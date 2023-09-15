@@ -1,0 +1,91 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "SelfdestructTransfer",
+  "sourceName": "contracts/utils/implementation/SelfdestructTransfer.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "_selfdestructAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountWei",
+          "type": "uint256"
+        }
+      ],
+      "name": "Received",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address payable",
+          "name": "selfdestructAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountWei",
+          "type": "uint256"
+        }
+      ],
+      "name": "SelfdestructTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "die",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "selfdestructAddress",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516102353803806102358339818101604052602081101561003357600080fd5b5051600080546001600160a01b039092166001600160a01b031992831617905560018054909116331790556101c88061006d6000396000f3fe6080604052600436106100385760003560e01c806335f4699414610077578063826de87c1461008e5780638da5cb5b146100bf57610072565b36610072576040805134815290517fa8142743f8f70a4c26f3691cf4ed59718381fb2f18070ec52be1f1022d8555579181900360200190a1005b600080fd5b34801561008357600080fd5b5061008c6100d4565b005b34801561009a57600080fd5b506100a3610174565b604080516001600160a01b039092168252519081900360200190f35b3480156100cb57600080fd5b506100a3610183565b6001546001600160a01b03163314610120576040805162461bcd60e51b815260206004820152600a60248201526937b7363c9037bbb732b960b11b604482015290519081900360640190fd5b600054604080516001600160a01b03909216825247602083015280517fa250b71eb16ee59fedb05a8bd82ce8e79fe209d29d453bf6ff06361a4767efb69281900390910190a16000546001600160a01b0316ff5b6000546001600160a01b031681565b6001546001600160a01b03168156fea264697066735822122051d1635ca745c77d6ccd8c8693acb559e00c7a420f09c52f59368076da7e910e64736f6c63430007060033",
+  "deployedBytecode": "0x6080604052600436106100385760003560e01c806335f4699414610077578063826de87c1461008e5780638da5cb5b146100bf57610072565b36610072576040805134815290517fa8142743f8f70a4c26f3691cf4ed59718381fb2f18070ec52be1f1022d8555579181900360200190a1005b600080fd5b34801561008357600080fd5b5061008c6100d4565b005b34801561009a57600080fd5b506100a3610174565b604080516001600160a01b039092168252519081900360200190f35b3480156100cb57600080fd5b506100a3610183565b6001546001600160a01b03163314610120576040805162461bcd60e51b815260206004820152600a60248201526937b7363c9037bbb732b960b11b604482015290519081900360640190fd5b600054604080516001600160a01b03909216825247602083015280517fa250b71eb16ee59fedb05a8bd82ce8e79fe209d29d453bf6ff06361a4767efb69281900390910190a16000546001600160a01b0316ff5b6000546001600160a01b031681565b6001546001600160a01b03168156fea264697066735822122051d1635ca745c77d6ccd8c8693acb559e00c7a420f09c52f59368076da7e910e64736f6c63430007060033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

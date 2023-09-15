@@ -1,0 +1,49 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "RewardServices",
+  "sourceName": "contracts/inflation/lib/RewardServices.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "contract IIInflationReceiver",
+          "name": "inflationReceiver",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountWei",
+          "type": "uint256"
+        }
+      ],
+      "name": "RewardServiceDailyAuthorizedInflationComputed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "contract IIInflationReceiver",
+          "name": "inflationReceiver",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountWei",
+          "type": "uint256"
+        }
+      ],
+      "name": "RewardServiceTopupRequestReceived",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220206273a5c9b92733fa9b9007d3607602f0a4940c30b8a786cd07c25a15c7548564736f6c63430007060033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220206273a5c9b92733fa9b9007d3607602f0a4940c30b8a786cd07c25a15c7548564736f6c63430007060033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

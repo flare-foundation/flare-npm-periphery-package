@@ -1,0 +1,24 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "DelegationHistory",
+  "sourceName": "contracts/token/lib/DelegationHistory.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "MAX_DELEGATES_BY_PERCENT",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608b610024600b82828239805160001a607314601757fe5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80632829744e146038575b600080fd5b603e6050565b60408051918252519081900360200190f35b60028156fea26469706673582212201c24fbcdab4a7a6f6d4f599d654ae0cb75d9e53063abaa2530eefa7b1ae2e1de64736f6c63430007060033",
+  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80632829744e146038575b600080fd5b603e6050565b60408051918252519081900360200190f35b60028156fea26469706673582212201c24fbcdab4a7a6f6d4f599d654ae0cb75d9e53063abaa2530eefa7b1ae2e1de64736f6c63430007060033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

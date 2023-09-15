@@ -1,0 +1,23 @@
+{
+  "name": "@flarenetwork/flare-periphery-contract-artifacts",
+  "description": "Smart contracts artifacts for all Flare chains",
+  "version": "0.1.0",
+  "author": "Flare Network",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "**/artifacts/**/*.json",
+    "**/deploys/**/*.json",
+    "**/README.md"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "typescript": "^5.2.2"
+  }
+}
