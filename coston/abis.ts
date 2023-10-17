@@ -78,6 +78,7 @@ import PollingFoundation from "./artifacts/contracts/governance/implementation/P
 import IIPreInflationCalculation from "./artifacts/contracts/inflation/interface/IIPreInflationCalculation.sol/IIPreInflationCalculation.json";
 import IIInflationReceiver from "./artifacts/contracts/inflation/interface/IIInflationReceiver.sol/IIInflationReceiver.json";
 import IIInflationV1 from "./artifacts/contracts/inflation/interface/IIInflationV1.sol/IIInflationV1.json";
+import IIInflationReceiverV1 from "./artifacts/contracts/inflation/interface/IIInflationReceiverV1.sol/IIInflationReceiverV1.json";
 import IISupply from "./artifacts/contracts/inflation/interface/IISupply.sol/IISupply.json";
 import IIInflationAllocation from "./artifacts/contracts/inflation/interface/IIInflationAllocation.sol/IIInflationAllocation.json";
 import Inflation from "./artifacts/contracts/inflation/implementation/Inflation.sol/Inflation.json";
@@ -189,6 +190,7 @@ export const abis: { [key: string]: any; } = {
   IIPreInflationCalculation: IIPreInflationCalculation.abi,
   IIInflationReceiver: IIInflationReceiver.abi,
   IIInflationV1: IIInflationV1.abi,
+  IIInflationReceiverV1: IIInflationReceiverV1.abi,
   IISupply: IISupply.abi,
   IIInflationAllocation: IIInflationAllocation.abi,
   Inflation: Inflation.abi,

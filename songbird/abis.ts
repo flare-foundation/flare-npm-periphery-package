@@ -71,21 +71,22 @@ import PollingFtso from "./artifacts/contracts/governance/implementation/Polling
 import GovernorProposals from "./artifacts/contracts/governance/implementation/GovernorProposals.sol/GovernorProposals.json";
 import GovernedAtGenesis from "./artifacts/contracts/governance/implementation/GovernedAtGenesis.sol/GovernedAtGenesis.json";
 import Governor from "./artifacts/contracts/governance/implementation/Governor.sol/Governor.json";
-import InflationAllocation from "./artifacts/contracts/governance/implementation/InflationAllocation.sol/InflationAllocation.json";
 import GovernedBaseV2 from "./artifacts/contracts/governance/implementation/GovernedBaseV2.sol/GovernedBaseV2.json";
 import GovernorVotes from "./artifacts/contracts/governance/implementation/GovernorVotes.sol/GovernorVotes.json";
 import GovernedV2 from "./artifacts/contracts/governance/implementation/GovernedV2.sol/GovernedV2.json";
 import PollingFoundation from "./artifacts/contracts/governance/implementation/PollingFoundation.sol/PollingFoundation.json";
-import IIInflationPercentageProvider from "./artifacts/contracts/inflation/interface/IIInflationPercentageProvider.sol/IIInflationPercentageProvider.json";
-import IIInflationSharingPercentageProvider from "./artifacts/contracts/inflation/interface/IIInflationSharingPercentageProvider.sol/IIInflationSharingPercentageProvider.json";
+import IIPreInflationCalculation from "./artifacts/contracts/inflation/interface/IIPreInflationCalculation.sol/IIPreInflationCalculation.json";
 import IIInflationReceiver from "./artifacts/contracts/inflation/interface/IIInflationReceiver.sol/IIInflationReceiver.json";
+import IIInflationV1 from "./artifacts/contracts/inflation/interface/IIInflationV1.sol/IIInflationV1.json";
+import IIInflationReceiverV1 from "./artifacts/contracts/inflation/interface/IIInflationReceiverV1.sol/IIInflationReceiverV1.json";
 import IISupply from "./artifacts/contracts/inflation/interface/IISupply.sol/IISupply.json";
+import IIInflationAllocation from "./artifacts/contracts/inflation/interface/IIInflationAllocation.sol/IIInflationAllocation.json";
 import Inflation from "./artifacts/contracts/inflation/implementation/Inflation.sol/Inflation.json";
+import InflationAllocation from "./artifacts/contracts/inflation/implementation/InflationAllocation.sol/InflationAllocation.json";
 import Supply from "./artifacts/contracts/inflation/implementation/Supply.sol/Supply.json";
-import RewardService from "./artifacts/contracts/inflation/lib/RewardService.sol/RewardService.json";
-import InflationAnnum from "./artifacts/contracts/inflation/lib/InflationAnnum.sol/InflationAnnum.json";
-import RewardServices from "./artifacts/contracts/inflation/lib/RewardServices.sol/RewardServices.json";
-import InflationAnnums from "./artifacts/contracts/inflation/lib/InflationAnnums.sol/InflationAnnums.json";
+import SelfDestructBurner from "./artifacts/contracts/inflation/implementation/SelfDestructBurner.sol/SelfDestructBurner.json";
+import InflationRewardServices from "./artifacts/contracts/inflation/lib/InflationRewardServices.sol/InflationRewardServices.json";
+import InflationTimeSlots from "./artifacts/contracts/inflation/lib/InflationTimeSlots.sol/InflationTimeSlots.json";
 import ICollateralizable from "./artifacts/contracts/mockXAsset/interface/ICollateralizable.sol/ICollateralizable.json";
 import IIAddressUpdatable from "./artifacts/contracts/addressUpdater/interface/IIAddressUpdatable.sol/IIAddressUpdatable.json";
 import IIAddressUpdater from "./artifacts/contracts/addressUpdater/interface/IIAddressUpdater.sol/IIAddressUpdater.json";
@@ -93,7 +94,9 @@ import AddressUpdatable from "./artifacts/contracts/addressUpdater/implementatio
 import AddressUpdater from "./artifacts/contracts/addressUpdater/implementation/AddressUpdater.sol/AddressUpdater.json";
 import IIFtsoRewardManager from "./artifacts/contracts/tokenPools/interface/IIFtsoRewardManager.sol/IIFtsoRewardManager.json";
 import IITokenPool from "./artifacts/contracts/tokenPools/interface/IITokenPool.sol/IITokenPool.json";
+import TokenPoolBase from "./artifacts/contracts/tokenPools/implementation/TokenPoolBase.sol/TokenPoolBase.json";
 import FtsoRewardManager from "./artifacts/contracts/tokenPools/implementation/FtsoRewardManager.sol/FtsoRewardManager.json";
+import InflationReceiver from "./artifacts/contracts/tokenPools/implementation/InflationReceiver.sol/InflationReceiver.json";
 import DataProviderFee from "./artifacts/contracts/tokenPools/lib/DataProviderFee.sol/DataProviderFee.json";
 import IIPriceSubmitter from "./artifacts/contracts/genesis/interface/IIPriceSubmitter.sol/IIPriceSubmitter.json";
 import IFtsoGenesis from "./artifacts/contracts/genesis/interface/IFtsoGenesis.sol/IFtsoGenesis.json";
@@ -180,21 +183,22 @@ export const abis: { [key: string]: any; } = {
   GovernorProposals: GovernorProposals.abi,
   GovernedAtGenesis: GovernedAtGenesis.abi,
   Governor: Governor.abi,
-  InflationAllocation: InflationAllocation.abi,
   GovernedBaseV2: GovernedBaseV2.abi,
   GovernorVotes: GovernorVotes.abi,
   GovernedV2: GovernedV2.abi,
   PollingFoundation: PollingFoundation.abi,
-  IIInflationPercentageProvider: IIInflationPercentageProvider.abi,
-  IIInflationSharingPercentageProvider: IIInflationSharingPercentageProvider.abi,
+  IIPreInflationCalculation: IIPreInflationCalculation.abi,
   IIInflationReceiver: IIInflationReceiver.abi,
+  IIInflationV1: IIInflationV1.abi,
+  IIInflationReceiverV1: IIInflationReceiverV1.abi,
   IISupply: IISupply.abi,
+  IIInflationAllocation: IIInflationAllocation.abi,
   Inflation: Inflation.abi,
+  InflationAllocation: InflationAllocation.abi,
   Supply: Supply.abi,
-  RewardService: RewardService.abi,
-  InflationAnnum: InflationAnnum.abi,
-  RewardServices: RewardServices.abi,
-  InflationAnnums: InflationAnnums.abi,
+  SelfDestructBurner: SelfDestructBurner.abi,
+  InflationRewardServices: InflationRewardServices.abi,
+  InflationTimeSlots: InflationTimeSlots.abi,
   ICollateralizable: ICollateralizable.abi,
   IIAddressUpdatable: IIAddressUpdatable.abi,
   IIAddressUpdater: IIAddressUpdater.abi,
@@ -202,7 +206,9 @@ export const abis: { [key: string]: any; } = {
   AddressUpdater: AddressUpdater.abi,
   IIFtsoRewardManager: IIFtsoRewardManager.abi,
   IITokenPool: IITokenPool.abi,
+  TokenPoolBase: TokenPoolBase.abi,
   FtsoRewardManager: FtsoRewardManager.abi,
+  InflationReceiver: InflationReceiver.abi,
   DataProviderFee: DataProviderFee.abi,
   IIPriceSubmitter: IIPriceSubmitter.abi,
   IFtsoGenesis: IFtsoGenesis.abi,

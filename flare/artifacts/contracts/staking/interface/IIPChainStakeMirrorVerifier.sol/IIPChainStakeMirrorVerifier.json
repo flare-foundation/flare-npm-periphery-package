@@ -1,0 +1,72 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IIPChainStakeMirrorVerifier",
+  "sourceName": "contracts/staking/interface/IIPChainStakeMirrorVerifier.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "txId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "stakingType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes20",
+              "name": "inputAddress",
+              "type": "bytes20"
+            },
+            {
+              "internalType": "bytes20",
+              "name": "nodeId",
+              "type": "bytes20"
+            },
+            {
+              "internalType": "uint64",
+              "name": "startTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "endTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "weight",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct IPChainStakeMirrorVerifier.PChainStake",
+          "name": "_stakeData",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "_merkleProof",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "verifyStake",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

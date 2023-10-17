@@ -116,13 +116,13 @@
   },
   {
     "name": "CombinedNat",
-    "contractName": "WNat.sol",
-    "address": "0xC67DCE33D7A8efA5FfEB961899C73fe01bCe9273"
+    "contractName": "CombinedNat.sol",
+    "address": "0xa9ef58F5CFf9e282d759e36b249011729a74E7dd"
   },
   {
     "name": "GovernanceVotePower",
     "contractName": "GovernanceVotePower.sol",
-    "address": "0xa821fDf6E157fdf52dDe6a1B6dEDaE28dC35053C"
+    "address": "0x8e4A2c063E1C82C9f5cb96489c0d2b6d78dF0538"
   },
   {
     "name": "FtsoWnat",
@@ -248,5 +248,25 @@
     "name": "PollingFtso",
     "contractName": "PollingFtso.sol",
     "address": "0x501A498e8FDA589038d6526C2153a9fdc9d8eDD2"
+  },
+  {
+    "name": "AddressBinder",
+    "contractName": "AddressBinder.sol",
+    "address": "0x332aa9e37D64CAAF70ae5dBe8EFC2FC7611934Ae"
+  },
+  {
+    "name": "PChainStakeMirrorMultiSigVoting",
+    "contractName": "PChainStakeMirrorMultiSigVoting.sol",
+    "address": "0x37c5d6DCCb4421A47E3931584B306fBc00288aE9"
+  },
+  {
+    "name": "PChainStakeMirrorVerifier",
+    "contractName": "PChainStakeMirrorVerifier.sol",
+    "address": "0xd61d6bEfB3B5C3e1D13b43C46CC1cebA3505a7aF"
+  },
+  {
+    "name": "PChainStakeMirror",
+    "contractName": "PChainStakeMirror.sol",
+    "address": "0xd2a1Bb23eB350814a30Dd6f9de78Bb2C8fdD9F1D"
   }
 ]

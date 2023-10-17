@@ -1,3 +1,4 @@
+import IICombinedNatBalance from "./artifacts/contracts/token/interface/IICombinedNatBalance.sol/IICombinedNatBalance.json";
 import IIVPToken from "./artifacts/contracts/token/interface/IIVPToken.sol/IIVPToken.json";
 import IIVPContract from "./artifacts/contracts/token/interface/IIVPContract.sol/IIVPContract.json";
 import IIGovernanceVotePower from "./artifacts/contracts/token/interface/IIGovernanceVotePower.sol/IIGovernanceVotePower.json";
@@ -6,6 +7,7 @@ import VPToken from "./artifacts/contracts/token/implementation/VPToken.sol/VPTo
 import Delegatable from "./artifacts/contracts/token/implementation/Delegatable.sol/Delegatable.json";
 import VPContract from "./artifacts/contracts/token/implementation/VPContract.sol/VPContract.json";
 import GovernanceVotePower from "./artifacts/contracts/token/implementation/GovernanceVotePower.sol/GovernanceVotePower.json";
+import CombinedNat from "./artifacts/contracts/token/implementation/CombinedNat.sol/CombinedNat.json";
 import CleanupBlockNumberManager from "./artifacts/contracts/token/implementation/CleanupBlockNumberManager.sol/CleanupBlockNumberManager.json";
 import CheckPointable from "./artifacts/contracts/token/implementation/CheckPointable.sol/CheckPointable.json";
 import WNat from "./artifacts/contracts/token/implementation/WNat.sol/WNat.json";
@@ -13,7 +15,6 @@ import CheckPointHistoryCache from "./artifacts/contracts/token/lib/CheckPointHi
 import DelegateCheckPointHistory from "./artifacts/contracts/token/lib/DelegateCheckPointHistory.sol/DelegateCheckPointHistory.json";
 import PercentageDelegation from "./artifacts/contracts/token/lib/PercentageDelegation.sol/PercentageDelegation.json";
 import CheckPointsByAddress from "./artifacts/contracts/token/lib/CheckPointsByAddress.sol/CheckPointsByAddress.json";
-import IICombinedNatBalance from "./artifacts/contracts/token/lib/IICombinedNatBalance.sol/IICombinedNatBalance.json";
 import VotePowerCache from "./artifacts/contracts/token/lib/VotePowerCache.sol/VotePowerCache.json";
 import DelegateCheckPointsByAddress from "./artifacts/contracts/token/lib/DelegateCheckPointsByAddress.sol/DelegateCheckPointsByAddress.json";
 import ExplicitDelegation from "./artifacts/contracts/token/lib/ExplicitDelegation.sol/ExplicitDelegation.json";
@@ -62,7 +63,15 @@ import VoterWhitelister from "./artifacts/contracts/utils/implementation/VoterWh
 import BokkyPooBahsDateTimeLibrary from "./artifacts/contracts/utils/implementation/DateTimeLibrary.sol/BokkyPooBahsDateTimeLibrary.json";
 import FundDistributor from "./artifacts/contracts/utils/implementation/FundDistributor.sol/FundDistributor.json";
 import FlareContractRegistry from "./artifacts/contracts/utils/implementation/FlareContractRegistry.sol/FlareContractRegistry.json";
+import BytesLib from "./artifacts/contracts/utils/implementation/BytesLib.sol/BytesLib.json";
 import FtsoRegistryProxy from "./artifacts/contracts/utils/implementation/FtsoRegistryProxy.sol/FtsoRegistryProxy.json";
+import IIPChainStakeMirrorVerifier from "./artifacts/contracts/staking/interface/IIPChainStakeMirrorVerifier.sol/IIPChainStakeMirrorVerifier.json";
+import PChainStakeMirrorMultiSigVoting from "./artifacts/contracts/staking/implementation/PChainStakeMirrorMultiSigVoting.sol/PChainStakeMirrorMultiSigVoting.json";
+import AddressBinder from "./artifacts/contracts/staking/implementation/AddressBinder.sol/AddressBinder.json";
+import PChainStakeMirrorVerifier from "./artifacts/contracts/staking/implementation/PChainStakeMirrorVerifier.sol/PChainStakeMirrorVerifier.json";
+import PChainStakeMirror from "./artifacts/contracts/staking/implementation/PChainStakeMirror.sol/PChainStakeMirror.json";
+import PChainStake from "./artifacts/contracts/staking/implementation/PChainStake.sol/PChainStake.json";
+import PChainStakeHistory from "./artifacts/contracts/staking/lib/PChainStakeHistory.sol/PChainStakeHistory.json";
 import IIGovernorProposer from "./artifacts/contracts/governance/interface/IIGovernorProposer.sol/IIGovernorProposer.json";
 import IIPollingFoundation from "./artifacts/contracts/governance/interface/IIPollingFoundation.sol/IIPollingFoundation.json";
 import Governed from "./artifacts/contracts/governance/implementation/Governed.sol/Governed.json";
@@ -127,6 +136,7 @@ import FlareDaemon from "./artifacts/contracts/genesis/implementation/FlareDaemo
 import GovernanceSettings from "./artifacts/contracts/genesis/implementation/GovernanceSettings.sol/GovernanceSettings.json";
 
 export const abis: { [key: string]: any; } = {
+  IICombinedNatBalance: IICombinedNatBalance.abi,
   IIVPToken: IIVPToken.abi,
   IIVPContract: IIVPContract.abi,
   IIGovernanceVotePower: IIGovernanceVotePower.abi,
@@ -135,6 +145,7 @@ export const abis: { [key: string]: any; } = {
   Delegatable: Delegatable.abi,
   VPContract: VPContract.abi,
   GovernanceVotePower: GovernanceVotePower.abi,
+  CombinedNat: CombinedNat.abi,
   CleanupBlockNumberManager: CleanupBlockNumberManager.abi,
   CheckPointable: CheckPointable.abi,
   WNat: WNat.abi,
@@ -142,7 +153,6 @@ export const abis: { [key: string]: any; } = {
   DelegateCheckPointHistory: DelegateCheckPointHistory.abi,
   PercentageDelegation: PercentageDelegation.abi,
   CheckPointsByAddress: CheckPointsByAddress.abi,
-  IICombinedNatBalance: IICombinedNatBalance.abi,
   VotePowerCache: VotePowerCache.abi,
   DelegateCheckPointsByAddress: DelegateCheckPointsByAddress.abi,
   ExplicitDelegation: ExplicitDelegation.abi,
@@ -191,7 +201,15 @@ export const abis: { [key: string]: any; } = {
   BokkyPooBahsDateTimeLibrary: BokkyPooBahsDateTimeLibrary.abi,
   FundDistributor: FundDistributor.abi,
   FlareContractRegistry: FlareContractRegistry.abi,
+  BytesLib: BytesLib.abi,
   FtsoRegistryProxy: FtsoRegistryProxy.abi,
+  IIPChainStakeMirrorVerifier: IIPChainStakeMirrorVerifier.abi,
+  PChainStakeMirrorMultiSigVoting: PChainStakeMirrorMultiSigVoting.abi,
+  AddressBinder: AddressBinder.abi,
+  PChainStakeMirrorVerifier: PChainStakeMirrorVerifier.abi,
+  PChainStakeMirror: PChainStakeMirror.abi,
+  PChainStake: PChainStake.abi,
+  PChainStakeHistory: PChainStakeHistory.abi,
   IIGovernorProposer: IIGovernorProposer.abi,
   IIPollingFoundation: IIPollingFoundation.abi,
   Governed: Governed.abi,

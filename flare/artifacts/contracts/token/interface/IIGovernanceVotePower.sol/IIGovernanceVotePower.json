@@ -126,7 +126,7 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "account",
+          "name": "_who",
           "type": "address"
         }
       ],
@@ -147,6 +147,19 @@
       "outputs": [
         {
           "internalType": "contract IVPToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pChainStakeMirror",
+      "outputs": [
+        {
+          "internalType": "contract IPChainStakeMirror",
           "name": "",
           "type": "address"
         }
