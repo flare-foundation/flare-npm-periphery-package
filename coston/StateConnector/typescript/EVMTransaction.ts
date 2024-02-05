@@ -7,17 +7,17 @@ export namespace EVMTransaction {
      */
     export interface Request {
         /**
-         * Attestation type id as defined for each attestation type on [this repo](https://gitlab.com/flarenetwork/state-connector-protocol/)
+         * ID of the attestation type.
          */
         attestationType: string;
 
         /**
-         * Id of the data source.
+         * ID of the data source.
          */
         sourceId: string;
 
         /**
-         * `MessageIntegrityCode` that is derived from the expected response as defined [here](/specs/attestations/hash-MIC.md#message-integrity-code).
+         * `MessageIntegrityCode` that is derived from the expected response.
          */
         messageIntegrityCode: string;
 
@@ -42,7 +42,7 @@ export namespace EVMTransaction {
         sourceId: string;
 
         /**
-         * The id of the state connector round in which the request was considered.
+         * The ID of the State Connector round in which the request was considered.
          */
         votingRound: string;
 
@@ -102,7 +102,7 @@ export namespace EVMTransaction {
         listEvents: boolean;
 
         /**
-         * If listEvents is false, this should be an empty list, otherwise, the request is rejected. If listEvents is true, this is the list of indices (logIndex) of the events to be relayed (sorted by the requestor). The array should contain at most 50 indices. If empty, it indicates all events in order capped by 50.
+         * If `listEvents` is `false`, this should be an empty list, otherwise, the request is rejected. If `listEvents` is `true`, this is the list of indices (logIndex) of the events to be relayed (sorted by the requestor). The array should contain at most 50 indices. If empty, it indicates all events in order capped by 50.
          */
         logIndices: string[];
     }
@@ -132,7 +132,7 @@ export namespace EVMTransaction {
         isDeployment: boolean;
 
         /**
-         * The address (to) of the receiver of the initial transaction. Zero address if `isDeployment` is true.
+         * The address (to) of the receiver of the initial transaction. Zero address if `isDeployment` is `true`.
          */
         receivingAddress: string;
 
@@ -152,7 +152,7 @@ export namespace EVMTransaction {
         status: string;
 
         /**
-         * If `listEvents` is true, an array of the requested events. Sorted by the logIndex in the same order as `logIndices`. Otherwise, an empty array.
+         * If `listEvents` is `true`, an array of the requested events. Sorted by the logIndex in the same order as `logIndices`. Otherwise, an empty array.
          */
         events: Event[];
     }
@@ -172,7 +172,7 @@ export namespace EVMTransaction {
         emitterAddress: string;
 
         /**
-         * An array of up to 4 32-byte strings of indexed log arguments. The first string is the signature of the event.
+         * An array of up to four 32-byte strings of indexed log arguments.
          */
         topics: string[];
 
@@ -182,7 +182,7 @@ export namespace EVMTransaction {
         data: string;
 
         /**
-         * It is true if log was removed due to a chain reorganization and false if it is a valid log.
+         * It is `true` if the log was removed due to a chain reorganization and `false` if it is a valid log.
          */
         removed: boolean;
     }

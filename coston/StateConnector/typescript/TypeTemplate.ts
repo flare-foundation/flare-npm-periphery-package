@@ -7,17 +7,17 @@ export namespace TypeTemplate {
      */
     export interface Request {
         /**
-         * Id of the attestation type.
+         * ID of the attestation type.
          */
         attestationType: string;
 
         /**
-         * Id of the data source.
+         * ID of the data source.
          */
         sourceId: string;
 
         /**
-         * `MessageIntegrityCode` that is derived from the expected response as defined [here](/specs/attestations/hash-MIC.md#message-integrity-code).
+         * `MessageIntegrityCode` that is derived from the expected response.
          */
         messageIntegrityCode: string;
 
@@ -42,7 +42,7 @@ export namespace TypeTemplate {
         sourceId: string;
 
         /**
-         * The id of the state connector round in which the request was considered.
+         * The ID of the State Connector round in which the request was considered.
          */
         votingRound: string;
 

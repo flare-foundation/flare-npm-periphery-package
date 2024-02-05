@@ -7,17 +7,17 @@ export namespace BalanceDecreasingTransaction {
      */
     export interface Request {
         /**
-         * Id of the attestation type.
+         * ID of the attestation type.
          */
         attestationType: string;
 
         /**
-         * Id of the data source.
+         * ID of the data source.
          */
         sourceId: string;
 
         /**
-         * `MessageIntegrityCode` that is derived from the expected response as defined [here](/specs/attestations/hash-MIC.md#message-integrity-code).
+         * `MessageIntegrityCode` that is derived from the expected response.
          */
         messageIntegrityCode: string;
 
@@ -42,7 +42,7 @@ export namespace BalanceDecreasingTransaction {
         sourceId: string;
 
         /**
-         * The id of the state connector round in which the request was considered. This is a security measure to prevent a collision of attestation hashes.
+         * The ID of the State Connector round in which the request was considered. This is a security measure to prevent a collision of attestation hashes.
          */
         votingRound: string;
 
@@ -82,7 +82,7 @@ export namespace BalanceDecreasingTransaction {
      */
     export interface RequestBody {
         /**
-         * Id of the payment transaction.
+         * ID of the payment transaction.
          */
         transactionId: string;
 
@@ -102,7 +102,7 @@ export namespace BalanceDecreasingTransaction {
         blockNumber: string;
 
         /**
-         * The timestamps of the block in which the transaction is included.
+         * The timestamp of the block in which the transaction is included.
          */
         blockTimestamp: string;
 

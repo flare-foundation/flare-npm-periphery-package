@@ -198,5 +198,35 @@
     "name": "WNatRegistryProvider",
     "contractName": "WNatRegistryProvider.sol",
     "address": "0x9819645ab3E99a0A2c0ECF797Da4B9312b31121F"
+  },
+  {
+    "name": "IEVMTransactionVerification",
+    "contractName": "IEVMTransactionVerification.sol",
+    "address": "0xC6B979a295aE1962045114392bc5BE7333840919"
+  },
+  {
+    "name": "IAddressValidityVerification",
+    "contractName": "IAddressValidityVerification.sol",
+    "address": "0x6493D7c0e4d81a73873067d14dfBFfaade072c5a"
+  },
+  {
+    "name": "IBalanceDecreasingTransactionVerification",
+    "contractName": "IBalanceDecreasingTransactionVerification.sol",
+    "address": "0x098088092EC01392609B1312c45F9E19b083888e"
+  },
+  {
+    "name": "IConfirmedBlockHeightExistsVerification",
+    "contractName": "IConfirmedBlockHeightExistsVerification.sol",
+    "address": "0x559eAa22affbeAD84D2F5271C2D8931f27CC316b"
+  },
+  {
+    "name": "IPaymentVerification",
+    "contractName": "IPaymentVerification.sol",
+    "address": "0x67aE5b59Bae06e61856e9Aff5605228a26D7b5bb"
+  },
+  {
+    "name": "IReferencedPaymentNonexistenceVerification",
+    "contractName": "IReferencedPaymentNonexistenceVerification.sol",
+    "address": "0x870Cfd102c2C549866CA87dB800EDdaABac02452"
   }
 ]

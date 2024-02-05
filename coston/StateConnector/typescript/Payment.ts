@@ -7,17 +7,17 @@ export namespace Payment {
      */
     export interface Request {
         /**
-         * Id of the attestation type.
+         * ID of the attestation type.
          */
         attestationType: string;
 
         /**
-         * Id of the data source.
+         * ID of the data source.
          */
         sourceId: string;
 
         /**
-         * `MessageIntegrityCode` that is derived from the expected response as defined [here](/specs/attestations/hash-MIC.md#message-integrity-code).
+         * `MessageIntegrityCode` that is derived from the expected response.
          */
         messageIntegrityCode: string;
 
@@ -42,7 +42,7 @@ export namespace Payment {
         sourceId: string;
 
         /**
-         * The id of the state connector round in which the request was considered.
+         * The ID of the State Connector round in which the request was considered.
          */
         votingRound: string;
 
@@ -82,17 +82,17 @@ export namespace Payment {
      */
     export interface RequestBody {
         /**
-         * Id of the payment transaction.
+         * ID of the payment transaction.
          */
         transactionId: string;
 
         /**
-         * For UTXO, this is the index of the transaction input with source address. Always 0 for the non-utxo chains.
+         * For UTXO chains, this is the index of the transaction input with source address. Always 0 for the non-utxo chains.
          */
         inUtxo: string;
 
         /**
-         * For UTXO, this is the index of the transaction output with receiving address. Always 0 for the non-utxo chains.
+         * For UTXO chains, this is the index of the transaction output with receiving address. Always 0 for the non-utxo chains.
          */
         utxo: string;
     }
@@ -107,7 +107,7 @@ export namespace Payment {
         blockNumber: string;
 
         /**
-         * The timestamps of the block in which the transaction is included.
+         * The timestamp of the block in which the transaction is included.
          */
         blockTimestamp: string;
 
@@ -117,12 +117,12 @@ export namespace Payment {
         sourceAddressHash: string;
 
         /**
-         * Standard address hash of the receiving address. Zero 32-byte string if there is no receivingAddress (if `status` is not success).
+         * Standard address hash of the receiving address. The zero 32-byte string if there is no receivingAddress (if `status` is not success).
          */
         receivingAddressHash: string;
 
         /**
-         * Standard address hash of the intended receiving address. Relevant if the transaction was unsuccessful.
+         * Standard address hash of the intended receiving address. Relevant if the transaction is unsuccessful.
          */
         intendedReceivingAddressHash: string;
 
@@ -132,7 +132,7 @@ export namespace Payment {
         spentAmount: string;
 
         /**
-         * Amount in minimal units to be spent by the source address. Relevant if the transaction status is not success.
+         * Amount in minimal units to be spent by the source address. Relevant if the transaction status is unsuccessful.
          */
         intendedSpentAmount: string;
 
@@ -142,12 +142,12 @@ export namespace Payment {
         receivedAmount: string;
 
         /**
-         * Amount in minimal units intended to be received by the receiving address. Relevant if the transaction was unsuccessful.
+         * Amount in minimal units intended to be received by the receiving address. Relevant if the transaction is unsuccessful.
          */
         intendedReceivedAmount: string;
 
         /**
-         * Identifier of the transaction as defined [here](/specs/attestations/external-chains/standardPaymentReference.md).
+         * [Standard payment reference](/specs/attestations/external-chains/standardPaymentReference.md) of the transaction.
          */
         standardPaymentReference: string;
 
@@ -157,7 +157,7 @@ export namespace Payment {
         oneToOne: boolean;
 
         /**
-         * Status of the transaction as described [here](/specs/attestations/external-chains/transactions.md#transaction-success-status):
+         * [Succes status](/specs/attestations/external-chains/transactions.md#transaction-success-status) of the transaction: 0 - success, 1 - failed by sender's fault,x  2 - failed by receiver's fault.
          */
         status: string;
     }

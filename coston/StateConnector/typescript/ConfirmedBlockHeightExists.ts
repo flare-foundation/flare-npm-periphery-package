@@ -7,17 +7,17 @@ export namespace ConfirmedBlockHeightExists {
      */
     export interface Request {
         /**
-         * Id of the attestation type.
+         * ID of the attestation type.
          */
         attestationType: string;
 
         /**
-         * Id of the data source.
+         * ID of the data source.
          */
         sourceId: string;
 
         /**
-         * `MessageIntegrityCode` that is derived from the expected response as defined [here](/specs/attestations/hash-MIC.md#message-integrity-code).
+         * `MessageIntegrityCode` that is derived from the expected response as defined.
          */
         messageIntegrityCode: string;
 
@@ -42,7 +42,7 @@ export namespace ConfirmedBlockHeightExists {
         sourceId: string;
 
         /**
-         * The id of the state connector round in which the request was considered.
+         * The ID of the State Connector round in which the request was considered.
          */
         votingRound: string;
 
@@ -87,7 +87,7 @@ export namespace ConfirmedBlockHeightExists {
         blockNumber: string;
 
         /**
-         * The period in seconds for sampling. The range is from `blockNumber` to the blockNumber of the first block more than queryWindow before the `blockNumber`.
+         * The length of the period in which the block production rate is to be computed.
          */
         queryWindow: string;
     }
@@ -102,7 +102,7 @@ export namespace ConfirmedBlockHeightExists {
         blockTimestamp: string;
 
         /**
-         * The depth at which a block is considered confirmed depending on the chain. All attestation clients must agree on this number.
+         * The depth at which a block is considered confirmed depending on the chain. All attestation providers must agree on this number.
          */
         numberOfConfirmations: string;
 

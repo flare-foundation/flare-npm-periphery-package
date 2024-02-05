@@ -7,7 +7,7 @@ export namespace AddressValidity {
      */
     export interface Request {
         /**
-         * Attestation type id as defined for each attestation type on [this repo](https://gitlab.com/flarenetwork/state-connector-protocol/)
+         * ID of the attestation type.
          */
         attestationType: string;
 
@@ -17,7 +17,7 @@ export namespace AddressValidity {
         sourceId: string;
 
         /**
-         * `MessageIntegrityCode` that is derived from the expected response as defined [here](/specs/attestations/hash-MIC.md#message-integrity-code).
+         * `MessageIntegrityCode` that is derived from the expected response.
          */
         messageIntegrityCode: string;
 
@@ -42,7 +42,7 @@ export namespace AddressValidity {
         sourceId: string;
 
         /**
-         * The id of the state connector round in which the request was considered.
+         * The ID of the State Connector round in which the request was considered.
          */
         votingRound: string;
 
@@ -92,12 +92,17 @@ export namespace AddressValidity {
      */
     export interface ResponseBody {
         /**
-         * Standard form of the validated address.
+         * Boolean indicator of the address validity.
+         */
+        isValid: boolean;
+
+        /**
+         * If `isValid`, standard form of the validated address. Otherwise an empty string.
          */
         standardAddress: string;
 
         /**
-         * Standard address hash of the validated address.
+         * If `isValid`, standard address hash of the validated address. Otherwise a zero bytes32 string.
          */
         standardAddressHash: string;
     }

@@ -75,6 +75,21 @@ import GovernedBaseV2 from "./artifacts/contracts/governance/implementation/Gove
 import GovernorVotes from "./artifacts/contracts/governance/implementation/GovernorVotes.sol/GovernorVotes.json";
 import GovernedV2 from "./artifacts/contracts/governance/implementation/GovernedV2.sol/GovernedV2.json";
 import PollingFoundation from "./artifacts/contracts/governance/implementation/PollingFoundation.sol/PollingFoundation.json";
+import IPaymentVerification from "./artifacts/contracts/StateConnector/interface/IPaymentVerification.sol/IPaymentVerification.json";
+import BalanceDecreasingTransaction from "./artifacts/contracts/StateConnector/interface/BalanceDecreasingTransaction.sol/BalanceDecreasingTransaction.json";
+import IEVMTransactionVerification from "./artifacts/contracts/StateConnector/interface/IEVMTransactionVerification.sol/IEVMTransactionVerification.json";
+import IStateConnector from "./artifacts/contracts/StateConnector/interface/IStateConnector.sol/IStateConnector.json";
+import IAddressValidityVerification from "./artifacts/contracts/StateConnector/interface/IAddressValidityVerification.sol/IAddressValidityVerification.json";
+import Payment from "./artifacts/contracts/StateConnector/interface/Payment.sol/Payment.json";
+import EVMTransaction from "./artifacts/contracts/StateConnector/interface/EVMTransaction.sol/EVMTransaction.json";
+import ITypeTemplateVerification from "./artifacts/contracts/StateConnector/interface/ITypeTemplateVerification.sol/ITypeTemplateVerification.json";
+import IBalanceDecreasingTransactionVerification from "./artifacts/contracts/StateConnector/interface/IBalanceDecreasingTransactionVerification.sol/IBalanceDecreasingTransactionVerification.json";
+import AddressValidity from "./artifacts/contracts/StateConnector/interface/AddressValidity.sol/AddressValidity.json";
+import IReferencedPaymentNonexistenceVerification from "./artifacts/contracts/StateConnector/interface/IReferencedPaymentNonexistenceVerification.sol/IReferencedPaymentNonexistenceVerification.json";
+import ReferencedPaymentNonexistence from "./artifacts/contracts/StateConnector/interface/ReferencedPaymentNonexistence.sol/ReferencedPaymentNonexistence.json";
+import TypeTemplate from "./artifacts/contracts/StateConnector/interface/TypeTemplate.sol/TypeTemplate.json";
+import ConfirmedBlockHeightExists from "./artifacts/contracts/StateConnector/interface/ConfirmedBlockHeightExists.sol/ConfirmedBlockHeightExists.json";
+import IConfirmedBlockHeightExistsVerification from "./artifacts/contracts/StateConnector/interface/IConfirmedBlockHeightExistsVerification.sol/IConfirmedBlockHeightExistsVerification.json";
 import IIPreInflationCalculation from "./artifacts/contracts/inflation/interface/IIPreInflationCalculation.sol/IIPreInflationCalculation.json";
 import IIInflationReceiver from "./artifacts/contracts/inflation/interface/IIInflationReceiver.sol/IIInflationReceiver.json";
 import IIInflationV1 from "./artifacts/contracts/inflation/interface/IIInflationV1.sol/IIInflationV1.json";
@@ -187,6 +202,21 @@ export const abis: { [key: string]: any; } = {
   GovernorVotes: GovernorVotes.abi,
   GovernedV2: GovernedV2.abi,
   PollingFoundation: PollingFoundation.abi,
+  IPaymentVerification: IPaymentVerification.abi,
+  BalanceDecreasingTransaction: BalanceDecreasingTransaction.abi,
+  IEVMTransactionVerification: IEVMTransactionVerification.abi,
+  IStateConnector: IStateConnector.abi,
+  IAddressValidityVerification: IAddressValidityVerification.abi,
+  Payment: Payment.abi,
+  EVMTransaction: EVMTransaction.abi,
+  ITypeTemplateVerification: ITypeTemplateVerification.abi,
+  IBalanceDecreasingTransactionVerification: IBalanceDecreasingTransactionVerification.abi,
+  AddressValidity: AddressValidity.abi,
+  IReferencedPaymentNonexistenceVerification: IReferencedPaymentNonexistenceVerification.abi,
+  ReferencedPaymentNonexistence: ReferencedPaymentNonexistence.abi,
+  TypeTemplate: TypeTemplate.abi,
+  ConfirmedBlockHeightExists: ConfirmedBlockHeightExists.abi,
+  IConfirmedBlockHeightExistsVerification: IConfirmedBlockHeightExistsVerification.abi,
   IIPreInflationCalculation: IIPreInflationCalculation.abi,
   IIInflationReceiver: IIInflationReceiver.abi,
   IIInflationV1: IIInflationV1.abi,
