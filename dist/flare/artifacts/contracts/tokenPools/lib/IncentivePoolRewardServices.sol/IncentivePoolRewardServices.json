@@ -1,0 +1,49 @@
+{
+    "_format": "hh-sol-artifact-1",
+    "contractName": "IncentivePoolRewardServices",
+    "sourceName": "contracts/tokenPools/lib/IncentivePoolRewardServices.sol",
+    "abi": [
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IIIncentivePoolReceiver",
+                    "name": "incentivePoolReceiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountWei",
+                    "type": "uint256"
+                }
+            ],
+            "name": "IncentivePoolRewardServiceDailyAuthorizedIncentiveComputed",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IIIncentivePoolReceiver",
+                    "name": "incentivePoolReceiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountWei",
+                    "type": "uint256"
+                }
+            ],
+            "name": "IncentivePoolRewardServiceTopupRequestReceived",
+            "type": "event"
+        }
+    ],
+    "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220652cba842c96584c50a686fe3e3d56097e8f8afd8de5d43021cc9b981002696864736f6c63430007060033",
+    "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220652cba842c96584c50a686fe3e3d56097e8f8afd8de5d43021cc9b981002696864736f6c63430007060033",
+    "linkReferences": {},
+    "deployedLinkReferences": {}
+}

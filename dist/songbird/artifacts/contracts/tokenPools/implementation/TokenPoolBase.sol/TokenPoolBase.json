@@ -1,0 +1,10 @@
+{
+    "_format": "hh-sol-artifact-1",
+    "contractName": "TokenPoolBase",
+    "sourceName": "contracts/tokenPools/implementation/TokenPoolBase.sol",
+    "abi": [],
+    "bytecode": "0x",
+    "deployedBytecode": "0x",
+    "linkReferences": {},
+    "deployedLinkReferences": {}
+}

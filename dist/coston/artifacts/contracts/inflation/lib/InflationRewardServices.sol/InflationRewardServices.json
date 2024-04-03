@@ -1,0 +1,68 @@
+{
+    "_format": "hh-sol-artifact-1",
+    "contractName": "InflationRewardServices",
+    "sourceName": "contracts/inflation/lib/InflationRewardServices.sol",
+    "abi": [
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IIInflationReceiver",
+                    "name": "inflationReceiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountWei",
+                    "type": "uint256"
+                }
+            ],
+            "name": "InflationRewardServiceDailyAuthorizedInflationComputed",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IIInflationReceiver",
+                    "name": "inflationReceiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountWei",
+                    "type": "uint256"
+                }
+            ],
+            "name": "InflationRewardServiceTopupComputed",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IIInflationReceiver",
+                    "name": "inflationReceiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountWei",
+                    "type": "uint256"
+                }
+            ],
+            "name": "InflationRewardServiceTopupRequestReceived",
+            "type": "event"
+        }
+    ],
+    "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212209eb8c26bcf3fa083693e133597b9c8d01b72557e85fe7c6b4714f2794cc4c7ab64736f6c63430007060033",
+    "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212209eb8c26bcf3fa083693e133597b9c8d01b72557e85fe7c6b4714f2794cc4c7ab64736f6c63430007060033",
+    "linkReferences": {},
+    "deployedLinkReferences": {}
+}

@@ -1,23 +1,23 @@
 import {
-  nameToAddress as nameToAddressFLR,
-  addressToName as addressToNameFLR,
-  nameToAbi as nameToAbiFLR,
-} from "./flare"
-import {
-  nameToAddress as nameToAddressSGB,
-  addressToName as addressToNameSGB,
-  nameToAbi as nameToAbiSGB,
-} from "./songbird";
-import {
-  nameToAddress as nameToAddressCST,
   addressToName as addressToNameCST,
   nameToAbi as nameToAbiCST,
+  nameToAddress as nameToAddressCST,
 } from "./coston";
 import {
-  nameToAddress as nameToAddressCST2,
   addressToName as addressToNameCST2,
   nameToAbi as nameToAbiCST2,
+  nameToAddress as nameToAddressCST2,
 } from "./coston2";
+import {
+  addressToName as addressToNameFLR,
+  nameToAbi as nameToAbiFLR,
+  nameToAddress as nameToAddressFLR,
+} from "./flare";
+import {
+  addressToName as addressToNameSGB,
+  nameToAbi as nameToAbiSGB,
+  nameToAddress as nameToAddressSGB,
+} from "./songbird";
 
 export const nameToAddress = (name: string, network: string): string => {
   if (network.toLowerCase() == "flare") return nameToAddressFLR(name);
@@ -45,3 +45,9 @@ export const nameToAbi = (
   if (network.toLowerCase() == "coston2") return nameToAbiCST2(name);
   return { data: [], status: "Please select a network" };
 };
+
+export * as coston from "./coston";
+export * as coston2 from "./coston2";
+export * as flare from "./flare";
+export * as songbird from "./songbird";
+
