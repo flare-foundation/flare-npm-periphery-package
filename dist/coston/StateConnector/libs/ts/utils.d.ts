@@ -64,10 +64,4 @@ export declare function readAttestationTypeConfigs(configsPath?: string): Map<st
  * @returns
  */
 export declare function serializeBigInts(obj: any): any;
-/**
- * Find the package root than contains the directory.
- * @param moduleDir the directory of a module, typically use `__dirname`
- * @returns the directory of the modules's package root.
- */
-export declare function findPackageRoot(moduleDir: string): string;
 //# sourceMappingURL=utils.d.ts.map
