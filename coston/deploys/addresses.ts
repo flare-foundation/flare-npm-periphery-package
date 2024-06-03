@@ -39,4 +39,5 @@ export const contractAddresses = {
   DelegationAccount: '0xE2Ee339b2608Fe20ca2f721e938a640e0E5ee546',
   FlareAssetRegistry: '0x92B87cc4205265e9500d570D452A3f7F91926e91',
   WNatRegistryProvider: '0x9819645ab3E99a0A2c0ECF797Da4B9312b31121F',
+  IRelay: '0x32D46A1260BB2D8C9d5Ab1C9bBd7FF7D7CfaabCC',
 };

@@ -228,5 +228,10 @@
     "name": "IReferencedPaymentNonexistenceVerification",
     "contractName": "IReferencedPaymentNonexistenceVerification.sol",
     "address": "0x870Cfd102c2C549866CA87dB800EDdaABac02452"
+  },
+  {
+    "name": "IRelay",
+    "contractName": "IRelay.sol",
+    "address": "0x32D46A1260BB2D8C9d5Ab1C9bBd7FF7D7CfaabCC",
   }
 ]

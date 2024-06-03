@@ -129,6 +129,7 @@ const PriceSubmitter_json_1 = __importDefault(require("./artifacts/contracts/gen
 const StateConnector_json_1 = __importDefault(require("./artifacts/contracts/genesis/implementation/StateConnector.sol/StateConnector.json"));
 const FlareDaemon_json_1 = __importDefault(require("./artifacts/contracts/genesis/implementation/FlareDaemon.sol/FlareDaemon.json"));
 const GovernanceSettings_json_1 = __importDefault(require("./artifacts/contracts/genesis/implementation/GovernanceSettings.sol/GovernanceSettings.json"));
+const IRelay_json_1 = __importDefault(require("./artifacts/contracts/utils/interface/IRelay.sol/IRelay.json"));
 exports.abis = {
     IIVPToken: IIVPToken_json_1.default.abi,
     IIVPContract: IIVPContract_json_1.default.abi,
@@ -255,5 +256,6 @@ exports.abis = {
     StateConnector: StateConnector_json_1.default.abi,
     FlareDaemon: FlareDaemon_json_1.default.abi,
     GovernanceSettings: GovernanceSettings_json_1.default.abi,
+    IRelay: IRelay_json_1.default.abi,
 };
 //# sourceMappingURL=abis.js.map

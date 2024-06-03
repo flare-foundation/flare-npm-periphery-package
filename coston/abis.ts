@@ -123,6 +123,7 @@ import PriceSubmitter from "./artifacts/contracts/genesis/implementation/PriceSu
 import StateConnector from "./artifacts/contracts/genesis/implementation/StateConnector.sol/StateConnector.json";
 import FlareDaemon from "./artifacts/contracts/genesis/implementation/FlareDaemon.sol/FlareDaemon.json";
 import GovernanceSettings from "./artifacts/contracts/genesis/implementation/GovernanceSettings.sol/GovernanceSettings.json";
+import IRelay from "./artifacts/contracts/utils/interface/IRelay.sol/IRelay.json";
 
 export const abis: { [key: string]: any; } = {
   IIVPToken: IIVPToken.abi,
@@ -250,4 +251,5 @@ export const abis: { [key: string]: any; } = {
   StateConnector: StateConnector.abi,
   FlareDaemon: FlareDaemon.abi,
   GovernanceSettings: GovernanceSettings.abi,
+  IRelay: IRelay.abi,
 };
