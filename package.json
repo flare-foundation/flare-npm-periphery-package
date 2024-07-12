@@ -1,7 +1,7 @@
 {
   "name": "@flarenetwork/flare-periphery-contract-artifacts",
   "description": "Smart contracts artifacts for all Flare chains",
-  "version": "0.1.9",
+  "version": "0.1.16",
   "author": "Flare Network",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -21,8 +21,5 @@
     "@types/node": "^20.6.0",
     "typescript": "^5.2.2",
     "ethers": "^6.7.1"
-  },
-  "browser": {
-    "fs/promises": false
   }
 }

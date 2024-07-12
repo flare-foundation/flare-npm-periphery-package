@@ -124,6 +124,8 @@ import StateConnector from "./artifacts/contracts/genesis/implementation/StateCo
 import FlareDaemon from "./artifacts/contracts/genesis/implementation/FlareDaemon.sol/FlareDaemon.json";
 import GovernanceSettings from "./artifacts/contracts/genesis/implementation/GovernanceSettings.sol/GovernanceSettings.json";
 import IRelay from "./artifacts/contracts/utils/interface/IRelay.sol/IRelay.json";
+import IFastUpdater from "./artifacts/contracts/userInterfaces/IFastUpdater.sol/IFastUpdater.json";
+import IFastUpdateIncentiveManager from "./artifacts/contracts/userInterfaces/IFastUpdateIncentiveManager.sol/IFastUpdateIncentiveManager.json";
 
 export const abis: { [key: string]: any; } = {
   IIVPToken: IIVPToken.abi,
@@ -252,4 +254,6 @@ export const abis: { [key: string]: any; } = {
   FlareDaemon: FlareDaemon.abi,
   GovernanceSettings: GovernanceSettings.abi,
   IRelay: IRelay.abi,
+  IFastUpdater: IFastUpdater.abi,
+  IFastUpdateIncentiveManager: IFastUpdateIncentiveManager.abi,
 };
