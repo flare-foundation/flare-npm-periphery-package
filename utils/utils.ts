@@ -149,11 +149,6 @@ export async function checkMerkleProof(scRound: number): Promise<any> {
 
 // --------------------------------- ATTESTATION FUNCTIONS ----------------------------------------
 
-// TODO: Import necessary modules and dependencies for attestation functions
-
-// const ATTESTATION_URL = process.env.ATTESTATION_URL; // URL for attestation API
-// const API_KEY = process.env.API_KEY; // API key for authentication
-
 export async function verifyAddressValidity(
   attestationType: string,
   sourceId: string,
@@ -168,7 +163,7 @@ export async function verifyAddressValidity(
   const requestData: AddressValidityRequest = {
     attestationType: toHex(attestationType),
     sourceId: toHex(sourceId),
-    messageIntegrityCode: "", // Derived based on your specific implementation
+    messageIntegrityCode: "",
     requestBody,
   };
 
@@ -192,8 +187,6 @@ export async function verifyAddressValidity(
   return data;
 }
 
-// ---------------
-
 export async function checkBalanceDecreasingTransaction(
   attestationType: string,
   sourceId: string,
@@ -210,7 +203,7 @@ export async function checkBalanceDecreasingTransaction(
   const requestData: BalanceDecreasingTransactionRequest = {
     attestationType: toHex(attestationType),
     sourceId: toHex(sourceId),
-    messageIntegrityCode: "", // Derived based on your specific implementation
+    messageIntegrityCode: "",
     requestBody,
   };
 
@@ -234,8 +227,6 @@ export async function checkBalanceDecreasingTransaction(
   return data;
 }
 
-// ------------------------------
-
 export async function verifyConfirmedBlockHeight(
   attestationType: string,
   sourceId: string,
@@ -252,7 +243,7 @@ export async function verifyConfirmedBlockHeight(
   const requestData: ConfirmedBlockHeightExistsRequest = {
     attestationType: toHex(attestationType),
     sourceId: toHex(sourceId),
-    messageIntegrityCode: "", // Derived based on your specific implementation
+    messageIntegrityCode: "",
     requestBody,
   };
 
@@ -276,8 +267,6 @@ export async function verifyConfirmedBlockHeight(
   return data;
 }
 
-// ------------------------------
-
 export async function verifyEVMTransaction(
   attestationType: string,
   sourceId: string,
@@ -300,7 +289,7 @@ export async function verifyEVMTransaction(
   const requestData: EVMTransactionRequest = {
     attestationType: toHex(attestationType),
     sourceId: toHex(sourceId),
-    messageIntegrityCode: "", // Derived based on your specific implementation
+    messageIntegrityCode: "",
     requestBody,
   };
 
@@ -323,8 +312,6 @@ export async function verifyEVMTransaction(
 
   return data;
 }
-
-// ------------------------------
 
 export async function verifyReferencedPaymentNonexistence(
   attestationType: string,
@@ -350,7 +337,7 @@ export async function verifyReferencedPaymentNonexistence(
   const requestData: ReferencedPaymentNonexistenceRequest = {
     attestationType: toHex(attestationType),
     sourceId: toHex(sourceId),
-    messageIntegrityCode: "", // Derived based on your specific implementation
+    messageIntegrityCode: "",
     requestBody,
   };
 
