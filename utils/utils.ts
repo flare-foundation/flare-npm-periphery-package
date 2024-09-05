@@ -1,4 +1,25 @@
 import { ethers } from "ethers";
+import {
+  addressToName as addressToNameCST,
+  nameToAbi as nameToAbiCST,
+  nameToAddress as nameToAddressCST,
+} from "../coston";
+import {
+  addressToName as addressToNameCST2,
+  nameToAbi as nameToAbiCST2,
+  nameToAddress as nameToAddressCST2,
+} from "../coston2";
+import {
+  addressToName as addressToNameFLR,
+  nameToAbi as nameToAbiFLR,
+  nameToAddress as nameToAddressFLR,
+} from "../flare";
+import {
+  addressToName as addressToNameSGB,
+  nameToAbi as nameToAbiSGB,
+  nameToAddress as nameToAddressSGB,
+} from "../songbird";
+
 /**
  * Converts a hex-encoded string back to its original string format.
  *
@@ -136,7 +157,9 @@ export async function checkMerkleProof(scRound: number): Promise<any> {
 export async function verifyAddressValidity(
   attestationType: string,
   sourceId: string,
-  addressStr: string
+  addressStr: string,
+  ATTESTATION_URL?: string,
+  API_KEY?: string
 ): Promise<AddressValidityResponse> {
   const requestBody: AddressValidityRequestBody = {
     addressStr,
@@ -145,21 +168,23 @@ export async function verifyAddressValidity(
   const requestData: AddressValidityRequest = {
     attestationType: toHex(attestationType),
     sourceId: toHex(sourceId),
-    messageIntegrityCode: "", // This would be derived based on your specific implementation
+    messageIntegrityCode: "", // Derived based on your specific implementation
     requestBody,
   };
 
-  const response = await fetch(
-    `${ATTESTATION_URL}/verifier/${sourceId}/${attestationType}/verifyAddress`,
-    {
-      method: "POST",
-      headers: {
-        "X-API-KEY": API_KEY as string,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestData),
-    }
-  );
+  const url = `${
+    ATTESTATION_URL || process.env.ATTESTATION_URL
+  }/verifier/${sourceId}/${attestationType}/verifyAddress`;
+  const apiKey = API_KEY || process.env.API_KEY;
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "X-API-KEY": apiKey as string,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestData),
+  });
 
   const data: AddressValidityResponse = await response.json();
   console.log("Address Validity Response:", data);
@@ -173,7 +198,9 @@ export async function checkBalanceDecreasingTransaction(
   attestationType: string,
   sourceId: string,
   transactionId: string,
-  sourceAddressIndicator: string
+  sourceAddressIndicator: string,
+  ATTESTATION_URL?: string,
+  API_KEY?: string
 ): Promise<BalanceDecreasingTransactionResponse> {
   const requestBody: BalanceDecreasingTransactionRequestBody = {
     transactionId: toHex(transactionId),
@@ -187,17 +214,19 @@ export async function checkBalanceDecreasingTransaction(
     requestBody,
   };
 
-  const response = await fetch(
-    `${ATTESTATION_URL}/verifier/${sourceId}/${attestationType}/checkBalanceDecreasingTransaction`,
-    {
-      method: "POST",
-      headers: {
-        "X-API-KEY": API_KEY as string,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestData),
-    }
-  );
+  const url = `${
+    ATTESTATION_URL || process.env.ATTESTATION_URL
+  }/verifier/${sourceId}/${attestationType}/checkBalanceDecreasingTransaction`;
+  const apiKey = API_KEY || process.env.API_KEY;
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "X-API-KEY": apiKey as string,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestData),
+  });
 
   const data: BalanceDecreasingTransactionResponse = await response.json();
   console.log("Balance Decreasing Transaction Response:", data);
@@ -205,17 +234,19 @@ export async function checkBalanceDecreasingTransaction(
   return data;
 }
 
-// ------------------------------------------------------
+// ------------------------------
 
 export async function verifyConfirmedBlockHeight(
   attestationType: string,
   sourceId: string,
   blockNumber: number,
-  queryWindow: number
+  queryWindow: number,
+  ATTESTATION_URL?: string,
+  API_KEY?: string
 ): Promise<ConfirmedBlockHeightExistsResponse> {
   const requestBody: ConfirmedBlockHeightExistsRequestBody = {
-    blockNumber: blockNumber,
-    queryWindow: queryWindow,
+    blockNumber,
+    queryWindow,
   };
 
   const requestData: ConfirmedBlockHeightExistsRequest = {
@@ -225,17 +256,19 @@ export async function verifyConfirmedBlockHeight(
     requestBody,
   };
 
-  const response = await fetch(
-    `${ATTESTATION_URL}/verifier/${sourceId}/${attestationType}/verifyConfirmedBlockHeight`,
-    {
-      method: "POST",
-      headers: {
-        "X-API-KEY": API_KEY as string,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestData),
-    }
-  );
+  const url = `${
+    ATTESTATION_URL || process.env.ATTESTATION_URL
+  }/verifier/${sourceId}/${attestationType}/verifyConfirmedBlockHeight`;
+  const apiKey = API_KEY || process.env.API_KEY;
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "X-API-KEY": apiKey as string,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestData),
+  });
 
   const data: ConfirmedBlockHeightExistsResponse = await response.json();
   console.log("Confirmed Block Height Response:", data);
@@ -243,8 +276,7 @@ export async function verifyConfirmedBlockHeight(
   return data;
 }
 
-// -------------------------
-// Import necessary modules and dependencies
+// ------------------------------
 
 export async function verifyEVMTransaction(
   attestationType: string,
@@ -253,7 +285,9 @@ export async function verifyEVMTransaction(
   requiredConfirmations: number,
   provideInput: boolean,
   listEvents: boolean,
-  logIndices: number[] = []
+  logIndices: number[] = [],
+  ATTESTATION_URL?: string,
+  API_KEY?: string
 ): Promise<EVMTransactionResponse> {
   const requestBody: EVMTransactionRequestBody = {
     transactionHash: transactionHash,
@@ -270,17 +304,19 @@ export async function verifyEVMTransaction(
     requestBody,
   };
 
-  const response = await fetch(
-    `${ATTESTATION_URL}/verifier/${sourceId}/${attestationType}/verifyEVMTransaction`,
-    {
-      method: "POST",
-      headers: {
-        "X-API-KEY": API_KEY as string,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestData),
-    }
-  );
+  const url = `${
+    ATTESTATION_URL || process.env.ATTESTATION_URL
+  }/verifier/${sourceId}/${attestationType}/verifyEVMTransaction`;
+  const apiKey = API_KEY || process.env.API_KEY;
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "X-API-KEY": apiKey as string,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestData),
+  });
 
   const data: EVMTransactionResponse = await response.json();
   console.log("EVM Transaction Response:", data);
@@ -289,7 +325,6 @@ export async function verifyEVMTransaction(
 }
 
 // ------------------------------
-// Import necessary modules and dependencies
 
 export async function verifyReferencedPaymentNonexistence(
   attestationType: string,
@@ -299,7 +334,9 @@ export async function verifyReferencedPaymentNonexistence(
   deadlineTimestamp: number,
   destinationAddressHash: string,
   amount: string,
-  standardPaymentReference: string
+  standardPaymentReference: string,
+  ATTESTATION_URL?: string,
+  API_KEY?: string
 ): Promise<ReferencedPaymentNonexistenceResponse> {
   const requestBody: ReferencedPaymentNonexistenceRequestBody = {
     minimalBlockNumber,
@@ -317,20 +354,49 @@ export async function verifyReferencedPaymentNonexistence(
     requestBody,
   };
 
-  const response = await fetch(
-    `${ATTESTATION_URL}/verifier/${sourceId}/${attestationType}/verifyReferencedPaymentNonexistence`,
-    {
-      method: "POST",
-      headers: {
-        "X-API-KEY": API_KEY as string,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestData),
-    }
-  );
+  const url = `${
+    ATTESTATION_URL || process.env.ATTESTATION_URL
+  }/verifier/${sourceId}/${attestationType}/verifyReferencedPaymentNonexistence`;
+  const apiKey = API_KEY || process.env.API_KEY;
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "X-API-KEY": apiKey as string,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestData),
+  });
 
   const data: ReferencedPaymentNonexistenceResponse = await response.json();
   console.log("Referenced Payment Nonexistence Response:", data);
 
   return data;
 }
+
+export const nameToAddress = (name: string, network: string): string => {
+  if (network.toLowerCase() == "flare") return nameToAddressFLR(name);
+  if (network.toLowerCase() == "songbird") return nameToAddressSGB(name);
+  if (network.toLowerCase() == "coston") return nameToAddressCST(name);
+  if (network.toLowerCase() == "coston2") return nameToAddressCST2(name);
+  return "";
+};
+
+export const addressToName = (address: string, network: string): string => {
+  if (network.toLowerCase() == "flare") return addressToNameFLR(address);
+  if (network.toLowerCase() == "songbird") return addressToNameSGB(address);
+  if (network.toLowerCase() == "coston") return addressToNameCST(address);
+  if (network.toLowerCase() == "coston2") return addressToNameCST2(address);
+  return "";
+};
+
+export const nameToAbi = (
+  name: string,
+  network: string
+): { data: any; status: string } => {
+  if (network.toLowerCase() == "flare") return nameToAbiFLR(name);
+  if (network.toLowerCase() == "songbird") return nameToAbiSGB(name);
+  if (network.toLowerCase() == "coston") return nameToAbiCST(name);
+  if (network.toLowerCase() == "coston2") return nameToAbiCST2(name);
+  return { data: [], status: "Please select a network" };
+};
