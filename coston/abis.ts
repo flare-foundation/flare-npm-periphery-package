@@ -69,6 +69,8 @@ import IIVPToken from "./artifacts/contracts/token/interface/IIVPToken.sol/IIVPT
 import IIVoterRegistrationTrigger from "./artifacts/contracts/protocol/interface/IIVoterRegistrationTrigger.sol/IIVoterRegistrationTrigger.json";
 import IIVoterRegistry from "./artifacts/contracts/protocol/interface/IIVoterRegistry.sol/IIVoterRegistry.json";
 import IIncreaseManager from "./artifacts/contracts/IIncreaseManager.sol/IIncreaseManager.json";
+import IJsonApi from "./artifacts/contracts/IJsonApi.sol/IJsonApi.json";
+import IJsonApiVerification from "./artifacts/contracts/IJsonApiVerification.sol/IJsonApiVerification.json";
 import IPayment from "./artifacts/contracts/IPayment.sol/IPayment.json";
 import IPaymentVerification from "./artifacts/contracts/IPaymentVerification.sol/IPaymentVerification.json";
 import IPollingManagementGroup from "./artifacts/contracts/IPollingManagementGroup.sol/IPollingManagementGroup.json";
@@ -171,6 +173,8 @@ export const interfaceAbis: { [key: string]: any; } = {
   IIVoterRegistrationTrigger: IIVoterRegistrationTrigger.abi,
   IIVoterRegistry: IIVoterRegistry.abi,
   IIncreaseManager: IIncreaseManager.abi,
+  IJsonApi: IJsonApi.abi,
+  IJsonApiVerification: IJsonApiVerification.abi,
   IPayment: IPayment.abi,
   IPaymentVerification: IPaymentVerification.abi,
   IPollingManagementGroup: IPollingManagementGroup.abi,

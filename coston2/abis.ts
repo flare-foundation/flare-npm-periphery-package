@@ -71,6 +71,8 @@ import IIVPToken from "./artifacts/contracts/token/interface/IIVPToken.sol/IIVPT
 import IIVoterRegistrationTrigger from "./artifacts/contracts/protocol/interface/IIVoterRegistrationTrigger.sol/IIVoterRegistrationTrigger.json";
 import IIVoterRegistry from "./artifacts/contracts/protocol/interface/IIVoterRegistry.sol/IIVoterRegistry.json";
 import IIncreaseManager from "./artifacts/contracts/IIncreaseManager.sol/IIncreaseManager.json";
+import IJsonApi from "./artifacts/contracts/IJsonApi.sol/IJsonApi.json";
+import IJsonApiVerification from "./artifacts/contracts/IJsonApiVerification.sol/IJsonApiVerification.json";
 import IPChainStakeMirror from "./artifacts/contracts/IPChainStakeMirror.sol/IPChainStakeMirror.json";
 import IPChainStakeMirrorMultiSigVoting from "./artifacts/contracts/IPChainStakeMirrorMultiSigVoting.sol/IPChainStakeMirrorMultiSigVoting.json";
 import IPChainStakeMirrorVerifier from "./artifacts/contracts/IPChainStakeMirrorVerifier.sol/IPChainStakeMirrorVerifier.json";
@@ -180,6 +182,8 @@ export const interfaceAbis: { [key: string]: any; } = {
   IIVoterRegistrationTrigger: IIVoterRegistrationTrigger.abi,
   IIVoterRegistry: IIVoterRegistry.abi,
   IIncreaseManager: IIncreaseManager.abi,
+  IJsonApi: IJsonApi.abi,
+  IJsonApiVerification: IJsonApiVerification.abi,
   IPChainStakeMirror: IPChainStakeMirror.abi,
   IPChainStakeMirrorMultiSigVoting: IPChainStakeMirrorMultiSigVoting.abi,
   IPChainStakeMirrorVerifier: IPChainStakeMirrorVerifier.abi,
