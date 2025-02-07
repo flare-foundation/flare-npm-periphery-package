@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IUpdateValidators",
-  "sourceName": "contracts/utils/interface/IUpdateValidators.sol",
+  "sourceName": "contracts/songbird/utils/interface/IUpdateValidators.sol",
   "abi": [
     {
       "inputs": [],

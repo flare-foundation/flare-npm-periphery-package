@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIFtsoManager",
-  "sourceName": "contracts/ftso/interface/IIFtsoManager.sol",
+  "sourceName": "contracts/songbird/ftso/interface/IIFtsoManager.sol",
   "abi": [
     {
       "anonymous": false,

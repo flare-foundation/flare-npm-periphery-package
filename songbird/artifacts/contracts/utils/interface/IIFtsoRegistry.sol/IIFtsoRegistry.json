@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIFtsoRegistry",
-  "sourceName": "contracts/utils/interface/IIFtsoRegistry.sol",
+  "sourceName": "contracts/songbird/utils/interface/IIFtsoRegistry.sol",
   "abi": [
     {
       "inputs": [

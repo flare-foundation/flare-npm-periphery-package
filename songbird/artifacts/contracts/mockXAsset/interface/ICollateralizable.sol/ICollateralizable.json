@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "ICollateralizable",
-  "sourceName": "contracts/mockXAsset/interface/ICollateralizable.sol",
+  "sourceName": "contracts/songbird/mockXAsset/interface/ICollateralizable.sol",
   "abi": [
     {
       "inputs": [

@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IFlareDaemonize",
-  "sourceName": "contracts/genesis/interface/IFlareDaemonize.sol",
+  "sourceName": "contracts/songbird/genesis/interface/IFlareDaemonize.sol",
   "abi": [
     {
       "inputs": [],

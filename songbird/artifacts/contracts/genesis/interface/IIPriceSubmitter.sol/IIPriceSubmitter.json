@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIPriceSubmitter",
-  "sourceName": "contracts/genesis/interface/IIPriceSubmitter.sol",
+  "sourceName": "contracts/songbird/genesis/interface/IIPriceSubmitter.sol",
   "abi": [
     {
       "anonymous": false,

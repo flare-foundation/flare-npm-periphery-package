@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIGovernanceVotePower",
-  "sourceName": "contracts/token/interface/IIGovernanceVotePower.sol",
+  "sourceName": "contracts/songbird/token/interface/IIGovernanceVotePower.sol",
   "abi": [
     {
       "anonymous": false,

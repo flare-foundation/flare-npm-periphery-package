@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIFlareAssetRegistryProvider",
-  "sourceName": "contracts/assetRegistry/interface/IIFlareAssetRegistryProvider.sol",
+  "sourceName": "contracts/songbird/assetRegistry/interface/IIFlareAssetRegistryProvider.sol",
   "abi": [
     {
       "inputs": [],

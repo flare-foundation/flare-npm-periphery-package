@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IFtsoGenesis",
-  "sourceName": "contracts/genesis/interface/IFtsoGenesis.sol",
+  "sourceName": "contracts/flare/genesis/interface/IFtsoGenesis.sol",
   "abi": [
     {
       "inputs": [

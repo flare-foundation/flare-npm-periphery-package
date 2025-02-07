@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIPreInflationCalculation",
-  "sourceName": "contracts/inflation/interface/IIPreInflationCalculation.sol",
+  "sourceName": "contracts/songbird/inflation/interface/IIPreInflationCalculation.sol",
   "abi": [
     {
       "inputs": [],

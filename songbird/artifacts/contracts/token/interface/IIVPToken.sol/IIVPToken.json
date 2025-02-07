@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIVPToken",
-  "sourceName": "contracts/token/interface/IIVPToken.sol",
+  "sourceName": "contracts/songbird/token/interface/IIVPToken.sol",
   "abi": [
     {
       "anonymous": false,
@@ -531,7 +531,7 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "recipient",
+          "name": "to",
           "type": "address"
         },
         {
@@ -555,12 +555,12 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "sender",
+          "name": "from",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "recipient",
+          "name": "to",
           "type": "address"
         },
         {

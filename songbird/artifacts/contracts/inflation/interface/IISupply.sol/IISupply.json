@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IISupply",
-  "sourceName": "contracts/inflation/interface/IISupply.sol",
+  "sourceName": "contracts/songbird/inflation/interface/IISupply.sol",
   "abi": [
     {
       "inputs": [

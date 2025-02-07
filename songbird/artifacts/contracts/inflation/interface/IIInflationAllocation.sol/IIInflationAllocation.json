@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIInflationAllocation",
-  "sourceName": "contracts/inflation/interface/IIInflationAllocation.sol",
+  "sourceName": "contracts/songbird/inflation/interface/IIInflationAllocation.sol",
   "abi": [
     {
       "inputs": [],

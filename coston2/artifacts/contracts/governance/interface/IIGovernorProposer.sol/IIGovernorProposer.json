@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIGovernorProposer",
-  "sourceName": "contracts/governance/interface/IIGovernorProposer.sol",
+  "sourceName": "contracts/coston2/governance/interface/IIGovernorProposer.sol",
   "abi": [
     {
       "inputs": [

@@ -1,281 +1,433 @@
-import IICombinedNatBalance from "./artifacts/contracts/token/interface/IICombinedNatBalance.sol/IICombinedNatBalance.json";
-import IIVPToken from "./artifacts/contracts/token/interface/IIVPToken.sol/IIVPToken.json";
-import IIVPContract from "./artifacts/contracts/token/interface/IIVPContract.sol/IIVPContract.json";
-import IIGovernanceVotePower from "./artifacts/contracts/token/interface/IIGovernanceVotePower.sol/IIGovernanceVotePower.json";
-import IICleanable from "./artifacts/contracts/token/interface/IICleanable.sol/IICleanable.json";
-import VPToken from "./artifacts/contracts/token/implementation/VPToken.sol/VPToken.json";
-import Delegatable from "./artifacts/contracts/token/implementation/Delegatable.sol/Delegatable.json";
-import VPContract from "./artifacts/contracts/token/implementation/VPContract.sol/VPContract.json";
-import GovernanceVotePower from "./artifacts/contracts/token/implementation/GovernanceVotePower.sol/GovernanceVotePower.json";
-import CombinedNat from "./artifacts/contracts/token/implementation/CombinedNat.sol/CombinedNat.json";
-import CleanupBlockNumberManager from "./artifacts/contracts/token/implementation/CleanupBlockNumberManager.sol/CleanupBlockNumberManager.json";
-import CheckPointable from "./artifacts/contracts/token/implementation/CheckPointable.sol/CheckPointable.json";
-import WNat from "./artifacts/contracts/token/implementation/WNat.sol/WNat.json";
-import CheckPointHistoryCache from "./artifacts/contracts/token/lib/CheckPointHistoryCache.sol/CheckPointHistoryCache.json";
-import DelegateCheckPointHistory from "./artifacts/contracts/token/lib/DelegateCheckPointHistory.sol/DelegateCheckPointHistory.json";
-import PercentageDelegation from "./artifacts/contracts/token/lib/PercentageDelegation.sol/PercentageDelegation.json";
-import CheckPointsByAddress from "./artifacts/contracts/token/lib/CheckPointsByAddress.sol/CheckPointsByAddress.json";
-import VotePowerCache from "./artifacts/contracts/token/lib/VotePowerCache.sol/VotePowerCache.json";
-import DelegateCheckPointsByAddress from "./artifacts/contracts/token/lib/DelegateCheckPointsByAddress.sol/DelegateCheckPointsByAddress.json";
-import ExplicitDelegation from "./artifacts/contracts/token/lib/ExplicitDelegation.sol/ExplicitDelegation.json";
-import DelegationHistory from "./artifacts/contracts/token/lib/DelegationHistory.sol/DelegationHistory.json";
-import VotePower from "./artifacts/contracts/token/lib/VotePower.sol/VotePower.json";
-import CheckPointHistory from "./artifacts/contracts/token/lib/CheckPointHistory.sol/CheckPointHistory.json";
-import IIFlareAssetRegistry from "./artifacts/contracts/assetRegistry/interface/IIFlareAssetRegistry.sol/IIFlareAssetRegistry.json";
-import IIERC20WithMetadata from "./artifacts/contracts/assetRegistry/interface/IIERC20WithMetadata.sol/IIERC20WithMetadata.json";
-import IIFlareAssetRegistryProvider from "./artifacts/contracts/assetRegistry/interface/IIFlareAssetRegistryProvider.sol/IIFlareAssetRegistryProvider.json";
-import FlareAssetRegistry from "./artifacts/contracts/assetRegistry/implementation/FlareAssetRegistry.sol/FlareAssetRegistry.json";
-import WNatRegistryProvider from "./artifacts/contracts/assetRegistry/implementation/WNatRegistryProvider.sol/WNatRegistryProvider.json";
-import StandardAttributes from "./artifacts/contracts/assetRegistry/lib/StandardAttributes.sol/StandardAttributes.json";
-import IIFtso from "./artifacts/contracts/ftso/interface/IIFtso.sol/IIFtso.json";
-import IIFtsoManager from "./artifacts/contracts/ftso/interface/IIFtsoManager.sol/IIFtsoManager.json";
-import IIFtsoManagerV1 from "./artifacts/contracts/ftso/interface/IIFtsoManagerV1.sol/IIFtsoManagerV1.json";
-import FtsoManager from "./artifacts/contracts/ftso/implementation/FtsoManager.sol/FtsoManager.json";
-import Ftso from "./artifacts/contracts/ftso/implementation/Ftso.sol/Ftso.json";
-import FtsoVote from "./artifacts/contracts/ftso/lib/FtsoVote.sol/FtsoVote.json";
-import FtsoMedian from "./artifacts/contracts/ftso/lib/FtsoMedian.sol/FtsoMedian.json";
-import FtsoEpoch from "./artifacts/contracts/ftso/lib/FtsoEpoch.sol/FtsoEpoch.json";
-import FtsoManagement from "./artifacts/contracts/ftso/lib/FtsoManagement.sol/FtsoManagement.json";
-import FtsoManagerSettings from "./artifacts/contracts/ftso/lib/FtsoManagerSettings.sol/FtsoManagerSettings.json";
-import MockFtsoRegistry from "./artifacts/contracts/ftso/priceProviderMockContracts/PriceProviderMockContracts.sol/MockFtsoRegistry.json";
-import MockVoterWhitelister from "./artifacts/contracts/ftso/priceProviderMockContracts/PriceProviderMockContracts.sol/MockVoterWhitelister.json";
-import MockPriceSubmitter from "./artifacts/contracts/ftso/priceProviderMockContracts/PriceProviderMockContracts.sol/MockPriceSubmitter.json";
-import MockNpmFtso from "./artifacts/contracts/ftso/priceProviderMockContracts/priceProviderMockFtso.sol/MockNpmFtso.json";
-import IIDelegationAccount from "./artifacts/contracts/claiming/interface/IIDelegationAccount.sol/IIDelegationAccount.json";
-import IIClaimSetupManager from "./artifacts/contracts/claiming/interface/IIClaimSetupManager.sol/IIClaimSetupManager.json";
-import DelegationAccount from "./artifacts/contracts/claiming/implementation/DelegationAccount.sol/DelegationAccount.json";
-import CloneFactory from "./artifacts/contracts/claiming/implementation/CloneFactory.sol/CloneFactory.json";
-import ClaimSetupManager from "./artifacts/contracts/claiming/implementation/ClaimSetupManager.sol/ClaimSetupManager.json";
-import IIFtsoRegistry from "./artifacts/contracts/utils/interface/IIFtsoRegistry.sol/IIFtsoRegistry.json";
-import IUpdateValidators from "./artifacts/contracts/utils/interface/IUpdateValidators.sol/IUpdateValidators.json";
-import IIRandomProvider from "./artifacts/contracts/utils/interface/IIRandomProvider.sol/IIRandomProvider.json";
-import IIVoterWhitelister from "./artifacts/contracts/utils/interface/IIVoterWhitelister.sol/IIVoterWhitelister.json";
-import AddressSet from "./artifacts/contracts/utils/implementation/AddressSet.sol/AddressSet.json";
-import GovernedAndFlareDaemonized from "./artifacts/contracts/utils/implementation/GovernedAndFlareDaemonized.sol/GovernedAndFlareDaemonized.json";
-import FtsoRegistry from "./artifacts/contracts/utils/implementation/FtsoRegistry.sol/FtsoRegistry.json";
-import FtsoV2Upgrader from "./artifacts/contracts/utils/implementation/FtsoV2Upgrader.sol/FtsoV2Upgrader.json";
-import ValidatorRegistry from "./artifacts/contracts/utils/implementation/ValidatorRegistry.sol/ValidatorRegistry.json";
-import SelfdestructTransfer from "./artifacts/contracts/utils/implementation/SelfdestructTransfer.sol/SelfdestructTransfer.json";
-import ProxyGoverned from "./artifacts/contracts/utils/implementation/ProxyGoverned.sol/ProxyGoverned.json";
-import SafePct from "./artifacts/contracts/utils/implementation/SafePct.sol/SafePct.json";
-import RevertErrorTracking from "./artifacts/contracts/utils/implementation/RevertErrorTracking.sol/RevertErrorTracking.json";
-import VoterWhitelister from "./artifacts/contracts/utils/implementation/VoterWhitelister.sol/VoterWhitelister.json";
-import BokkyPooBahsDateTimeLibrary from "./artifacts/contracts/utils/implementation/DateTimeLibrary.sol/BokkyPooBahsDateTimeLibrary.json";
-import FundDistributor from "./artifacts/contracts/utils/implementation/FundDistributor.sol/FundDistributor.json";
-import FlareContractRegistry from "./artifacts/contracts/utils/implementation/FlareContractRegistry.sol/FlareContractRegistry.json";
-import BytesLib from "./artifacts/contracts/utils/implementation/BytesLib.sol/BytesLib.json";
-import FtsoRegistryProxy from "./artifacts/contracts/utils/implementation/FtsoRegistryProxy.sol/FtsoRegistryProxy.json";
-import IIPChainStakeMirrorVerifier from "./artifacts/contracts/staking/interface/IIPChainStakeMirrorVerifier.sol/IIPChainStakeMirrorVerifier.json";
-import PChainStakeMirrorMultiSigVoting from "./artifacts/contracts/staking/implementation/PChainStakeMirrorMultiSigVoting.sol/PChainStakeMirrorMultiSigVoting.json";
-import AddressBinder from "./artifacts/contracts/staking/implementation/AddressBinder.sol/AddressBinder.json";
-import PChainStakeMirrorVerifier from "./artifacts/contracts/staking/implementation/PChainStakeMirrorVerifier.sol/PChainStakeMirrorVerifier.json";
-import PChainStakeMirror from "./artifacts/contracts/staking/implementation/PChainStakeMirror.sol/PChainStakeMirror.json";
-import PChainStake from "./artifacts/contracts/staking/implementation/PChainStake.sol/PChainStake.json";
-import PChainStakeHistory from "./artifacts/contracts/staking/lib/PChainStakeHistory.sol/PChainStakeHistory.json";
-import IIGovernorProposer from "./artifacts/contracts/governance/interface/IIGovernorProposer.sol/IIGovernorProposer.json";
-import IIPollingFoundation from "./artifacts/contracts/governance/interface/IIPollingFoundation.sol/IIPollingFoundation.json";
-import Governed from "./artifacts/contracts/governance/implementation/Governed.sol/Governed.json";
-import GovernorProposer from "./artifacts/contracts/governance/implementation/GovernorProposer.sol/GovernorProposer.json";
-import GovernorVotePower from "./artifacts/contracts/governance/implementation/GovernorVotePower.sol/GovernorVotePower.json";
-import GovernedBase from "./artifacts/contracts/governance/implementation/GovernedBase.sol/GovernedBase.json";
-import PollingFtso from "./artifacts/contracts/governance/implementation/PollingFtso.sol/PollingFtso.json";
-import GovernorProposals from "./artifacts/contracts/governance/implementation/GovernorProposals.sol/GovernorProposals.json";
-import GovernedAtGenesis from "./artifacts/contracts/governance/implementation/GovernedAtGenesis.sol/GovernedAtGenesis.json";
-import Governor from "./artifacts/contracts/governance/implementation/Governor.sol/Governor.json";
-import GovernorVotes from "./artifacts/contracts/governance/implementation/GovernorVotes.sol/GovernorVotes.json";
-import PollingFoundation from "./artifacts/contracts/governance/implementation/PollingFoundation.sol/PollingFoundation.json";
-import IIInflationPercentageProvider from "./artifacts/contracts/inflation/interface/IIInflationPercentageProvider.sol/IIInflationPercentageProvider.json";
-import IIInflationSharingPercentageProvider from "./artifacts/contracts/inflation/interface/IIInflationSharingPercentageProvider.sol/IIInflationSharingPercentageProvider.json";
-import IIInflationReceiver from "./artifacts/contracts/inflation/interface/IIInflationReceiver.sol/IIInflationReceiver.json";
-import IISupply from "./artifacts/contracts/inflation/interface/IISupply.sol/IISupply.json";
-import IIInflationAllocation from "./artifacts/contracts/inflation/interface/IIInflationAllocation.sol/IIInflationAllocation.json";
-import Inflation from "./artifacts/contracts/inflation/implementation/Inflation.sol/Inflation.json";
-import InflationAllocation from "./artifacts/contracts/inflation/implementation/InflationAllocation.sol/InflationAllocation.json";
-import Supply from "./artifacts/contracts/inflation/implementation/Supply.sol/Supply.json";
-import RewardService from "./artifacts/contracts/inflation/lib/RewardService.sol/RewardService.json";
-import InflationAnnum from "./artifacts/contracts/inflation/lib/InflationAnnum.sol/InflationAnnum.json";
-import RewardServices from "./artifacts/contracts/inflation/lib/RewardServices.sol/RewardServices.json";
-import InflationAnnums from "./artifacts/contracts/inflation/lib/InflationAnnums.sol/InflationAnnums.json";
-import ICollateralizable from "./artifacts/contracts/mockXAsset/interface/ICollateralizable.sol/ICollateralizable.json";
-import IIAddressUpdatable from "./artifacts/contracts/addressUpdater/interface/IIAddressUpdatable.sol/IIAddressUpdatable.json";
-import IIAddressUpdater from "./artifacts/contracts/addressUpdater/interface/IIAddressUpdater.sol/IIAddressUpdater.json";
-import AddressUpdatable from "./artifacts/contracts/addressUpdater/implementation/AddressUpdatable.sol/AddressUpdatable.json";
-import AddressUpdater from "./artifacts/contracts/addressUpdater/implementation/AddressUpdater.sol/AddressUpdater.json";
-import IIIncentivePoolAllocation from "./artifacts/contracts/tokenPools/interface/IIIncentivePoolAllocation.sol/IIIncentivePoolAllocation.json";
-import IIIncentivePoolReceiver from "./artifacts/contracts/tokenPools/interface/IIIncentivePoolReceiver.sol/IIIncentivePoolReceiver.json";
-import IIIncentivePoolPercentageProvider from "./artifacts/contracts/tokenPools/interface/IIIncentivePoolPercentageProvider.sol/IIIncentivePoolPercentageProvider.json";
-import IIFtsoRewardManager from "./artifacts/contracts/tokenPools/interface/IIFtsoRewardManager.sol/IIFtsoRewardManager.json";
-import IIIncentivePoolSharingPercentageProvider from "./artifacts/contracts/tokenPools/interface/IIIncentivePoolSharingPercentageProvider.sol/IIIncentivePoolSharingPercentageProvider.json";
-import IITokenPool from "./artifacts/contracts/tokenPools/interface/IITokenPool.sol/IITokenPool.json";
-import IIGenericRewardManager from "./artifacts/contracts/tokenPools/interface/IIGenericRewardManager.sol/IIGenericRewardManager.json";
-import IncentivePool from "./artifacts/contracts/tokenPools/implementation/IncentivePool.sol/IncentivePool.json";
-import GenericRewardManager from "./artifacts/contracts/tokenPools/implementation/GenericRewardManager.sol/GenericRewardManager.json";
-import ValidatorRewardManager from "./artifacts/contracts/tokenPools/implementation/ValidatorRewardManager.sol/ValidatorRewardManager.json";
-import Escrow from "./artifacts/contracts/tokenPools/implementation/Escrow.sol/Escrow.json";
-import IncentivePoolAllocation from "./artifacts/contracts/tokenPools/implementation/IncentivePoolAllocation.sol/IncentivePoolAllocation.json";
-import DistributionToDelegators from "./artifacts/contracts/tokenPools/implementation/DistributionToDelegators.sol/DistributionToDelegators.json";
-import FtsoRewardManager from "./artifacts/contracts/tokenPools/implementation/FtsoRewardManager.sol/FtsoRewardManager.json";
-import AttestationProviderRewardManager from "./artifacts/contracts/tokenPools/implementation/AttestationProviderRewardManager.sol/AttestationProviderRewardManager.json";
-import IncentivePoolRewardService from "./artifacts/contracts/tokenPools/lib/IncentivePoolRewardService.sol/IncentivePoolRewardService.json";
-import DataProviderFee from "./artifacts/contracts/tokenPools/lib/DataProviderFee.sol/DataProviderFee.json";
-import IncentivePoolAnnum from "./artifacts/contracts/tokenPools/lib/IncentivePoolAnnum.sol/IncentivePoolAnnum.json";
-import IncentivePoolRewardServices from "./artifacts/contracts/tokenPools/lib/IncentivePoolRewardServices.sol/IncentivePoolRewardServices.json";
-import IncentivePoolAnnums from "./artifacts/contracts/tokenPools/lib/IncentivePoolAnnums.sol/IncentivePoolAnnums.json";
-import IIPriceSubmitter from "./artifacts/contracts/genesis/interface/IIPriceSubmitter.sol/IIPriceSubmitter.json";
-import IFtsoGenesis from "./artifacts/contracts/genesis/interface/IFtsoGenesis.sol/IFtsoGenesis.json";
-import IFtsoRegistryGenesis from "./artifacts/contracts/genesis/interface/IFtsoRegistryGenesis.sol/IFtsoRegistryGenesis.json";
-import IFtsoManagerGenesis from "./artifacts/contracts/genesis/interface/IFtsoManagerGenesis.sol/IFtsoManagerGenesis.json";
+import ContractRegistry from "./artifacts/contracts/ContractRegistry.sol/ContractRegistry.json";
+import FtsoV2Interface from "./artifacts/contracts/FtsoV2Interface.sol/FtsoV2Interface.json";
+import IAddressBinder from "./artifacts/contracts/IAddressBinder.sol/IAddressBinder.json";
+import IAddressValidity from "./artifacts/contracts/IAddressValidity.sol/IAddressValidity.json";
+import IAddressValidityVerification from "./artifacts/contracts/IAddressValidityVerification.sol/IAddressValidityVerification.json";
+import IBalanceDecreasingTransaction from "./artifacts/contracts/IBalanceDecreasingTransaction.sol/IBalanceDecreasingTransaction.json";
+import IBalanceDecreasingTransactionVerification from "./artifacts/contracts/IBalanceDecreasingTransactionVerification.sol/IBalanceDecreasingTransactionVerification.json";
+import ICChainStake from "./artifacts/contracts/ICChainStake.sol/ICChainStake.json";
+import ICChainVotePower from "./artifacts/contracts/ICChainVotePower.sol/ICChainVotePower.json";
+import IClaimSetupManager from "./artifacts/contracts/IClaimSetupManager.sol/IClaimSetupManager.json";
+import IConfirmedBlockHeightExists from "./artifacts/contracts/IConfirmedBlockHeightExists.sol/IConfirmedBlockHeightExists.json";
+import IConfirmedBlockHeightExistsVerification from "./artifacts/contracts/IConfirmedBlockHeightExistsVerification.sol/IConfirmedBlockHeightExistsVerification.json";
+import IDelegationAccount from "./artifacts/contracts/IDelegationAccount.sol/IDelegationAccount.json";
+import IDistributionToDelegators from "./artifacts/contracts/IDistributionToDelegators.sol/IDistributionToDelegators.json";
+import IEVMTransaction from "./artifacts/contracts/IEVMTransaction.sol/IEVMTransaction.json";
+import IEVMTransactionVerification from "./artifacts/contracts/IEVMTransactionVerification.sol/IEVMTransactionVerification.json";
+import IEntityManager from "./artifacts/contracts/IEntityManager.sol/IEntityManager.json";
+import IFastUpdateIncentiveManager from "./artifacts/contracts/IFastUpdateIncentiveManager.sol/IFastUpdateIncentiveManager.json";
+import IFastUpdater from "./artifacts/contracts/IFastUpdater.sol/IFastUpdater.json";
+import IFastUpdatesConfiguration from "./artifacts/contracts/IFastUpdatesConfiguration.sol/IFastUpdatesConfiguration.json";
+import IFdcHub from "./artifacts/contracts/IFdcHub.sol/IFdcHub.json";
+import IFdcInflationConfigurations from "./artifacts/contracts/IFdcInflationConfigurations.sol/IFdcInflationConfigurations.json";
+import IFdcRequestFeeConfigurations from "./artifacts/contracts/IFdcRequestFeeConfigurations.sol/IFdcRequestFeeConfigurations.json";
+import IFdcVerification from "./artifacts/contracts/IFdcVerification.sol/IFdcVerification.json";
+import IFeeCalculator from "./artifacts/contracts/IFeeCalculator.sol/IFeeCalculator.json";
+import IFlareAssetRegistry from "./artifacts/contracts/IFlareAssetRegistry.sol/IFlareAssetRegistry.json";
+import IFlareContractRegistry from "./artifacts/contracts/IFlareContractRegistry.sol/IFlareContractRegistry.json";
 import IFlareDaemonize from "./artifacts/contracts/genesis/interface/IFlareDaemonize.sol/IFlareDaemonize.json";
-import IInflationGenesis from "./artifacts/contracts/genesis/interface/IInflationGenesis.sol/IInflationGenesis.json";
-import InitialAirdrop from "./artifacts/contracts/genesis/implementation/InitialAirdrop.sol/InitialAirdrop.json";
-import PriceSubmitter from "./artifacts/contracts/genesis/implementation/PriceSubmitter.sol/PriceSubmitter.json";
-import DistributionTreasury from "./artifacts/contracts/genesis/implementation/DistributionTreasury.sol/DistributionTreasury.json";
-import IncentivePoolTreasury from "./artifacts/contracts/genesis/implementation/IncentivePoolTreasury.sol/IncentivePoolTreasury.json";
-import StateConnector from "./artifacts/contracts/genesis/implementation/StateConnector.sol/StateConnector.json";
-import FlareDaemon from "./artifacts/contracts/genesis/implementation/FlareDaemon.sol/FlareDaemon.json";
-import GovernanceSettings from "./artifacts/contracts/genesis/implementation/GovernanceSettings.sol/GovernanceSettings.json";
-import IRelay from "./artifacts/contracts/utils/interface/IRelay.sol/IRelay.json";
-import IFastUpdater from "./artifacts/contracts/userInterfaces/IFastUpdater.sol/IFastUpdater.json";
-import IFastUpdateIncentiveManager from "./artifacts/contracts/userInterfaces/IFastUpdateIncentiveManager.sol/IFastUpdateIncentiveManager.json";
+import IFlareSystemsCalculator from "./artifacts/contracts/IFlareSystemsCalculator.sol/IFlareSystemsCalculator.json";
+import IFlareSystemsManager from "./artifacts/contracts/IFlareSystemsManager.sol/IFlareSystemsManager.json";
+import IFtso from "./artifacts/contracts/IFtso.sol/IFtso.json";
+import IFtsoFeedDecimals from "./artifacts/contracts/IFtsoFeedDecimals.sol/IFtsoFeedDecimals.json";
+import IFtsoFeedIdConverter from "./artifacts/contracts/IFtsoFeedIdConverter.sol/IFtsoFeedIdConverter.json";
+import IFtsoFeedPublisher from "./artifacts/contracts/IFtsoFeedPublisher.sol/IFtsoFeedPublisher.json";
+import IFtsoGenesis from "./artifacts/contracts/genesis/interface/IFtsoGenesis.sol/IFtsoGenesis.json";
+import IFtsoInflationConfigurations from "./artifacts/contracts/IFtsoInflationConfigurations.sol/IFtsoInflationConfigurations.json";
+import IFtsoManager from "./artifacts/contracts/IFtsoManager.sol/IFtsoManager.json";
+import IFtsoManagerGenesis from "./artifacts/contracts/genesis/interface/IFtsoManagerGenesis.sol/IFtsoManagerGenesis.json";
+import IFtsoRegistry from "./artifacts/contracts/IFtsoRegistry.sol/IFtsoRegistry.json";
+import IFtsoRegistryGenesis from "./artifacts/contracts/genesis/interface/IFtsoRegistryGenesis.sol/IFtsoRegistryGenesis.json";
+import IFtsoRewardManager from "./artifacts/contracts/IFtsoRewardManager.sol/IFtsoRewardManager.json";
+import IFtsoRewardOffersManager from "./artifacts/contracts/IFtsoRewardOffersManager.sol/IFtsoRewardOffersManager.json";
+import IGenericRewardManager from "./artifacts/contracts/IGenericRewardManager.sol/IGenericRewardManager.json";
+import IGovernanceSettings from "./artifacts/contracts/IGovernanceSettings.sol/IGovernanceSettings.json";
+import IGovernanceVotePower from "./artifacts/contracts/IGovernanceVotePower.sol/IGovernanceVotePower.json";
+import IGovernor from "./artifacts/contracts/IGovernor.sol/IGovernor.json";
+import IIClaimSetupManager from "./artifacts/contracts/protocol/interface/IIClaimSetupManager.sol/IIClaimSetupManager.json";
+import IICleanable from "./artifacts/contracts/token/interface/IICleanable.sol/IICleanable.json";
+import IICleanupBlockNumberManager from "./artifacts/contracts/protocol/interface/IICleanupBlockNumberManager.sol/IICleanupBlockNumberManager.json";
+import IIEntityManager from "./artifacts/contracts/protocol/interface/IIEntityManager.sol/IIEntityManager.json";
+import IIFastUpdaterView from "./artifacts/contracts/fscV1/interface/IIFastUpdaterView.sol/IIFastUpdaterView.json";
+import IIFlareSystemsCalculator from "./artifacts/contracts/protocol/interface/IIFlareSystemsCalculator.sol/IIFlareSystemsCalculator.json";
+import IIFlareSystemsManager from "./artifacts/contracts/protocol/interface/IIFlareSystemsManager.sol/IIFlareSystemsManager.json";
+import IIFtso from "./artifacts/contracts/ftso/interface/IIFtso.sol/IIFtso.json";
+import IIFtsoFeedPublisher from "./artifacts/contracts/ftso/interface/IIFtsoFeedPublisher.sol/IIFtsoFeedPublisher.json";
+import IIFtsoManagerProxy from "./artifacts/contracts/fscV1/interface/IIFtsoManagerProxy.sol/IIFtsoManagerProxy.json";
+import IIGovernanceVotePower from "./artifacts/contracts/token/interface/IIGovernanceVotePower.sol/IIGovernanceVotePower.json";
+import IIGovernorProposer from "./artifacts/contracts/governance/interface/IIGovernorProposer.sol/IIGovernorProposer.json";
+import IINodePossessionVerifier from "./artifacts/contracts/protocol/interface/IINodePossessionVerifier.sol/IINodePossessionVerifier.json";
+import IIPollingFoundation from "./artifacts/contracts/governance/interface/IIPollingFoundation.sol/IIPollingFoundation.json";
+import IIPollingManagementGroup from "./artifacts/contracts/governance/interface/IIPollingManagementGroup.sol/IIPollingManagementGroup.json";
+import IIPublicKeyVerifier from "./artifacts/contracts/protocol/interface/IIPublicKeyVerifier.sol/IIPublicKeyVerifier.json";
+import IIRNat from "./artifacts/contracts/rNat/interface/IIRNat.sol/IIRNat.json";
+import IIRNatAccount from "./artifacts/contracts/rNat/interface/IIRNatAccount.sol/IIRNatAccount.json";
+import IIRelay from "./artifacts/contracts/protocol/interface/IIRelay.sol/IIRelay.json";
+import IIRewardEpochSwitchoverTrigger from "./artifacts/contracts/protocol/interface/IIRewardEpochSwitchoverTrigger.sol/IIRewardEpochSwitchoverTrigger.json";
+import IIRewardManager from "./artifacts/contracts/protocol/interface/IIRewardManager.sol/IIRewardManager.json";
+import IISubmission from "./artifacts/contracts/protocol/interface/IISubmission.sol/IISubmission.json";
+import IIVPContract from "./artifacts/contracts/token/interface/IIVPContract.sol/IIVPContract.json";
+import IIVPToken from "./artifacts/contracts/token/interface/IIVPToken.sol/IIVPToken.json";
+import IIVoterRegistrationTrigger from "./artifacts/contracts/protocol/interface/IIVoterRegistrationTrigger.sol/IIVoterRegistrationTrigger.json";
+import IIVoterRegistry from "./artifacts/contracts/protocol/interface/IIVoterRegistry.sol/IIVoterRegistry.json";
+import IIncreaseManager from "./artifacts/contracts/IIncreaseManager.sol/IIncreaseManager.json";
+import IPChainStakeMirror from "./artifacts/contracts/IPChainStakeMirror.sol/IPChainStakeMirror.json";
+import IPChainStakeMirrorMultiSigVoting from "./artifacts/contracts/IPChainStakeMirrorMultiSigVoting.sol/IPChainStakeMirrorMultiSigVoting.json";
+import IPChainStakeMirrorVerifier from "./artifacts/contracts/IPChainStakeMirrorVerifier.sol/IPChainStakeMirrorVerifier.json";
+import IPChainVotePower from "./artifacts/contracts/IPChainVotePower.sol/IPChainVotePower.json";
+import IPayment from "./artifacts/contracts/IPayment.sol/IPayment.json";
+import IPaymentVerification from "./artifacts/contracts/IPaymentVerification.sol/IPaymentVerification.json";
+import IPollingManagementGroup from "./artifacts/contracts/IPollingManagementGroup.sol/IPollingManagementGroup.json";
+import IPriceSubmitter from "./artifacts/contracts/IPriceSubmitter.sol/IPriceSubmitter.json";
+import IRNat from "./artifacts/contracts/IRNat.sol/IRNat.json";
+import IRNatAccount from "./artifacts/contracts/IRNatAccount.sol/IRNatAccount.json";
+import IRandomProvider from "./artifacts/contracts/IRandomProvider.sol/IRandomProvider.json";
+import IReferencedPaymentNonexistence from "./artifacts/contracts/IReferencedPaymentNonexistence.sol/IReferencedPaymentNonexistence.json";
+import IReferencedPaymentNonexistenceVerification from "./artifacts/contracts/IReferencedPaymentNonexistenceVerification.sol/IReferencedPaymentNonexistenceVerification.json";
+import IRelay from "./artifacts/contracts/IRelay.sol/IRelay.json";
+import IRewardManager from "./artifacts/contracts/IRewardManager.sol/IRewardManager.json";
+import ISubmission from "./artifacts/contracts/ISubmission.sol/ISubmission.json";
+import ITypeTemplate from "./artifacts/contracts/fdc/interface/ITypeTemplate.sol/ITypeTemplate.json";
+import ITypeTemplateVerification from "./artifacts/contracts/fdc/interface/ITypeTemplateVerification.sol/ITypeTemplateVerification.json";
+import IVPContractEvents from "./artifacts/contracts/IVPContractEvents.sol/IVPContractEvents.json";
+import IVPToken from "./artifacts/contracts/IVPToken.sol/IVPToken.json";
+import IValidatorRegistry from "./artifacts/contracts/IValidatorRegistry.sol/IValidatorRegistry.json";
+import IValidatorRewardOffersManager from "./artifacts/contracts/IValidatorRewardOffersManager.sol/IValidatorRewardOffersManager.json";
+import IVoterPreRegistry from "./artifacts/contracts/IVoterPreRegistry.sol/IVoterPreRegistry.json";
+import IVoterRegistry from "./artifacts/contracts/IVoterRegistry.sol/IVoterRegistry.json";
+import IVoterWhitelister from "./artifacts/contracts/IVoterWhitelister.sol/IVoterWhitelister.json";
+import IWNat from "./artifacts/contracts/IWNat.sol/IWNat.json";
+import IWNatDelegationFee from "./artifacts/contracts/IWNatDelegationFee.sol/IWNatDelegationFee.json";
+import ProtocolsV2Interface from "./artifacts/contracts/ProtocolsV2Interface.sol/ProtocolsV2Interface.json";
+import RandomNumberV2Interface from "./artifacts/contracts/RandomNumberV2Interface.sol/RandomNumberV2Interface.json";
+import RewardsV2Interface from "./artifacts/contracts/RewardsV2Interface.sol/RewardsV2Interface.json";
+import TestFtsoV2Interface from "./artifacts/contracts/TestFtsoV2Interface.sol/TestFtsoV2Interface.json";
 
-export const abis: { [key: string]: any; } = {
-  IICombinedNatBalance: IICombinedNatBalance.abi,
-  IIVPToken: IIVPToken.abi,
-  IIVPContract: IIVPContract.abi,
-  IIGovernanceVotePower: IIGovernanceVotePower.abi,
-  IICleanable: IICleanable.abi,
-  VPToken: VPToken.abi,
-  Delegatable: Delegatable.abi,
-  VPContract: VPContract.abi,
-  GovernanceVotePower: GovernanceVotePower.abi,
-  CombinedNat: CombinedNat.abi,
-  CleanupBlockNumberManager: CleanupBlockNumberManager.abi,
-  CheckPointable: CheckPointable.abi,
-  WNat: WNat.abi,
-  CheckPointHistoryCache: CheckPointHistoryCache.abi,
-  DelegateCheckPointHistory: DelegateCheckPointHistory.abi,
-  PercentageDelegation: PercentageDelegation.abi,
-  CheckPointsByAddress: CheckPointsByAddress.abi,
-  VotePowerCache: VotePowerCache.abi,
-  DelegateCheckPointsByAddress: DelegateCheckPointsByAddress.abi,
-  ExplicitDelegation: ExplicitDelegation.abi,
-  DelegationHistory: DelegationHistory.abi,
-  VotePower: VotePower.abi,
-  CheckPointHistory: CheckPointHistory.abi,
-  IIFlareAssetRegistry: IIFlareAssetRegistry.abi,
-  IIERC20WithMetadata: IIERC20WithMetadata.abi,
-  IIFlareAssetRegistryProvider: IIFlareAssetRegistryProvider.abi,
-  FlareAssetRegistry: FlareAssetRegistry.abi,
-  WNatRegistryProvider: WNatRegistryProvider.abi,
-  StandardAttributes: StandardAttributes.abi,
-  IIFtso: IIFtso.abi,
-  IIFtsoManager: IIFtsoManager.abi,
-  IIFtsoManagerV1: IIFtsoManagerV1.abi,
-  FtsoManager: FtsoManager.abi,
-  Ftso: Ftso.abi,
-  FtsoVote: FtsoVote.abi,
-  FtsoMedian: FtsoMedian.abi,
-  FtsoEpoch: FtsoEpoch.abi,
-  FtsoManagement: FtsoManagement.abi,
-  FtsoManagerSettings: FtsoManagerSettings.abi,
-  MockFtsoRegistry: MockFtsoRegistry.abi,
-  MockVoterWhitelister: MockVoterWhitelister.abi,
-  MockPriceSubmitter: MockPriceSubmitter.abi,
-  MockNpmFtso: MockNpmFtso.abi,
-  IIDelegationAccount: IIDelegationAccount.abi,
-  IIClaimSetupManager: IIClaimSetupManager.abi,
-  DelegationAccount: DelegationAccount.abi,
-  CloneFactory: CloneFactory.abi,
-  ClaimSetupManager: ClaimSetupManager.abi,
-  IIFtsoRegistry: IIFtsoRegistry.abi,
-  IUpdateValidators: IUpdateValidators.abi,
-  IIRandomProvider: IIRandomProvider.abi,
-  IIVoterWhitelister: IIVoterWhitelister.abi,
-  AddressSet: AddressSet.abi,
-  GovernedAndFlareDaemonized: GovernedAndFlareDaemonized.abi,
-  FtsoRegistry: FtsoRegistry.abi,
-  FtsoV2Upgrader: FtsoV2Upgrader.abi,
-  ValidatorRegistry: ValidatorRegistry.abi,
-  SelfdestructTransfer: SelfdestructTransfer.abi,
-  ProxyGoverned: ProxyGoverned.abi,
-  SafePct: SafePct.abi,
-  RevertErrorTracking: RevertErrorTracking.abi,
-  VoterWhitelister: VoterWhitelister.abi,
-  BokkyPooBahsDateTimeLibrary: BokkyPooBahsDateTimeLibrary.abi,
-  FundDistributor: FundDistributor.abi,
-  FlareContractRegistry: FlareContractRegistry.abi,
-  BytesLib: BytesLib.abi,
-  FtsoRegistryProxy: FtsoRegistryProxy.abi,
-  IIPChainStakeMirrorVerifier: IIPChainStakeMirrorVerifier.abi,
-  PChainStakeMirrorMultiSigVoting: PChainStakeMirrorMultiSigVoting.abi,
-  AddressBinder: AddressBinder.abi,
-  PChainStakeMirrorVerifier: PChainStakeMirrorVerifier.abi,
-  PChainStakeMirror: PChainStakeMirror.abi,
-  PChainStake: PChainStake.abi,
-  PChainStakeHistory: PChainStakeHistory.abi,
-  IIGovernorProposer: IIGovernorProposer.abi,
-  IIPollingFoundation: IIPollingFoundation.abi,
-  Governed: Governed.abi,
-  GovernorProposer: GovernorProposer.abi,
-  GovernorVotePower: GovernorVotePower.abi,
-  GovernedBase: GovernedBase.abi,
-  PollingFtso: PollingFtso.abi,
-  GovernorProposals: GovernorProposals.abi,
-  GovernedAtGenesis: GovernedAtGenesis.abi,
-  Governor: Governor.abi,
-  GovernorVotes: GovernorVotes.abi,
-  PollingFoundation: PollingFoundation.abi,
-  IIInflationPercentageProvider: IIInflationPercentageProvider.abi,
-  IIInflationSharingPercentageProvider: IIInflationSharingPercentageProvider.abi,
-  IIInflationReceiver: IIInflationReceiver.abi,
-  IISupply: IISupply.abi,
-  IIInflationAllocation: IIInflationAllocation.abi,
-  Inflation: Inflation.abi,
-  InflationAllocation: InflationAllocation.abi,
-  Supply: Supply.abi,
-  RewardService: RewardService.abi,
-  InflationAnnum: InflationAnnum.abi,
-  RewardServices: RewardServices.abi,
-  InflationAnnums: InflationAnnums.abi,
-  ICollateralizable: ICollateralizable.abi,
-  IIAddressUpdatable: IIAddressUpdatable.abi,
-  IIAddressUpdater: IIAddressUpdater.abi,
-  AddressUpdatable: AddressUpdatable.abi,
-  AddressUpdater: AddressUpdater.abi,
-  IIIncentivePoolAllocation: IIIncentivePoolAllocation.abi,
-  IIIncentivePoolReceiver: IIIncentivePoolReceiver.abi,
-  IIIncentivePoolPercentageProvider: IIIncentivePoolPercentageProvider.abi,
-  IIFtsoRewardManager: IIFtsoRewardManager.abi,
-  IIIncentivePoolSharingPercentageProvider: IIIncentivePoolSharingPercentageProvider.abi,
-  IITokenPool: IITokenPool.abi,
-  IIGenericRewardManager: IIGenericRewardManager.abi,
-  IncentivePool: IncentivePool.abi,
-  GenericRewardManager: GenericRewardManager.abi,
-  ValidatorRewardManager: ValidatorRewardManager.abi,
-  Escrow: Escrow.abi,
-  IncentivePoolAllocation: IncentivePoolAllocation.abi,
-  DistributionToDelegators: DistributionToDelegators.abi,
-  FtsoRewardManager: FtsoRewardManager.abi,
-  AttestationProviderRewardManager: AttestationProviderRewardManager.abi,
-  IncentivePoolRewardService: IncentivePoolRewardService.abi,
-  DataProviderFee: DataProviderFee.abi,
-  IncentivePoolAnnum: IncentivePoolAnnum.abi,
-  IncentivePoolRewardServices: IncentivePoolRewardServices.abi,
-  IncentivePoolAnnums: IncentivePoolAnnums.abi,
-  IIPriceSubmitter: IIPriceSubmitter.abi,
-  IFtsoGenesis: IFtsoGenesis.abi,
-  IFtsoRegistryGenesis: IFtsoRegistryGenesis.abi,
-  IFtsoManagerGenesis: IFtsoManagerGenesis.abi,
-  IFlareDaemonize: IFlareDaemonize.abi,
-  IInflationGenesis: IInflationGenesis.abi,
-  InitialAirdrop: InitialAirdrop.abi,
-  PriceSubmitter: PriceSubmitter.abi,
-  DistributionTreasury: DistributionTreasury.abi,
-  IncentivePoolTreasury: IncentivePoolTreasury.abi,
-  StateConnector: StateConnector.abi,
-  FlareDaemon: FlareDaemon.abi,
-  GovernanceSettings: GovernanceSettings.abi,
-  IRelay: IRelay.abi,
-  IFastUpdater: IFastUpdater.abi,
+import { JsonRpcProvider } from "ethers";
+import { nameToAddress } from "../index";
+
+export const interfaceAbis: { [key: string]: any; } = {
+  ContractRegistry: ContractRegistry.abi,
+  FtsoV2Interface: FtsoV2Interface.abi,
+  IAddressBinder: IAddressBinder.abi,
+  IAddressValidity: IAddressValidity.abi,
+  IAddressValidityVerification: IAddressValidityVerification.abi,
+  IBalanceDecreasingTransaction: IBalanceDecreasingTransaction.abi,
+  IBalanceDecreasingTransactionVerification: IBalanceDecreasingTransactionVerification.abi,
+  ICChainStake: ICChainStake.abi,
+  ICChainVotePower: ICChainVotePower.abi,
+  IClaimSetupManager: IClaimSetupManager.abi,
+  IConfirmedBlockHeightExists: IConfirmedBlockHeightExists.abi,
+  IConfirmedBlockHeightExistsVerification: IConfirmedBlockHeightExistsVerification.abi,
+  IDelegationAccount: IDelegationAccount.abi,
+  IDistributionToDelegators: IDistributionToDelegators.abi,
+  IEVMTransaction: IEVMTransaction.abi,
+  IEVMTransactionVerification: IEVMTransactionVerification.abi,
+  IEntityManager: IEntityManager.abi,
   IFastUpdateIncentiveManager: IFastUpdateIncentiveManager.abi,
+  IFastUpdater: IFastUpdater.abi,
+  IFastUpdatesConfiguration: IFastUpdatesConfiguration.abi,
+  IFdcHub: IFdcHub.abi,
+  IFdcInflationConfigurations: IFdcInflationConfigurations.abi,
+  IFdcRequestFeeConfigurations: IFdcRequestFeeConfigurations.abi,
+  IFdcVerification: IFdcVerification.abi,
+  IFeeCalculator: IFeeCalculator.abi,
+  IFlareAssetRegistry: IFlareAssetRegistry.abi,
+  IFlareContractRegistry: IFlareContractRegistry.abi,
+  IFlareDaemonize: IFlareDaemonize.abi,
+  IFlareSystemsCalculator: IFlareSystemsCalculator.abi,
+  IFlareSystemsManager: IFlareSystemsManager.abi,
+  IFtso: IFtso.abi,
+  IFtsoFeedDecimals: IFtsoFeedDecimals.abi,
+  IFtsoFeedIdConverter: IFtsoFeedIdConverter.abi,
+  IFtsoFeedPublisher: IFtsoFeedPublisher.abi,
+  IFtsoGenesis: IFtsoGenesis.abi,
+  IFtsoInflationConfigurations: IFtsoInflationConfigurations.abi,
+  IFtsoManager: IFtsoManager.abi,
+  IFtsoManagerGenesis: IFtsoManagerGenesis.abi,
+  IFtsoRegistry: IFtsoRegistry.abi,
+  IFtsoRegistryGenesis: IFtsoRegistryGenesis.abi,
+  IFtsoRewardManager: IFtsoRewardManager.abi,
+  IFtsoRewardOffersManager: IFtsoRewardOffersManager.abi,
+  IGenericRewardManager: IGenericRewardManager.abi,
+  IGovernanceSettings: IGovernanceSettings.abi,
+  IGovernanceVotePower: IGovernanceVotePower.abi,
+  IGovernor: IGovernor.abi,
+  IIClaimSetupManager: IIClaimSetupManager.abi,
+  IICleanable: IICleanable.abi,
+  IICleanupBlockNumberManager: IICleanupBlockNumberManager.abi,
+  IIEntityManager: IIEntityManager.abi,
+  IIFastUpdaterView: IIFastUpdaterView.abi,
+  IIFlareSystemsCalculator: IIFlareSystemsCalculator.abi,
+  IIFlareSystemsManager: IIFlareSystemsManager.abi,
+  IIFtso: IIFtso.abi,
+  IIFtsoFeedPublisher: IIFtsoFeedPublisher.abi,
+  IIFtsoManagerProxy: IIFtsoManagerProxy.abi,
+  IIGovernanceVotePower: IIGovernanceVotePower.abi,
+  IIGovernorProposer: IIGovernorProposer.abi,
+  IINodePossessionVerifier: IINodePossessionVerifier.abi,
+  IIPollingFoundation: IIPollingFoundation.abi,
+  IIPollingManagementGroup: IIPollingManagementGroup.abi,
+  IIPublicKeyVerifier: IIPublicKeyVerifier.abi,
+  IIRNat: IIRNat.abi,
+  IIRNatAccount: IIRNatAccount.abi,
+  IIRelay: IIRelay.abi,
+  IIRewardEpochSwitchoverTrigger: IIRewardEpochSwitchoverTrigger.abi,
+  IIRewardManager: IIRewardManager.abi,
+  IISubmission: IISubmission.abi,
+  IIVPContract: IIVPContract.abi,
+  IIVPToken: IIVPToken.abi,
+  IIVoterRegistrationTrigger: IIVoterRegistrationTrigger.abi,
+  IIVoterRegistry: IIVoterRegistry.abi,
+  IIncreaseManager: IIncreaseManager.abi,
+  IPChainStakeMirror: IPChainStakeMirror.abi,
+  IPChainStakeMirrorMultiSigVoting: IPChainStakeMirrorMultiSigVoting.abi,
+  IPChainStakeMirrorVerifier: IPChainStakeMirrorVerifier.abi,
+  IPChainVotePower: IPChainVotePower.abi,
+  IPayment: IPayment.abi,
+  IPaymentVerification: IPaymentVerification.abi,
+  IPollingManagementGroup: IPollingManagementGroup.abi,
+  IPriceSubmitter: IPriceSubmitter.abi,
+  IRNat: IRNat.abi,
+  IRNatAccount: IRNatAccount.abi,
+  IRandomProvider: IRandomProvider.abi,
+  IReferencedPaymentNonexistence: IReferencedPaymentNonexistence.abi,
+  IReferencedPaymentNonexistenceVerification: IReferencedPaymentNonexistenceVerification.abi,
+  IRelay: IRelay.abi,
+  IRewardManager: IRewardManager.abi,
+  ISubmission: ISubmission.abi,
+  ITypeTemplate: ITypeTemplate.abi,
+  ITypeTemplateVerification: ITypeTemplateVerification.abi,
+  IVPContractEvents: IVPContractEvents.abi,
+  IVPToken: IVPToken.abi,
+  IValidatorRegistry: IValidatorRegistry.abi,
+  IValidatorRewardOffersManager: IValidatorRewardOffersManager.abi,
+  IVoterPreRegistry: IVoterPreRegistry.abi,
+  IVoterRegistry: IVoterRegistry.abi,
+  IVoterWhitelister: IVoterWhitelister.abi,
+  IWNat: IWNat.abi,
+  IWNatDelegationFee: IWNatDelegationFee.abi,
+  ProtocolsV2Interface: ProtocolsV2Interface.abi,
+  RandomNumberV2Interface: RandomNumberV2Interface.abi,
+  RewardsV2Interface: RewardsV2Interface.abi,
+  TestFtsoV2Interface: TestFtsoV2Interface.abi,
+};
+
+export const products: { [key: string]: { name: string, interface: string, abi: any, getAddress: (provider: JsonRpcProvider) => Promise<string> } } = {
+  AddressBinder: {
+    name: "AddressBinder",
+    interface: "IAddressBinder",
+    abi: interfaceAbis.IAddressBinder,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("AddressBinder", provider),
+  },
+  ClaimSetupManager: {
+    name: "ClaimSetupManager",
+    interface: "IClaimSetupManager",
+    abi: interfaceAbis.IClaimSetupManager,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("ClaimSetupManager", provider),
+  },
+  DistributionToDelegators: {
+    name: "DistributionToDelegators",
+    interface: "IDistributionToDelegators",
+    abi: interfaceAbis.IDistributionToDelegators,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("DistributionToDelegators", provider),
+  },
+  EntityManager: {
+    name: "EntityManager",
+    interface: "IEntityManager",
+    abi: interfaceAbis.IEntityManager,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("EntityManager", provider),
+  },
+  FastUpdateIncentiveManager: {
+    name: "FastUpdateIncentiveManager",
+    interface: "IFastUpdateIncentiveManager",
+    abi: interfaceAbis.IFastUpdateIncentiveManager,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FastUpdateIncentiveManager", provider),
+  },
+  FastUpdater: {
+    name: "FastUpdater",
+    interface: "IFastUpdater",
+    abi: interfaceAbis.IFastUpdater,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FastUpdater", provider),
+  },
+  FastUpdatesConfiguration: {
+    name: "FastUpdatesConfiguration",
+    interface: "IFastUpdatesConfiguration",
+    abi: interfaceAbis.IFastUpdatesConfiguration,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FastUpdatesConfiguration", provider),
+  },
+  FeeCalculator: {
+    name: "FeeCalculator",
+    interface: "IFeeCalculator",
+    abi: interfaceAbis.IFeeCalculator,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FeeCalculator", provider),
+  },
+  FlareAssetRegistry: {
+    name: "FlareAssetRegistry",
+    interface: "IFlareAssetRegistry",
+    abi: interfaceAbis.IFlareAssetRegistry,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FlareAssetRegistry", provider),
+  },
+  FlareContractRegistry: {
+    name: "FlareContractRegistry",
+    interface: "IFlareContractRegistry",
+    abi: interfaceAbis.IFlareContractRegistry,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FlareContractRegistry", provider),
+  },
+  FlareSystemsCalculator: {
+    name: "FlareSystemsCalculator",
+    interface: "IFlareSystemsCalculator",
+    abi: interfaceAbis.IFlareSystemsCalculator,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FlareSystemsCalculator", provider),
+  },
+  FlareSystemsManager: {
+    name: "FlareSystemsManager",
+    interface: "IFlareSystemsManager",
+    abi: interfaceAbis.IFlareSystemsManager,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FlareSystemsManager", provider),
+  },
+  FtsoFeedDecimals: {
+    name: "FtsoFeedDecimals",
+    interface: "IFtsoFeedDecimals",
+    abi: interfaceAbis.IFtsoFeedDecimals,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FtsoFeedDecimals", provider),
+  },
+  FtsoFeedIdConverter: {
+    name: "FtsoFeedIdConverter",
+    interface: "IFtsoFeedIdConverter",
+    abi: interfaceAbis.IFtsoFeedIdConverter,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FtsoFeedIdConverter", provider),
+  },
+  FtsoFeedPublisher: {
+    name: "FtsoFeedPublisher",
+    interface: "IFtsoFeedPublisher",
+    abi: interfaceAbis.IFtsoFeedPublisher,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FtsoFeedPublisher", provider),
+  },
+  FtsoInflationConfigurations: {
+    name: "FtsoInflationConfigurations",
+    interface: "IFtsoInflationConfigurations",
+    abi: interfaceAbis.IFtsoInflationConfigurations,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FtsoInflationConfigurations", provider),
+  },
+  FtsoManager: {
+    name: "FtsoManager",
+    interface: "IFtsoManager",
+    abi: interfaceAbis.IFtsoManager,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FtsoManager", provider),
+  },
+  FtsoRegistry: {
+    name: "FtsoRegistry",
+    interface: "IFtsoRegistry",
+    abi: interfaceAbis.IFtsoRegistry,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FtsoRegistry", provider),
+  },
+  FtsoRewardManager: {
+    name: "FtsoRewardManager",
+    interface: "IFtsoRewardManager",
+    abi: interfaceAbis.IFtsoRewardManager,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FtsoRewardManager", provider),
+  },
+  FtsoRewardOffersManager: {
+    name: "FtsoRewardOffersManager",
+    interface: "IFtsoRewardOffersManager",
+    abi: interfaceAbis.IFtsoRewardOffersManager,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("FtsoRewardOffersManager", provider),
+  },
+  GovernanceSettings: {
+    name: "GovernanceSettings",
+    interface: "IGovernanceSettings",
+    abi: interfaceAbis.IGovernanceSettings,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("GovernanceSettings", provider),
+  },
+  GovernanceVotePower: {
+    name: "GovernanceVotePower",
+    interface: "IGovernanceVotePower",
+    abi: interfaceAbis.IGovernanceVotePower,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("GovernanceVotePower", provider),
+  },
+  PChainStakeMirror: {
+    name: "PChainStakeMirror",
+    interface: "IPChainStakeMirror",
+    abi: interfaceAbis.IPChainStakeMirror,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("PChainStakeMirror", provider),
+  },
+  PChainStakeMirrorMultiSigVoting: {
+    name: "PChainStakeMirrorMultiSigVoting",
+    interface: "IPChainStakeMirrorMultiSigVoting",
+    abi: interfaceAbis.IPChainStakeMirrorMultiSigVoting,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("PChainStakeMirrorMultiSigVoting", provider),
+  },
+  PChainStakeMirrorVerifier: {
+    name: "PChainStakeMirrorVerifier",
+    interface: "IPChainStakeMirrorVerifier",
+    abi: interfaceAbis.IPChainStakeMirrorVerifier,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("PChainStakeMirrorVerifier", provider),
+  },
+  PriceSubmitter: {
+    name: "PriceSubmitter",
+    interface: "IPriceSubmitter",
+    abi: interfaceAbis.IPriceSubmitter,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("PriceSubmitter", provider),
+  },
+  RNat: {
+    name: "RNat",
+    interface: "IRNat",
+    abi: interfaceAbis.IRNat,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("RNat", provider),
+  },
+  Relay: {
+    name: "Relay",
+    interface: "IRelay",
+    abi: interfaceAbis.IRelay,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("Relay", provider),
+  },
+  RewardManager: {
+    name: "RewardManager",
+    interface: "IRewardManager",
+    abi: interfaceAbis.IRewardManager,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("RewardManager", provider),
+  },
+  Submission: {
+    name: "Submission",
+    interface: "ISubmission",
+    abi: interfaceAbis.ISubmission,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("Submission", provider),
+  },
+  ValidatorRegistry: {
+    name: "ValidatorRegistry",
+    interface: "IValidatorRegistry",
+    abi: interfaceAbis.IValidatorRegistry,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("ValidatorRegistry", provider),
+  },
+  ValidatorRewardManager: {
+    name: "ValidatorRewardManager",
+    interface: "IGenericRewardManager",
+    abi: interfaceAbis.IGenericRewardManager,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("ValidatorRewardManager", provider),
+  },
+  VoterRegistry: {
+    name: "VoterRegistry",
+    interface: "IVoterRegistry",
+    abi: interfaceAbis.IVoterRegistry,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("VoterRegistry", provider),
+  },
+  VoterWhitelister: {
+    name: "VoterWhitelister",
+    interface: "IVoterWhitelister",
+    abi: interfaceAbis.IVoterWhitelister,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("VoterWhitelister", provider),
+  },
+  WNat: {
+    name: "WNat",
+    interface: "IWNat",
+    abi: interfaceAbis.IWNat,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("WNat", provider),
+  },
+  WNatDelegationFee: {
+    name: "WNatDelegationFee",
+    interface: "IWNatDelegationFee",
+    abi: interfaceAbis.IWNatDelegationFee,
+    getAddress: async (provider: JsonRpcProvider) => await nameToAddress("WNatDelegationFee", provider),
+  },
 };

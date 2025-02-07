@@ -1,0 +1,39 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IIPublicKeyVerifier",
+  "sourceName": "contracts/coston2/protocol/interface/IIPublicKeyVerifier.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_voter",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_part1",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_part2",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "verificationData",
+          "type": "bytes"
+        }
+      ],
+      "name": "verifyPublicKey",
+      "outputs": [],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

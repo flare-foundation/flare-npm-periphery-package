@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIVPContract",
-  "sourceName": "contracts/token/interface/IIVPContract.sol",
+  "sourceName": "contracts/songbird/token/interface/IIVPContract.sol",
   "abi": [
     {
       "anonymous": false,

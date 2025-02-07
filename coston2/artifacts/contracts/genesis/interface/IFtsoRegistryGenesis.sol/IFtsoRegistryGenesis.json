@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IFtsoRegistryGenesis",
-  "sourceName": "contracts/genesis/interface/IFtsoRegistryGenesis.sol",
+  "sourceName": "contracts/coston2/genesis/interface/IFtsoRegistryGenesis.sol",
   "abi": [
     {
       "inputs": [

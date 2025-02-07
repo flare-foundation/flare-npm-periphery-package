@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIFtsoRewardManager",
-  "sourceName": "contracts/tokenPools/interface/IIFtsoRewardManager.sol",
+  "sourceName": "contracts/songbird/tokenPools/interface/IIFtsoRewardManager.sol",
   "abi": [
     {
       "anonymous": false,

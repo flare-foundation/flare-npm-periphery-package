@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIERC20WithMetadata",
-  "sourceName": "contracts/assetRegistry/interface/IIERC20WithMetadata.sol",
+  "sourceName": "contracts/songbird/assetRegistry/interface/IIERC20WithMetadata.sol",
   "abi": [
     {
       "anonymous": false,
@@ -176,7 +176,7 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "recipient",
+          "name": "to",
           "type": "address"
         },
         {
@@ -200,12 +200,12 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "sender",
+          "name": "from",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "recipient",
+          "name": "to",
           "type": "address"
         },
         {

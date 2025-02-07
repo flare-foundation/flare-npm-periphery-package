@@ -1,7 +1,7 @@
 {
   "name": "@flarenetwork/flare-periphery-contract-artifacts",
   "description": "Smart contracts artifacts for all Flare chains",
-  "version": "0.1.16",
+  "version": "0.1.19",
   "author": "Flare Network",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -15,11 +15,25 @@
   ],
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "tsc"
+    "build": "rollup -c",
+    "test": "jest -c jest.config.js"
+  },
+  "dependencies": {
+    "ethers": "^6.7.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/jest": "^29.5.12",
     "@types/node": "^20.6.0",
-    "typescript": "^5.2.2",
-    "ethers": "^6.7.1"
+    "glob": "^10.0.0",
+    "jest": "^29.7.0",
+    "rollup": "^4.20.0",
+    "rollup-jest": "^3.1.0",
+    "ts-jest": "^29.2.4",
+    "typescript": "^5.2.2"
   }
 }

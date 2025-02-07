@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IITokenPool",
-  "sourceName": "contracts/tokenPools/interface/IITokenPool.sol",
+  "sourceName": "contracts/songbird/tokenPools/interface/IITokenPool.sol",
   "abi": [
     {
       "inputs": [],

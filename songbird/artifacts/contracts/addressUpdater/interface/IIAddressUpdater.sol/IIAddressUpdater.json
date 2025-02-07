@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIAddressUpdater",
-  "sourceName": "contracts/addressUpdater/interface/IIAddressUpdater.sol",
+  "sourceName": "contracts/songbird/addressUpdater/interface/IIAddressUpdater.sol",
   "abi": [
     {
       "inputs": [

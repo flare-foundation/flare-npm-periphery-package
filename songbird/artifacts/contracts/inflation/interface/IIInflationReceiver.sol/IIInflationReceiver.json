@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIInflationReceiver",
-  "sourceName": "contracts/inflation/interface/IIInflationReceiver.sol",
+  "sourceName": "contracts/songbird/inflation/interface/IIInflationReceiver.sol",
   "abi": [
     {
       "inputs": [],

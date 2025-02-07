@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIPollingFoundation",
-  "sourceName": "contracts/governance/interface/IIPollingFoundation.sol",
+  "sourceName": "contracts/coston2/governance/interface/IIPollingFoundation.sol",
   "abi": [
     {
       "anonymous": false,
@@ -271,19 +271,41 @@
     {
       "inputs": [
         {
-          "internalType": "string",
-          "name": "_description",
-          "type": "string"
+          "internalType": "uint256",
+          "name": "_proposalId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_targets",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_values",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "_calldatas",
+          "type": "bytes[]"
         }
       ],
       "name": "execute",
-      "outputs": [
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
         {
           "internalType": "uint256",
-          "name": "",
+          "name": "_proposalId",
           "type": "uint256"
         }
       ],
+      "name": "execute",
+      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -310,7 +332,7 @@
           "type": "string"
         }
       ],
-      "name": "execute",
+      "name": "getProposalId",
       "outputs": [
         {
           "internalType": "uint256",
@@ -318,7 +340,20 @@
           "type": "uint256"
         }
       ],
-      "stateMutability": "payable",
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getProposalIds",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -380,6 +415,11 @@
           "internalType": "uint256",
           "name": "_circulatingSupply",
           "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_description",
+          "type": "string"
         }
       ],
       "stateMutability": "view",
@@ -507,7 +547,7 @@
             },
             {
               "internalType": "uint256",
-              "name": "votingDelaySeconds",
+              "name": "votingStartTs",
               "type": "uint256"
             },
             {
@@ -573,7 +613,7 @@
             },
             {
               "internalType": "uint256",
-              "name": "votingDelaySeconds",
+              "name": "votingStartTs",
               "type": "uint256"
             },
             {

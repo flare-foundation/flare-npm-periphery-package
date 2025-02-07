@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIFtso",
-  "sourceName": "contracts/ftso/interface/IIFtso.sol",
+  "sourceName": "contracts/songbird/ftso/interface/IIFtso.sol",
   "abi": [
     {
       "anonymous": false,
@@ -199,19 +199,6 @@
       ],
       "name": "PriceRevealed",
       "type": "event"
-    },
-    {
-      "inputs": [],
-      "name": "ASSET_PRICE_USD_DECIMALS",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
     },
     {
       "inputs": [

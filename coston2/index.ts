@@ -1,2 +1,2 @@
-export * from "./deploys/mapper";
-export * from "./deploys/addresses";
+export * from "./mapper";
+export * from "./abis";

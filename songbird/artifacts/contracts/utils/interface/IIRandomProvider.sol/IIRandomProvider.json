@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IIRandomProvider",
-  "sourceName": "contracts/utils/interface/IIRandomProvider.sol",
+  "sourceName": "contracts/songbird/utils/interface/IIRandomProvider.sol",
   "abi": [
     {
       "inputs": [
