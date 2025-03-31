@@ -1,18 +1,9 @@
-{
-  "_format": "hh-sol-artifact-1",
-  "contractName": "IIPreInflationCalculation",
-  "sourceName": "contracts/songbird/inflation/interface/IIPreInflationCalculation.sol",
-  "abi": [
-    {
-      "inputs": [],
-      "name": "trigger",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    }
-  ],
-  "bytecode": "0x",
-  "deployedBytecode": "0x",
-  "linkReferences": {},
-  "deployedLinkReferences": {}
-}
+[
+  {
+    "inputs": [],
+    "name": "trigger",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
