@@ -1,24 +1,102 @@
-# Flare smart contracts periphery
+# Flare Smart Contracts Periphery
 
-This package contains ABIs, typechain artifacts and addresses for smart contracts on Flare networks Flare, Songbird,
-Coston and Coston2.
+This package contains ABIs and addresses for smart contracts deployed on [Flare networks](https://dev.flare.network/network/solidity-reference):
 
-Enjoy
+- Flare Mainnet
+- Songbird Canary Network
+- Songbird Testnet Coston
+- Flare Testnet Coston2
 
+## Installation
+
+```bash
+npm install @flarenetwork/flare-periphery-contract
+# or
+yarn add @flarenetwork/flare-periphery-contract
+```
 
 ## Features
-This library exposes the following names at top level:
- * `nameToAbi(name:string, network: string): any` and `interfaceToAbi(name: string, network: string): any` - 
- return abi an array of objects.
-    Name is the name of contract/interface and network can be one of coston, coston2, songbird and flare. 
- * `nameToAddress(name: string, provider: ethers.JsonRpcApiProvider): Promise<string>` and `namesToAddresses(names: string[], provider: ethers.JsonRpcApiProvider): Promise<string[]>`.
-  Provider is used to get contract address(es). They are read from FlareContractRegistryLibrary on chain.
- * `FlareContractRegistryAddress` - hardcoded address constant, the same for all chains and should never change.
- * `coston`, `coston2`, `flare` and `songbird` - namespaces with 4 exports:
-    - `products` - an object exposing contracts through `.ContractName` syntax. They have fields
-    `name`, `interface` - interface's name and `abi`, and method `getAddress(provider: JsonRpcProvider): Promise<string>`.
-    - `interfaceAbis` - a class allowing access to abis using `.InterfaceName` syntax. Interface names are
-    usually contract names prefixed with capital letter `I`.
-    - `nameToAbi(name: string): any` and `interfaceToAbi(name: string): any` - the same as top level functions, with omitted network argument
 
-Additionally typechain artifacts are stored in `artifacts/contracts` folders for every chain.
+### Top Level Exports
+
+#### ABI Access Functions
+
+- `nameToAbi(name: string, network: string): any`
+- `interfaceToAbi(name: string, network: string): any`
+
+Both functions return an ABI array. The `network` parameter must be one of: 
+
+- `"coston"`
+- `"coston2"`
+- `"songbird"`
+- `"flare"`
+
+```typescript
+import { nameToAbi } from "@flarenetwork/flare-periphery-contract";
+
+const abi = nameToAbi("FtsoManager", "flare");
+```
+
+#### Address Resolution
+
+- `nameToAddress(name: string, provider: ethers.JsonRpcApiProvider): Promise<string>`
+- `namesToAddresses(names: string[], provider: ethers.JsonRpcApiProvider): Promise<string[]>`
+
+These functions fetch contract addresses from the on-chain FlareContractRegistryLibrary.
+
+```typescript
+import { nameToAddress } from "@flarenetwork/flare-periphery-contract";
+import { ethers } from "ethers";
+
+const provider = new ethers.JsonRpcProvider("https://flare-api.flare.network/ext/C/rpc");
+const address = await nameToAddress("FtsoManager", provider);
+```
+
+#### Constants
+
+- `FlareContractRegistryAddress`: Hardcoded registry address (same for all chains)
+
+### Network-Specific Namespaces
+
+Each network (`coston`, `coston2`, `flare`, `songbird`) exports:
+
+#### 1. Products
+
+Access contract information through `.ContractName` syntax:
+
+```typescript
+import { flare } from "@flarenetwork/flare-periphery-contract";
+
+const ftsoManager = flare.products.FtsoManager;
+console.log(ftsoManager.name);        // Contract name
+console.log(ftsoManager.interface);   // Interface name
+console.log(ftsoManager.abi);         // Contract ABI
+
+// Get deployed address
+const address = await ftsoManager.getAddress(provider);
+```
+
+#### 2. Interface ABIs
+
+Access interface ABIs using `.InterfaceName` syntax:
+
+```typescript
+import { flare } from "@flarenetwork/flare-periphery-contract";
+
+const abi = flare.interfaceAbis.IFtsoManager;
+```
+
+#### 3. Network-Specific ABI Functions
+
+It is same as top-level functions but with the pre-set network:
+
+```typescript
+import { flare } from "@flarenetwork/flare-periphery-contract";
+
+const abi = flare.nameToAbi("FtsoManager");      // Network already known
+const iAbi = flare.interfaceToAbi("IFtsoManager");
+```
+
+## Support
+
+For issues and feature requests, please visit our [GitHub repository](https://github.com/flare-foundation/flare-smart-contracts-periphery).
