@@ -21,8 +21,8 @@ yarn add @flarenetwork/flare-periphery-contract
 
 #### ABI Access Functions
 
-- `nameToAbi(name: string, network: string): any`
-- `interfaceToAbi(name: string, network: string): any`
+- `nameToAbi(name: string, network: string): any` - get full smart contract functionality;
+- `interfaceToAbi(name: string, network: string): any` - interact with the contract's public API.
 
 Both functions return an ABI array. The `network` parameter must be one of: 
 
@@ -32,9 +32,10 @@ Both functions return an ABI array. The `network` parameter must be one of:
 - `"flare"`
 
 ```typescript
-import { nameToAbi } from "@flarenetwork/flare-periphery-contract";
+import { nameToAbi, interfaceToAbi } from "@flarenetwork/flare-periphery-contract";
 
-const abi = nameToAbi("FtsoManager", "flare");
+const fullAbi = nameToAbi("FtsoManager", "flare");
+const interfaceAbi = interfaceToAbi("IFtsoManager", "flare");
 ```
 
 #### Address Resolution
