@@ -10,9 +10,9 @@ This package contains ABIs and addresses for smart contracts deployed on [Flare 
 ## Installation
 
 ```bash
-npm install @flarenetwork/flare-periphery-contract
+npm install @flarenetwork/flare-periphery-contract-artifacts"
 # or
-yarn add @flarenetwork/flare-periphery-contract
+yarn add @flarenetwork/flare-periphery-contract-artifacts"
 ```
 
 ## Features
@@ -46,7 +46,7 @@ const interfaceAbi = interfaceToAbi("IFtsoManager", "flare");
 These functions fetch contract addresses from the on-chain FlareContractRegistryLibrary.
 
 ```typescript
-import { nameToAddress } from "@flarenetwork/flare-periphery-contract";
+import { nameToAddress } from "@flarenetwork/flare-periphery-contract-artifacts";
 import { ethers } from "ethers";
 
 const provider = new ethers.JsonRpcProvider("https://flare-api.flare.network/ext/C/rpc");
@@ -66,7 +66,7 @@ Each network (`coston`, `coston2`, `flare`, `songbird`) exports:
 Access contract information through `.ContractName` syntax:
 
 ```typescript
-import { flare } from "@flarenetwork/flare-periphery-contract";
+import { flare } from "@flarenetwork/flare-periphery-contract-artifacts";
 
 const ftsoManager = flare.products.FtsoManager;
 console.log(ftsoManager.name);        // Contract name
@@ -82,7 +82,7 @@ const address = await ftsoManager.getAddress(provider);
 Access interface ABIs using `.InterfaceName` syntax:
 
 ```typescript
-import { flare } from "@flarenetwork/flare-periphery-contract";
+import { flare } from "@flarenetwork/flare-periphery-contract-artifacts";
 
 const abi = flare.interfaceAbis.IFtsoManager;
 ```
@@ -92,7 +92,7 @@ const abi = flare.interfaceAbis.IFtsoManager;
 It is same as top-level functions but with the pre-set network:
 
 ```typescript
-import { flare } from "@flarenetwork/flare-periphery-contract";
+import { flare } from "@flarenetwork/flare-periphery-contract-artifacts";
 
 const abi = flare.nameToAbi("FtsoManager");      // Network already known
 const iAbi = flare.interfaceToAbi("IFtsoManager");
