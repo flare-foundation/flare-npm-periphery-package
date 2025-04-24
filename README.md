@@ -10,9 +10,9 @@ This package contains ABIs and addresses for smart contracts deployed on [Flare 
 ## Installation
 
 ```bash
-npm install @flarenetwork/flare-periphery-contract-artifacts"
+npm install @flarenetwork/flare-periphery-contract-artifacts
 # or
-yarn add @flarenetwork/flare-periphery-contract-artifacts"
+yarn add @flarenetwork/flare-periphery-contract-artifacts
 ```
 
 ## Features
