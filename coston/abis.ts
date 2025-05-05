@@ -79,6 +79,8 @@ import IIVPToken from "./artifacts/contracts/token/interfaces/IIVPToken.sol/IIVP
 import IIVoterRegistrationTrigger from "./artifacts/contracts/protocol/interfaces/IIVoterRegistrationTrigger.sol/IIVoterRegistrationTrigger.json";
 import IIVoterRegistry from "./artifacts/contracts/protocol/interfaces/IIVoterRegistry.sol/IIVoterRegistry.json";
 import IIncreaseManager from "./artifacts/contracts/IIncreaseManager.sol/IIncreaseManager.json";
+import IJsonApi from "./artifacts/contracts/IJsonApi.sol/IJsonApi.json";
+import IJsonApiVerification from "./artifacts/contracts/IJsonApiVerification.sol/IJsonApiVerification.json";
 import IPayment from "./artifacts/contracts/IPayment.sol/IPayment.json";
 import IPaymentVerification from "./artifacts/contracts/IPaymentVerification.sol/IPaymentVerification.json";
 import IPollingManagementGroup from "./artifacts/contracts/IPollingManagementGroup.sol/IPollingManagementGroup.json";
@@ -103,6 +105,8 @@ import IVoterRegistry from "./artifacts/contracts/IVoterRegistry.sol/IVoterRegis
 import IVoterWhitelister from "./artifacts/contracts/IVoterWhitelister.sol/IVoterWhitelister.json";
 import IWNat from "./artifacts/contracts/IWNat.sol/IWNat.json";
 import IWNatDelegationFee from "./artifacts/contracts/IWNatDelegationFee.sol/IWNatDelegationFee.json";
+import IWeb2Json from "./artifacts/contracts/IWeb2Json.sol/IWeb2Json.json";
+import IWeb2JsonVerification from "./artifacts/contracts/IWeb2JsonVerification.sol/IWeb2JsonVerification.json";
 import ProtocolsV2Interface from "./artifacts/contracts/ProtocolsV2Interface.sol/ProtocolsV2Interface.json";
 import RandomNumberV2Interface from "./artifacts/contracts/RandomNumberV2Interface.sol/RandomNumberV2Interface.json";
 import RedemptionTicketInfo from "./artifacts/contracts/userInterfaces/data/RedemptionTicketInfo.sol/RedemptionTicketInfo.json";
@@ -194,6 +198,8 @@ export const interfaceAbis: { [key: string]: any; } = {
   IIVoterRegistrationTrigger: IIVoterRegistrationTrigger,
   IIVoterRegistry: IIVoterRegistry,
   IIncreaseManager: IIncreaseManager,
+  IJsonApi: IJsonApi,
+  IJsonApiVerification: IJsonApiVerification,
   IPayment: IPayment,
   IPaymentVerification: IPaymentVerification,
   IPollingManagementGroup: IPollingManagementGroup,
@@ -218,6 +224,8 @@ export const interfaceAbis: { [key: string]: any; } = {
   IVoterWhitelister: IVoterWhitelister,
   IWNat: IWNat,
   IWNatDelegationFee: IWNatDelegationFee,
+  IWeb2Json: IWeb2Json,
+  IWeb2JsonVerification: IWeb2JsonVerification,
   ProtocolsV2Interface: ProtocolsV2Interface,
   RandomNumberV2Interface: RandomNumberV2Interface,
   RedemptionTicketInfo: RedemptionTicketInfo,
