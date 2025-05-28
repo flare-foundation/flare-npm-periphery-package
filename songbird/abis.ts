@@ -2,11 +2,13 @@ import AgentInfo from "./artifacts/contracts/userInterfaces/data/AgentInfo.sol/A
 import AgentSettings from "./artifacts/contracts/userInterfaces/data/AgentSettings.sol/AgentSettings.json";
 import AssetManagerSettings from "./artifacts/contracts/userInterfaces/data/AssetManagerSettings.sol/AssetManagerSettings.json";
 import AvailableAgentInfo from "./artifacts/contracts/userInterfaces/data/AvailableAgentInfo.sol/AvailableAgentInfo.json";
+import CollateralReservationInfo from "./artifacts/contracts/userInterfaces/data/CollateralReservationInfo.sol/CollateralReservationInfo.json";
 import CollateralType from "./artifacts/contracts/userInterfaces/data/CollateralType.sol/CollateralType.json";
 import ContractRegistry from "./artifacts/contracts/ContractRegistry.sol/ContractRegistry.json";
 import FtsoV2Interface from "./artifacts/contracts/FtsoV2Interface.sol/FtsoV2Interface.json";
 import IAddressValidity from "./artifacts/contracts/IAddressValidity.sol/IAddressValidity.json";
 import IAddressValidityVerification from "./artifacts/contracts/IAddressValidityVerification.sol/IAddressValidityVerification.json";
+import IAgentAlwaysAllowedMinters from "./artifacts/contracts/IAgentAlwaysAllowedMinters.sol/IAgentAlwaysAllowedMinters.json";
 import IAgentPing from "./artifacts/contracts/IAgentPing.sol/IAgentPing.json";
 import IAssetManager from "./artifacts/contracts/IAssetManager.sol/IAssetManager.json";
 import IAssetManagerEvents from "./artifacts/contracts/IAssetManagerEvents.sol/IAssetManagerEvents.json";
@@ -18,6 +20,8 @@ import IClaimSetupManager from "./artifacts/contracts/IClaimSetupManager.sol/ICl
 import ICollateralizable from "./artifacts/contracts/mockXAsset/interfaces/ICollateralizable.sol/ICollateralizable.json";
 import IConfirmedBlockHeightExists from "./artifacts/contracts/IConfirmedBlockHeightExists.sol/IConfirmedBlockHeightExists.json";
 import IConfirmedBlockHeightExistsVerification from "./artifacts/contracts/IConfirmedBlockHeightExistsVerification.sol/IConfirmedBlockHeightExistsVerification.json";
+import ICoreVault from "./artifacts/contracts/ICoreVault.sol/ICoreVault.json";
+import ICoreVaultSettings from "./artifacts/contracts/ICoreVaultSettings.sol/ICoreVaultSettings.json";
 import IDelegationAccount from "./artifacts/contracts/IDelegationAccount.sol/IDelegationAccount.json";
 import IDiamondLoupe from "./artifacts/contracts/diamond/interfaces/IDiamondLoupe.sol/IDiamondLoupe.json";
 import IEVMTransaction from "./artifacts/contracts/IEVMTransaction.sol/IEVMTransaction.json";
@@ -132,6 +136,7 @@ import IWeb2Json from "./artifacts/contracts/IWeb2Json.sol/IWeb2Json.json";
 import IWeb2JsonVerification from "./artifacts/contracts/IWeb2JsonVerification.sol/IWeb2JsonVerification.json";
 import ProtocolsV2Interface from "./artifacts/contracts/ProtocolsV2Interface.sol/ProtocolsV2Interface.json";
 import RandomNumberV2Interface from "./artifacts/contracts/RandomNumberV2Interface.sol/RandomNumberV2Interface.json";
+import RedemptionRequestInfo from "./artifacts/contracts/userInterfaces/data/RedemptionRequestInfo.sol/RedemptionRequestInfo.json";
 import RedemptionTicketInfo from "./artifacts/contracts/userInterfaces/data/RedemptionTicketInfo.sol/RedemptionTicketInfo.json";
 import RewardsV2Interface from "./artifacts/contracts/RewardsV2Interface.sol/RewardsV2Interface.json";
 import TestFtsoV2Interface from "./artifacts/contracts/TestFtsoV2Interface.sol/TestFtsoV2Interface.json";
@@ -144,11 +149,13 @@ export const interfaceAbis: { [key: string]: any; } = {
   AgentSettings: AgentSettings,
   AssetManagerSettings: AssetManagerSettings,
   AvailableAgentInfo: AvailableAgentInfo,
+  CollateralReservationInfo: CollateralReservationInfo,
   CollateralType: CollateralType,
   ContractRegistry: ContractRegistry,
   FtsoV2Interface: FtsoV2Interface,
   IAddressValidity: IAddressValidity,
   IAddressValidityVerification: IAddressValidityVerification,
+  IAgentAlwaysAllowedMinters: IAgentAlwaysAllowedMinters,
   IAgentPing: IAgentPing,
   IAssetManager: IAssetManager,
   IAssetManagerEvents: IAssetManagerEvents,
@@ -160,6 +167,8 @@ export const interfaceAbis: { [key: string]: any; } = {
   ICollateralizable: ICollateralizable,
   IConfirmedBlockHeightExists: IConfirmedBlockHeightExists,
   IConfirmedBlockHeightExistsVerification: IConfirmedBlockHeightExistsVerification,
+  ICoreVault: ICoreVault,
+  ICoreVaultSettings: ICoreVaultSettings,
   IDelegationAccount: IDelegationAccount,
   IDiamondLoupe: IDiamondLoupe,
   IEVMTransaction: IEVMTransaction,
@@ -274,6 +283,7 @@ export const interfaceAbis: { [key: string]: any; } = {
   IWeb2JsonVerification: IWeb2JsonVerification,
   ProtocolsV2Interface: ProtocolsV2Interface,
   RandomNumberV2Interface: RandomNumberV2Interface,
+  RedemptionRequestInfo: RedemptionRequestInfo,
   RedemptionTicketInfo: RedemptionTicketInfo,
   RewardsV2Interface: RewardsV2Interface,
   TestFtsoV2Interface: TestFtsoV2Interface,

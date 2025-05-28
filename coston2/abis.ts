@@ -1,8 +1,18 @@
+import AgentInfo from "./artifacts/contracts/userInterfaces/data/AgentInfo.sol/AgentInfo.json";
+import AgentSettings from "./artifacts/contracts/userInterfaces/data/AgentSettings.sol/AgentSettings.json";
+import AssetManagerSettings from "./artifacts/contracts/userInterfaces/data/AssetManagerSettings.sol/AssetManagerSettings.json";
+import AvailableAgentInfo from "./artifacts/contracts/userInterfaces/data/AvailableAgentInfo.sol/AvailableAgentInfo.json";
+import CollateralReservationInfo from "./artifacts/contracts/userInterfaces/data/CollateralReservationInfo.sol/CollateralReservationInfo.json";
+import CollateralType from "./artifacts/contracts/userInterfaces/data/CollateralType.sol/CollateralType.json";
 import ContractRegistry from "./artifacts/contracts/ContractRegistry.sol/ContractRegistry.json";
 import FtsoV2Interface from "./artifacts/contracts/FtsoV2Interface.sol/FtsoV2Interface.json";
 import IAddressBinder from "./artifacts/contracts/IAddressBinder.sol/IAddressBinder.json";
 import IAddressValidity from "./artifacts/contracts/IAddressValidity.sol/IAddressValidity.json";
 import IAddressValidityVerification from "./artifacts/contracts/IAddressValidityVerification.sol/IAddressValidityVerification.json";
+import IAgentAlwaysAllowedMinters from "./artifacts/contracts/IAgentAlwaysAllowedMinters.sol/IAgentAlwaysAllowedMinters.json";
+import IAgentPing from "./artifacts/contracts/IAgentPing.sol/IAgentPing.json";
+import IAssetManager from "./artifacts/contracts/IAssetManager.sol/IAssetManager.json";
+import IAssetManagerEvents from "./artifacts/contracts/IAssetManagerEvents.sol/IAssetManagerEvents.json";
 import IBalanceDecreasingTransaction from "./artifacts/contracts/IBalanceDecreasingTransaction.sol/IBalanceDecreasingTransaction.json";
 import IBalanceDecreasingTransactionVerification from "./artifacts/contracts/IBalanceDecreasingTransactionVerification.sol/IBalanceDecreasingTransactionVerification.json";
 import ICChainStake from "./artifacts/contracts/ICChainStake.sol/ICChainStake.json";
@@ -10,7 +20,10 @@ import ICChainVotePower from "./artifacts/contracts/ICChainVotePower.sol/ICChain
 import IClaimSetupManager from "./artifacts/contracts/IClaimSetupManager.sol/IClaimSetupManager.json";
 import IConfirmedBlockHeightExists from "./artifacts/contracts/IConfirmedBlockHeightExists.sol/IConfirmedBlockHeightExists.json";
 import IConfirmedBlockHeightExistsVerification from "./artifacts/contracts/IConfirmedBlockHeightExistsVerification.sol/IConfirmedBlockHeightExistsVerification.json";
+import ICoreVault from "./artifacts/contracts/ICoreVault.sol/ICoreVault.json";
+import ICoreVaultSettings from "./artifacts/contracts/ICoreVaultSettings.sol/ICoreVaultSettings.json";
 import IDelegationAccount from "./artifacts/contracts/IDelegationAccount.sol/IDelegationAccount.json";
+import IDiamondLoupe from "./artifacts/contracts/diamond/interfaces/IDiamondLoupe.sol/IDiamondLoupe.json";
 import IDistributionToDelegators from "./artifacts/contracts/IDistributionToDelegators.sol/IDistributionToDelegators.json";
 import IEVMTransaction from "./artifacts/contracts/IEVMTransaction.sol/IEVMTransaction.json";
 import IEVMTransactionVerification from "./artifacts/contracts/IEVMTransactionVerification.sol/IEVMTransactionVerification.json";
@@ -85,11 +98,13 @@ import IPriceSubmitter from "./artifacts/contracts/IPriceSubmitter.sol/IPriceSub
 import IRNat from "./artifacts/contracts/IRNat.sol/IRNat.json";
 import IRNatAccount from "./artifacts/contracts/IRNatAccount.sol/IRNatAccount.json";
 import IRandomProvider from "./artifacts/contracts/IRandomProvider.sol/IRandomProvider.json";
+import IRedemptionTimeExtension from "./artifacts/contracts/IRedemptionTimeExtension.sol/IRedemptionTimeExtension.json";
 import IReferencedPaymentNonexistence from "./artifacts/contracts/IReferencedPaymentNonexistence.sol/IReferencedPaymentNonexistence.json";
 import IReferencedPaymentNonexistenceVerification from "./artifacts/contracts/IReferencedPaymentNonexistenceVerification.sol/IReferencedPaymentNonexistenceVerification.json";
 import IRelay from "./artifacts/contracts/IRelay.sol/IRelay.json";
 import IRewardManager from "./artifacts/contracts/IRewardManager.sol/IRewardManager.json";
 import ISubmission from "./artifacts/contracts/ISubmission.sol/ISubmission.json";
+import ITransferFees from "./artifacts/contracts/ITransferFees.sol/ITransferFees.json";
 import ITypeTemplate from "./artifacts/contracts/fdc/interfaces/ITypeTemplate.sol/ITypeTemplate.json";
 import ITypeTemplateVerification from "./artifacts/contracts/fdc/interfaces/ITypeTemplateVerification.sol/ITypeTemplateVerification.json";
 import IVPContractEvents from "./artifacts/contracts/IVPContractEvents.sol/IVPContractEvents.json";
@@ -105,6 +120,8 @@ import IWeb2Json from "./artifacts/contracts/IWeb2Json.sol/IWeb2Json.json";
 import IWeb2JsonVerification from "./artifacts/contracts/IWeb2JsonVerification.sol/IWeb2JsonVerification.json";
 import ProtocolsV2Interface from "./artifacts/contracts/ProtocolsV2Interface.sol/ProtocolsV2Interface.json";
 import RandomNumberV2Interface from "./artifacts/contracts/RandomNumberV2Interface.sol/RandomNumberV2Interface.json";
+import RedemptionRequestInfo from "./artifacts/contracts/userInterfaces/data/RedemptionRequestInfo.sol/RedemptionRequestInfo.json";
+import RedemptionTicketInfo from "./artifacts/contracts/userInterfaces/data/RedemptionTicketInfo.sol/RedemptionTicketInfo.json";
 import RewardsV2Interface from "./artifacts/contracts/RewardsV2Interface.sol/RewardsV2Interface.json";
 import TestFtsoV2Interface from "./artifacts/contracts/TestFtsoV2Interface.sol/TestFtsoV2Interface.json";
 
@@ -112,11 +129,21 @@ import { JsonRpcProvider } from "ethers";
 import { nameToAddress } from "../index";
 
 export const interfaceAbis: { [key: string]: any; } = {
+  AgentInfo: AgentInfo,
+  AgentSettings: AgentSettings,
+  AssetManagerSettings: AssetManagerSettings,
+  AvailableAgentInfo: AvailableAgentInfo,
+  CollateralReservationInfo: CollateralReservationInfo,
+  CollateralType: CollateralType,
   ContractRegistry: ContractRegistry,
   FtsoV2Interface: FtsoV2Interface,
   IAddressBinder: IAddressBinder,
   IAddressValidity: IAddressValidity,
   IAddressValidityVerification: IAddressValidityVerification,
+  IAgentAlwaysAllowedMinters: IAgentAlwaysAllowedMinters,
+  IAgentPing: IAgentPing,
+  IAssetManager: IAssetManager,
+  IAssetManagerEvents: IAssetManagerEvents,
   IBalanceDecreasingTransaction: IBalanceDecreasingTransaction,
   IBalanceDecreasingTransactionVerification: IBalanceDecreasingTransactionVerification,
   ICChainStake: ICChainStake,
@@ -124,7 +151,10 @@ export const interfaceAbis: { [key: string]: any; } = {
   IClaimSetupManager: IClaimSetupManager,
   IConfirmedBlockHeightExists: IConfirmedBlockHeightExists,
   IConfirmedBlockHeightExistsVerification: IConfirmedBlockHeightExistsVerification,
+  ICoreVault: ICoreVault,
+  ICoreVaultSettings: ICoreVaultSettings,
   IDelegationAccount: IDelegationAccount,
+  IDiamondLoupe: IDiamondLoupe,
   IDistributionToDelegators: IDistributionToDelegators,
   IEVMTransaction: IEVMTransaction,
   IEVMTransactionVerification: IEVMTransactionVerification,
@@ -199,11 +229,13 @@ export const interfaceAbis: { [key: string]: any; } = {
   IRNat: IRNat,
   IRNatAccount: IRNatAccount,
   IRandomProvider: IRandomProvider,
+  IRedemptionTimeExtension: IRedemptionTimeExtension,
   IReferencedPaymentNonexistence: IReferencedPaymentNonexistence,
   IReferencedPaymentNonexistenceVerification: IReferencedPaymentNonexistenceVerification,
   IRelay: IRelay,
   IRewardManager: IRewardManager,
   ISubmission: ISubmission,
+  ITransferFees: ITransferFees,
   ITypeTemplate: ITypeTemplate,
   ITypeTemplateVerification: ITypeTemplateVerification,
   IVPContractEvents: IVPContractEvents,
@@ -219,6 +251,8 @@ export const interfaceAbis: { [key: string]: any; } = {
   IWeb2JsonVerification: IWeb2JsonVerification,
   ProtocolsV2Interface: ProtocolsV2Interface,
   RandomNumberV2Interface: RandomNumberV2Interface,
+  RedemptionRequestInfo: RedemptionRequestInfo,
+  RedemptionTicketInfo: RedemptionTicketInfo,
   RewardsV2Interface: RewardsV2Interface,
   TestFtsoV2Interface: TestFtsoV2Interface,
 };
