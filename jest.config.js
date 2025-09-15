@@ -1,15 +1,12 @@
 module.exports = {
-    "preset": "rollup-jest",
-    "moduleFileExtensions": [
-        "js",
-        "ts",
-    ],
-    "transform": {
-        ".(ts|tsx)": "ts-jest"
+    preset: "rollup-jest",
+    moduleFileExtensions: ["js", "ts"],
+    transform: {
+        ".(ts|tsx)": "ts-jest",
     },
-    "transformIgnorePatterns": [
+    transformIgnorePatterns: [
         "/node_modules/", // defaults
         "\\.pnp\\.[^\\\/]+$", // defaults
-        ".json"
-    ]
+        ".json",
+    ],
 };

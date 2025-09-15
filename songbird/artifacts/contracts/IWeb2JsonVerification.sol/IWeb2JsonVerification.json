@@ -95,7 +95,7 @@
         "type": "tuple"
       }
     ],
-    "name": "verifyJsonApi",
+    "name": "verifyWeb2Json",
     "outputs": [
       {
         "internalType": "bool",

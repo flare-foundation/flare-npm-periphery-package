@@ -14,16 +14,6 @@
     "resolveJsonModule": true,
     "allowJs": true
   },
-  "include": [
-    "index.ts",
-    "types.ts",
-    "coston/",
-    "coston2/",
-    "songbird/",
-    "flare/"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["index.ts", "types.ts", "coston/", "coston2/", "songbird/", "flare/"],
+  "exclude": ["node_modules", "dist"]
 }
