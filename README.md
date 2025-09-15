@@ -4,8 +4,8 @@ This package contains ABIs and addresses for smart contracts deployed on [Flare 
 
 - Flare Mainnet
 - Songbird Canary Network
-- Songbird Testnet Coston
 - Flare Testnet Coston2
+- Songbird Testnet Coston
 
 ## Installation
 
@@ -21,15 +21,17 @@ yarn add @flarenetwork/flare-periphery-contract-artifacts
 
 #### ABI Access Functions
 
-- `nameToAbi(name: string, network: string): any` - get full smart contract functionality;
-- `interfaceToAbi(name: string, network: string): any` - interact with the contract's public API.
+<!-- FIXME:(FilipS) This is probably not correct?! Both functions currently return the same ABI. -->
 
-Both functions return an ABI array. The `network` parameter must be one of: 
+- `nameToAbi(name: string, network: string): any` - Get full smart contract functionality.
+- `interfaceToAbi(name: string, network: string): any` - Interact with the contract's public API.
 
-- `"coston"`
-- `"coston2"`
-- `"songbird"`
+Both functions return an ABI array. The `network` parameter must be one of:
+
 - `"flare"`
+- `"songbird"`
+- `"coston2"`
+- `"coston"`
 
 ```typescript
 import { nameToAbi, interfaceToAbi } from "@flarenetwork/flare-periphery-contract";
@@ -40,8 +42,8 @@ const interfaceAbi = interfaceToAbi("IFtsoManager", "flare");
 
 #### Address Resolution
 
-- `nameToAddress(name: string, provider: ethers.JsonRpcApiProvider): Promise<string>`
-- `namesToAddresses(names: string[], provider: ethers.JsonRpcApiProvider): Promise<string[]>`
+- `nameToAddress(name: string, network: string, provider: ethers.JsonRpcApiProvider): Promise<string>`
+- `namesToAddresses(names: string[], network: string, provider: ethers.JsonRpcApiProvider): Promise<string[]>`
 
 These functions fetch contract addresses from the on-chain FlareContractRegistryLibrary.
 
@@ -50,7 +52,7 @@ import { nameToAddress } from "@flarenetwork/flare-periphery-contract-artifacts"
 import { ethers } from "ethers";
 
 const provider = new ethers.JsonRpcProvider("https://flare-api.flare.network/ext/C/rpc");
-const address = await nameToAddress("FtsoManager", provider);
+const address = await nameToAddress("FtsoManager", "flare", provider);
 ```
 
 #### Constants
@@ -59,7 +61,7 @@ const address = await nameToAddress("FtsoManager", provider);
 
 ### Network-Specific Namespaces
 
-Each network (`coston`, `coston2`, `flare`, `songbird`) exports:
+Each network (`flare`, `songbird`, `coston2`, `coston`) exports:
 
 #### 1. Products
 
@@ -69,9 +71,9 @@ Access contract information through `.ContractName` syntax:
 import { flare } from "@flarenetwork/flare-periphery-contract-artifacts";
 
 const ftsoManager = flare.products.FtsoManager;
-console.log(ftsoManager.name);        // Contract name
-console.log(ftsoManager.interface);   // Interface name
-console.log(ftsoManager.abi);         // Contract ABI
+console.log(ftsoManager.name); // Contract name
+console.log(ftsoManager.interface); // Interface name
+console.log(ftsoManager.abi); // Contract ABI
 
 // Get deployed address
 const address = await ftsoManager.getAddress(provider);
@@ -94,7 +96,8 @@ It is same as top-level functions but with the pre-set network:
 ```typescript
 import { flare } from "@flarenetwork/flare-periphery-contract-artifacts";
 
-const abi = flare.nameToAbi("FtsoManager");      // Network already known
+// Network already known
+const abi = flare.nameToAbi("FtsoManager");
 const iAbi = flare.interfaceToAbi("IFtsoManager");
 ```
 

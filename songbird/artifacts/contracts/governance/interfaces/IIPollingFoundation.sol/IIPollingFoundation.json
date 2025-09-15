@@ -267,41 +267,19 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "_proposalId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address[]",
-        "name": "_targets",
-        "type": "address[]"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "_values",
-        "type": "uint256[]"
-      },
-      {
-        "internalType": "bytes[]",
-        "name": "_calldatas",
-        "type": "bytes[]"
+        "internalType": "string",
+        "name": "_description",
+        "type": "string"
       }
     ],
     "name": "execute",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [
+    "outputs": [
       {
         "internalType": "uint256",
-        "name": "_proposalId",
+        "name": "",
         "type": "uint256"
       }
     ],
-    "name": "execute",
-    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -328,7 +306,7 @@
         "type": "string"
       }
     ],
-    "name": "getProposalId",
+    "name": "execute",
     "outputs": [
       {
         "internalType": "uint256",
@@ -336,20 +314,7 @@
         "type": "uint256"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getProposalIds",
-    "outputs": [
-      {
-        "internalType": "uint256[]",
-        "name": "",
-        "type": "uint256[]"
-      }
-    ],
-    "stateMutability": "view",
+    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -411,11 +376,6 @@
         "internalType": "uint256",
         "name": "_circulatingSupply",
         "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "_description",
-        "type": "string"
       }
     ],
     "stateMutability": "view",
@@ -543,7 +503,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "votingStartTs",
+            "name": "votingDelaySeconds",
             "type": "uint256"
           },
           {
