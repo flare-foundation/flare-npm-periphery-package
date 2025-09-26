@@ -5,6 +5,7 @@ import AvailableAgentInfo from "./artifacts/contracts/data/AvailableAgentInfo.so
 import CollateralReservationInfo from "./artifacts/contracts/data/CollateralReservationInfo.sol/CollateralReservationInfo.json";
 import CollateralType from "./artifacts/contracts/data/CollateralType.sol/CollateralType.json";
 import ContractRegistry from "./artifacts/contracts/ContractRegistry.sol/ContractRegistry.json";
+import EmergencyPause from "./artifacts/contracts/data/EmergencyPause.sol/EmergencyPause.json";
 import FtsoV2Interface from "./artifacts/contracts/FtsoV2Interface.sol/FtsoV2Interface.json";
 import IAddressBinder from "./artifacts/contracts/IAddressBinder.sol/IAddressBinder.json";
 import IAddressValidity from "./artifacts/contracts/IAddressValidity.sol/IAddressValidity.json";
@@ -172,6 +173,7 @@ export const interfaceAbis: { [key: string]: any } = {
     CollateralReservationInfo: CollateralReservationInfo,
     CollateralType: CollateralType,
     ContractRegistry: ContractRegistry,
+    EmergencyPause: EmergencyPause,
     FtsoV2Interface: FtsoV2Interface,
     IAddressBinder: IAddressBinder,
     IAddressValidity: IAddressValidity,
@@ -339,6 +341,13 @@ export const products: {
         registry: "AssetManagerController",
         abi: interfaceAbis.IAssetManagerController,
         getAddress: async (provider: Provider) => await nameToAddress("AssetManagerController", provider),
+    },
+    AssetManagerFXRP: {
+        name: "AssetManagerFXRP",
+        interface: "IAssetManager",
+        registry: "AssetManagerFXRP",
+        abi: interfaceAbis.IAssetManager,
+        getAddress: async (provider: Provider) => await nameToAddress("AssetManagerFXRP", provider),
     },
     ClaimSetupManager: {
         name: "ClaimSetupManager",

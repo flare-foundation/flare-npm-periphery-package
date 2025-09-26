@@ -12,6 +12,7 @@ describe("Testing coston2 ABIs", () => {
         expect(coston2.interfaceAbis.CollateralReservationInfo).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.CollateralType).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.ContractRegistry).toEqual(expect.any(Array));
+        expect(coston2.interfaceAbis.EmergencyPause).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.FtsoV2Interface).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IAddressBinder).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IAddressValidity).toEqual(expect.any(Array));
@@ -444,6 +445,7 @@ describe("Testing coston2 ABIs", () => {
         );
         expect(interfaceToAbi("CollateralType", "coston2")).toEqual(coston2.interfaceAbis.CollateralType);
         expect(interfaceToAbi("ContractRegistry", "coston2")).toEqual(coston2.interfaceAbis.ContractRegistry);
+        expect(interfaceToAbi("EmergencyPause", "coston2")).toEqual(coston2.interfaceAbis.EmergencyPause);
         expect(interfaceToAbi("FtsoV2Interface", "coston2")).toEqual(coston2.interfaceAbis.FtsoV2Interface);
         expect(interfaceToAbi("IAddressBinder", "coston2")).toEqual(coston2.interfaceAbis.IAddressBinder);
         expect(interfaceToAbi("IAddressValidity", "coston2")).toEqual(coston2.interfaceAbis.IAddressValidity);
@@ -686,6 +688,7 @@ describe("Testing coston2 ABIs", () => {
         );
         expect(coston2.interfaceToAbi("CollateralType")).toEqual(coston2.interfaceAbis.CollateralType);
         expect(coston2.interfaceToAbi("ContractRegistry")).toEqual(coston2.interfaceAbis.ContractRegistry);
+        expect(coston2.interfaceToAbi("EmergencyPause")).toEqual(coston2.interfaceAbis.EmergencyPause);
         expect(coston2.interfaceToAbi("FtsoV2Interface")).toEqual(coston2.interfaceAbis.FtsoV2Interface);
         expect(coston2.interfaceToAbi("IAddressBinder")).toEqual(coston2.interfaceAbis.IAddressBinder);
         expect(coston2.interfaceToAbi("IAddressValidity")).toEqual(coston2.interfaceAbis.IAddressValidity);

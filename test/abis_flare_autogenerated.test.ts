@@ -12,6 +12,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.CollateralReservationInfo).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.CollateralType).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ContractRegistry).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.EmergencyPause).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.FtsoV2Interface).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAddressBinder).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAddressValidity).toEqual(expect.any(Array));
@@ -166,6 +167,7 @@ describe("Testing flare ABIs", () => {
 
     test("Contract names are set for all products", () => {
         expect(flare.products.AssetManagerController.name).toEqual("AssetManagerController");
+        expect(flare.products.AssetManagerFXRP.name).toEqual("AssetManagerFXRP");
         expect(flare.products.ClaimSetupManager.name).toEqual("ClaimSetupManager");
         expect(flare.products.EntityManager.name).toEqual("EntityManager");
         expect(flare.products.FastUpdateIncentiveManager.name).toEqual("FastUpdateIncentiveManager");
@@ -207,6 +209,7 @@ describe("Testing flare ABIs", () => {
 
     test("Interface names are set for all products", () => {
         expect(flare.products.AssetManagerController.interface).toEqual("IAssetManagerController");
+        expect(flare.products.AssetManagerFXRP.interface).toEqual("IAssetManager");
         expect(flare.products.ClaimSetupManager.interface).toEqual("IClaimSetupManager");
         expect(flare.products.EntityManager.interface).toEqual("IEntityManager");
         expect(flare.products.FastUpdateIncentiveManager.interface).toEqual("IFastUpdateIncentiveManager");
@@ -248,6 +251,7 @@ describe("Testing flare ABIs", () => {
 
     test("Registry names are set for all products", () => {
         expect(flare.products.AssetManagerController.registry).toEqual("AssetManagerController");
+        expect(flare.products.AssetManagerFXRP.registry).toEqual("AssetManagerFXRP");
         expect(flare.products.ClaimSetupManager.registry).toEqual("ClaimSetupManager");
         expect(flare.products.EntityManager.registry).toEqual("EntityManager");
         expect(flare.products.FastUpdateIncentiveManager.registry).toEqual("FastUpdateIncentiveManager");
@@ -289,6 +293,7 @@ describe("Testing flare ABIs", () => {
 
     test("ABIs exist for all products", () => {
         expect(flare.products.AssetManagerController.abi).toEqual(expect.any(Array));
+        expect(flare.products.AssetManagerFXRP.abi).toEqual(expect.any(Array));
         expect(flare.products.ClaimSetupManager.abi).toEqual(expect.any(Array));
         expect(flare.products.EntityManager.abi).toEqual(expect.any(Array));
         expect(flare.products.FastUpdateIncentiveManager.abi).toEqual(expect.any(Array));
@@ -330,6 +335,7 @@ describe("Testing flare ABIs", () => {
 
     test("nameToAbi finds every contract", () => {
         expect(nameToAbi("AssetManagerController", "flare")).toEqual(flare.interfaceAbis.IAssetManagerController);
+        expect(nameToAbi("AssetManagerFXRP", "flare")).toEqual(flare.interfaceAbis.IAssetManager);
         expect(nameToAbi("ClaimSetupManager", "flare")).toEqual(flare.interfaceAbis.IClaimSetupManager);
         expect(nameToAbi("EntityManager", "flare")).toEqual(flare.interfaceAbis.IEntityManager);
         expect(nameToAbi("FastUpdateIncentiveManager", "flare")).toEqual(
@@ -375,6 +381,7 @@ describe("Testing flare ABIs", () => {
         expect(nameToAbi("WNatDelegationFee", "flare")).toEqual(flare.interfaceAbis.IWNatDelegationFee);
 
         expect(flare.nameToAbi("AssetManagerController")).toEqual(flare.interfaceAbis.IAssetManagerController);
+        expect(flare.nameToAbi("AssetManagerFXRP")).toEqual(flare.interfaceAbis.IAssetManager);
         expect(flare.nameToAbi("ClaimSetupManager")).toEqual(flare.interfaceAbis.IClaimSetupManager);
         expect(flare.nameToAbi("EntityManager")).toEqual(flare.interfaceAbis.IEntityManager);
         expect(flare.nameToAbi("FastUpdateIncentiveManager")).toEqual(flare.interfaceAbis.IFastUpdateIncentiveManager);
@@ -428,6 +435,7 @@ describe("Testing flare ABIs", () => {
         );
         expect(interfaceToAbi("CollateralType", "flare")).toEqual(flare.interfaceAbis.CollateralType);
         expect(interfaceToAbi("ContractRegistry", "flare")).toEqual(flare.interfaceAbis.ContractRegistry);
+        expect(interfaceToAbi("EmergencyPause", "flare")).toEqual(flare.interfaceAbis.EmergencyPause);
         expect(interfaceToAbi("FtsoV2Interface", "flare")).toEqual(flare.interfaceAbis.FtsoV2Interface);
         expect(interfaceToAbi("IAddressBinder", "flare")).toEqual(flare.interfaceAbis.IAddressBinder);
         expect(interfaceToAbi("IAddressValidity", "flare")).toEqual(flare.interfaceAbis.IAddressValidity);
@@ -656,6 +664,7 @@ describe("Testing flare ABIs", () => {
         );
         expect(flare.interfaceToAbi("CollateralType")).toEqual(flare.interfaceAbis.CollateralType);
         expect(flare.interfaceToAbi("ContractRegistry")).toEqual(flare.interfaceAbis.ContractRegistry);
+        expect(flare.interfaceToAbi("EmergencyPause")).toEqual(flare.interfaceAbis.EmergencyPause);
         expect(flare.interfaceToAbi("FtsoV2Interface")).toEqual(flare.interfaceAbis.FtsoV2Interface);
         expect(flare.interfaceToAbi("IAddressBinder")).toEqual(flare.interfaceAbis.IAddressBinder);
         expect(flare.interfaceToAbi("IAddressValidity")).toEqual(flare.interfaceAbis.IAddressValidity);

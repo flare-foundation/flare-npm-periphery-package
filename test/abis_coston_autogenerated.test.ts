@@ -12,6 +12,7 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceAbis.CollateralReservationInfo).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.CollateralType).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.ContractRegistry).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.EmergencyPause).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.FtsoV2Interface).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IAddressValidity).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IAddressValidityVerification).toEqual(expect.any(Array));
@@ -423,6 +424,7 @@ describe("Testing coston ABIs", () => {
         );
         expect(interfaceToAbi("CollateralType", "coston")).toEqual(coston.interfaceAbis.CollateralType);
         expect(interfaceToAbi("ContractRegistry", "coston")).toEqual(coston.interfaceAbis.ContractRegistry);
+        expect(interfaceToAbi("EmergencyPause", "coston")).toEqual(coston.interfaceAbis.EmergencyPause);
         expect(interfaceToAbi("FtsoV2Interface", "coston")).toEqual(coston.interfaceAbis.FtsoV2Interface);
         expect(interfaceToAbi("IAddressValidity", "coston")).toEqual(coston.interfaceAbis.IAddressValidity);
         expect(interfaceToAbi("IAddressValidityVerification", "coston")).toEqual(
@@ -632,6 +634,7 @@ describe("Testing coston ABIs", () => {
         );
         expect(coston.interfaceToAbi("CollateralType")).toEqual(coston.interfaceAbis.CollateralType);
         expect(coston.interfaceToAbi("ContractRegistry")).toEqual(coston.interfaceAbis.ContractRegistry);
+        expect(coston.interfaceToAbi("EmergencyPause")).toEqual(coston.interfaceAbis.EmergencyPause);
         expect(coston.interfaceToAbi("FtsoV2Interface")).toEqual(coston.interfaceAbis.FtsoV2Interface);
         expect(coston.interfaceToAbi("IAddressValidity")).toEqual(coston.interfaceAbis.IAddressValidity);
         expect(coston.interfaceToAbi("IAddressValidityVerification")).toEqual(
