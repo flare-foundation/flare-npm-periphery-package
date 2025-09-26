@@ -12,6 +12,7 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceAbis.CollateralReservationInfo).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.CollateralType).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ContractRegistry).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.EmergencyPause).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.FtsoV2Interface).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IAddressValidity).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IAddressValidityVerification).toEqual(expect.any(Array));
@@ -423,6 +424,7 @@ describe("Testing songbird ABIs", () => {
         );
         expect(interfaceToAbi("CollateralType", "songbird")).toEqual(songbird.interfaceAbis.CollateralType);
         expect(interfaceToAbi("ContractRegistry", "songbird")).toEqual(songbird.interfaceAbis.ContractRegistry);
+        expect(interfaceToAbi("EmergencyPause", "songbird")).toEqual(songbird.interfaceAbis.EmergencyPause);
         expect(interfaceToAbi("FtsoV2Interface", "songbird")).toEqual(songbird.interfaceAbis.FtsoV2Interface);
         expect(interfaceToAbi("IAddressValidity", "songbird")).toEqual(songbird.interfaceAbis.IAddressValidity);
         expect(interfaceToAbi("IAddressValidityVerification", "songbird")).toEqual(
@@ -648,6 +650,7 @@ describe("Testing songbird ABIs", () => {
         );
         expect(songbird.interfaceToAbi("CollateralType")).toEqual(songbird.interfaceAbis.CollateralType);
         expect(songbird.interfaceToAbi("ContractRegistry")).toEqual(songbird.interfaceAbis.ContractRegistry);
+        expect(songbird.interfaceToAbi("EmergencyPause")).toEqual(songbird.interfaceAbis.EmergencyPause);
         expect(songbird.interfaceToAbi("FtsoV2Interface")).toEqual(songbird.interfaceAbis.FtsoV2Interface);
         expect(songbird.interfaceToAbi("IAddressValidity")).toEqual(songbird.interfaceAbis.IAddressValidity);
         expect(songbird.interfaceToAbi("IAddressValidityVerification")).toEqual(
