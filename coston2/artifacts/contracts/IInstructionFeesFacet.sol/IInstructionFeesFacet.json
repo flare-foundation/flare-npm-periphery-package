@@ -1,0 +1,106 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "instructionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "InstructionFeeNotSet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InstructionFeesLengthsMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "instructionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidInstructionFee",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "defaultInstructionFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "DefaultInstructionFeeSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "instructionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "InstructionFeeRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "instructionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "instructionFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "InstructionFeeSet",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getDefaultInstructionFee",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_instructionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getInstructionFee",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
