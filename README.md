@@ -100,7 +100,3 @@ import { flare } from "@flarenetwork/flare-periphery-contract-artifacts";
 const abi = flare.nameToAbi("FtsoManager");
 const iAbi = flare.interfaceToAbi("IFtsoManager");
 ```
-
-## Support
-
-For issues and feature requests, please visit our [GitHub repository](https://github.com/flare-foundation/flare-smart-contracts-periphery).

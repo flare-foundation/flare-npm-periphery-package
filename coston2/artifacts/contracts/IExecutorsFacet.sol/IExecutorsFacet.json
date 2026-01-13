@@ -1,0 +1,56 @@
+[
+  {
+    "inputs": [],
+    "name": "InvalidExecutor",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidExecutorFee",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "executorFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "ExecutorFeeSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "executor",
+        "type": "address"
+      }
+    ],
+    "name": "ExecutorSet",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getExecutorInfo",
+    "outputs": [
+      {
+        "internalType": "address payable",
+        "name": "_executor",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_executorFee",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

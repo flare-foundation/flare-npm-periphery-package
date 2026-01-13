@@ -1,0 +1,76 @@
+[
+  {
+    "inputs": [],
+    "name": "InvalidPaymentProofValidityDuration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidReceivingAddressHash",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSourceId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidTransactionProof",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidTransactionStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MismatchingSourceAndXrplAddr",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PaymentProofExpired",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "paymentProofValidityDurationSeconds",
+        "type": "uint256"
+      }
+    ],
+    "name": "PaymentProofValidityDurationSecondsSet",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getPaymentProofValidityDurationSeconds",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSourceId",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

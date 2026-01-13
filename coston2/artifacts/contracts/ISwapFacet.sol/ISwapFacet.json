@@ -1,0 +1,161 @@
+[
+  {
+    "inputs": [],
+    "name": "InvalidMaxSlippagePPM",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidPoolFeeTierPPM",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidUniswapV3Router",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidUsdt0",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "personalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "tokenIn",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "tokenOut",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "xrplOwner",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountIn",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountOut",
+        "type": "uint256"
+      }
+    ],
+    "name": "SwapExecuted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "uniswapV3Router",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "usdt0",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint24",
+        "name": "wNatUsdt0PoolFeeTierPPM",
+        "type": "uint24"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint24",
+        "name": "usdt0FXrpPoolFeeTierPPM",
+        "type": "uint24"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint24",
+        "name": "maxSlippagePPM",
+        "type": "uint24"
+      }
+    ],
+    "name": "SwapParamsSet",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getSwapParams",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "_uniswapV3Router",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_usdt0",
+        "type": "address"
+      },
+      {
+        "internalType": "uint24",
+        "name": "_wNatUsdt0PoolFeeTierPPM",
+        "type": "uint24"
+      },
+      {
+        "internalType": "uint24",
+        "name": "_usdt0FXrpPoolFeeTierPPM",
+        "type": "uint24"
+      },
+      {
+        "internalType": "uint24",
+        "name": "_maxSlippagePPM",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_xrplAddress",
+        "type": "string"
+      }
+    ],
+    "name": "swapUsdt0ForFAsset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_xrplAddress",
+        "type": "string"
+      }
+    ],
+    "name": "swapWNatForUsdt0",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
