@@ -30,6 +30,7 @@ import IDiamondLoupe from "./artifacts/contracts/diamond/interfaces/IDiamondLoup
 import IEVMTransaction from "./artifacts/contracts/IEVMTransaction.sol/IEVMTransaction.json";
 import IEVMTransactionVerification from "./artifacts/contracts/IEVMTransactionVerification.sol/IEVMTransactionVerification.json";
 import IEntityManager from "./artifacts/contracts/IEntityManager.sol/IEntityManager.json";
+import IFAsset from "./artifacts/contracts/IFAsset.sol/IFAsset.json";
 import IFastUpdateIncentiveManager from "./artifacts/contracts/IFastUpdateIncentiveManager.sol/IFastUpdateIncentiveManager.json";
 import IFastUpdater from "./artifacts/contracts/IFastUpdater.sol/IFastUpdater.json";
 import IFastUpdatesConfiguration from "./artifacts/contracts/IFastUpdatesConfiguration.sol/IFastUpdatesConfiguration.json";
@@ -185,6 +186,7 @@ export const interfaceAbis: { [key: string]: any } = {
     IEVMTransaction: IEVMTransaction,
     IEVMTransactionVerification: IEVMTransactionVerification,
     IEntityManager: IEntityManager,
+    IFAsset: IFAsset,
     IFastUpdateIncentiveManager: IFastUpdateIncentiveManager,
     IFastUpdater: IFastUpdater,
     IFastUpdatesConfiguration: IFastUpdatesConfiguration,

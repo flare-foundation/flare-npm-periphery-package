@@ -39,6 +39,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IEVMTransaction).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IEVMTransactionVerification).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IEntityManager).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IFAsset).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFastUpdateIncentiveManager).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFastUpdater).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFastUpdatesConfiguration).toEqual(expect.any(Array));
@@ -480,6 +481,7 @@ describe("Testing flare ABIs", () => {
             flare.interfaceAbis.IEVMTransactionVerification
         );
         expect(interfaceToAbi("IEntityManager", "flare")).toEqual(flare.interfaceAbis.IEntityManager);
+        expect(interfaceToAbi("IFAsset", "flare")).toEqual(flare.interfaceAbis.IFAsset);
         expect(interfaceToAbi("IFastUpdateIncentiveManager", "flare")).toEqual(
             flare.interfaceAbis.IFastUpdateIncentiveManager
         );
@@ -707,6 +709,7 @@ describe("Testing flare ABIs", () => {
             flare.interfaceAbis.IEVMTransactionVerification
         );
         expect(flare.interfaceToAbi("IEntityManager")).toEqual(flare.interfaceAbis.IEntityManager);
+        expect(flare.interfaceToAbi("IFAsset")).toEqual(flare.interfaceAbis.IFAsset);
         expect(flare.interfaceToAbi("IFastUpdateIncentiveManager")).toEqual(
             flare.interfaceAbis.IFastUpdateIncentiveManager
         );

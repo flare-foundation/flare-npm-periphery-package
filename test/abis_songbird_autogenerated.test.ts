@@ -37,6 +37,7 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceAbis.IEVMTransaction).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IEVMTransactionVerification).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IEntityManager).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IFAsset).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IFastUpdateIncentiveManager).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IFastUpdater).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IFastUpdatesConfiguration).toEqual(expect.any(Array));
@@ -467,6 +468,7 @@ describe("Testing songbird ABIs", () => {
             songbird.interfaceAbis.IEVMTransactionVerification
         );
         expect(interfaceToAbi("IEntityManager", "songbird")).toEqual(songbird.interfaceAbis.IEntityManager);
+        expect(interfaceToAbi("IFAsset", "songbird")).toEqual(songbird.interfaceAbis.IFAsset);
         expect(interfaceToAbi("IFastUpdateIncentiveManager", "songbird")).toEqual(
             songbird.interfaceAbis.IFastUpdateIncentiveManager
         );
@@ -693,6 +695,7 @@ describe("Testing songbird ABIs", () => {
             songbird.interfaceAbis.IEVMTransactionVerification
         );
         expect(songbird.interfaceToAbi("IEntityManager")).toEqual(songbird.interfaceAbis.IEntityManager);
+        expect(songbird.interfaceToAbi("IFAsset")).toEqual(songbird.interfaceAbis.IFAsset);
         expect(songbird.interfaceToAbi("IFastUpdateIncentiveManager")).toEqual(
             songbird.interfaceAbis.IFastUpdateIncentiveManager
         );
