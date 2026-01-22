@@ -37,6 +37,7 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceAbis.IEVMTransaction).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IEVMTransactionVerification).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IEntityManager).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IFAsset).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IFastUpdateIncentiveManager).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IFastUpdater).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IFastUpdatesConfiguration).toEqual(expect.any(Array));
@@ -467,6 +468,7 @@ describe("Testing coston ABIs", () => {
             coston.interfaceAbis.IEVMTransactionVerification
         );
         expect(interfaceToAbi("IEntityManager", "coston")).toEqual(coston.interfaceAbis.IEntityManager);
+        expect(interfaceToAbi("IFAsset", "coston")).toEqual(coston.interfaceAbis.IFAsset);
         expect(interfaceToAbi("IFastUpdateIncentiveManager", "coston")).toEqual(
             coston.interfaceAbis.IFastUpdateIncentiveManager
         );
@@ -675,6 +677,7 @@ describe("Testing coston ABIs", () => {
             coston.interfaceAbis.IEVMTransactionVerification
         );
         expect(coston.interfaceToAbi("IEntityManager")).toEqual(coston.interfaceAbis.IEntityManager);
+        expect(coston.interfaceToAbi("IFAsset")).toEqual(coston.interfaceAbis.IFAsset);
         expect(coston.interfaceToAbi("IFastUpdateIncentiveManager")).toEqual(
             coston.interfaceAbis.IFastUpdateIncentiveManager
         );

@@ -372,13 +372,25 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "amount",
+        "name": "claimableEpoch",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "claimableEpoch",
+        "name": "year",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "month",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "day",
         "type": "uint256"
       }
     ],

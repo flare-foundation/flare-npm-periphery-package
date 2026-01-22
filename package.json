@@ -1,7 +1,7 @@
 {
   "name": "@flarenetwork/flare-periphery-contract-artifacts",
   "description": "Smart contract artifacts for all Flare chains",
-  "version": "0.1.39",
+  "version": "0.1.40",
   "author": "Flare Network",
   "license": "MIT",
   "keywords": [

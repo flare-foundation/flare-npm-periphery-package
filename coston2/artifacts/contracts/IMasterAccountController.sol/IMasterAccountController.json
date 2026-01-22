@@ -107,6 +107,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "InvalidFeedId",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -192,6 +197,11 @@
   },
   {
     "inputs": [],
+    "name": "InvalidStableCoin",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "InvalidTransactionId",
     "type": "error"
   },
@@ -208,11 +218,6 @@
   {
     "inputs": [],
     "name": "InvalidUniswapV3Router",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "InvalidUsdt0",
     "type": "error"
   },
   {
@@ -899,13 +904,25 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "amount",
+        "name": "claimableEpoch",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "claimableEpoch",
+        "name": "year",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "month",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "day",
         "type": "uint256"
       }
     ],
@@ -998,19 +1015,19 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "usdt0",
+        "name": "stableCoin",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "uint24",
-        "name": "wNatUsdt0PoolFeeTierPPM",
+        "name": "wNatStableCoinPoolFeeTierPPM",
         "type": "uint24"
       },
       {
         "indexed": false,
         "internalType": "uint24",
-        "name": "usdt0FXrpPoolFeeTierPPM",
+        "name": "stableCoinFXrpPoolFeeTierPPM",
         "type": "uint24"
       },
       {
@@ -1018,6 +1035,18 @@
         "internalType": "uint24",
         "name": "maxSlippagePPM",
         "type": "uint24"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes21",
+        "name": "stableCoinUsdFeedId",
+        "type": "bytes21"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes21",
+        "name": "wNatUsdFeedId",
+        "type": "bytes21"
       }
     ],
     "name": "SwapParamsSet",
@@ -1713,23 +1742,33 @@
       },
       {
         "internalType": "address",
-        "name": "_usdt0",
+        "name": "_stableCoin",
         "type": "address"
       },
       {
         "internalType": "uint24",
-        "name": "_wNatUsdt0PoolFeeTierPPM",
+        "name": "_wNatStableCoinPoolFeeTierPPM",
         "type": "uint24"
       },
       {
         "internalType": "uint24",
-        "name": "_usdt0FXrpPoolFeeTierPPM",
+        "name": "_stableCoinFXrpPoolFeeTierPPM",
         "type": "uint24"
       },
       {
         "internalType": "uint24",
         "name": "_maxSlippagePPM",
         "type": "uint24"
+      },
+      {
+        "internalType": "bytes21",
+        "name": "_stableCoinUsdFeedId",
+        "type": "bytes21"
+      },
+      {
+        "internalType": "bytes21",
+        "name": "_wNatUsdFeedId",
+        "type": "bytes21"
       }
     ],
     "stateMutability": "view",
@@ -1904,7 +1943,7 @@
         "type": "string"
       }
     ],
-    "name": "swapUsdt0ForFAsset",
+    "name": "swapStableCoinForFAsset",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1917,7 +1956,7 @@
         "type": "string"
       }
     ],
-    "name": "swapWNatForUsdt0",
+    "name": "swapWNatForStableCoin",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
