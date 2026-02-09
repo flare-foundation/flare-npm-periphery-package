@@ -34,6 +34,7 @@ describe("Testing coston2 ABIs", () => {
         expect(coston2.interfaceAbis.IConfirmedBlockHeightExistsVerification).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.ICoreVaultClient).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.ICoreVaultClientSettings).toEqual(expect.any(Array));
+        expect(coston2.interfaceAbis.ICustomInstructionsFacet).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IDelegationAccount).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IDiamond).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IDiamondCut).toEqual(expect.any(Array));
@@ -500,6 +501,9 @@ describe("Testing coston2 ABIs", () => {
         expect(interfaceToAbi("ICoreVaultClientSettings", "coston2")).toEqual(
             coston2.interfaceAbis.ICoreVaultClientSettings
         );
+        expect(interfaceToAbi("ICustomInstructionsFacet", "coston2")).toEqual(
+            coston2.interfaceAbis.ICustomInstructionsFacet
+        );
         expect(interfaceToAbi("IDelegationAccount", "coston2")).toEqual(coston2.interfaceAbis.IDelegationAccount);
         expect(interfaceToAbi("IDiamond", "coston2")).toEqual(coston2.interfaceAbis.IDiamond);
         expect(interfaceToAbi("IDiamondCut", "coston2")).toEqual(coston2.interfaceAbis.IDiamondCut);
@@ -765,6 +769,9 @@ describe("Testing coston2 ABIs", () => {
         expect(coston2.interfaceToAbi("ICoreVaultClient")).toEqual(coston2.interfaceAbis.ICoreVaultClient);
         expect(coston2.interfaceToAbi("ICoreVaultClientSettings")).toEqual(
             coston2.interfaceAbis.ICoreVaultClientSettings
+        );
+        expect(coston2.interfaceToAbi("ICustomInstructionsFacet")).toEqual(
+            coston2.interfaceAbis.ICustomInstructionsFacet
         );
         expect(coston2.interfaceToAbi("IDelegationAccount")).toEqual(coston2.interfaceAbis.IDelegationAccount);
         expect(coston2.interfaceToAbi("IDiamond")).toEqual(coston2.interfaceAbis.IDiamond);

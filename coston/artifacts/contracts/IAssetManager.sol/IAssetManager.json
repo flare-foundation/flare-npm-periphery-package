@@ -678,6 +678,12 @@
   },
   {
     "anonymous": false,
+    "inputs": [],
+    "name": "EmergencyPauseTotalDurationReset",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
     "inputs": [
       {
         "indexed": false,
@@ -849,6 +855,19 @@
       }
     ],
     "name": "MintingExecuted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "paused",
+        "type": "bool"
+      }
+    ],
+    "name": "MintingPaused",
     "type": "event"
   },
   {
@@ -1909,7 +1928,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_valueNATWei",
+        "name": "_valuePoolTokenWei",
         "type": "uint256"
       }
     ],

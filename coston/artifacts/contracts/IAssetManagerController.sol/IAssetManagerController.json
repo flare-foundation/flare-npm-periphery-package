@@ -1,5 +1,31 @@
 [
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "assetManager",
+        "type": "address"
+      }
+    ],
+    "name": "AssetManagerAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "assetManager",
+        "type": "address"
+      }
+    ],
+    "name": "AssetManagerRemoved",
+    "type": "event"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
