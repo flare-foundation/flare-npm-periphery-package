@@ -1,0 +1,63 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "xrplProviderWallet",
+        "type": "string"
+      }
+    ],
+    "name": "InvalidXrplProviderWallet",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "xrplProviderWallet",
+        "type": "string"
+      }
+    ],
+    "name": "XrplProviderWalletAlreadyExists",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "xrplProviderWallet",
+        "type": "string"
+      }
+    ],
+    "name": "XrplProviderWalletAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "xrplProviderWallet",
+        "type": "string"
+      }
+    ],
+    "name": "XrplProviderWalletRemoved",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getXrplProviderWallets",
+    "outputs": [
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

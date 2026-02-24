@@ -1,0 +1,126 @@
+[
+  {
+    "inputs": [],
+    "name": "TimelockDurationTooLong",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TimelockInvalidSelector",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TimelockNotAllowedYet",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "encodedCall",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "encodedCallHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "allowedAfterTimestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "CallTimelocked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timelockDurationSeconds",
+        "type": "uint256"
+      }
+    ],
+    "name": "TimelockDurationSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "encodedCallHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "TimelockedCallCanceled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "encodedCallHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "TimelockedCallExecuted",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "_encodedCall",
+        "type": "bytes"
+      }
+    ],
+    "name": "executeTimelockedCall",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "_encodedCall",
+        "type": "bytes"
+      }
+    ],
+    "name": "getExecuteTimelockedCallTimestamp",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_allowedAfterTimestamp",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getTimelockDurationSeconds",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_timelockDurationSeconds",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
