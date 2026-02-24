@@ -560,6 +560,13 @@ export const products: {
         abi: interfaceAbis.IJsonApiVerification,
         getAddress: async (provider: Provider) => await nameToAddress("JsonApiVerification", provider),
     },
+    MasterAccountController: {
+        name: "MasterAccountController",
+        interface: "IMasterAccountController",
+        registry: "MasterAccountController",
+        abi: interfaceAbis.IMasterAccountController,
+        getAddress: async (provider: Provider) => await nameToAddress("MasterAccountController", provider),
+    },
     PriceSubmitter: {
         name: "PriceSubmitter",
         interface: "IPriceSubmitter",
