@@ -96,31 +96,6 @@
     "type": "event"
   },
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "vaultId",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "vaultAddress",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint8",
-        "name": "vaultType",
-        "type": "uint8"
-      }
-    ],
-    "name": "VaultRemoved",
-    "type": "event"
-  },
-  {
     "inputs": [],
     "name": "getVaults",
     "outputs": [
