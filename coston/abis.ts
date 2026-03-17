@@ -493,13 +493,6 @@ export const products: {
         abi: interfaceAbis.IGovernanceVotePower,
         getAddress: async (provider: Provider) => await nameToAddress("GovernanceVotePower", provider),
     },
-    JsonApiVerification: {
-        name: "JsonApiVerification",
-        interface: "IJsonApiVerification",
-        registry: "JsonApiVerification",
-        abi: interfaceAbis.IJsonApiVerification,
-        getAddress: async (provider: Provider) => await nameToAddress("JsonApiVerification", provider),
-    },
     PriceSubmitter: {
         name: "PriceSubmitter",
         interface: "IPriceSubmitter",
