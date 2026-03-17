@@ -27,6 +27,7 @@ import IConfirmedBlockHeightExists from "./artifacts/contracts/IConfirmedBlockHe
 import IConfirmedBlockHeightExistsVerification from "./artifacts/contracts/IConfirmedBlockHeightExistsVerification.sol/IConfirmedBlockHeightExistsVerification.json";
 import ICoreVaultClient from "./artifacts/contracts/ICoreVaultClient.sol/ICoreVaultClient.json";
 import ICoreVaultClientSettings from "./artifacts/contracts/ICoreVaultClientSettings.sol/ICoreVaultClientSettings.json";
+import ICustomInstructionsFacet from "./artifacts/contracts/ICustomInstructionsFacet.sol/ICustomInstructionsFacet.json";
 import IDelegationAccount from "./artifacts/contracts/IDelegationAccount.sol/IDelegationAccount.json";
 import IDiamond from "./artifacts/contracts/diamond/interfaces/IDiamond.sol/IDiamond.json";
 import IDiamondCut from "./artifacts/contracts/diamond/interfaces/IDiamondCut.sol/IDiamondCut.json";
@@ -212,6 +213,7 @@ export const interfaceAbis: { [key: string]: any } = {
     IConfirmedBlockHeightExistsVerification: IConfirmedBlockHeightExistsVerification,
     ICoreVaultClient: ICoreVaultClient,
     ICoreVaultClientSettings: ICoreVaultClientSettings,
+    ICustomInstructionsFacet: ICustomInstructionsFacet,
     IDelegationAccount: IDelegationAccount,
     IDiamond: IDiamond,
     IDiamondCut: IDiamondCut,
@@ -550,13 +552,6 @@ export const products: {
         registry: "GovernanceVotePower",
         abi: interfaceAbis.IGovernanceVotePower,
         getAddress: async (provider: Provider) => await nameToAddress("GovernanceVotePower", provider),
-    },
-    JsonApiVerification: {
-        name: "JsonApiVerification",
-        interface: "IJsonApiVerification",
-        registry: "JsonApiVerification",
-        abi: interfaceAbis.IJsonApiVerification,
-        getAddress: async (provider: Provider) => await nameToAddress("JsonApiVerification", provider),
     },
     MasterAccountController: {
         name: "MasterAccountController",

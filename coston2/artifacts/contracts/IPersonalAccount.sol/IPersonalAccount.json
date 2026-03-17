@@ -17,6 +17,34 @@
   {
     "inputs": [
       {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "targetContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct ICustomInstructionsFacet.CustomCall",
+        "name": "customCall",
+        "type": "tuple"
+      }
+    ],
+    "name": "CustomInstructionCallFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "collateralReservationFee",
         "type": "uint256"
@@ -159,6 +187,36 @@
       }
     ],
     "name": "CollateralReserved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "targetContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          }
+        ],
+        "indexed": true,
+        "internalType": "struct ICustomInstructionsFacet.CustomCall[]",
+        "name": "customInstruction",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "CustomInstructionExecuted",
     "type": "event"
   },
   {

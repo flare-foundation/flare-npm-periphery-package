@@ -180,7 +180,6 @@ describe("Testing coston ABIs", () => {
         expect(coston.products.FtsoV2.name).toEqual("FtsoV2");
         expect(coston.products.GovernanceSettings.name).toEqual("GovernanceSettings");
         expect(coston.products.GovernanceVotePower.name).toEqual("GovernanceVotePower");
-        expect(coston.products.JsonApiVerification.name).toEqual("JsonApiVerification");
         expect(coston.products.PriceSubmitter.name).toEqual("PriceSubmitter");
         expect(coston.products.ProtocolsV2.name).toEqual("ProtocolsV2");
         expect(coston.products.RandomNumberV2.name).toEqual("RandomNumberV2");
@@ -222,7 +221,6 @@ describe("Testing coston ABIs", () => {
         expect(coston.products.FtsoV2.interface).toEqual("FtsoV2Interface");
         expect(coston.products.GovernanceSettings.interface).toEqual("IGovernanceSettings");
         expect(coston.products.GovernanceVotePower.interface).toEqual("IGovernanceVotePower");
-        expect(coston.products.JsonApiVerification.interface).toEqual("IJsonApiVerification");
         expect(coston.products.PriceSubmitter.interface).toEqual("IPriceSubmitter");
         expect(coston.products.ProtocolsV2.interface).toEqual("ProtocolsV2Interface");
         expect(coston.products.RandomNumberV2.interface).toEqual("RandomNumberV2Interface");
@@ -264,7 +262,6 @@ describe("Testing coston ABIs", () => {
         expect(coston.products.FtsoV2.registry).toEqual("FtsoV2");
         expect(coston.products.GovernanceSettings.registry).toEqual("GovernanceSettings");
         expect(coston.products.GovernanceVotePower.registry).toEqual("GovernanceVotePower");
-        expect(coston.products.JsonApiVerification.registry).toEqual("JsonApiVerification");
         expect(coston.products.PriceSubmitter.registry).toEqual("PriceSubmitter");
         expect(coston.products.ProtocolsV2.registry).toEqual("ProtocolsV2");
         expect(coston.products.RandomNumberV2.registry).toEqual("RandomNumberV2");
@@ -306,7 +303,6 @@ describe("Testing coston ABIs", () => {
         expect(coston.products.FtsoV2.abi).toEqual(expect.any(Array));
         expect(coston.products.GovernanceSettings.abi).toEqual(expect.any(Array));
         expect(coston.products.GovernanceVotePower.abi).toEqual(expect.any(Array));
-        expect(coston.products.JsonApiVerification.abi).toEqual(expect.any(Array));
         expect(coston.products.PriceSubmitter.abi).toEqual(expect.any(Array));
         expect(coston.products.ProtocolsV2.abi).toEqual(expect.any(Array));
         expect(coston.products.RandomNumberV2.abi).toEqual(expect.any(Array));
@@ -354,7 +350,6 @@ describe("Testing coston ABIs", () => {
         expect(nameToAbi("FtsoV2", "coston")).toEqual(coston.interfaceAbis.FtsoV2Interface);
         expect(nameToAbi("GovernanceSettings", "coston")).toEqual(coston.interfaceAbis.IGovernanceSettings);
         expect(nameToAbi("GovernanceVotePower", "coston")).toEqual(coston.interfaceAbis.IGovernanceVotePower);
-        expect(nameToAbi("JsonApiVerification", "coston")).toEqual(coston.interfaceAbis.IJsonApiVerification);
         expect(nameToAbi("PriceSubmitter", "coston")).toEqual(coston.interfaceAbis.IPriceSubmitter);
         expect(nameToAbi("ProtocolsV2", "coston")).toEqual(coston.interfaceAbis.ProtocolsV2Interface);
         expect(nameToAbi("RandomNumberV2", "coston")).toEqual(coston.interfaceAbis.RandomNumberV2Interface);
@@ -400,7 +395,6 @@ describe("Testing coston ABIs", () => {
         expect(coston.nameToAbi("FtsoV2")).toEqual(coston.interfaceAbis.FtsoV2Interface);
         expect(coston.nameToAbi("GovernanceSettings")).toEqual(coston.interfaceAbis.IGovernanceSettings);
         expect(coston.nameToAbi("GovernanceVotePower")).toEqual(coston.interfaceAbis.IGovernanceVotePower);
-        expect(coston.nameToAbi("JsonApiVerification")).toEqual(coston.interfaceAbis.IJsonApiVerification);
         expect(coston.nameToAbi("PriceSubmitter")).toEqual(coston.interfaceAbis.IPriceSubmitter);
         expect(coston.nameToAbi("ProtocolsV2")).toEqual(coston.interfaceAbis.ProtocolsV2Interface);
         expect(coston.nameToAbi("RandomNumberV2")).toEqual(coston.interfaceAbis.RandomNumberV2Interface);
