@@ -13,7 +13,7 @@
   {
     "inputs": [
       {
-        "internalType": "uint8",
+        "internalType": "enum IVaultsFacet.VaultType",
         "name": "vaultType",
         "type": "uint8"
       }
@@ -87,7 +87,7 @@
       },
       {
         "indexed": true,
-        "internalType": "uint8",
+        "internalType": "enum IVaultsFacet.VaultType",
         "name": "vaultType",
         "type": "uint8"
       }
@@ -110,7 +110,7 @@
         "type": "address[]"
       },
       {
-        "internalType": "uint8[]",
+        "internalType": "enum IVaultsFacet.VaultType[]",
         "name": "_vaultTypes",
         "type": "uint8[]"
       }

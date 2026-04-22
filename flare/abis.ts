@@ -1,5 +1,6 @@
 import AgentInfo from "./artifacts/contracts/data/AgentInfo.sol/AgentInfo.json";
 import AgentSettings from "./artifacts/contracts/data/AgentSettings.sol/AgentSettings.json";
+import AggregatorV3Interface from "./artifacts/contracts/adapters/interfaces/AggregatorV3Interface.sol/AggregatorV3Interface.json";
 import AssetManagerSettings from "./artifacts/contracts/data/AssetManagerSettings.sol/AssetManagerSettings.json";
 import AvailableAgentInfo from "./artifacts/contracts/data/AvailableAgentInfo.sol/AvailableAgentInfo.json";
 import CollateralReservationInfo from "./artifacts/contracts/data/CollateralReservationInfo.sol/CollateralReservationInfo.json";
@@ -31,6 +32,8 @@ import IDelegationAccount from "./artifacts/contracts/IDelegationAccount.sol/IDe
 import IDiamond from "./artifacts/contracts/diamond/interfaces/IDiamond.sol/IDiamond.json";
 import IDiamondCut from "./artifacts/contracts/diamond/interfaces/IDiamondCut.sol/IDiamondCut.json";
 import IDiamondLoupe from "./artifacts/contracts/diamond/interfaces/IDiamondLoupe.sol/IDiamondLoupe.json";
+import IDirectMinting from "./artifacts/contracts/IDirectMinting.sol/IDirectMinting.json";
+import IDirectMintingSettings from "./artifacts/contracts/IDirectMintingSettings.sol/IDirectMintingSettings.json";
 import IDistributionToDelegators from "./artifacts/contracts/IDistributionToDelegators.sol/IDistributionToDelegators.json";
 import IERC165 from "./artifacts/contracts/diamond/interfaces/IERC165.sol/IERC165.json";
 import IERC173 from "./artifacts/contracts/diamond/interfaces/IERC173.sol/IERC173.json";
@@ -39,6 +42,8 @@ import IEVMTransactionVerification from "./artifacts/contracts/IEVMTransactionVe
 import IEntityManager from "./artifacts/contracts/IEntityManager.sol/IEntityManager.json";
 import IExecutorsFacet from "./artifacts/contracts/IExecutorsFacet.sol/IExecutorsFacet.json";
 import IFAsset from "./artifacts/contracts/IFAsset.sol/IFAsset.json";
+import IFAssetRedeemComposer from "./artifacts/contracts/IFAssetRedeemComposer.sol/IFAssetRedeemComposer.json";
+import IFAssetRedeemerAccount from "./artifacts/contracts/IFAssetRedeemerAccount.sol/IFAssetRedeemerAccount.json";
 import IFastUpdateIncentiveManager from "./artifacts/contracts/IFastUpdateIncentiveManager.sol/IFastUpdateIncentiveManager.json";
 import IFastUpdater from "./artifacts/contracts/IFastUpdater.sol/IFastUpdater.json";
 import IFastUpdatesConfiguration from "./artifacts/contracts/IFastUpdatesConfiguration.sol/IFastUpdatesConfiguration.json";
@@ -125,13 +130,14 @@ import IIncreaseManager from "./artifacts/contracts/IIncreaseManager.sol/IIncrea
 import IInflationGenesis from "./artifacts/contracts/genesis/interfaces/IInflationGenesis.sol/IInflationGenesis.json";
 import IInstructionFeesFacet from "./artifacts/contracts/IInstructionFeesFacet.sol/IInstructionFeesFacet.json";
 import IInstructionsFacet from "./artifacts/contracts/IInstructionsFacet.sol/IInstructionsFacet.json";
-import IJsonApi from "./artifacts/contracts/IJsonApi.sol/IJsonApi.json";
-import IJsonApiVerification from "./artifacts/contracts/IJsonApiVerification.sol/IJsonApiVerification.json";
 import IMasterAccountController from "./artifacts/contracts/IMasterAccountController.sol/IMasterAccountController.json";
+import IMemoInstructionsFacet from "./artifacts/contracts/IMemoInstructionsFacet.sol/IMemoInstructionsFacet.json";
+import IOwnableWithTimelock from "./artifacts/contracts/IOwnableWithTimelock.sol/IOwnableWithTimelock.json";
 import IPChainStakeMirror from "./artifacts/contracts/IPChainStakeMirror.sol/IPChainStakeMirror.json";
 import IPChainStakeMirrorMultiSigVoting from "./artifacts/contracts/IPChainStakeMirrorMultiSigVoting.sol/IPChainStakeMirrorMultiSigVoting.json";
 import IPChainStakeMirrorVerifier from "./artifacts/contracts/IPChainStakeMirrorVerifier.sol/IPChainStakeMirrorVerifier.json";
 import IPChainVotePower from "./artifacts/contracts/IPChainVotePower.sol/IPChainVotePower.json";
+import IPauseFacet from "./artifacts/contracts/IPauseFacet.sol/IPauseFacet.json";
 import IPayment from "./artifacts/contracts/IPayment.sol/IPayment.json";
 import IPaymentProofsFacet from "./artifacts/contracts/IPaymentProofsFacet.sol/IPaymentProofsFacet.json";
 import IPaymentVerification from "./artifacts/contracts/IPaymentVerification.sol/IPaymentVerification.json";
@@ -143,13 +149,15 @@ import IPriceSubmitter from "./artifacts/contracts/IPriceSubmitter.sol/IPriceSub
 import IRNat from "./artifacts/contracts/IRNat.sol/IRNat.json";
 import IRNatAccount from "./artifacts/contracts/IRNatAccount.sol/IRNatAccount.json";
 import IRandomProvider from "./artifacts/contracts/IRandomProvider.sol/IRandomProvider.json";
+import IReaderFacet from "./artifacts/contracts/IReaderFacet.sol/IReaderFacet.json";
+import IRedeemExtended from "./artifacts/contracts/IRedeemExtended.sol/IRedeemExtended.json";
+import IRedeemExtendedSettings from "./artifacts/contracts/IRedeemExtendedSettings.sol/IRedeemExtendedSettings.json";
 import IRedemptionTimeExtension from "./artifacts/contracts/IRedemptionTimeExtension.sol/IRedemptionTimeExtension.json";
 import IReferencedPaymentNonexistence from "./artifacts/contracts/IReferencedPaymentNonexistence.sol/IReferencedPaymentNonexistence.json";
 import IReferencedPaymentNonexistenceVerification from "./artifacts/contracts/IReferencedPaymentNonexistenceVerification.sol/IReferencedPaymentNonexistenceVerification.json";
 import IRelay from "./artifacts/contracts/IRelay.sol/IRelay.json";
 import IRewardManager from "./artifacts/contracts/IRewardManager.sol/IRewardManager.json";
 import ISubmission from "./artifacts/contracts/ISubmission.sol/ISubmission.json";
-import ISwapFacet from "./artifacts/contracts/ISwapFacet.sol/ISwapFacet.json";
 import ITimelockFacet from "./artifacts/contracts/ITimelockFacet.sol/ITimelockFacet.json";
 import ITypeTemplate from "./artifacts/contracts/fdc/interfaces/ITypeTemplate.sol/ITypeTemplate.json";
 import ITypeTemplateVerification from "./artifacts/contracts/fdc/interfaces/ITypeTemplateVerification.sol/ITypeTemplateVerification.json";
@@ -166,6 +174,10 @@ import IWNat from "./artifacts/contracts/IWNat.sol/IWNat.json";
 import IWNatDelegationFee from "./artifacts/contracts/IWNatDelegationFee.sol/IWNatDelegationFee.json";
 import IWeb2Json from "./artifacts/contracts/IWeb2Json.sol/IWeb2Json.json";
 import IWeb2JsonVerification from "./artifacts/contracts/IWeb2JsonVerification.sol/IWeb2JsonVerification.json";
+import IXRPPayment from "./artifacts/contracts/IXRPPayment.sol/IXRPPayment.json";
+import IXRPPaymentNonexistence from "./artifacts/contracts/IXRPPaymentNonexistence.sol/IXRPPaymentNonexistence.json";
+import IXRPPaymentNonexistenceVerification from "./artifacts/contracts/IXRPPaymentNonexistenceVerification.sol/IXRPPaymentNonexistenceVerification.json";
+import IXRPPaymentVerification from "./artifacts/contracts/IXRPPaymentVerification.sol/IXRPPaymentVerification.json";
 import IXrplProviderWalletsFacet from "./artifacts/contracts/IXrplProviderWalletsFacet.sol/IXrplProviderWalletsFacet.json";
 import ProtocolsV2Interface from "./artifacts/contracts/ProtocolsV2Interface.sol/ProtocolsV2Interface.json";
 import RandomNumberV2Interface from "./artifacts/contracts/RandomNumberV2Interface.sol/RandomNumberV2Interface.json";
@@ -185,6 +197,7 @@ const nameToAddress = async (name: string, provider: Provider): Promise<string> 
 export const interfaceAbis: { [key: string]: any } = {
     AgentInfo: AgentInfo,
     AgentSettings: AgentSettings,
+    AggregatorV3Interface: AggregatorV3Interface,
     AssetManagerSettings: AssetManagerSettings,
     AvailableAgentInfo: AvailableAgentInfo,
     CollateralReservationInfo: CollateralReservationInfo,
@@ -216,6 +229,8 @@ export const interfaceAbis: { [key: string]: any } = {
     IDiamond: IDiamond,
     IDiamondCut: IDiamondCut,
     IDiamondLoupe: IDiamondLoupe,
+    IDirectMinting: IDirectMinting,
+    IDirectMintingSettings: IDirectMintingSettings,
     IDistributionToDelegators: IDistributionToDelegators,
     IERC165: IERC165,
     IERC173: IERC173,
@@ -224,6 +239,8 @@ export const interfaceAbis: { [key: string]: any } = {
     IEntityManager: IEntityManager,
     IExecutorsFacet: IExecutorsFacet,
     IFAsset: IFAsset,
+    IFAssetRedeemComposer: IFAssetRedeemComposer,
+    IFAssetRedeemerAccount: IFAssetRedeemerAccount,
     IFastUpdateIncentiveManager: IFastUpdateIncentiveManager,
     IFastUpdater: IFastUpdater,
     IFastUpdatesConfiguration: IFastUpdatesConfiguration,
@@ -310,13 +327,14 @@ export const interfaceAbis: { [key: string]: any } = {
     IInflationGenesis: IInflationGenesis,
     IInstructionFeesFacet: IInstructionFeesFacet,
     IInstructionsFacet: IInstructionsFacet,
-    IJsonApi: IJsonApi,
-    IJsonApiVerification: IJsonApiVerification,
     IMasterAccountController: IMasterAccountController,
+    IMemoInstructionsFacet: IMemoInstructionsFacet,
+    IOwnableWithTimelock: IOwnableWithTimelock,
     IPChainStakeMirror: IPChainStakeMirror,
     IPChainStakeMirrorMultiSigVoting: IPChainStakeMirrorMultiSigVoting,
     IPChainStakeMirrorVerifier: IPChainStakeMirrorVerifier,
     IPChainVotePower: IPChainVotePower,
+    IPauseFacet: IPauseFacet,
     IPayment: IPayment,
     IPaymentProofsFacet: IPaymentProofsFacet,
     IPaymentVerification: IPaymentVerification,
@@ -328,13 +346,15 @@ export const interfaceAbis: { [key: string]: any } = {
     IRNat: IRNat,
     IRNatAccount: IRNatAccount,
     IRandomProvider: IRandomProvider,
+    IReaderFacet: IReaderFacet,
+    IRedeemExtended: IRedeemExtended,
+    IRedeemExtendedSettings: IRedeemExtendedSettings,
     IRedemptionTimeExtension: IRedemptionTimeExtension,
     IReferencedPaymentNonexistence: IReferencedPaymentNonexistence,
     IReferencedPaymentNonexistenceVerification: IReferencedPaymentNonexistenceVerification,
     IRelay: IRelay,
     IRewardManager: IRewardManager,
     ISubmission: ISubmission,
-    ISwapFacet: ISwapFacet,
     ITimelockFacet: ITimelockFacet,
     ITypeTemplate: ITypeTemplate,
     ITypeTemplateVerification: ITypeTemplateVerification,
@@ -351,6 +371,10 @@ export const interfaceAbis: { [key: string]: any } = {
     IWNatDelegationFee: IWNatDelegationFee,
     IWeb2Json: IWeb2Json,
     IWeb2JsonVerification: IWeb2JsonVerification,
+    IXRPPayment: IXRPPayment,
+    IXRPPaymentNonexistence: IXRPPaymentNonexistence,
+    IXRPPaymentNonexistenceVerification: IXRPPaymentNonexistenceVerification,
+    IXRPPaymentVerification: IXRPPaymentVerification,
     IXrplProviderWalletsFacet: IXrplProviderWalletsFacet,
     ProtocolsV2Interface: ProtocolsV2Interface,
     RandomNumberV2Interface: RandomNumberV2Interface,

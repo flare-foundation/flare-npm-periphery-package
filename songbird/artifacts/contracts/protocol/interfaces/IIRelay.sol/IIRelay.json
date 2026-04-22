@@ -379,6 +379,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "signingPolicySetter",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -392,6 +405,69 @@
         "internalType": "uint256",
         "name": "_startingVotingRoundId",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "stateData",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "randomNumberProtocolId",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint32",
+        "name": "firstVotingRoundStartTs",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint8",
+        "name": "votingEpochDurationSeconds",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint32",
+        "name": "firstRewardEpochStartVotingRoundId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "rewardEpochDurationInVotingEpochs",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint16",
+        "name": "thresholdIncreaseBIPS",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "randomVotingRoundId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bool",
+        "name": "isSecureRandom",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint32",
+        "name": "lastInitializedRewardEpoch",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bool",
+        "name": "noSigningPolicyRelay",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint32",
+        "name": "messageFinalizationWindowInRewardEpochs",
+        "type": "uint32"
       }
     ],
     "stateMutability": "view",
