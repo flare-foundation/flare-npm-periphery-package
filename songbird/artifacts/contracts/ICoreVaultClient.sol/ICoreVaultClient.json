@@ -3,6 +3,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountUBA",
+        "type": "uint256"
+      }
+    ],
+    "name": "CoreVaultFundsAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "redeemer",
@@ -201,6 +214,152 @@
       }
     ],
     "name": "cancelReturnFromCoreVault",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32[]",
+            "name": "merkleProof",
+            "type": "bytes32[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "attestationType",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "sourceId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "votingRound",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "lowestUsedTimestamp",
+                "type": "uint64"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bytes32",
+                    "name": "transactionId",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "proofOwner",
+                    "type": "address"
+                  }
+                ],
+                "internalType": "struct IXRPPayment.RequestBody",
+                "name": "requestBody",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "blockNumber",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "blockTimestamp",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "sourceAddress",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "sourceAddressHash",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "receivingAddressHash",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "intendedReceivingAddressHash",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "spentAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "intendedSpentAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "receivedAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "intendedReceivedAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasMemoData",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bytes",
+                    "name": "firstMemoData",
+                    "type": "bytes"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasDestinationTag",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "destinationTag",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint8",
+                    "name": "status",
+                    "type": "uint8"
+                  }
+                ],
+                "internalType": "struct IXRPPayment.ResponseBody",
+                "name": "responseBody",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct IXRPPayment.Response",
+            "name": "data",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IXRPPayment.Proof",
+        "name": "_payment",
+        "type": "tuple"
+      }
+    ],
+    "name": "confirmCoreVaultDonation",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

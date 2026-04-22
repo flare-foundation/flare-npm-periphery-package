@@ -1,11 +1,6 @@
 [
   {
     "inputs": [],
-    "name": "AddressZero",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "InvalidAmount",
     "type": "error"
   },
@@ -64,17 +59,7 @@
   },
   {
     "inputs": [],
-    "name": "TransactionAlreadyExecuted",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "UnknownCollateralReservationId",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "ValueZero",
     "type": "error"
   },
   {
@@ -770,25 +755,6 @@
         "internalType": "bytes32",
         "name": "_transactionId",
         "type": "bytes32"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "_transactionId",
-        "type": "bytes32"
-      }
-    ],
-    "name": "isTransactionIdUsed",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
       }
     ],
     "stateMutability": "view",

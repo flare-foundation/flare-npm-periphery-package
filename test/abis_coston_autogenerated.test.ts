@@ -7,6 +7,7 @@ describe("Testing coston ABIs", () => {
     test("Interface ABIs exist for all contracts", () => {
         expect(coston.interfaceAbis.AgentInfo).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.AgentSettings).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.AggregatorV3Interface).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.AssetManagerSettings).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.AvailableAgentInfo).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.CollateralReservationInfo).toEqual(expect.any(Array));
@@ -19,6 +20,7 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceAbis.IAgentAlwaysAllowedMinters).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IAgentOwnerRegistry).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IAgentPing).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IAgentVaultsFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IAssetManager).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IAssetManagerController).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IAssetManagerEvents).toEqual(expect.any(Array));
@@ -33,11 +35,20 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceAbis.ICoreVaultClient).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.ICoreVaultClientSettings).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IDelegationAccount).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IDiamond).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IDiamondCut).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IDiamondLoupe).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IDirectMinting).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IDirectMintingSettings).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IERC165).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IERC173).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IEVMTransaction).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IEVMTransactionVerification).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IEntityManager).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IExecutorsFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IFAsset).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IFAssetRedeemComposer).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IFAssetRedeemerAccount).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IFastUpdateIncentiveManager).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IFastUpdater).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IFastUpdatesConfiguration).toEqual(expect.any(Array));
@@ -116,28 +127,40 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceAbis.IIVoterWhitelister).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IIncreaseManager).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IInflationGenesis).toEqual(expect.any(Array));
-        expect(coston.interfaceAbis.IJsonApi).toEqual(expect.any(Array));
-        expect(coston.interfaceAbis.IJsonApiVerification).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IInstructionFeesFacet).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IInstructionsFacet).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IMasterAccountController).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IMemoInstructionsFacet).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IOwnableWithTimelock).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IPauseFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IPayment).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IPaymentProofsFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IPaymentVerification).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IPersonalAccount).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IPersonalAccountsFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IPollingFtso).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IPollingManagementGroup).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IPriceSubmitter).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IRNat).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IRNatAccount).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IRandomProvider).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IReaderFacet).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IRedeemExtended).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IRedeemExtendedSettings).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IRedemptionTimeExtension).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IReferencedPaymentNonexistence).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IReferencedPaymentNonexistenceVerification).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IRelay).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IRewardManager).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.ISubmission).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.ITimelockFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.ITypeTemplate).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.ITypeTemplateVerification).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IUpdateValidators).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IVPContractEvents).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IVPToken).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IValidatorRewardOffersManager).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IVaultsFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IVoterPreRegistry).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IVoterRegistry).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IVoterWhitelister).toEqual(expect.any(Array));
@@ -145,6 +168,11 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceAbis.IWNatDelegationFee).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IWeb2Json).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IWeb2JsonVerification).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IXRPPayment).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IXRPPaymentNonexistence).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IXRPPaymentNonexistenceVerification).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IXRPPaymentVerification).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IXrplProviderWalletsFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.ProtocolsV2Interface).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.RandomNumberV2Interface).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.RedemptionRequestInfo).toEqual(expect.any(Array));
@@ -412,6 +440,7 @@ describe("Testing coston ABIs", () => {
     test("interfaceToAbi finds every contract", () => {
         expect(interfaceToAbi("AgentInfo", "coston")).toEqual(coston.interfaceAbis.AgentInfo);
         expect(interfaceToAbi("AgentSettings", "coston")).toEqual(coston.interfaceAbis.AgentSettings);
+        expect(interfaceToAbi("AggregatorV3Interface", "coston")).toEqual(coston.interfaceAbis.AggregatorV3Interface);
         expect(interfaceToAbi("AssetManagerSettings", "coston")).toEqual(coston.interfaceAbis.AssetManagerSettings);
         expect(interfaceToAbi("AvailableAgentInfo", "coston")).toEqual(coston.interfaceAbis.AvailableAgentInfo);
         expect(interfaceToAbi("CollateralReservationInfo", "coston")).toEqual(
@@ -430,6 +459,7 @@ describe("Testing coston ABIs", () => {
         );
         expect(interfaceToAbi("IAgentOwnerRegistry", "coston")).toEqual(coston.interfaceAbis.IAgentOwnerRegistry);
         expect(interfaceToAbi("IAgentPing", "coston")).toEqual(coston.interfaceAbis.IAgentPing);
+        expect(interfaceToAbi("IAgentVaultsFacet", "coston")).toEqual(coston.interfaceAbis.IAgentVaultsFacet);
         expect(interfaceToAbi("IAssetManager", "coston")).toEqual(coston.interfaceAbis.IAssetManager);
         expect(interfaceToAbi("IAssetManagerController", "coston")).toEqual(
             coston.interfaceAbis.IAssetManagerController
@@ -456,13 +486,22 @@ describe("Testing coston ABIs", () => {
             coston.interfaceAbis.ICoreVaultClientSettings
         );
         expect(interfaceToAbi("IDelegationAccount", "coston")).toEqual(coston.interfaceAbis.IDelegationAccount);
+        expect(interfaceToAbi("IDiamond", "coston")).toEqual(coston.interfaceAbis.IDiamond);
+        expect(interfaceToAbi("IDiamondCut", "coston")).toEqual(coston.interfaceAbis.IDiamondCut);
         expect(interfaceToAbi("IDiamondLoupe", "coston")).toEqual(coston.interfaceAbis.IDiamondLoupe);
+        expect(interfaceToAbi("IDirectMinting", "coston")).toEqual(coston.interfaceAbis.IDirectMinting);
+        expect(interfaceToAbi("IDirectMintingSettings", "coston")).toEqual(coston.interfaceAbis.IDirectMintingSettings);
+        expect(interfaceToAbi("IERC165", "coston")).toEqual(coston.interfaceAbis.IERC165);
+        expect(interfaceToAbi("IERC173", "coston")).toEqual(coston.interfaceAbis.IERC173);
         expect(interfaceToAbi("IEVMTransaction", "coston")).toEqual(coston.interfaceAbis.IEVMTransaction);
         expect(interfaceToAbi("IEVMTransactionVerification", "coston")).toEqual(
             coston.interfaceAbis.IEVMTransactionVerification
         );
         expect(interfaceToAbi("IEntityManager", "coston")).toEqual(coston.interfaceAbis.IEntityManager);
+        expect(interfaceToAbi("IExecutorsFacet", "coston")).toEqual(coston.interfaceAbis.IExecutorsFacet);
         expect(interfaceToAbi("IFAsset", "coston")).toEqual(coston.interfaceAbis.IFAsset);
+        expect(interfaceToAbi("IFAssetRedeemComposer", "coston")).toEqual(coston.interfaceAbis.IFAssetRedeemComposer);
+        expect(interfaceToAbi("IFAssetRedeemerAccount", "coston")).toEqual(coston.interfaceAbis.IFAssetRedeemerAccount);
         expect(interfaceToAbi("IFastUpdateIncentiveManager", "coston")).toEqual(
             coston.interfaceAbis.IFastUpdateIncentiveManager
         );
@@ -571,10 +610,19 @@ describe("Testing coston ABIs", () => {
         expect(interfaceToAbi("IIVoterWhitelister", "coston")).toEqual(coston.interfaceAbis.IIVoterWhitelister);
         expect(interfaceToAbi("IIncreaseManager", "coston")).toEqual(coston.interfaceAbis.IIncreaseManager);
         expect(interfaceToAbi("IInflationGenesis", "coston")).toEqual(coston.interfaceAbis.IInflationGenesis);
-        expect(interfaceToAbi("IJsonApi", "coston")).toEqual(coston.interfaceAbis.IJsonApi);
-        expect(interfaceToAbi("IJsonApiVerification", "coston")).toEqual(coston.interfaceAbis.IJsonApiVerification);
+        expect(interfaceToAbi("IInstructionFeesFacet", "coston")).toEqual(coston.interfaceAbis.IInstructionFeesFacet);
+        expect(interfaceToAbi("IInstructionsFacet", "coston")).toEqual(coston.interfaceAbis.IInstructionsFacet);
+        expect(interfaceToAbi("IMasterAccountController", "coston")).toEqual(
+            coston.interfaceAbis.IMasterAccountController
+        );
+        expect(interfaceToAbi("IMemoInstructionsFacet", "coston")).toEqual(coston.interfaceAbis.IMemoInstructionsFacet);
+        expect(interfaceToAbi("IOwnableWithTimelock", "coston")).toEqual(coston.interfaceAbis.IOwnableWithTimelock);
+        expect(interfaceToAbi("IPauseFacet", "coston")).toEqual(coston.interfaceAbis.IPauseFacet);
         expect(interfaceToAbi("IPayment", "coston")).toEqual(coston.interfaceAbis.IPayment);
+        expect(interfaceToAbi("IPaymentProofsFacet", "coston")).toEqual(coston.interfaceAbis.IPaymentProofsFacet);
         expect(interfaceToAbi("IPaymentVerification", "coston")).toEqual(coston.interfaceAbis.IPaymentVerification);
+        expect(interfaceToAbi("IPersonalAccount", "coston")).toEqual(coston.interfaceAbis.IPersonalAccount);
+        expect(interfaceToAbi("IPersonalAccountsFacet", "coston")).toEqual(coston.interfaceAbis.IPersonalAccountsFacet);
         expect(interfaceToAbi("IPollingFtso", "coston")).toEqual(coston.interfaceAbis.IPollingFtso);
         expect(interfaceToAbi("IPollingManagementGroup", "coston")).toEqual(
             coston.interfaceAbis.IPollingManagementGroup
@@ -583,6 +631,11 @@ describe("Testing coston ABIs", () => {
         expect(interfaceToAbi("IRNat", "coston")).toEqual(coston.interfaceAbis.IRNat);
         expect(interfaceToAbi("IRNatAccount", "coston")).toEqual(coston.interfaceAbis.IRNatAccount);
         expect(interfaceToAbi("IRandomProvider", "coston")).toEqual(coston.interfaceAbis.IRandomProvider);
+        expect(interfaceToAbi("IReaderFacet", "coston")).toEqual(coston.interfaceAbis.IReaderFacet);
+        expect(interfaceToAbi("IRedeemExtended", "coston")).toEqual(coston.interfaceAbis.IRedeemExtended);
+        expect(interfaceToAbi("IRedeemExtendedSettings", "coston")).toEqual(
+            coston.interfaceAbis.IRedeemExtendedSettings
+        );
         expect(interfaceToAbi("IRedemptionTimeExtension", "coston")).toEqual(
             coston.interfaceAbis.IRedemptionTimeExtension
         );
@@ -595,6 +648,7 @@ describe("Testing coston ABIs", () => {
         expect(interfaceToAbi("IRelay", "coston")).toEqual(coston.interfaceAbis.IRelay);
         expect(interfaceToAbi("IRewardManager", "coston")).toEqual(coston.interfaceAbis.IRewardManager);
         expect(interfaceToAbi("ISubmission", "coston")).toEqual(coston.interfaceAbis.ISubmission);
+        expect(interfaceToAbi("ITimelockFacet", "coston")).toEqual(coston.interfaceAbis.ITimelockFacet);
         expect(interfaceToAbi("ITypeTemplate", "coston")).toEqual(coston.interfaceAbis.ITypeTemplate);
         expect(interfaceToAbi("ITypeTemplateVerification", "coston")).toEqual(
             coston.interfaceAbis.ITypeTemplateVerification
@@ -605,6 +659,7 @@ describe("Testing coston ABIs", () => {
         expect(interfaceToAbi("IValidatorRewardOffersManager", "coston")).toEqual(
             coston.interfaceAbis.IValidatorRewardOffersManager
         );
+        expect(interfaceToAbi("IVaultsFacet", "coston")).toEqual(coston.interfaceAbis.IVaultsFacet);
         expect(interfaceToAbi("IVoterPreRegistry", "coston")).toEqual(coston.interfaceAbis.IVoterPreRegistry);
         expect(interfaceToAbi("IVoterRegistry", "coston")).toEqual(coston.interfaceAbis.IVoterRegistry);
         expect(interfaceToAbi("IVoterWhitelister", "coston")).toEqual(coston.interfaceAbis.IVoterWhitelister);
@@ -612,6 +667,19 @@ describe("Testing coston ABIs", () => {
         expect(interfaceToAbi("IWNatDelegationFee", "coston")).toEqual(coston.interfaceAbis.IWNatDelegationFee);
         expect(interfaceToAbi("IWeb2Json", "coston")).toEqual(coston.interfaceAbis.IWeb2Json);
         expect(interfaceToAbi("IWeb2JsonVerification", "coston")).toEqual(coston.interfaceAbis.IWeb2JsonVerification);
+        expect(interfaceToAbi("IXRPPayment", "coston")).toEqual(coston.interfaceAbis.IXRPPayment);
+        expect(interfaceToAbi("IXRPPaymentNonexistence", "coston")).toEqual(
+            coston.interfaceAbis.IXRPPaymentNonexistence
+        );
+        expect(interfaceToAbi("IXRPPaymentNonexistenceVerification", "coston")).toEqual(
+            coston.interfaceAbis.IXRPPaymentNonexistenceVerification
+        );
+        expect(interfaceToAbi("IXRPPaymentVerification", "coston")).toEqual(
+            coston.interfaceAbis.IXRPPaymentVerification
+        );
+        expect(interfaceToAbi("IXrplProviderWalletsFacet", "coston")).toEqual(
+            coston.interfaceAbis.IXrplProviderWalletsFacet
+        );
         expect(interfaceToAbi("ProtocolsV2Interface", "coston")).toEqual(coston.interfaceAbis.ProtocolsV2Interface);
         expect(interfaceToAbi("RandomNumberV2Interface", "coston")).toEqual(
             coston.interfaceAbis.RandomNumberV2Interface
@@ -623,6 +691,7 @@ describe("Testing coston ABIs", () => {
 
         expect(coston.interfaceToAbi("AgentInfo")).toEqual(coston.interfaceAbis.AgentInfo);
         expect(coston.interfaceToAbi("AgentSettings")).toEqual(coston.interfaceAbis.AgentSettings);
+        expect(coston.interfaceToAbi("AggregatorV3Interface")).toEqual(coston.interfaceAbis.AggregatorV3Interface);
         expect(coston.interfaceToAbi("AssetManagerSettings")).toEqual(coston.interfaceAbis.AssetManagerSettings);
         expect(coston.interfaceToAbi("AvailableAgentInfo")).toEqual(coston.interfaceAbis.AvailableAgentInfo);
         expect(coston.interfaceToAbi("CollateralReservationInfo")).toEqual(
@@ -641,6 +710,7 @@ describe("Testing coston ABIs", () => {
         );
         expect(coston.interfaceToAbi("IAgentOwnerRegistry")).toEqual(coston.interfaceAbis.IAgentOwnerRegistry);
         expect(coston.interfaceToAbi("IAgentPing")).toEqual(coston.interfaceAbis.IAgentPing);
+        expect(coston.interfaceToAbi("IAgentVaultsFacet")).toEqual(coston.interfaceAbis.IAgentVaultsFacet);
         expect(coston.interfaceToAbi("IAssetManager")).toEqual(coston.interfaceAbis.IAssetManager);
         expect(coston.interfaceToAbi("IAssetManagerController")).toEqual(coston.interfaceAbis.IAssetManagerController);
         expect(coston.interfaceToAbi("IAssetManagerEvents")).toEqual(coston.interfaceAbis.IAssetManagerEvents);
@@ -665,13 +735,22 @@ describe("Testing coston ABIs", () => {
             coston.interfaceAbis.ICoreVaultClientSettings
         );
         expect(coston.interfaceToAbi("IDelegationAccount")).toEqual(coston.interfaceAbis.IDelegationAccount);
+        expect(coston.interfaceToAbi("IDiamond")).toEqual(coston.interfaceAbis.IDiamond);
+        expect(coston.interfaceToAbi("IDiamondCut")).toEqual(coston.interfaceAbis.IDiamondCut);
         expect(coston.interfaceToAbi("IDiamondLoupe")).toEqual(coston.interfaceAbis.IDiamondLoupe);
+        expect(coston.interfaceToAbi("IDirectMinting")).toEqual(coston.interfaceAbis.IDirectMinting);
+        expect(coston.interfaceToAbi("IDirectMintingSettings")).toEqual(coston.interfaceAbis.IDirectMintingSettings);
+        expect(coston.interfaceToAbi("IERC165")).toEqual(coston.interfaceAbis.IERC165);
+        expect(coston.interfaceToAbi("IERC173")).toEqual(coston.interfaceAbis.IERC173);
         expect(coston.interfaceToAbi("IEVMTransaction")).toEqual(coston.interfaceAbis.IEVMTransaction);
         expect(coston.interfaceToAbi("IEVMTransactionVerification")).toEqual(
             coston.interfaceAbis.IEVMTransactionVerification
         );
         expect(coston.interfaceToAbi("IEntityManager")).toEqual(coston.interfaceAbis.IEntityManager);
+        expect(coston.interfaceToAbi("IExecutorsFacet")).toEqual(coston.interfaceAbis.IExecutorsFacet);
         expect(coston.interfaceToAbi("IFAsset")).toEqual(coston.interfaceAbis.IFAsset);
+        expect(coston.interfaceToAbi("IFAssetRedeemComposer")).toEqual(coston.interfaceAbis.IFAssetRedeemComposer);
+        expect(coston.interfaceToAbi("IFAssetRedeemerAccount")).toEqual(coston.interfaceAbis.IFAssetRedeemerAccount);
         expect(coston.interfaceToAbi("IFastUpdateIncentiveManager")).toEqual(
             coston.interfaceAbis.IFastUpdateIncentiveManager
         );
@@ -778,16 +857,28 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceToAbi("IIVoterWhitelister")).toEqual(coston.interfaceAbis.IIVoterWhitelister);
         expect(coston.interfaceToAbi("IIncreaseManager")).toEqual(coston.interfaceAbis.IIncreaseManager);
         expect(coston.interfaceToAbi("IInflationGenesis")).toEqual(coston.interfaceAbis.IInflationGenesis);
-        expect(coston.interfaceToAbi("IJsonApi")).toEqual(coston.interfaceAbis.IJsonApi);
-        expect(coston.interfaceToAbi("IJsonApiVerification")).toEqual(coston.interfaceAbis.IJsonApiVerification);
+        expect(coston.interfaceToAbi("IInstructionFeesFacet")).toEqual(coston.interfaceAbis.IInstructionFeesFacet);
+        expect(coston.interfaceToAbi("IInstructionsFacet")).toEqual(coston.interfaceAbis.IInstructionsFacet);
+        expect(coston.interfaceToAbi("IMasterAccountController")).toEqual(
+            coston.interfaceAbis.IMasterAccountController
+        );
+        expect(coston.interfaceToAbi("IMemoInstructionsFacet")).toEqual(coston.interfaceAbis.IMemoInstructionsFacet);
+        expect(coston.interfaceToAbi("IOwnableWithTimelock")).toEqual(coston.interfaceAbis.IOwnableWithTimelock);
+        expect(coston.interfaceToAbi("IPauseFacet")).toEqual(coston.interfaceAbis.IPauseFacet);
         expect(coston.interfaceToAbi("IPayment")).toEqual(coston.interfaceAbis.IPayment);
+        expect(coston.interfaceToAbi("IPaymentProofsFacet")).toEqual(coston.interfaceAbis.IPaymentProofsFacet);
         expect(coston.interfaceToAbi("IPaymentVerification")).toEqual(coston.interfaceAbis.IPaymentVerification);
+        expect(coston.interfaceToAbi("IPersonalAccount")).toEqual(coston.interfaceAbis.IPersonalAccount);
+        expect(coston.interfaceToAbi("IPersonalAccountsFacet")).toEqual(coston.interfaceAbis.IPersonalAccountsFacet);
         expect(coston.interfaceToAbi("IPollingFtso")).toEqual(coston.interfaceAbis.IPollingFtso);
         expect(coston.interfaceToAbi("IPollingManagementGroup")).toEqual(coston.interfaceAbis.IPollingManagementGroup);
         expect(coston.interfaceToAbi("IPriceSubmitter")).toEqual(coston.interfaceAbis.IPriceSubmitter);
         expect(coston.interfaceToAbi("IRNat")).toEqual(coston.interfaceAbis.IRNat);
         expect(coston.interfaceToAbi("IRNatAccount")).toEqual(coston.interfaceAbis.IRNatAccount);
         expect(coston.interfaceToAbi("IRandomProvider")).toEqual(coston.interfaceAbis.IRandomProvider);
+        expect(coston.interfaceToAbi("IReaderFacet")).toEqual(coston.interfaceAbis.IReaderFacet);
+        expect(coston.interfaceToAbi("IRedeemExtended")).toEqual(coston.interfaceAbis.IRedeemExtended);
+        expect(coston.interfaceToAbi("IRedeemExtendedSettings")).toEqual(coston.interfaceAbis.IRedeemExtendedSettings);
         expect(coston.interfaceToAbi("IRedemptionTimeExtension")).toEqual(
             coston.interfaceAbis.IRedemptionTimeExtension
         );
@@ -800,6 +891,7 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceToAbi("IRelay")).toEqual(coston.interfaceAbis.IRelay);
         expect(coston.interfaceToAbi("IRewardManager")).toEqual(coston.interfaceAbis.IRewardManager);
         expect(coston.interfaceToAbi("ISubmission")).toEqual(coston.interfaceAbis.ISubmission);
+        expect(coston.interfaceToAbi("ITimelockFacet")).toEqual(coston.interfaceAbis.ITimelockFacet);
         expect(coston.interfaceToAbi("ITypeTemplate")).toEqual(coston.interfaceAbis.ITypeTemplate);
         expect(coston.interfaceToAbi("ITypeTemplateVerification")).toEqual(
             coston.interfaceAbis.ITypeTemplateVerification
@@ -810,6 +902,7 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceToAbi("IValidatorRewardOffersManager")).toEqual(
             coston.interfaceAbis.IValidatorRewardOffersManager
         );
+        expect(coston.interfaceToAbi("IVaultsFacet")).toEqual(coston.interfaceAbis.IVaultsFacet);
         expect(coston.interfaceToAbi("IVoterPreRegistry")).toEqual(coston.interfaceAbis.IVoterPreRegistry);
         expect(coston.interfaceToAbi("IVoterRegistry")).toEqual(coston.interfaceAbis.IVoterRegistry);
         expect(coston.interfaceToAbi("IVoterWhitelister")).toEqual(coston.interfaceAbis.IVoterWhitelister);
@@ -817,6 +910,15 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceToAbi("IWNatDelegationFee")).toEqual(coston.interfaceAbis.IWNatDelegationFee);
         expect(coston.interfaceToAbi("IWeb2Json")).toEqual(coston.interfaceAbis.IWeb2Json);
         expect(coston.interfaceToAbi("IWeb2JsonVerification")).toEqual(coston.interfaceAbis.IWeb2JsonVerification);
+        expect(coston.interfaceToAbi("IXRPPayment")).toEqual(coston.interfaceAbis.IXRPPayment);
+        expect(coston.interfaceToAbi("IXRPPaymentNonexistence")).toEqual(coston.interfaceAbis.IXRPPaymentNonexistence);
+        expect(coston.interfaceToAbi("IXRPPaymentNonexistenceVerification")).toEqual(
+            coston.interfaceAbis.IXRPPaymentNonexistenceVerification
+        );
+        expect(coston.interfaceToAbi("IXRPPaymentVerification")).toEqual(coston.interfaceAbis.IXRPPaymentVerification);
+        expect(coston.interfaceToAbi("IXrplProviderWalletsFacet")).toEqual(
+            coston.interfaceAbis.IXrplProviderWalletsFacet
+        );
         expect(coston.interfaceToAbi("ProtocolsV2Interface")).toEqual(coston.interfaceAbis.ProtocolsV2Interface);
         expect(coston.interfaceToAbi("RandomNumberV2Interface")).toEqual(coston.interfaceAbis.RandomNumberV2Interface);
         expect(coston.interfaceToAbi("RedemptionRequestInfo")).toEqual(coston.interfaceAbis.RedemptionRequestInfo);

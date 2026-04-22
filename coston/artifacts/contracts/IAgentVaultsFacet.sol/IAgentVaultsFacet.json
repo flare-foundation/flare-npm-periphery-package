@@ -1,0 +1,129 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "AgentNotAvailable",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "agentVaultAddress",
+        "type": "address"
+      }
+    ],
+    "name": "AgentVaultAddressAlreadyAdded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "AgentVaultAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "agentVaultId",
+        "type": "uint256"
+      }
+    ],
+    "name": "AgentVaultIdAlreadyAdded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "AgentVaultIdZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AgentsVaultsLengthsMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "agentVaultId",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidAgentVault",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "agentVaultId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVaultAddress",
+        "type": "address"
+      }
+    ],
+    "name": "AgentVaultAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "agentVaultId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVaultAddress",
+        "type": "address"
+      }
+    ],
+    "name": "AgentVaultRemoved",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getAgentVaults",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "_agentVaultIds",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_agentVaultAddresses",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
