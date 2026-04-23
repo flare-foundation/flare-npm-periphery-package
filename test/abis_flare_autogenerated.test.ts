@@ -139,6 +139,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IInstructionsFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IMasterAccountController).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IMemoInstructionsFacet).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IMintingTagManager).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IOwnableWithTimelock).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPChainStakeMirror).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPChainStakeMirrorMultiSigVoting).toEqual(expect.any(Array));
@@ -653,6 +654,7 @@ describe("Testing flare ABIs", () => {
             flare.interfaceAbis.IMasterAccountController
         );
         expect(interfaceToAbi("IMemoInstructionsFacet", "flare")).toEqual(flare.interfaceAbis.IMemoInstructionsFacet);
+        expect(interfaceToAbi("IMintingTagManager", "flare")).toEqual(flare.interfaceAbis.IMintingTagManager);
         expect(interfaceToAbi("IOwnableWithTimelock", "flare")).toEqual(flare.interfaceAbis.IOwnableWithTimelock);
         expect(interfaceToAbi("IPChainStakeMirror", "flare")).toEqual(flare.interfaceAbis.IPChainStakeMirror);
         expect(interfaceToAbi("IPChainStakeMirrorMultiSigVoting", "flare")).toEqual(
@@ -905,6 +907,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("IInstructionsFacet")).toEqual(flare.interfaceAbis.IInstructionsFacet);
         expect(flare.interfaceToAbi("IMasterAccountController")).toEqual(flare.interfaceAbis.IMasterAccountController);
         expect(flare.interfaceToAbi("IMemoInstructionsFacet")).toEqual(flare.interfaceAbis.IMemoInstructionsFacet);
+        expect(flare.interfaceToAbi("IMintingTagManager")).toEqual(flare.interfaceAbis.IMintingTagManager);
         expect(flare.interfaceToAbi("IOwnableWithTimelock")).toEqual(flare.interfaceAbis.IOwnableWithTimelock);
         expect(flare.interfaceToAbi("IPChainStakeMirror")).toEqual(flare.interfaceAbis.IPChainStakeMirror);
         expect(flare.interfaceToAbi("IPChainStakeMirrorMultiSigVoting")).toEqual(

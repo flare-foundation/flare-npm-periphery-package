@@ -131,6 +131,7 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceAbis.IInstructionsFacet).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IMasterAccountController).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IMemoInstructionsFacet).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IMintingTagManager).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IOwnableWithTimelock).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IPauseFacet).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IPayment).toEqual(expect.any(Array));
@@ -646,6 +647,7 @@ describe("Testing songbird ABIs", () => {
         expect(interfaceToAbi("IMemoInstructionsFacet", "songbird")).toEqual(
             songbird.interfaceAbis.IMemoInstructionsFacet
         );
+        expect(interfaceToAbi("IMintingTagManager", "songbird")).toEqual(songbird.interfaceAbis.IMintingTagManager);
         expect(interfaceToAbi("IOwnableWithTimelock", "songbird")).toEqual(songbird.interfaceAbis.IOwnableWithTimelock);
         expect(interfaceToAbi("IPauseFacet", "songbird")).toEqual(songbird.interfaceAbis.IPauseFacet);
         expect(interfaceToAbi("IPayment", "songbird")).toEqual(songbird.interfaceAbis.IPayment);
@@ -911,6 +913,7 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceToAbi("IMemoInstructionsFacet")).toEqual(
             songbird.interfaceAbis.IMemoInstructionsFacet
         );
+        expect(songbird.interfaceToAbi("IMintingTagManager")).toEqual(songbird.interfaceAbis.IMintingTagManager);
         expect(songbird.interfaceToAbi("IOwnableWithTimelock")).toEqual(songbird.interfaceAbis.IOwnableWithTimelock);
         expect(songbird.interfaceToAbi("IPauseFacet")).toEqual(songbird.interfaceAbis.IPauseFacet);
         expect(songbird.interfaceToAbi("IPayment")).toEqual(songbird.interfaceAbis.IPayment);

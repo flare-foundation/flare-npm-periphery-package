@@ -139,6 +139,7 @@ describe("Testing coston2 ABIs", () => {
         expect(coston2.interfaceAbis.IInstructionsFacet).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IMasterAccountController).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IMemoInstructionsFacet).toEqual(expect.any(Array));
+        expect(coston2.interfaceAbis.IMintingTagManager).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IOwnableWithTimelock).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IPChainStakeMirror).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IPChainStakeMirrorMultiSigVoting).toEqual(expect.any(Array));
@@ -673,6 +674,7 @@ describe("Testing coston2 ABIs", () => {
         expect(interfaceToAbi("IMemoInstructionsFacet", "coston2")).toEqual(
             coston2.interfaceAbis.IMemoInstructionsFacet
         );
+        expect(interfaceToAbi("IMintingTagManager", "coston2")).toEqual(coston2.interfaceAbis.IMintingTagManager);
         expect(interfaceToAbi("IOwnableWithTimelock", "coston2")).toEqual(coston2.interfaceAbis.IOwnableWithTimelock);
         expect(interfaceToAbi("IPChainStakeMirror", "coston2")).toEqual(coston2.interfaceAbis.IPChainStakeMirror);
         expect(interfaceToAbi("IPChainStakeMirrorMultiSigVoting", "coston2")).toEqual(
@@ -955,6 +957,7 @@ describe("Testing coston2 ABIs", () => {
             coston2.interfaceAbis.IMasterAccountController
         );
         expect(coston2.interfaceToAbi("IMemoInstructionsFacet")).toEqual(coston2.interfaceAbis.IMemoInstructionsFacet);
+        expect(coston2.interfaceToAbi("IMintingTagManager")).toEqual(coston2.interfaceAbis.IMintingTagManager);
         expect(coston2.interfaceToAbi("IOwnableWithTimelock")).toEqual(coston2.interfaceAbis.IOwnableWithTimelock);
         expect(coston2.interfaceToAbi("IPChainStakeMirror")).toEqual(coston2.interfaceAbis.IPChainStakeMirror);
         expect(coston2.interfaceToAbi("IPChainStakeMirrorMultiSigVoting")).toEqual(
