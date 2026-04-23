@@ -124,6 +124,7 @@ import IInstructionFeesFacet from "./artifacts/contracts/IInstructionFeesFacet.s
 import IInstructionsFacet from "./artifacts/contracts/IInstructionsFacet.sol/IInstructionsFacet.json";
 import IMasterAccountController from "./artifacts/contracts/IMasterAccountController.sol/IMasterAccountController.json";
 import IMemoInstructionsFacet from "./artifacts/contracts/IMemoInstructionsFacet.sol/IMemoInstructionsFacet.json";
+import IMintingTagManager from "./artifacts/contracts/IMintingTagManager.sol/IMintingTagManager.json";
 import IOwnableWithTimelock from "./artifacts/contracts/IOwnableWithTimelock.sol/IOwnableWithTimelock.json";
 import IPauseFacet from "./artifacts/contracts/IPauseFacet.sol/IPauseFacet.json";
 import IPayment from "./artifacts/contracts/IPayment.sol/IPayment.json";
@@ -308,6 +309,7 @@ export const interfaceAbis: { [key: string]: any } = {
     IInstructionsFacet: IInstructionsFacet,
     IMasterAccountController: IMasterAccountController,
     IMemoInstructionsFacet: IMemoInstructionsFacet,
+    IMintingTagManager: IMintingTagManager,
     IOwnableWithTimelock: IOwnableWithTimelock,
     IPauseFacet: IPauseFacet,
     IPayment: IPayment,

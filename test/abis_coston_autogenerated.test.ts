@@ -131,6 +131,7 @@ describe("Testing coston ABIs", () => {
         expect(coston.interfaceAbis.IInstructionsFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IMasterAccountController).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IMemoInstructionsFacet).toEqual(expect.any(Array));
+        expect(coston.interfaceAbis.IMintingTagManager).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IOwnableWithTimelock).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IPauseFacet).toEqual(expect.any(Array));
         expect(coston.interfaceAbis.IPayment).toEqual(expect.any(Array));
@@ -616,6 +617,7 @@ describe("Testing coston ABIs", () => {
             coston.interfaceAbis.IMasterAccountController
         );
         expect(interfaceToAbi("IMemoInstructionsFacet", "coston")).toEqual(coston.interfaceAbis.IMemoInstructionsFacet);
+        expect(interfaceToAbi("IMintingTagManager", "coston")).toEqual(coston.interfaceAbis.IMintingTagManager);
         expect(interfaceToAbi("IOwnableWithTimelock", "coston")).toEqual(coston.interfaceAbis.IOwnableWithTimelock);
         expect(interfaceToAbi("IPauseFacet", "coston")).toEqual(coston.interfaceAbis.IPauseFacet);
         expect(interfaceToAbi("IPayment", "coston")).toEqual(coston.interfaceAbis.IPayment);
@@ -863,6 +865,7 @@ describe("Testing coston ABIs", () => {
             coston.interfaceAbis.IMasterAccountController
         );
         expect(coston.interfaceToAbi("IMemoInstructionsFacet")).toEqual(coston.interfaceAbis.IMemoInstructionsFacet);
+        expect(coston.interfaceToAbi("IMintingTagManager")).toEqual(coston.interfaceAbis.IMintingTagManager);
         expect(coston.interfaceToAbi("IOwnableWithTimelock")).toEqual(coston.interfaceAbis.IOwnableWithTimelock);
         expect(coston.interfaceToAbi("IPauseFacet")).toEqual(coston.interfaceAbis.IPauseFacet);
         expect(coston.interfaceToAbi("IPayment")).toEqual(coston.interfaceAbis.IPayment);
