@@ -28,6 +28,7 @@ import IConfirmedBlockHeightExists from "./artifacts/contracts/IConfirmedBlockHe
 import IConfirmedBlockHeightExistsVerification from "./artifacts/contracts/IConfirmedBlockHeightExistsVerification.sol/IConfirmedBlockHeightExistsVerification.json";
 import ICoreVaultClient from "./artifacts/contracts/ICoreVaultClient.sol/ICoreVaultClient.json";
 import ICoreVaultClientSettings from "./artifacts/contracts/ICoreVaultClientSettings.sol/ICoreVaultClientSettings.json";
+import ICoreVaultManager from "./artifacts/contracts/ICoreVaultManager.sol/ICoreVaultManager.json";
 import IDelegationAccount from "./artifacts/contracts/IDelegationAccount.sol/IDelegationAccount.json";
 import IDiamond from "./artifacts/contracts/diamond/interfaces/IDiamond.sol/IDiamond.json";
 import IDiamondCut from "./artifacts/contracts/diamond/interfaces/IDiamondCut.sol/IDiamondCut.json";
@@ -226,6 +227,7 @@ export const interfaceAbis: { [key: string]: any } = {
     IConfirmedBlockHeightExistsVerification: IConfirmedBlockHeightExistsVerification,
     ICoreVaultClient: ICoreVaultClient,
     ICoreVaultClientSettings: ICoreVaultClientSettings,
+    ICoreVaultManager: ICoreVaultManager,
     IDelegationAccount: IDelegationAccount,
     IDiamond: IDiamond,
     IDiamondCut: IDiamondCut,
