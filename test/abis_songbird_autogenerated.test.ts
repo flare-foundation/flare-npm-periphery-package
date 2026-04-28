@@ -34,6 +34,7 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceAbis.IConfirmedBlockHeightExistsVerification).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ICoreVaultClient).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ICoreVaultClientSettings).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.ICoreVaultManager).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IDelegationAccount).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IDiamond).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IDiamondCut).toEqual(expect.any(Array));
@@ -494,6 +495,7 @@ describe("Testing songbird ABIs", () => {
         expect(interfaceToAbi("ICoreVaultClientSettings", "songbird")).toEqual(
             songbird.interfaceAbis.ICoreVaultClientSettings
         );
+        expect(interfaceToAbi("ICoreVaultManager", "songbird")).toEqual(songbird.interfaceAbis.ICoreVaultManager);
         expect(interfaceToAbi("IDelegationAccount", "songbird")).toEqual(songbird.interfaceAbis.IDelegationAccount);
         expect(interfaceToAbi("IDiamond", "songbird")).toEqual(songbird.interfaceAbis.IDiamond);
         expect(interfaceToAbi("IDiamondCut", "songbird")).toEqual(songbird.interfaceAbis.IDiamondCut);
@@ -774,6 +776,7 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceToAbi("ICoreVaultClientSettings")).toEqual(
             songbird.interfaceAbis.ICoreVaultClientSettings
         );
+        expect(songbird.interfaceToAbi("ICoreVaultManager")).toEqual(songbird.interfaceAbis.ICoreVaultManager);
         expect(songbird.interfaceToAbi("IDelegationAccount")).toEqual(songbird.interfaceAbis.IDelegationAccount);
         expect(songbird.interfaceToAbi("IDiamond")).toEqual(songbird.interfaceAbis.IDiamond);
         expect(songbird.interfaceToAbi("IDiamondCut")).toEqual(songbird.interfaceAbis.IDiamondCut);

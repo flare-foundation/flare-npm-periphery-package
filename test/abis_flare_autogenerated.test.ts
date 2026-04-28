@@ -35,6 +35,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IConfirmedBlockHeightExistsVerification).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ICoreVaultClient).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ICoreVaultClientSettings).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.ICoreVaultManager).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IDelegationAccount).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IDiamond).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IDiamondCut).toEqual(expect.any(Array));
@@ -508,6 +509,7 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("ICoreVaultClientSettings", "flare")).toEqual(
             flare.interfaceAbis.ICoreVaultClientSettings
         );
+        expect(interfaceToAbi("ICoreVaultManager", "flare")).toEqual(flare.interfaceAbis.ICoreVaultManager);
         expect(interfaceToAbi("IDelegationAccount", "flare")).toEqual(flare.interfaceAbis.IDelegationAccount);
         expect(interfaceToAbi("IDiamond", "flare")).toEqual(flare.interfaceAbis.IDiamond);
         expect(interfaceToAbi("IDiamondCut", "flare")).toEqual(flare.interfaceAbis.IDiamondCut);
@@ -771,6 +773,7 @@ describe("Testing flare ABIs", () => {
         );
         expect(flare.interfaceToAbi("ICoreVaultClient")).toEqual(flare.interfaceAbis.ICoreVaultClient);
         expect(flare.interfaceToAbi("ICoreVaultClientSettings")).toEqual(flare.interfaceAbis.ICoreVaultClientSettings);
+        expect(flare.interfaceToAbi("ICoreVaultManager")).toEqual(flare.interfaceAbis.ICoreVaultManager);
         expect(flare.interfaceToAbi("IDelegationAccount")).toEqual(flare.interfaceAbis.IDelegationAccount);
         expect(flare.interfaceToAbi("IDiamond")).toEqual(flare.interfaceAbis.IDiamond);
         expect(flare.interfaceToAbi("IDiamondCut")).toEqual(flare.interfaceAbis.IDiamondCut);
