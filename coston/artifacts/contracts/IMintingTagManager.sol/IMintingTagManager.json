@@ -434,6 +434,24 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "_mintingTag",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_executor",
+        "type": "address"
+      }
+    ],
+    "name": "setAllowedExecutor",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "operator",
         "type": "address"
