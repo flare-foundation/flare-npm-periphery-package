@@ -112,8 +112,6 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceAbis.IIPreInflationCalculation).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IIPriceSubmitter).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IIPublicKeyVerifier).toEqual(expect.any(Array));
-        expect(songbird.interfaceAbis.IIRNat).toEqual(expect.any(Array));
-        expect(songbird.interfaceAbis.IIRNatAccount).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IIRandomProvider).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IIRelay).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IIRewardEpochSwitchoverTrigger).toEqual(expect.any(Array));
@@ -619,8 +617,6 @@ describe("Testing songbird ABIs", () => {
         );
         expect(interfaceToAbi("IIPriceSubmitter", "songbird")).toEqual(songbird.interfaceAbis.IIPriceSubmitter);
         expect(interfaceToAbi("IIPublicKeyVerifier", "songbird")).toEqual(songbird.interfaceAbis.IIPublicKeyVerifier);
-        expect(interfaceToAbi("IIRNat", "songbird")).toEqual(songbird.interfaceAbis.IIRNat);
-        expect(interfaceToAbi("IIRNatAccount", "songbird")).toEqual(songbird.interfaceAbis.IIRNatAccount);
         expect(interfaceToAbi("IIRandomProvider", "songbird")).toEqual(songbird.interfaceAbis.IIRandomProvider);
         expect(interfaceToAbi("IIRelay", "songbird")).toEqual(songbird.interfaceAbis.IIRelay);
         expect(interfaceToAbi("IIRewardEpochSwitchoverTrigger", "songbird")).toEqual(
@@ -888,8 +884,6 @@ describe("Testing songbird ABIs", () => {
         );
         expect(songbird.interfaceToAbi("IIPriceSubmitter")).toEqual(songbird.interfaceAbis.IIPriceSubmitter);
         expect(songbird.interfaceToAbi("IIPublicKeyVerifier")).toEqual(songbird.interfaceAbis.IIPublicKeyVerifier);
-        expect(songbird.interfaceToAbi("IIRNat")).toEqual(songbird.interfaceAbis.IIRNat);
-        expect(songbird.interfaceToAbi("IIRNatAccount")).toEqual(songbird.interfaceAbis.IIRNatAccount);
         expect(songbird.interfaceToAbi("IIRandomProvider")).toEqual(songbird.interfaceAbis.IIRandomProvider);
         expect(songbird.interfaceToAbi("IIRelay")).toEqual(songbird.interfaceAbis.IIRelay);
         expect(songbird.interfaceToAbi("IIRewardEpochSwitchoverTrigger")).toEqual(

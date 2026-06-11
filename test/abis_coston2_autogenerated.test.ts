@@ -120,8 +120,6 @@ describe("Testing coston2 ABIs", () => {
         expect(coston2.interfaceAbis.IIPreInflationCalculation).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IIPriceSubmitter).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IIPublicKeyVerifier).toEqual(expect.any(Array));
-        expect(coston2.interfaceAbis.IIRNat).toEqual(expect.any(Array));
-        expect(coston2.interfaceAbis.IIRNatAccount).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IIRandomProvider).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IIRelay).toEqual(expect.any(Array));
         expect(coston2.interfaceAbis.IIRewardEpochSwitchoverTrigger).toEqual(expect.any(Array));
@@ -648,8 +646,6 @@ describe("Testing coston2 ABIs", () => {
         );
         expect(interfaceToAbi("IIPriceSubmitter", "coston2")).toEqual(coston2.interfaceAbis.IIPriceSubmitter);
         expect(interfaceToAbi("IIPublicKeyVerifier", "coston2")).toEqual(coston2.interfaceAbis.IIPublicKeyVerifier);
-        expect(interfaceToAbi("IIRNat", "coston2")).toEqual(coston2.interfaceAbis.IIRNat);
-        expect(interfaceToAbi("IIRNatAccount", "coston2")).toEqual(coston2.interfaceAbis.IIRNatAccount);
         expect(interfaceToAbi("IIRandomProvider", "coston2")).toEqual(coston2.interfaceAbis.IIRandomProvider);
         expect(interfaceToAbi("IIRelay", "coston2")).toEqual(coston2.interfaceAbis.IIRelay);
         expect(interfaceToAbi("IIRewardEpochSwitchoverTrigger", "coston2")).toEqual(
@@ -934,8 +930,6 @@ describe("Testing coston2 ABIs", () => {
         );
         expect(coston2.interfaceToAbi("IIPriceSubmitter")).toEqual(coston2.interfaceAbis.IIPriceSubmitter);
         expect(coston2.interfaceToAbi("IIPublicKeyVerifier")).toEqual(coston2.interfaceAbis.IIPublicKeyVerifier);
-        expect(coston2.interfaceToAbi("IIRNat")).toEqual(coston2.interfaceAbis.IIRNat);
-        expect(coston2.interfaceToAbi("IIRNatAccount")).toEqual(coston2.interfaceAbis.IIRNatAccount);
         expect(coston2.interfaceToAbi("IIRandomProvider")).toEqual(coston2.interfaceAbis.IIRandomProvider);
         expect(coston2.interfaceToAbi("IIRelay")).toEqual(coston2.interfaceAbis.IIRelay);
         expect(coston2.interfaceToAbi("IIRewardEpochSwitchoverTrigger")).toEqual(

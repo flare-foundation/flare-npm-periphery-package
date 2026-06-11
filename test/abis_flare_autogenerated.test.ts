@@ -120,8 +120,6 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IIPreInflationCalculation).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIPriceSubmitter).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIPublicKeyVerifier).toEqual(expect.any(Array));
-        expect(flare.interfaceAbis.IIRNat).toEqual(expect.any(Array));
-        expect(flare.interfaceAbis.IIRNatAccount).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIRandomProvider).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIRelay).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIRewardEpochSwitchoverTrigger).toEqual(expect.any(Array));
@@ -630,8 +628,6 @@ describe("Testing flare ABIs", () => {
         );
         expect(interfaceToAbi("IIPriceSubmitter", "flare")).toEqual(flare.interfaceAbis.IIPriceSubmitter);
         expect(interfaceToAbi("IIPublicKeyVerifier", "flare")).toEqual(flare.interfaceAbis.IIPublicKeyVerifier);
-        expect(interfaceToAbi("IIRNat", "flare")).toEqual(flare.interfaceAbis.IIRNat);
-        expect(interfaceToAbi("IIRNatAccount", "flare")).toEqual(flare.interfaceAbis.IIRNatAccount);
         expect(interfaceToAbi("IIRandomProvider", "flare")).toEqual(flare.interfaceAbis.IIRandomProvider);
         expect(interfaceToAbi("IIRelay", "flare")).toEqual(flare.interfaceAbis.IIRelay);
         expect(interfaceToAbi("IIRewardEpochSwitchoverTrigger", "flare")).toEqual(
@@ -886,8 +882,6 @@ describe("Testing flare ABIs", () => {
         );
         expect(flare.interfaceToAbi("IIPriceSubmitter")).toEqual(flare.interfaceAbis.IIPriceSubmitter);
         expect(flare.interfaceToAbi("IIPublicKeyVerifier")).toEqual(flare.interfaceAbis.IIPublicKeyVerifier);
-        expect(flare.interfaceToAbi("IIRNat")).toEqual(flare.interfaceAbis.IIRNat);
-        expect(flare.interfaceToAbi("IIRNatAccount")).toEqual(flare.interfaceAbis.IIRNatAccount);
         expect(flare.interfaceToAbi("IIRandomProvider")).toEqual(flare.interfaceAbis.IIRandomProvider);
         expect(flare.interfaceToAbi("IIRelay")).toEqual(flare.interfaceAbis.IIRelay);
         expect(flare.interfaceToAbi("IIRewardEpochSwitchoverTrigger")).toEqual(
