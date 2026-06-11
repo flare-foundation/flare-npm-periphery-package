@@ -10,9 +10,9 @@
       },
       {
         "indexed": true,
-        "internalType": "uint24",
+        "internalType": "uint32",
         "name": "rewardEpochId",
-        "type": "uint24"
+        "type": "uint32"
       },
       {
         "indexed": false,
@@ -86,9 +86,9 @@
         "type": "address"
       },
       {
-        "internalType": "uint24",
+        "internalType": "uint32",
         "name": "_rewardEpochId",
-        "type": "uint24"
+        "type": "uint32"
       },
       {
         "internalType": "uint256",

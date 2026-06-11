@@ -113,8 +113,6 @@ import IIPollingManagementGroup from "./artifacts/contracts/governance/interface
 import IIPreInflationCalculation from "./artifacts/contracts/inflation/interfaces/IIPreInflationCalculation.sol/IIPreInflationCalculation.json";
 import IIPriceSubmitter from "./artifacts/contracts/genesis/interfaces/IIPriceSubmitter.sol/IIPriceSubmitter.json";
 import IIPublicKeyVerifier from "./artifacts/contracts/protocol/interfaces/IIPublicKeyVerifier.sol/IIPublicKeyVerifier.json";
-import IIRNat from "./artifacts/contracts/rNat/interfaces/IIRNat.sol/IIRNat.json";
-import IIRNatAccount from "./artifacts/contracts/rNat/interfaces/IIRNatAccount.sol/IIRNatAccount.json";
 import IIRandomProvider from "./artifacts/contracts/utils/interfaces/IIRandomProvider.sol/IIRandomProvider.json";
 import IIRelay from "./artifacts/contracts/protocol/interfaces/IIRelay.sol/IIRelay.json";
 import IIRewardEpochSwitchoverTrigger from "./artifacts/contracts/protocol/interfaces/IIRewardEpochSwitchoverTrigger.sol/IIRewardEpochSwitchoverTrigger.json";
@@ -312,8 +310,6 @@ export const interfaceAbis: { [key: string]: any } = {
     IIPreInflationCalculation: IIPreInflationCalculation,
     IIPriceSubmitter: IIPriceSubmitter,
     IIPublicKeyVerifier: IIPublicKeyVerifier,
-    IIRNat: IIRNat,
-    IIRNatAccount: IIRNatAccount,
     IIRandomProvider: IIRandomProvider,
     IIRelay: IIRelay,
     IIRewardEpochSwitchoverTrigger: IIRewardEpochSwitchoverTrigger,

@@ -10,9 +10,9 @@
       },
       {
         "indexed": false,
-        "internalType": "uint256",
+        "internalType": "uint32",
         "name": "untilRewardEpochId",
-        "type": "uint256"
+        "type": "uint32"
       }
     ],
     "name": "BeneficiaryChilled",
@@ -29,9 +29,9 @@
       },
       {
         "indexed": true,
-        "internalType": "uint24",
+        "internalType": "uint32",
         "name": "rewardEpochId",
-        "type": "uint24"
+        "type": "uint32"
       },
       {
         "indexed": true,
@@ -52,22 +52,51 @@
         "type": "address"
       },
       {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "x",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "y",
+            "type": "bytes32"
+          }
+        ],
         "indexed": false,
-        "internalType": "bytes32",
-        "name": "publicKeyPart1",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "internalType": "bytes32",
-        "name": "publicKeyPart2",
-        "type": "bytes32"
+        "internalType": "struct PublicKey",
+        "name": "publicKey",
+        "type": "tuple"
       },
       {
         "indexed": false,
         "internalType": "uint256",
         "name": "registrationWeight",
         "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct Signature",
+        "name": "signature",
+        "type": "tuple"
       }
     ],
     "name": "VoterRegistered",
@@ -84,9 +113,9 @@
       },
       {
         "indexed": true,
-        "internalType": "uint256",
+        "internalType": "uint32",
         "name": "rewardEpochId",
-        "type": "uint256"
+        "type": "uint32"
       }
     ],
     "name": "VoterRemoved",
@@ -584,7 +613,7 @@
             "type": "bytes32"
           }
         ],
-        "internalType": "struct IVoterRegistry.Signature",
+        "internalType": "struct Signature",
         "name": "_signature",
         "type": "tuple"
       }
@@ -603,19 +632,6 @@
       }
     ],
     "name": "setNewSigningPolicyInitializationStartBlockNumber",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_voter",
-        "type": "address"
-      }
-    ],
-    "name": "systemRegistration",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
