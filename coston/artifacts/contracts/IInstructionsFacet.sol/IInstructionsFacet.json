@@ -26,6 +26,11 @@
         "internalType": "uint256",
         "name": "instructionType",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expectedVaultType",
+        "type": "uint256"
       }
     ],
     "name": "InvalidInstructionType",

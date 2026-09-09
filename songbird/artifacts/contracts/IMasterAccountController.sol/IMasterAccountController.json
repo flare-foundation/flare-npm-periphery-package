@@ -78,6 +78,22 @@
   {
     "inputs": [
       {
+        "internalType": "bytes32",
+        "name": "expected",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "actual",
+        "type": "bytes32"
+      }
+    ],
+    "name": "CustomInstructionHashMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "instructionId",
         "type": "uint256"
@@ -176,6 +192,11 @@
       {
         "internalType": "uint256",
         "name": "instructionType",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expectedVaultType",
         "type": "uint256"
       }
     ],
@@ -2363,6 +2384,49 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_transactionId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "string",
+        "name": "_sourceAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_underlyingTimestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_memoData",
+        "type": "bytes"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_executor",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_data",
+        "type": "bytes"
+      }
+    ],
+    "name": "handleMintedFAssets",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "implementation",
     "outputs": [
@@ -2467,44 +2531,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "_transactionId",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "string",
-        "name": "_sourceAddress",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_underlyingTimestamp",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes",
-        "name": "_memoData",
-        "type": "bytes"
-      },
-      {
-        "internalType": "address payable",
-        "name": "_executor",
-        "type": "address"
-      }
-    ],
-    "name": "mintedFAssets",
-    "outputs": [],
-    "stateMutability": "payable",
     "type": "function"
   },
   {

@@ -23,8 +23,13 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IAgentPing).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAgentVaultsFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAssetManager).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IAssetManagerAgents).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAssetManagerController).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAssetManagerEvents).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IAssetManagerInfo).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IAssetManagerLiquidation).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IAssetManagerMinting).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IAssetManagerRedemption).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IBalanceDecreasingTransaction).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IBalanceDecreasingTransactionVerification).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ICChainStake).toEqual(expect.any(Array));
@@ -485,8 +490,15 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("IAgentPing", "flare")).toEqual(flare.interfaceAbis.IAgentPing);
         expect(interfaceToAbi("IAgentVaultsFacet", "flare")).toEqual(flare.interfaceAbis.IAgentVaultsFacet);
         expect(interfaceToAbi("IAssetManager", "flare")).toEqual(flare.interfaceAbis.IAssetManager);
+        expect(interfaceToAbi("IAssetManagerAgents", "flare")).toEqual(flare.interfaceAbis.IAssetManagerAgents);
         expect(interfaceToAbi("IAssetManagerController", "flare")).toEqual(flare.interfaceAbis.IAssetManagerController);
         expect(interfaceToAbi("IAssetManagerEvents", "flare")).toEqual(flare.interfaceAbis.IAssetManagerEvents);
+        expect(interfaceToAbi("IAssetManagerInfo", "flare")).toEqual(flare.interfaceAbis.IAssetManagerInfo);
+        expect(interfaceToAbi("IAssetManagerLiquidation", "flare")).toEqual(
+            flare.interfaceAbis.IAssetManagerLiquidation
+        );
+        expect(interfaceToAbi("IAssetManagerMinting", "flare")).toEqual(flare.interfaceAbis.IAssetManagerMinting);
+        expect(interfaceToAbi("IAssetManagerRedemption", "flare")).toEqual(flare.interfaceAbis.IAssetManagerRedemption);
         expect(interfaceToAbi("IBalanceDecreasingTransaction", "flare")).toEqual(
             flare.interfaceAbis.IBalanceDecreasingTransaction
         );
@@ -749,8 +761,13 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("IAgentPing")).toEqual(flare.interfaceAbis.IAgentPing);
         expect(flare.interfaceToAbi("IAgentVaultsFacet")).toEqual(flare.interfaceAbis.IAgentVaultsFacet);
         expect(flare.interfaceToAbi("IAssetManager")).toEqual(flare.interfaceAbis.IAssetManager);
+        expect(flare.interfaceToAbi("IAssetManagerAgents")).toEqual(flare.interfaceAbis.IAssetManagerAgents);
         expect(flare.interfaceToAbi("IAssetManagerController")).toEqual(flare.interfaceAbis.IAssetManagerController);
         expect(flare.interfaceToAbi("IAssetManagerEvents")).toEqual(flare.interfaceAbis.IAssetManagerEvents);
+        expect(flare.interfaceToAbi("IAssetManagerInfo")).toEqual(flare.interfaceAbis.IAssetManagerInfo);
+        expect(flare.interfaceToAbi("IAssetManagerLiquidation")).toEqual(flare.interfaceAbis.IAssetManagerLiquidation);
+        expect(flare.interfaceToAbi("IAssetManagerMinting")).toEqual(flare.interfaceAbis.IAssetManagerMinting);
+        expect(flare.interfaceToAbi("IAssetManagerRedemption")).toEqual(flare.interfaceAbis.IAssetManagerRedemption);
         expect(flare.interfaceToAbi("IBalanceDecreasingTransaction")).toEqual(
             flare.interfaceAbis.IBalanceDecreasingTransaction
         );

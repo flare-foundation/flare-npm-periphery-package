@@ -1,0 +1,15 @@
+[
+  {
+    "inputs": [],
+    "name": "paymentModel",
+    "outputs": [
+      {
+        "internalType": "enum PaymentModel",
+        "name": "_paymentModel",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  }
+]

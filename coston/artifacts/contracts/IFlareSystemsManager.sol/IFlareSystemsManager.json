@@ -486,7 +486,7 @@
             "type": "bytes32"
           }
         ],
-        "internalType": "struct IFlareSystemsManager.Signature",
+        "internalType": "struct Signature",
         "name": "_signature",
         "type": "tuple"
       }
@@ -543,7 +543,7 @@
             "type": "bytes32"
           }
         ],
-        "internalType": "struct IFlareSystemsManager.Signature",
+        "internalType": "struct Signature",
         "name": "_signature",
         "type": "tuple"
       }
@@ -583,7 +583,7 @@
             "type": "bytes32"
           }
         ],
-        "internalType": "struct IFlareSystemsManager.Signature",
+        "internalType": "struct Signature",
         "name": "_signature",
         "type": "tuple"
       }
@@ -623,7 +623,7 @@
             "type": "bytes32"
           }
         ],
-        "internalType": "struct IFlareSystemsManager.Signature",
+        "internalType": "struct Signature",
         "name": "_signature",
         "type": "tuple"
       }

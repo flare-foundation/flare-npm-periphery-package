@@ -1,0 +1,1405 @@
+[
+  {
+    "inputs": [],
+    "name": "AccountIndexMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AnchorIndexOutOfBounds",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AnchorMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "availableAt",
+        "type": "uint64"
+      }
+    ],
+    "name": "AnchorNotReady",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AuthorizationAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BatchNotYetEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BatchSizeZero",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidFeeFactor",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidPaymentId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidRecipientAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LengthsMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MaxBatchSizeZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoActiveReplacement",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoNewAnchors",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoPaymentInstructions",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyAuthorizationAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyProductionOrPausedStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlySystemExtensionId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyWalletOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PMWMultisigAccountAddressAlreadySet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PMWMultisigAccountNotRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PaymentAmountZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PaymentHashMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PaymentNotInBatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReissueRewardEpochChanged",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReplacementAlreadyFinalized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ScheduledSignaturesUnsupported",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UnsupportedSourceId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WalletNotInProduction",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongKeyType",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "accountAddress",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "accountIndex",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "anchorCount",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "authorizationAddress",
+        "type": "address"
+      }
+    ],
+    "name": "PMWMultisigUtxoAccountAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "accountAddress",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "accountIndex",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "anchorCount",
+        "type": "uint32"
+      }
+    ],
+    "name": "UtxoAnchorsAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "accountAddress",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "batchSize",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "batchDurationSeconds",
+        "type": "uint64"
+      }
+    ],
+    "name": "UtxoBatchSettingsSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "batchPaymentId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "replacementId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "firstPaymentId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "paymentCount",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256[]",
+        "name": "blocks",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "UtxoReplacementReady",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "batchPaymentId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "replacementId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "firstPaymentId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "startBlock",
+        "type": "uint256"
+      }
+    ],
+    "name": "UtxoReplacementStarted",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "bytes",
+                "name": "signingPolicySignatures",
+                "type": "bytes"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint8",
+                    "name": "v",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "r",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "s",
+                    "type": "bytes32"
+                  }
+                ],
+                "internalType": "struct Signature[]",
+                "name": "teeSignatures",
+                "type": "tuple[]"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint8",
+                    "name": "v",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "r",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "s",
+                    "type": "bytes32"
+                  }
+                ],
+                "internalType": "struct Signature[]",
+                "name": "cosignerSignatures",
+                "type": "tuple[]"
+              }
+            ],
+            "internalType": "struct IFdc2Verification.Fdc2Signatures",
+            "name": "signatures",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "attestationType",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "sourceId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "thresholdBIPS",
+                "type": "uint16"
+              },
+              {
+                "internalType": "address",
+                "name": "proofOwner",
+                "type": "address"
+              },
+              {
+                "internalType": "address[]",
+                "name": "cosigners",
+                "type": "address[]"
+              },
+              {
+                "internalType": "uint64",
+                "name": "cosignersThreshold",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct IFdc2Hub.Fdc2ResponseHeader",
+            "name": "header",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint32",
+                "name": "accountIndex",
+                "type": "uint32"
+              },
+              {
+                "internalType": "bytes[]",
+                "name": "publicKeys",
+                "type": "bytes[]"
+              },
+              {
+                "internalType": "uint64",
+                "name": "threshold",
+                "type": "uint64"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bytes32",
+                    "name": "genesisAnchorTxid",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "uint32",
+                    "name": "genesisAnchorVout",
+                    "type": "uint32"
+                  }
+                ],
+                "internalType": "struct IPMWMultisigUtxoConfigured.Anchor[]",
+                "name": "anchors",
+                "type": "tuple[]"
+              }
+            ],
+            "internalType": "struct IPMWMultisigUtxoConfigured.RequestBody",
+            "name": "requestBody",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum IPMWMultisigUtxoConfigured.PMWMultisigUtxoStatus",
+                "name": "status",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string",
+                "name": "accountAddress",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct IPMWMultisigUtxoConfigured.ResponseBody",
+            "name": "responseBody",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IPMWMultisigUtxoConfigured.Proof",
+        "name": "_proof",
+        "type": "tuple"
+      }
+    ],
+    "name": "addAnchors",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "bytes",
+                "name": "signingPolicySignatures",
+                "type": "bytes"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint8",
+                    "name": "v",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "r",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "s",
+                    "type": "bytes32"
+                  }
+                ],
+                "internalType": "struct Signature[]",
+                "name": "teeSignatures",
+                "type": "tuple[]"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint8",
+                    "name": "v",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "r",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "s",
+                    "type": "bytes32"
+                  }
+                ],
+                "internalType": "struct Signature[]",
+                "name": "cosignerSignatures",
+                "type": "tuple[]"
+              }
+            ],
+            "internalType": "struct IFdc2Verification.Fdc2Signatures",
+            "name": "signatures",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "attestationType",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "sourceId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "thresholdBIPS",
+                "type": "uint16"
+              },
+              {
+                "internalType": "address",
+                "name": "proofOwner",
+                "type": "address"
+              },
+              {
+                "internalType": "address[]",
+                "name": "cosigners",
+                "type": "address[]"
+              },
+              {
+                "internalType": "uint64",
+                "name": "cosignersThreshold",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct IFdc2Hub.Fdc2ResponseHeader",
+            "name": "header",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint32",
+                "name": "accountIndex",
+                "type": "uint32"
+              },
+              {
+                "internalType": "bytes[]",
+                "name": "publicKeys",
+                "type": "bytes[]"
+              },
+              {
+                "internalType": "uint64",
+                "name": "threshold",
+                "type": "uint64"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bytes32",
+                    "name": "genesisAnchorTxid",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "uint32",
+                    "name": "genesisAnchorVout",
+                    "type": "uint32"
+                  }
+                ],
+                "internalType": "struct IPMWMultisigUtxoConfigured.Anchor[]",
+                "name": "anchors",
+                "type": "tuple[]"
+              }
+            ],
+            "internalType": "struct IPMWMultisigUtxoConfigured.RequestBody",
+            "name": "requestBody",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum IPMWMultisigUtxoConfigured.PMWMultisigUtxoStatus",
+                "name": "status",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string",
+                "name": "accountAddress",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct IPMWMultisigUtxoConfigured.ResponseBody",
+            "name": "responseBody",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IPMWMultisigUtxoConfigured.Proof",
+        "name": "_proof",
+        "type": "tuple"
+      },
+      {
+        "internalType": "address",
+        "name": "_authorizationAddress",
+        "type": "address"
+      }
+    ],
+    "name": "addPMWMultisigAccount",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_anchorIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAnchor",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "genesisAnchorTxid",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "genesisAnchorVout",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "nextNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "availableAt",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct ITeePaymentsUtxo.UtxoAnchorState",
+        "name": "_anchor",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getAnchorCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_anchorCount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getAnchorReuseDelay",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "_anchorReuseDelaySeconds",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getAuthorizationAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "_authorizationAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_paymentId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getBatchPaymentId",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "_batchPaymentId",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_batchPaymentId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getBatchRecord",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "nonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "batchEndTs",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "paymentCount",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "anchorIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint24",
+            "name": "rewardEpochId",
+            "type": "uint24"
+          }
+        ],
+        "internalType": "struct ITeePaymentsUtxo.BatchRecord",
+        "name": "_batch",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bool",
+        "name": "_open",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getBatchSettings",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "_batchSize",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_batchDurationSeconds",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getMaxBatchSettings",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "_maxBatchSize",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_maxBatchDurationSeconds",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getNextPaymentId",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "_nextPaymentId",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_opCommand",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getPaymentFee",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_fee",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_paymentId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getPaymentHash",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_paymentHash",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getWalletAccounts",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount[]",
+        "name": "_walletAccounts",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getWalletId",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "recipientAddress",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "tokenId",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "paymentReference",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PaymentInstruction",
+        "name": "_paymentInstruction",
+        "type": "tuple"
+      },
+      {
+        "internalType": "address",
+        "name": "_claimBackAddress",
+        "type": "address"
+      }
+    ],
+    "name": "pay",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "_paymentId",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "paymentModel",
+    "outputs": [
+      {
+        "internalType": "enum PaymentModel",
+        "name": "_paymentModel",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_batchPaymentId",
+        "type": "uint64"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "recipientAddress",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "tokenId",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "paymentReference",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PaymentInstruction[]",
+        "name": "_paymentInstructions",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256[]",
+            "name": "maxFeePerPayment",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "int16[][]",
+            "name": "factorsBIPSPerPayment",
+            "type": "int16[][]"
+          },
+          {
+            "internalType": "uint16[]",
+            "name": "delaysSeconds",
+            "type": "uint16[]"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.ReissueFeeParams",
+        "name": "_reissueFeeParams",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bool",
+        "name": "_startNew",
+        "type": "bool"
+      },
+      {
+        "internalType": "address",
+        "name": "_claimBackAddress",
+        "type": "address"
+      }
+    ],
+    "name": "reissue",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_finalized",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_batchSize",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_batchDurationSeconds",
+        "type": "uint64"
+      }
+    ],
+    "name": "setBatchSettings",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

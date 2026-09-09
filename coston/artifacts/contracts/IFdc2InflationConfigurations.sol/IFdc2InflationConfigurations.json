@@ -1,0 +1,203 @@
+[
+  {
+    "inputs": [],
+    "name": "InvalidIndex",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LengthsMismatch",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "attestationType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint24",
+            "name": "inflationShare",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint8",
+            "name": "minRequestsThreshold",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint224",
+            "name": "mode",
+            "type": "uint224"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IFdc2InflationConfigurations.Fdc2Configuration",
+        "name": "configuration",
+        "type": "tuple"
+      }
+    ],
+    "name": "Fdc2ConfigurationAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "Fdc2ConfigurationRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "attestationType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint24",
+            "name": "inflationShare",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint8",
+            "name": "minRequestsThreshold",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint224",
+            "name": "mode",
+            "type": "uint224"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IFdc2InflationConfigurations.Fdc2Configuration",
+        "name": "configuration",
+        "type": "tuple"
+      }
+    ],
+    "name": "Fdc2ConfigurationReplaced",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getFdc2Configuration",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "attestationType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint24",
+            "name": "inflationShare",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint8",
+            "name": "minRequestsThreshold",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint224",
+            "name": "mode",
+            "type": "uint224"
+          }
+        ],
+        "internalType": "struct IFdc2InflationConfigurations.Fdc2Configuration",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getFdc2Configurations",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "attestationType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint24",
+            "name": "inflationShare",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint8",
+            "name": "minRequestsThreshold",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint224",
+            "name": "mode",
+            "type": "uint224"
+          }
+        ],
+        "internalType": "struct IFdc2InflationConfigurations.Fdc2Configuration[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

@@ -1,0 +1,929 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "collateralClass",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "collateralToken",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "minCollateralRatioBIPS",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "safetyMinCollateralRatioBIPS",
+        "type": "uint256"
+      }
+    ],
+    "name": "CollateralRatiosChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "collateralClass",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "decimals",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "directPricePair",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "assetFtsoSymbol",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "tokenFtsoSymbol",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "minCollateralRatioBIPS",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "safetyMinCollateralRatioBIPS",
+        "type": "uint256"
+      }
+    ],
+    "name": "CollateralTypeAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "value",
+        "type": "address"
+      }
+    ],
+    "name": "ContractChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "underlyingBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "underlyingBlockTimestamp",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "updatedAt",
+        "type": "uint256"
+      }
+    ],
+    "name": "CurrentUnderlyingBlockUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "EmergencyPauseCanceled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "EmergencyPauseTotalDurationReset",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "enum EmergencyPause.Level",
+        "name": "externalLevel",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "externalPausedUntil",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum EmergencyPause.Level",
+        "name": "governanceLevel",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "governancePausedUntil",
+        "type": "uint256"
+      }
+    ],
+    "name": "EmergencyPauseTriggered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "paused",
+        "type": "bool"
+      }
+    ],
+    "name": "MintingPaused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256[]",
+        "name": "value",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "SettingArrayChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "SettingChanged",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "assetManagerController",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "assetMintingDecimals",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "assetMintingGranularityUBA",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "controllerAttached",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "currentUnderlyingBlock",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_blockNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_blockTimestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_lastUpdateTs",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "emergencyPauseLevel",
+    "outputs": [
+      {
+        "internalType": "enum EmergencyPause.Level",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "emergencyPaused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "emergencyPausedUntil",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fAsset",
+    "outputs": [
+      {
+        "internalType": "contract IERC20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum CollateralType.Class",
+        "name": "_collateralClass",
+        "type": "uint8"
+      },
+      {
+        "internalType": "contract IERC20",
+        "name": "_token",
+        "type": "address"
+      }
+    ],
+    "name": "getCollateralType",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum CollateralType.Class",
+            "name": "collateralClass",
+            "type": "uint8"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "decimals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "validUntil",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "directPricePair",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "assetFtsoSymbol",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "tokenFtsoSymbol",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "safetyMinCollateralRatioBIPS",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct CollateralType.Data",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getCollateralTypes",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum CollateralType.Class",
+            "name": "collateralClass",
+            "type": "uint8"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "decimals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "validUntil",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "directPricePair",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "assetFtsoSymbol",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "tokenFtsoSymbol",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "safetyMinCollateralRatioBIPS",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct CollateralType.Data[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSettings",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "assetManagerController",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "fAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "agentVaultFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collateralPoolFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collateralPoolTokenFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "poolTokenSuffix",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "__whitelist",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "agentOwnerRegistry",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "fdcVerification",
+            "type": "address"
+          },
+          {
+            "internalType": "address payable",
+            "name": "burnAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "priceReader",
+            "type": "address"
+          },
+          {
+            "internalType": "uint8",
+            "name": "assetDecimals",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "assetMintingDecimals",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "chainId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "averageBlockTimeMS",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "mintingPoolHoldingsRequiredBIPS",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "collateralReservationFeeBIPS",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint64",
+            "name": "assetUnitUBA",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "assetMintingGranularityUBA",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "lotSizeAMG",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint16",
+            "name": "__minUnderlyingBackingBIPS",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bool",
+            "name": "__requireEOAAddressProof",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint64",
+            "name": "mintingCapAMG",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "underlyingBlocksForPayment",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "underlyingSecondsForPayment",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint16",
+            "name": "redemptionFeeBIPS",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint32",
+            "name": "redemptionDefaultFactorVaultCollateralBIPS",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "__redemptionDefaultFactorPoolBIPS",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "confirmationByOthersAfterSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "confirmationByOthersRewardUSD5",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint16",
+            "name": "maxRedeemedTickets",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "paymentChallengeRewardBIPS",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint128",
+            "name": "paymentChallengeRewardUSD5",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint64",
+            "name": "withdrawalWaitMinSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "maxTrustedPriceAgeSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "__ccbTimeSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "attestationWindowSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "minUpdateRepeatTimeSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "__buybackCollateralFactorBIPS",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "__announcedUnderlyingConfirmationMinSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "__tokenInvalidationTimeMinSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "vaultCollateralBuyForFlareFactorBIPS",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "agentExitAvailableTimelockSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "agentFeeChangeTimelockSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "agentMintingCRChangeTimelockSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "poolExitCRChangeTimelockSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "agentTimelockedOperationWindowSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "collateralPoolTokenTimelockSeconds",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "liquidationStepSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "liquidationCollateralFactorBIPS",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "liquidationFactorVaultCollateralBIPS",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint64",
+            "name": "diamondCutMinTimelockSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "maxEmergencyPauseDurationSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "emergencyPauseDurationResetAfterSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "__cancelCollateralReservationAfterSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint16",
+            "name": "__rejectOrCancelCollateralReservationReturnFactorBIPS",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint64",
+            "name": "__rejectRedemptionRequestWindowSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "__takeOverRedemptionRequestWindowSeconds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "__rejectedRedemptionDefaultFactorVaultCollateralBIPS",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "__rejectedRedemptionDefaultFactorPoolBIPS",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct AssetManagerSettings.Data",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lotSize",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_lotSizeUBA",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "mintingPaused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "priceReader",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32[]",
+            "name": "merkleProof",
+            "type": "bytes32[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "attestationType",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "sourceId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "votingRound",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "lowestUsedTimestamp",
+                "type": "uint64"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "blockNumber",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "queryWindow",
+                    "type": "uint64"
+                  }
+                ],
+                "internalType": "struct IConfirmedBlockHeightExists.RequestBody",
+                "name": "requestBody",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "blockTimestamp",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "numberOfConfirmations",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "lowestQueryWindowBlockNumber",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "lowestQueryWindowBlockTimestamp",
+                    "type": "uint64"
+                  }
+                ],
+                "internalType": "struct IConfirmedBlockHeightExists.ResponseBody",
+                "name": "responseBody",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct IConfirmedBlockHeightExists.Response",
+            "name": "data",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IConfirmedBlockHeightExists.Proof",
+        "name": "_proof",
+        "type": "tuple"
+      }
+    ],
+    "name": "updateCurrentBlock",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

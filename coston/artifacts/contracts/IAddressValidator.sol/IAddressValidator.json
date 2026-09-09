@@ -1,0 +1,85 @@
+[
+  {
+    "inputs": [],
+    "name": "EmptyArray",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IAddressValidator.ChainKind",
+        "name": "chainKind",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IAddressValidator.Network",
+        "name": "network",
+        "type": "uint8"
+      }
+    ],
+    "name": "SourceConfigSet",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getSourceConfig",
+    "outputs": [
+      {
+        "internalType": "enum IAddressValidator.ChainKind",
+        "name": "_chainKind",
+        "type": "uint8"
+      },
+      {
+        "internalType": "enum IAddressValidator.Network",
+        "name": "_network",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bool",
+        "name": "_configured",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "string",
+        "name": "_address",
+        "type": "string"
+      }
+    ],
+    "name": "isValidAddress",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_valid",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

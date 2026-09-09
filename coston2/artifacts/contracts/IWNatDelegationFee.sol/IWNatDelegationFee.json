@@ -1,5 +1,30 @@
 [
   {
+    "inputs": [],
+    "name": "DefaultFeePercentageInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FeePercentageInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidRewardEpochId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MinFeePercentageInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OffsetTooSmall",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -117,6 +142,19 @@
         "internalType": "bool[]",
         "name": "_fixed",
         "type": "bool[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "minFeeBIPS",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
       }
     ],
     "stateMutability": "view",

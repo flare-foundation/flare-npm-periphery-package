@@ -1,7 +1,7 @@
 {
   "name": "@flarenetwork/flare-periphery-contract-artifacts",
   "description": "Smart contract artifacts for all Flare chains",
-  "version": "0.1.52",
+  "version": "0.1.53",
   "author": "Flare Network",
   "license": "MIT",
   "keywords": [
@@ -37,7 +37,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
-    "@types/jest": "^30.0.0",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20.6.0",
     "glob": "^10.0.0",
     "jest": "^29.7.0",

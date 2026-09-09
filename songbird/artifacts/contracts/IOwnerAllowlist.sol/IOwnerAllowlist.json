@@ -1,0 +1,698 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "AddressAlreadyInSet",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "AddressNotInSet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AvailabilityCheckTimestampInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "cosigner",
+        "type": "address"
+      }
+    ],
+    "name": "DuplicatedCosigner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ExtensionIdMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAvailabilityCheckStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "cosigner",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidCosigner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidDuration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidGovernanceHash",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidKeyType",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidNonce",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidPublicKey",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidResponseData",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSigningAlgo",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidThreshold",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidWalletStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "keyType",
+        "type": "bytes32"
+      }
+    ],
+    "name": "KeyTypeNotSupported",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LengthsMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoAddresses",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "NotOwnerOrPauser",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "NotOwnerOrUnpauser",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyExtensionOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyExtensionOwnerOrOperator",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyOwnerOrBackupManager",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyProductionOrPausedStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyProposedOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OwnerNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TeeMachineNotAvailable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "VersionNotSupported",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "AllExtensionOwnersAllowed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "AllExtensionOwnersDisallowed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "AllTeeMachineOwnersAllowed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "AllTeeMachineOwnersDisallowed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "AllTeeWalletProjectOwnersAllowed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "AllTeeWalletProjectOwnersDisallowed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "AllowedExtensionOwnersAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "AllowedExtensionOwnersRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "AllowedTeeMachineOwnersAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "AllowedTeeMachineOwnersRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "AllowedTeeWalletProjectOwnersAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "AllowedTeeWalletProjectOwnersRemoved",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "_owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "addAllowedExtensionOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "addAllowedTeeMachineOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "addAllowedTeeWalletProjectOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "allExtensionOwnersAllowed",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_allAllowed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "allTeeMachineOwnersAllowed",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_allAllowed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "allTeeWalletProjectOwnersAllowed",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_allAllowed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "allowAllExtensionOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "allowAllTeeMachineOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "allowAllTeeWalletProjectOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "disallowAllExtensionOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "disallowAllTeeMachineOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "disallowAllTeeWalletProjectOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllowedExtensionOwners",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "_allowedOwners",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAllowedTeeMachineOwners",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "_allowedOwners",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAllowedTeeWalletProjectOwners",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "_allowedOwners",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      }
+    ],
+    "name": "isAllowedExtensionOwner",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_isAllowed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      }
+    ],
+    "name": "isAllowedTeeMachineOwner",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_isAllowed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      }
+    ],
+    "name": "isAllowedTeeWalletProjectOwner",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_isAllowed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "_owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "removeAllowedExtensionOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "removeAllowedTeeMachineOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "removeAllowedTeeWalletProjectOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

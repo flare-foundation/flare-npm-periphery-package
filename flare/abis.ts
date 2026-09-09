@@ -16,8 +16,13 @@ import IAgentOwnerRegistry from "./artifacts/contracts/IAgentOwnerRegistry.sol/I
 import IAgentPing from "./artifacts/contracts/IAgentPing.sol/IAgentPing.json";
 import IAgentVaultsFacet from "./artifacts/contracts/IAgentVaultsFacet.sol/IAgentVaultsFacet.json";
 import IAssetManager from "./artifacts/contracts/IAssetManager.sol/IAssetManager.json";
+import IAssetManagerAgents from "./artifacts/contracts/IAssetManagerAgents.sol/IAssetManagerAgents.json";
 import IAssetManagerController from "./artifacts/contracts/IAssetManagerController.sol/IAssetManagerController.json";
 import IAssetManagerEvents from "./artifacts/contracts/IAssetManagerEvents.sol/IAssetManagerEvents.json";
+import IAssetManagerInfo from "./artifacts/contracts/IAssetManagerInfo.sol/IAssetManagerInfo.json";
+import IAssetManagerLiquidation from "./artifacts/contracts/IAssetManagerLiquidation.sol/IAssetManagerLiquidation.json";
+import IAssetManagerMinting from "./artifacts/contracts/IAssetManagerMinting.sol/IAssetManagerMinting.json";
+import IAssetManagerRedemption from "./artifacts/contracts/IAssetManagerRedemption.sol/IAssetManagerRedemption.json";
 import IBalanceDecreasingTransaction from "./artifacts/contracts/IBalanceDecreasingTransaction.sol/IBalanceDecreasingTransaction.json";
 import IBalanceDecreasingTransactionVerification from "./artifacts/contracts/IBalanceDecreasingTransactionVerification.sol/IBalanceDecreasingTransactionVerification.json";
 import ICChainStake from "./artifacts/contracts/ICChainStake.sol/ICChainStake.json";
@@ -213,8 +218,13 @@ export const interfaceAbis: { [key: string]: any } = {
     IAgentPing: IAgentPing,
     IAgentVaultsFacet: IAgentVaultsFacet,
     IAssetManager: IAssetManager,
+    IAssetManagerAgents: IAssetManagerAgents,
     IAssetManagerController: IAssetManagerController,
     IAssetManagerEvents: IAssetManagerEvents,
+    IAssetManagerInfo: IAssetManagerInfo,
+    IAssetManagerLiquidation: IAssetManagerLiquidation,
+    IAssetManagerMinting: IAssetManagerMinting,
+    IAssetManagerRedemption: IAssetManagerRedemption,
     IBalanceDecreasingTransaction: IBalanceDecreasingTransaction,
     IBalanceDecreasingTransactionVerification: IBalanceDecreasingTransactionVerification,
     ICChainStake: ICChainStake,

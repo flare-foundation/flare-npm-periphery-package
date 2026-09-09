@@ -1,0 +1,514 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "AddressAlreadyInSet",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "AddressNotInSet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AvailabilityCheckTimestampInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "cosigner",
+        "type": "address"
+      }
+    ],
+    "name": "DuplicatedCosigner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ExtensionIdMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAvailabilityCheckStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "cosigner",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidCosigner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidDuration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidGovernanceHash",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidKeyType",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidNonce",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidPublicKey",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidResponseData",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidRewardEpochId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSigningAlgo",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidTeeMachine",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidThreshold",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidWalletStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "KeyAlreadyAvailable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "KeyNotConfirmed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "keyType",
+        "type": "bytes32"
+      }
+    ],
+    "name": "KeyTypeNotSupported",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LengthsMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoAddresses",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "NotOwnerOrPauser",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "NotOwnerOrUnpauser",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyExtensionOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyExtensionOwnerOrOperator",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyOwnerOrBackupManager",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyProductionOrPausedStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyProposedOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OwnerNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SourceTeeDoesNotHoldKey",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TeeMachineNotAvailable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "VersionNotSupported",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "teeId",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "keyId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "BackupRestoreTriggered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sourceTeeId",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "destinationTeeId",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "keyId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "backupInstructionId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "DirectBackupTriggered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "destinationTeeId",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "keyId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "destinationNonce",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "backupInstructionId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "DirectRestoreTriggered",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_teeId",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "teeId",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "walletId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "keyId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "keyType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "signingAlgo",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "publicKey",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint32",
+            "name": "rewardEpochId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "randomNonce",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct IWalletBackupManager.BackupId",
+        "name": "_backupId",
+        "type": "tuple"
+      },
+      {
+        "internalType": "string",
+        "name": "_backupUrl",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_claimBackAddress",
+        "type": "address"
+      }
+    ],
+    "name": "backupRestore",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_sourceTeeId",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_destinationTeeId",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_keyId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "address",
+        "name": "_claimBackAddress",
+        "type": "address"
+      }
+    ],
+    "name": "directBackup",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_instructionId",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_destinationTeeId",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "teeId",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "walletId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "keyId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "keyType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "signingAlgo",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "publicKey",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint32",
+            "name": "rewardEpochId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "randomNonce",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct IWalletBackupManager.BackupId",
+        "name": "_backupId",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_backupInstructionId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "_claimBackAddress",
+        "type": "address"
+      }
+    ],
+    "name": "directRestore",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_instructionId",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  }
+]

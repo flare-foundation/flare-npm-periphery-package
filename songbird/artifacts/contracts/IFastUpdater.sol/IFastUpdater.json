@@ -336,7 +336,7 @@
                 "type": "bytes32"
               }
             ],
-            "internalType": "struct IFastUpdater.Signature",
+            "internalType": "struct Signature",
             "name": "signature",
             "type": "tuple"
           }

@@ -1,0 +1,757 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "AddressAlreadyInSet",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "AddressNotInSet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AvailabilityCheckTimestampInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "cosigner",
+        "type": "address"
+      }
+    ],
+    "name": "DuplicatedCosigner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ExtensionIdMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAvailabilityCheckStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "cosigner",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidCosigner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidDuration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidGovernanceHash",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidKeyId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidKeyType",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidNonce",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidPublicKey",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidResponseData",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSettings",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSigningAlgo",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidTeeSignature",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidThreshold",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidWalletStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "KeyNotGeneratedOnTeeMachine",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "KeyNotRestoredOnTeeMachine",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "keyType",
+        "type": "bytes32"
+      }
+    ],
+    "name": "KeyTypeNotSupported",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LengthsMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoAddresses",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "NotOwnerOrPauser",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "NotOwnerOrUnpauser",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyExtensionOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyExtensionOwnerOrOperator",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyOwnerOrBackupManager",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyProductionOrPausedStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyProposedOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OwnerNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TeeIdAlreadyAdded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TeeMachineNotAvailable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ThresholdNotMet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "VersionNotSupported",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "teeId",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "keyId",
+        "type": "uint64"
+      }
+    ],
+    "name": "WalletKeyAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "teeId",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "keyId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "publicKey",
+        "type": "bytes"
+      }
+    ],
+    "name": "WalletKeyConfirmed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "teeId",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "keyId",
+        "type": "uint64"
+      }
+    ],
+    "name": "WalletKeyDeleted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64[]",
+        "name": "keyIds",
+        "type": "uint64[]"
+      }
+    ],
+    "name": "WalletKeysNotAvailable",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "multisigThreshold",
+        "type": "uint64"
+      }
+    ],
+    "name": "WalletMultisigThresholdSet",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_teeId",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "_claimBackAddress",
+        "type": "address"
+      }
+    ],
+    "name": "addKey",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "_keyId",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_keyId",
+        "type": "uint64"
+      }
+    ],
+    "name": "cleanUpTeeIds",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "teeId",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "walletId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "keyId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "keyType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "signingAlgo",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "publicKey",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint256",
+            "name": "nonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "restored",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "bytes32",
+                    "name": "x",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "y",
+                    "type": "bytes32"
+                  }
+                ],
+                "internalType": "struct PublicKey[]",
+                "name": "adminsPublicKeys",
+                "type": "tuple[]"
+              },
+              {
+                "internalType": "uint64",
+                "name": "adminsThreshold",
+                "type": "uint64"
+              },
+              {
+                "internalType": "address[]",
+                "name": "cosigners",
+                "type": "address[]"
+              },
+              {
+                "internalType": "uint64",
+                "name": "cosignersThreshold",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct IWalletKeyManager.KeyConfigConstants",
+            "name": "configConstants",
+            "type": "tuple"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "settingsVersion",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "settings",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IWalletKeyManager.KeyExistence",
+        "name": "_proof",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct Signature",
+        "name": "_teeSignature",
+        "type": "tuple"
+      }
+    ],
+    "name": "confirmKey",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_teeId",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_keyId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "address",
+        "name": "_claimBackAddress",
+        "type": "address"
+      }
+    ],
+    "name": "deleteKey",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_teeId",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_keyId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getKeyNonce",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_teeHoldsKey",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getReceivingTeeIds",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "_teeIds",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_keyId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getWalletKeyPublicKey",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "_publicKey",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_keyId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getWalletKeyTeeIds",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "_teeIds",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getWalletKeysInfo",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "_multisigThreshold",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64[]",
+        "name": "_keyIds",
+        "type": "uint64[]"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_counter",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getWalletPublicKeys",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "_multisigThreshold",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "_publicKeys",
+        "type": "bytes[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "receivingTeesAndKeys",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "teeId",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "keyId",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct TeeIdKeyIdPair[]",
+        "name": "_teeIdKeyIdPairs",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_multisigThreshold",
+        "type": "uint64"
+      }
+    ],
+    "name": "setMultisigThreshold",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
