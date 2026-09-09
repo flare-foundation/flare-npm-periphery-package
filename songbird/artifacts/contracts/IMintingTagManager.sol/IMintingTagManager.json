@@ -7,19 +7,6 @@
         "internalType": "uint256",
         "name": "tag",
         "type": "uint256"
-      }
-    ],
-    "name": "AllowedExecutorChangeCancelled",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "tag",
-        "type": "uint256"
       },
       {
         "indexed": false,
@@ -35,19 +22,6 @@
       }
     ],
     "name": "AllowedExecutorChangePending",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "tag",
-        "type": "uint256"
-      }
-    ],
-    "name": "AllowedExecutorCleared",
     "type": "event"
   },
   {
@@ -98,19 +72,6 @@
       }
     ],
     "name": "ApprovalForAll",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "executorChangeAfterSeconds",
-        "type": "uint256"
-      }
-    ],
-    "name": "ExecutorChangeAfterSecondsChanged",
     "type": "event"
   },
   {
@@ -252,19 +213,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "executorChangeAfterSeconds",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -395,19 +343,6 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "reservationFeeRecipient",
-    "outputs": [
-      {
-        "internalType": "address payable",
-        "name": "",
-        "type": "address"
       }
     ],
     "stateMutability": "view",

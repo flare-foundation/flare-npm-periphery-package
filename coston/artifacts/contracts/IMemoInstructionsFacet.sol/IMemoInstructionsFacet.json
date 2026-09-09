@@ -18,6 +18,22 @@
   {
     "inputs": [
       {
+        "internalType": "bytes32",
+        "name": "expected",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "actual",
+        "type": "bytes32"
+      }
+    ],
+    "name": "CustomInstructionHashMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "amount",
         "type": "uint256"
@@ -327,25 +343,6 @@
         "internalType": "bytes32",
         "name": "_transactionId",
         "type": "bytes32"
-      }
-    ],
-    "name": "isTransactionIdUsed",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "_transactionId",
-        "type": "bytes32"
       },
       {
         "internalType": "string",
@@ -371,11 +368,35 @@
         "internalType": "address payable",
         "name": "_executor",
         "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_data",
+        "type": "bytes"
       }
     ],
-    "name": "mintedFAssets",
+    "name": "handleMintedFAssets",
     "outputs": [],
     "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_transactionId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "isTransactionIdUsed",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   }
 ]

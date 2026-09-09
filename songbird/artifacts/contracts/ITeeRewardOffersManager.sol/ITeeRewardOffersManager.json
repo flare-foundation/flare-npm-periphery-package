@@ -1,0 +1,45 @@
+[
+  {
+    "inputs": [],
+    "name": "InvalidTeeOwnersPPMValue",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint24",
+        "name": "rewardEpochId",
+        "type": "uint24"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "teeOwnersPPM",
+        "type": "uint256"
+      }
+    ],
+    "name": "InflationRewardsOffered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint24",
+        "name": "teeOwnersPPM",
+        "type": "uint24"
+      }
+    ],
+    "name": "TeeOwnersPPMSet",
+    "type": "event"
+  }
+]

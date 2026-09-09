@@ -1,0 +1,1637 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "feeBIPS",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "mintingVaultCollateralRatioBIPS",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "mintingPoolCollateralRatioBIPS",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "freeCollateralLots",
+        "type": "uint256"
+      }
+    ],
+    "name": "AgentAvailable",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "collateralClass",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "AgentCollateralTypeChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "destroyAllowedAt",
+        "type": "uint256"
+      }
+    ],
+    "name": "AgentDestroyAnnounced",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "AgentDestroyed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "validAt",
+        "type": "uint256"
+      }
+    ],
+    "name": "AgentSettingChangeAnnounced",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "AgentSettingChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "collateralPool",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collateralPoolToken",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "underlyingAddress",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "vaultCollateralToken",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "poolWNatToken",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "feeBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "poolFeeShareBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mintingVaultCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mintingPoolCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "buyFAssetByAgentFactorBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "poolExitCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redemptionPoolFeeShareBIPS",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IAssetManagerAgents.AgentVaultCreationData",
+        "name": "creationData",
+        "type": "tuple"
+      }
+    ],
+    "name": "AgentVaultCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "exitAllowedAt",
+        "type": "uint256"
+      }
+    ],
+    "name": "AvailableAgentExitAnnounced",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "AvailableAgentExited",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountWei",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "withdrawalAllowedAt",
+        "type": "uint256"
+      }
+    ],
+    "name": "PoolTokenRedemptionAnnounced",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "underlyingBalanceUBA",
+        "type": "int256"
+      }
+    ],
+    "name": "UnderlyingBalanceChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "transactionHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "depositedUBA",
+        "type": "uint256"
+      }
+    ],
+    "name": "UnderlyingBalanceToppedUp",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "announcementId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "paymentReference",
+        "type": "bytes32"
+      }
+    ],
+    "name": "UnderlyingWithdrawalAnnounced",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "announcementId",
+        "type": "uint256"
+      }
+    ],
+    "name": "UnderlyingWithdrawalCancelled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "announcementId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "spentUBA",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "transactionHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "UnderlyingWithdrawalConfirmed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "agentVault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountWei",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "withdrawalAllowedAt",
+        "type": "uint256"
+      }
+    ],
+    "name": "VaultCollateralWithdrawalAnnounced",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_valuePoolTokenWei",
+        "type": "uint256"
+      }
+    ],
+    "name": "announceAgentPoolTokenRedemption",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_redemptionAllowedAt",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "announceAgentSettingUpdate",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_updateAllowedAt",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "announceDestroyAgent",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_destroyAllowedAt",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "announceExitAvailableAgentList",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_exitAllowedAt",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "announceUnderlyingWithdrawal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_valueNATWei",
+        "type": "uint256"
+      }
+    ],
+    "name": "announceVaultCollateralWithdrawal",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_withdrawalAllowedAt",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "cancelUnderlyingWithdrawal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32[]",
+            "name": "merkleProof",
+            "type": "bytes32[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "attestationType",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "sourceId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "votingRound",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "lowestUsedTimestamp",
+                "type": "uint64"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bytes32",
+                    "name": "transactionId",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "inUtxo",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "utxo",
+                    "type": "uint256"
+                  }
+                ],
+                "internalType": "struct IPayment.RequestBody",
+                "name": "requestBody",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "blockNumber",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "blockTimestamp",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "sourceAddressHash",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "sourceAddressesRoot",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "receivingAddressHash",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "intendedReceivingAddressHash",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "spentAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "intendedSpentAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "receivedAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "intendedReceivedAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "standardPaymentReference",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "oneToOne",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "uint8",
+                    "name": "status",
+                    "type": "uint8"
+                  }
+                ],
+                "internalType": "struct IPayment.ResponseBody",
+                "name": "responseBody",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct IPayment.Response",
+            "name": "data",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IPayment.Proof",
+        "name": "_payment",
+        "type": "tuple"
+      },
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "confirmTopupPayment",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32[]",
+            "name": "merkleProof",
+            "type": "bytes32[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "attestationType",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "sourceId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "votingRound",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "lowestUsedTimestamp",
+                "type": "uint64"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bytes32",
+                    "name": "transactionId",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "inUtxo",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "utxo",
+                    "type": "uint256"
+                  }
+                ],
+                "internalType": "struct IPayment.RequestBody",
+                "name": "requestBody",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "blockNumber",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "blockTimestamp",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "sourceAddressHash",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "sourceAddressesRoot",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "receivingAddressHash",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "intendedReceivingAddressHash",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "spentAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "intendedSpentAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "receivedAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "int256",
+                    "name": "intendedReceivedAmount",
+                    "type": "int256"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "standardPaymentReference",
+                    "type": "bytes32"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "oneToOne",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "uint8",
+                    "name": "status",
+                    "type": "uint8"
+                  }
+                ],
+                "internalType": "struct IPayment.ResponseBody",
+                "name": "responseBody",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct IPayment.Response",
+            "name": "data",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IPayment.Proof",
+        "name": "_payment",
+        "type": "tuple"
+      },
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "confirmUnderlyingWithdrawal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32[]",
+            "name": "merkleProof",
+            "type": "bytes32[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "attestationType",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "sourceId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "votingRound",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "lowestUsedTimestamp",
+                "type": "uint64"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "string",
+                    "name": "addressStr",
+                    "type": "string"
+                  }
+                ],
+                "internalType": "struct IAddressValidity.RequestBody",
+                "name": "requestBody",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bool",
+                    "name": "isValid",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "standardAddress",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "standardAddressHash",
+                    "type": "bytes32"
+                  }
+                ],
+                "internalType": "struct IAddressValidity.ResponseBody",
+                "name": "responseBody",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct IAddressValidity.Response",
+            "name": "data",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IAddressValidity.Proof",
+        "name": "_addressProof",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "contract IERC20",
+            "name": "vaultCollateralToken",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "poolTokenSuffix",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "feeBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "poolFeeShareBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mintingVaultCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mintingPoolCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "buyFAssetByAgentFactorBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "poolExitCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redemptionPoolFeeShareBIPS",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct AgentSettings.Data",
+        "name": "_settings",
+        "type": "tuple"
+      }
+    ],
+    "name": "createAgentVault",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_recipient",
+        "type": "address"
+      }
+    ],
+    "name": "destroyAgent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      }
+    ],
+    "name": "executeAgentSettingUpdate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "exitAvailableAgentList",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "getAgentFullPoolCollateral",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "getAgentFullVaultCollateral",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "getAgentInfo",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum AgentInfo.Status",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "ownerManagementAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "ownerWorkAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collateralPool",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collateralPoolToken",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "underlyingAddressString",
+            "type": "string"
+          },
+          {
+            "internalType": "bool",
+            "name": "publiclyAvailable",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "feeBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "poolFeeShareBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "vaultCollateralToken",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mintingVaultCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mintingPoolCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "freeCollateralLots",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalVaultCollateralWei",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "freeVaultCollateralWei",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "vaultCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "poolWNatToken",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalPoolCollateralNATWei",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "freePoolCollateralNATWei",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "poolCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalAgentPoolTokensWei",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "announcedVaultCollateralWithdrawalWei",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "announcedPoolTokensWithdrawalWei",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "freeAgentPoolTokensWei",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mintedUBA",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reservedUBA",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemingUBA",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "poolRedeemingUBA",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dustUBA",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidationStartTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxLiquidationAmountUBA",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidationPaymentFactorVaultBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidationPaymentFactorPoolBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "int256",
+            "name": "underlyingBalanceUBA",
+            "type": "int256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "requiredUnderlyingBalanceUBA",
+            "type": "uint256"
+          },
+          {
+            "internalType": "int256",
+            "name": "freeUnderlyingBalanceUBA",
+            "type": "int256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "announcedUnderlyingWithdrawalId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "buyFAssetByAgentFactorBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "poolExitCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redemptionPoolFeeShareBIPS",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct AgentInfo.Info",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "getAgentLiquidationFactorsAndMaxAmount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "liquidationPaymentFactorVaultBIPS",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidationPaymentFactorPoolBIPS",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maxLiquidationAmountUBA",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "getAgentMinPoolCollateralRatioBIPS",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "getAgentMinVaultCollateralRatioBIPS",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      }
+    ],
+    "name": "getAgentSetting",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "getAgentVaultCollateralToken",
+    "outputs": [
+      {
+        "internalType": "contract IERC20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "getAgentVaultOwner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "_ownerManagementAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_end",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAllAgents",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "_agents",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_totalLength",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_end",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAvailableAgentsDetailedList",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "agentVault",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "ownerManagementAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "feeBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mintingVaultCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mintingPoolCollateralRatioBIPS",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "freeCollateralLots",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum AgentInfo.Status",
+            "name": "status",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct AvailableAgentInfo.Data[]",
+        "name": "_agents",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_totalLength",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_end",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAvailableAgentsList",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "_agents",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_totalLength",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "getCollateralPool",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_suffix",
+        "type": "string"
+      }
+    ],
+    "name": "isPoolTokenSuffixReserved",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "makeAgentAvailable",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_agentVault",
+        "type": "address"
+      }
+    ],
+    "name": "upgradeAgentVaultAndPool",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

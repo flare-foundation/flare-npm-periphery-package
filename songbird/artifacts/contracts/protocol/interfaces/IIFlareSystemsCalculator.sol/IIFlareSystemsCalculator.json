@@ -1,5 +1,69 @@
 [
   {
+    "inputs": [],
+    "name": "OnlyVoterRegistry",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SigningPolicyNotSignedYet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "VoterRegistrationEnabled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WNatCapPPMTooHigh",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "PChainStakeMirrorEnabled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "signingPolicySignNonPunishableDurationSeconds",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "signingPolicySignNonPunishableDurationBlocks",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "signingPolicySignNoRewardsDurationBlocks",
+        "type": "uint64"
+      }
+    ],
+    "name": "SigningPolicySignDurationsSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "stakingFactor",
+        "type": "uint16"
+      }
+    ],
+    "name": "StakingFactorSet",
+    "type": "event"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -52,6 +116,19 @@
       }
     ],
     "name": "VoterRegistrationInfo",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint24",
+        "name": "wNatCapPPM",
+        "type": "uint24"
+      }
+    ],
+    "name": "WNatCapPPMSet",
     "type": "event"
   },
   {
@@ -141,6 +218,19 @@
         "internalType": "uint64",
         "name": "",
         "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "stakingFactor",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
       }
     ],
     "stateMutability": "view",

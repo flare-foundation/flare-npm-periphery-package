@@ -1,0 +1,205 @@
+[
+  {
+    "inputs": [],
+    "name": "COutOfRange",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "GammaNotOnCurve",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "GammaXUnverifiable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "HXUnverifiable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "HashToCurveExceededIterationLimit",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidCGammaWitness",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidUWitness",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidVWitness",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidZInv",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PkNotOnCurve",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PkXUnverifiable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SOutOfRange",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_gammaX",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_gammaY",
+        "type": "uint256"
+      }
+    ],
+    "name": "randomnessFromProof",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "x",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "y",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct IVrfVerifier.Point",
+            "name": "gamma",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint256",
+            "name": "c",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "s",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "x",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "y",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct IVrfVerifier.Point",
+            "name": "u",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "x",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "y",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct IVrfVerifier.Point",
+            "name": "cGamma",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "x",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "y",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct IVrfVerifier.Point",
+            "name": "v",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint256",
+            "name": "zInv",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IVrfVerifier.Proof",
+        "name": "_proof",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_pkX",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_pkY",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_nonce",
+        "type": "bytes"
+      }
+    ],
+    "name": "verifyRandomness",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_valid",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

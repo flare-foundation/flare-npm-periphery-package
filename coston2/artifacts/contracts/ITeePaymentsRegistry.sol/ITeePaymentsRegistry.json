@@ -1,0 +1,349 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "teePayments",
+        "type": "address"
+      }
+    ],
+    "name": "SourceAlreadyRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "SourceIdZero",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "SourceKeyTypeZero",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "SourceNotRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "SourceOpTypeZero",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "SourcePaymentModelUnknown",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "teePayments",
+        "type": "address"
+      }
+    ],
+    "name": "TeePaymentsNotContract",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "teePayments",
+        "type": "address"
+      },
+      {
+        "internalType": "enum PaymentModel",
+        "name": "expected",
+        "type": "uint8"
+      },
+      {
+        "internalType": "enum PaymentModel",
+        "name": "actual",
+        "type": "uint8"
+      }
+    ],
+    "name": "WrongPaymentModel",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "keyType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "opType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "enum PaymentModel",
+            "name": "paymentModel",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "teePayments",
+            "type": "address"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct ITeePaymentsRegistry.SourceRegistration[]",
+        "name": "registrations",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "SourcesRegistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes32[]",
+        "name": "sourceIds",
+        "type": "bytes32[]"
+      }
+    ],
+    "name": "SourcesUnregistered",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getRegisteredSourceIds",
+    "outputs": [
+      {
+        "internalType": "bytes32[]",
+        "name": "_sourceIds",
+        "type": "bytes32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getRegisteredTeePaymentsContracts",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "_teePaymentsContracts",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getSourceConfig",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "keyType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "opType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "enum PaymentModel",
+            "name": "paymentModel",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "teePayments",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct ITeePaymentsRegistry.SourceConfig",
+        "name": "_sourceConfig",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_teePayments",
+        "type": "address"
+      }
+    ],
+    "name": "getSourceIdsForTeePayments",
+    "outputs": [
+      {
+        "internalType": "bytes32[]",
+        "name": "_sourceIds",
+        "type": "bytes32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getSourceKeyTypeAndTeePayments",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_keyType",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "_teePayments",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getSourceOpTypeAndTeePayments",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_opType",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "_teePayments",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getSourcePaymentModel",
+    "outputs": [
+      {
+        "internalType": "enum PaymentModel",
+        "name": "_paymentModel",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getTeePaymentsForSource",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "_teePayments",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "isSourceRegistered",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

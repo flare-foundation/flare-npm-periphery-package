@@ -1,0 +1,839 @@
+[
+  {
+    "inputs": [],
+    "name": "DestinationTeeIdAlreadyExists",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "teeId",
+        "type": "address"
+      }
+    ],
+    "name": "GovernanceHashZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidMachinePath",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSignatureType",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSignaturesLength",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ListAlreadyFinalized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ListNotFinalized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MessageHashMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoActiveMachinePathList",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoDestinationTeeIds",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoPaths",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoSourceTeeIds",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SafeApprovalAlreadyConfirmed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SafeApprovalNotRecorded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SafeGovernanceStale",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SignerAlreadySigned",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SourceTeeIdAlreadyExists",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "required",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "counted",
+        "type": "uint256"
+      }
+    ],
+    "name": "ThresholdNotReached",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UnorderedSignatures",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UnrecognizedSigner",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "safe",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "safeNonce",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32[]",
+        "name": "satisfiedGovernanceHashes",
+        "type": "bytes32[]"
+      }
+    ],
+    "name": "MachinePathListApproved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32[]",
+        "name": "involvedGovernanceHashes",
+        "type": "bytes32[]"
+      }
+    ],
+    "name": "MachinePathListFinalized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "governanceHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "safe",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "safeNonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "MachinePathListSafeApprovalConfirmed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "signer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32[]",
+        "name": "countedGovernanceHashes",
+        "type": "bytes32[]"
+      }
+    ],
+    "name": "MachinePathListSignatureAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "MachinePathListSigned",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "MachinePathListStarted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "extensionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address[]",
+            "name": "sourceTeeIds",
+            "type": "address[]"
+          },
+          {
+            "internalType": "address[]",
+            "name": "destinationTeeIds",
+            "type": "address[]"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IMachinePathManager.MachinePath[]",
+        "name": "paths",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "MachinePathsAdded",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address[]",
+            "name": "sourceTeeIds",
+            "type": "address[]"
+          },
+          {
+            "internalType": "address[]",
+            "name": "destinationTeeIds",
+            "type": "address[]"
+          }
+        ],
+        "internalType": "struct IMachinePathManager.MachinePath[]",
+        "name": "_paths",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "addMachinePaths",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_messageHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "approveMachinePathList",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_governanceHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_safeNonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_signatures",
+        "type": "bytes"
+      }
+    ],
+    "name": "confirmMachinePathListSafeApproval",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "createNewMachinePathList",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "finalizeMachinePathList",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getActiveMachinePathListNonce",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMachinePathList",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address[]",
+            "name": "sourceTeeIds",
+            "type": "address[]"
+          },
+          {
+            "internalType": "address[]",
+            "name": "destinationTeeIds",
+            "type": "address[]"
+          }
+        ],
+        "internalType": "struct IMachinePathManager.MachinePath[]",
+        "name": "_paths",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "bytes32[]",
+        "name": "_involvedGovernanceHashes",
+        "type": "bytes32[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct Signature[]",
+        "name": "_signatures",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "bool",
+        "name": "_signed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMachinePathListApprovals",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "signer",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "blockNumber",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "safeNonce",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IMachinePathManager.Approval[]",
+        "name": "_approvals",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMachinePathListMessageHash",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_governanceHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getMachinePathListSafeApprovalArtifact",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "safeNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "signatures",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IMachinePathManager.SafeApprovalArtifact",
+        "name": "_artifact",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_governanceHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getMachinePathListSignatureCount",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMachinePathListsCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "isMachinePathListFinalized",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_governanceHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "isMachinePathListSafeApproved",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "isMachinePathListSigned",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_sourceTeeId",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_destinationTeeId",
+        "type": "address"
+      }
+    ],
+    "name": "isMachinePathValid",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_extensionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct Signature",
+        "name": "_signature",
+        "type": "tuple"
+      }
+    ],
+    "name": "signMachinePathList",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

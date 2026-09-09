@@ -1,0 +1,596 @@
+[
+  {
+    "inputs": [],
+    "name": "AccountNotRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "delay",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maxDelay",
+        "type": "uint256"
+      }
+    ],
+    "name": "DelayTooLarge",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EmptyScheduleNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "FeeScheduleConfigNotSet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FeeScheduleNotSet",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidFeeDelay",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidFeeFactor",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint8",
+        "name": "maxSchedules",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint16",
+        "name": "maxDelaySeconds",
+        "type": "uint16"
+      }
+    ],
+    "name": "InvalidFeeScheduleConfig",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LengthsMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyProjectOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlySystemExtensionId",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "SourceLimitsNotConfigured",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TooManySchedules",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "UnsupportedSourceId",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "projectId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "accountAddress",
+        "type": "string"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "AccountFeeScheduleCleared",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "projectId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "accountAddress",
+        "type": "string"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountHash",
+        "type": "bytes32"
+      },
+      {
+        "components": [
+          {
+            "internalType": "int16",
+            "name": "factorBIPS",
+            "type": "int16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "delaySeconds",
+            "type": "uint16"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct ITeePaymentsFeeScheduleManager.FeeSchedule[]",
+        "name": "schedule",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "AccountFeeScheduleSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes32[]",
+        "name": "sourceIds",
+        "type": "bytes32[]"
+      }
+    ],
+    "name": "FeeScheduleConfigsCleared",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "maxDelaySeconds",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint8",
+            "name": "maxSchedules",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct ITeePaymentsFeeScheduleManager.FeeScheduleConfigInput[]",
+        "name": "configs",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "FeeScheduleConfigsSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "projectId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "ProjectFeeScheduleCleared",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "projectId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "sourceId",
+        "type": "bytes32"
+      },
+      {
+        "components": [
+          {
+            "internalType": "int16",
+            "name": "factorBIPS",
+            "type": "int16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "delaySeconds",
+            "type": "uint16"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct ITeePaymentsFeeScheduleManager.FeeSchedule[]",
+        "name": "schedule",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "ProjectFeeScheduleSet",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      }
+    ],
+    "name": "clearAccountFeeSchedule",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_projectId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "clearProjectFeeSchedule",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getAccountFeeSchedule",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "int16",
+            "name": "factorBIPS",
+            "type": "int16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "delaySeconds",
+            "type": "uint16"
+          }
+        ],
+        "internalType": "struct ITeePaymentsFeeScheduleManager.FeeSchedule[]",
+        "name": "_schedule",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_projectId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_accountHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getEffectiveSchedule",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "_feeSchedule",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getFeeScheduleConfig",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint8",
+            "name": "maxSchedules",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint16",
+            "name": "maxDelaySeconds",
+            "type": "uint16"
+          }
+        ],
+        "internalType": "struct ITeePaymentsFeeScheduleManager.FeeScheduleConfig",
+        "name": "_config",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_projectId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getProjectFeeSchedule",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "int16",
+            "name": "factorBIPS",
+            "type": "int16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "delaySeconds",
+            "type": "uint16"
+          }
+        ],
+        "internalType": "struct ITeePaymentsFeeScheduleManager.FeeSchedule[]",
+        "name": "_schedule",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "accountAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ITeePaymentsBase.PMWMultisigAccount",
+        "name": "_account",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "int16",
+            "name": "factorBIPS",
+            "type": "int16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "delaySeconds",
+            "type": "uint16"
+          }
+        ],
+        "internalType": "struct ITeePaymentsFeeScheduleManager.FeeSchedule[]",
+        "name": "_schedule",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "setAccountFeeSchedule",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_projectId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      },
+      {
+        "components": [
+          {
+            "internalType": "int16",
+            "name": "factorBIPS",
+            "type": "int16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "delaySeconds",
+            "type": "uint16"
+          }
+        ],
+        "internalType": "struct ITeePaymentsFeeScheduleManager.FeeSchedule[]",
+        "name": "_schedule",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "setProjectFeeSchedule",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_sourceId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "int16[][]",
+        "name": "_factorsBIPSPerPayment",
+        "type": "int16[][]"
+      },
+      {
+        "internalType": "uint16[]",
+        "name": "_delaysSeconds",
+        "type": "uint16[]"
+      }
+    ],
+    "name": "validateAndEncodeSchedules",
+    "outputs": [
+      {
+        "internalType": "bytes[]",
+        "name": "_encodedPerPayment",
+        "type": "bytes[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

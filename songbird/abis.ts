@@ -8,6 +8,8 @@ import CollateralType from "./artifacts/contracts/data/CollateralType.sol/Collat
 import ContractRegistry from "./artifacts/contracts/ContractRegistry.sol/ContractRegistry.json";
 import EmergencyPause from "./artifacts/contracts/data/EmergencyPause.sol/EmergencyPause.json";
 import FtsoV2Interface from "./artifacts/contracts/FtsoV2Interface.sol/FtsoV2Interface.json";
+import IAddressUpdatable from "./artifacts/contracts/IAddressUpdatable.sol/IAddressUpdatable.json";
+import IAddressValidator from "./artifacts/contracts/IAddressValidator.sol/IAddressValidator.json";
 import IAddressValidity from "./artifacts/contracts/IAddressValidity.sol/IAddressValidity.json";
 import IAddressValidityVerification from "./artifacts/contracts/IAddressValidityVerification.sol/IAddressValidityVerification.json";
 import IAgentAlwaysAllowedMinters from "./artifacts/contracts/IAgentAlwaysAllowedMinters.sol/IAgentAlwaysAllowedMinters.json";
@@ -15,8 +17,13 @@ import IAgentOwnerRegistry from "./artifacts/contracts/IAgentOwnerRegistry.sol/I
 import IAgentPing from "./artifacts/contracts/IAgentPing.sol/IAgentPing.json";
 import IAgentVaultsFacet from "./artifacts/contracts/IAgentVaultsFacet.sol/IAgentVaultsFacet.json";
 import IAssetManager from "./artifacts/contracts/IAssetManager.sol/IAssetManager.json";
+import IAssetManagerAgents from "./artifacts/contracts/IAssetManagerAgents.sol/IAssetManagerAgents.json";
 import IAssetManagerController from "./artifacts/contracts/IAssetManagerController.sol/IAssetManagerController.json";
 import IAssetManagerEvents from "./artifacts/contracts/IAssetManagerEvents.sol/IAssetManagerEvents.json";
+import IAssetManagerInfo from "./artifacts/contracts/IAssetManagerInfo.sol/IAssetManagerInfo.json";
+import IAssetManagerLiquidation from "./artifacts/contracts/IAssetManagerLiquidation.sol/IAssetManagerLiquidation.json";
+import IAssetManagerMinting from "./artifacts/contracts/IAssetManagerMinting.sol/IAssetManagerMinting.json";
+import IAssetManagerRedemption from "./artifacts/contracts/IAssetManagerRedemption.sol/IAssetManagerRedemption.json";
 import IBalanceDecreasingTransaction from "./artifacts/contracts/IBalanceDecreasingTransaction.sol/IBalanceDecreasingTransaction.json";
 import IBalanceDecreasingTransactionVerification from "./artifacts/contracts/IBalanceDecreasingTransactionVerification.sol/IBalanceDecreasingTransactionVerification.json";
 import ICChainStake from "./artifacts/contracts/ICChainStake.sol/ICChainStake.json";
@@ -31,6 +38,7 @@ import ICoreVaultManager from "./artifacts/contracts/ICoreVaultManager.sol/ICore
 import IDelegationAccount from "./artifacts/contracts/IDelegationAccount.sol/IDelegationAccount.json";
 import IDiamond from "./artifacts/contracts/diamond/interfaces/IDiamond.sol/IDiamond.json";
 import IDiamondCut from "./artifacts/contracts/diamond/interfaces/IDiamondCut.sol/IDiamondCut.json";
+import IDiamondGovernance from "./artifacts/contracts/IDiamondGovernance.sol/IDiamondGovernance.json";
 import IDiamondLoupe from "./artifacts/contracts/diamond/interfaces/IDiamondLoupe.sol/IDiamondLoupe.json";
 import IDirectMinting from "./artifacts/contracts/IDirectMinting.sol/IDirectMinting.json";
 import IDirectMintingSettings from "./artifacts/contracts/IDirectMintingSettings.sol/IDirectMintingSettings.json";
@@ -40,12 +48,20 @@ import IEVMTransaction from "./artifacts/contracts/IEVMTransaction.sol/IEVMTrans
 import IEVMTransactionVerification from "./artifacts/contracts/IEVMTransactionVerification.sol/IEVMTransactionVerification.json";
 import IEntityManager from "./artifacts/contracts/IEntityManager.sol/IEntityManager.json";
 import IExecutorsFacet from "./artifacts/contracts/IExecutorsFacet.sol/IExecutorsFacet.json";
+import IExtensionGovernance from "./artifacts/contracts/IExtensionGovernance.sol/IExtensionGovernance.json";
+import IExtensionManager from "./artifacts/contracts/IExtensionManager.sol/IExtensionManager.json";
+import IExternalAddresses from "./artifacts/contracts/IExternalAddresses.sol/IExternalAddresses.json";
 import IFAsset from "./artifacts/contracts/IFAsset.sol/IFAsset.json";
 import IFAssetRedeemComposer from "./artifacts/contracts/IFAssetRedeemComposer.sol/IFAssetRedeemComposer.json";
 import IFAssetRedeemerAccount from "./artifacts/contracts/IFAssetRedeemerAccount.sol/IFAssetRedeemerAccount.json";
 import IFastUpdateIncentiveManager from "./artifacts/contracts/IFastUpdateIncentiveManager.sol/IFastUpdateIncentiveManager.json";
 import IFastUpdater from "./artifacts/contracts/IFastUpdater.sol/IFastUpdater.json";
 import IFastUpdatesConfiguration from "./artifacts/contracts/IFastUpdatesConfiguration.sol/IFastUpdatesConfiguration.json";
+import IFdc2Hub from "./artifacts/contracts/IFdc2Hub.sol/IFdc2Hub.json";
+import IFdc2InflationConfigurations from "./artifacts/contracts/IFdc2InflationConfigurations.sol/IFdc2InflationConfigurations.json";
+import IFdc2RequestFeeConfigurations from "./artifacts/contracts/IFdc2RequestFeeConfigurations.sol/IFdc2RequestFeeConfigurations.json";
+import IFdc2RewardOffersManager from "./artifacts/contracts/IFdc2RewardOffersManager.sol/IFdc2RewardOffersManager.json";
+import IFdc2Verification from "./artifacts/contracts/IFdc2Verification.sol/IFdc2Verification.json";
 import IFdcHub from "./artifacts/contracts/IFdcHub.sol/IFdcHub.json";
 import IFdcInflationConfigurations from "./artifacts/contracts/IFdcInflationConfigurations.sol/IFdcInflationConfigurations.json";
 import IFdcRequestFeeConfigurations from "./artifacts/contracts/IFdcRequestFeeConfigurations.sol/IFdcRequestFeeConfigurations.json";
@@ -54,8 +70,15 @@ import IFeeCalculator from "./artifacts/contracts/IFeeCalculator.sol/IFeeCalcula
 import IFlareAssetRegistry from "./artifacts/contracts/IFlareAssetRegistry.sol/IFlareAssetRegistry.json";
 import IFlareContractRegistry from "./artifacts/contracts/IFlareContractRegistry.sol/IFlareContractRegistry.json";
 import IFlareDaemonize from "./artifacts/contracts/genesis/interfaces/IFlareDaemonize.sol/IFlareDaemonize.json";
+import IFlareGovernance from "./artifacts/contracts/IFlareGovernance.sol/IFlareGovernance.json";
 import IFlareSystemsCalculator from "./artifacts/contracts/IFlareSystemsCalculator.sol/IFlareSystemsCalculator.json";
 import IFlareSystemsManager from "./artifacts/contracts/IFlareSystemsManager.sol/IFlareSystemsManager.json";
+import IFlareTeeManager from "./artifacts/contracts/IFlareTeeManager.sol/IFlareTeeManager.json";
+import IFlareTeeManagerAdmin from "./artifacts/contracts/IFlareTeeManagerAdmin.sol/IFlareTeeManagerAdmin.json";
+import IFlareTeeManagerMachines from "./artifacts/contracts/IFlareTeeManagerMachines.sol/IFlareTeeManagerMachines.json";
+import IFlareTeeManagerOperations from "./artifacts/contracts/IFlareTeeManagerOperations.sol/IFlareTeeManagerOperations.json";
+import IFlareTeeManagerWalletKeys from "./artifacts/contracts/IFlareTeeManagerWalletKeys.sol/IFlareTeeManagerWalletKeys.json";
+import IFlareTeeManagerWallets from "./artifacts/contracts/IFlareTeeManagerWallets.sol/IFlareTeeManagerWallets.json";
 import IFtso from "./artifacts/contracts/IFtso.sol/IFtso.json";
 import IFtsoFeedDecimals from "./artifacts/contracts/IFtsoFeedDecimals.sol/IFtsoFeedDecimals.json";
 import IFtsoFeedIdConverter from "./artifacts/contracts/IFtsoFeedIdConverter.sol/IFtsoFeedIdConverter.json";
@@ -83,6 +106,7 @@ import IIEntityManager from "./artifacts/contracts/protocol/interfaces/IIEntityM
 import IIFastUpdaterView from "./artifacts/contracts/fscV1/interfaces/IIFastUpdaterView.sol/IIFastUpdaterView.json";
 import IIFlareAssetRegistry from "./artifacts/contracts/assetRegistry/interfaces/IIFlareAssetRegistry.sol/IIFlareAssetRegistry.json";
 import IIFlareAssetRegistryProvider from "./artifacts/contracts/assetRegistry/interfaces/IIFlareAssetRegistryProvider.sol/IIFlareAssetRegistryProvider.json";
+import IIFlareGovernance from "./artifacts/contracts/governance/interfaces/IIFlareGovernance.sol/IIFlareGovernance.json";
 import IIFlareSystemsCalculator from "./artifacts/contracts/protocol/interfaces/IIFlareSystemsCalculator.sol/IIFlareSystemsCalculator.json";
 import IIFlareSystemsManager from "./artifacts/contracts/protocol/interfaces/IIFlareSystemsManager.sol/IIFlareSystemsManager.json";
 import IIFtso from "./artifacts/contracts/ftso/interfaces/IIFtso.sol/IIFtso.json";
@@ -120,11 +144,21 @@ import IIVoterWhitelister from "./artifacts/contracts/utils/interfaces/IIVoterWh
 import IIncreaseManager from "./artifacts/contracts/IIncreaseManager.sol/IIncreaseManager.json";
 import IInflationGenesis from "./artifacts/contracts/genesis/interfaces/IInflationGenesis.sol/IInflationGenesis.json";
 import IInstructionFeesFacet from "./artifacts/contracts/IInstructionFeesFacet.sol/IInstructionFeesFacet.json";
+import IInstructions from "./artifacts/contracts/IInstructions.sol/IInstructions.json";
 import IInstructionsFacet from "./artifacts/contracts/IInstructionsFacet.sol/IInstructionsFacet.json";
+import IMachineEmergencyPause from "./artifacts/contracts/IMachineEmergencyPause.sol/IMachineEmergencyPause.json";
+import IMachineManager from "./artifacts/contracts/IMachineManager.sol/IMachineManager.json";
+import IMachinePathManager from "./artifacts/contracts/IMachinePathManager.sol/IMachinePathManager.json";
 import IMasterAccountController from "./artifacts/contracts/IMasterAccountController.sol/IMasterAccountController.json";
 import IMemoInstructionsFacet from "./artifacts/contracts/IMemoInstructionsFacet.sol/IMemoInstructionsFacet.json";
 import IMintingTagManager from "./artifacts/contracts/IMintingTagManager.sol/IMintingTagManager.json";
+import IOperationFees from "./artifacts/contracts/IOperationFees.sol/IOperationFees.json";
 import IOwnableWithTimelock from "./artifacts/contracts/IOwnableWithTimelock.sol/IOwnableWithTimelock.json";
+import IOwnerAllowlist from "./artifacts/contracts/IOwnerAllowlist.sol/IOwnerAllowlist.json";
+import IPMWFeeProof from "./artifacts/contracts/IPMWFeeProof.sol/IPMWFeeProof.json";
+import IPMWMultisigAccountConfigured from "./artifacts/contracts/IPMWMultisigAccountConfigured.sol/IPMWMultisigAccountConfigured.json";
+import IPMWMultisigUtxoConfigured from "./artifacts/contracts/IPMWMultisigUtxoConfigured.sol/IPMWMultisigUtxoConfigured.json";
+import IPMWPaymentStatus from "./artifacts/contracts/IPMWPaymentStatus.sol/IPMWPaymentStatus.json";
 import IPauseFacet from "./artifacts/contracts/IPauseFacet.sol/IPauseFacet.json";
 import IPayment from "./artifacts/contracts/IPayment.sol/IPayment.json";
 import IPaymentProofsFacet from "./artifacts/contracts/IPaymentProofsFacet.sol/IPaymentProofsFacet.json";
@@ -145,7 +179,19 @@ import IReferencedPaymentNonexistence from "./artifacts/contracts/IReferencedPay
 import IReferencedPaymentNonexistenceVerification from "./artifacts/contracts/IReferencedPaymentNonexistenceVerification.sol/IReferencedPaymentNonexistenceVerification.json";
 import IRelay from "./artifacts/contracts/IRelay.sol/IRelay.json";
 import IRewardManager from "./artifacts/contracts/IRewardManager.sol/IRewardManager.json";
+import ISafeMinimal from "./artifacts/contracts/utils/interfaces/ISafeMinimal.sol/ISafeMinimal.json";
 import ISubmission from "./artifacts/contracts/ISubmission.sol/ISubmission.json";
+import ITeeAvailabilityCheck from "./artifacts/contracts/ITeeAvailabilityCheck.sol/ITeeAvailabilityCheck.json";
+import ITeeCommonErrors from "./artifacts/contracts/ITeeCommonErrors.sol/ITeeCommonErrors.json";
+import ITeeExtensionStateVerifier from "./artifacts/contracts/ITeeExtensionStateVerifier.sol/ITeeExtensionStateVerifier.json";
+import ITeePayments from "./artifacts/contracts/ITeePayments.sol/ITeePayments.json";
+import ITeePaymentsBase from "./artifacts/contracts/ITeePaymentsBase.sol/ITeePaymentsBase.json";
+import ITeePaymentsConfigVerifier from "./artifacts/contracts/ITeePaymentsConfigVerifier.sol/ITeePaymentsConfigVerifier.json";
+import ITeePaymentsFeeScheduleManager from "./artifacts/contracts/ITeePaymentsFeeScheduleManager.sol/ITeePaymentsFeeScheduleManager.json";
+import ITeePaymentsModel from "./artifacts/contracts/ITeePaymentsModel.sol/ITeePaymentsModel.json";
+import ITeePaymentsRegistry from "./artifacts/contracts/ITeePaymentsRegistry.sol/ITeePaymentsRegistry.json";
+import ITeePaymentsUtxo from "./artifacts/contracts/ITeePaymentsUtxo.sol/ITeePaymentsUtxo.json";
+import ITeeRewardOffersManager from "./artifacts/contracts/ITeeRewardOffersManager.sol/ITeeRewardOffersManager.json";
 import ITimelockFacet from "./artifacts/contracts/ITimelockFacet.sol/ITimelockFacet.json";
 import ITypeTemplate from "./artifacts/contracts/fdc/interfaces/ITypeTemplate.sol/ITypeTemplate.json";
 import ITypeTemplateVerification from "./artifacts/contracts/fdc/interfaces/ITypeTemplateVerification.sol/ITypeTemplateVerification.json";
@@ -154,11 +200,19 @@ import IVPContractEvents from "./artifacts/contracts/IVPContractEvents.sol/IVPCo
 import IVPToken from "./artifacts/contracts/IVPToken.sol/IVPToken.json";
 import IValidatorRewardOffersManager from "./artifacts/contracts/IValidatorRewardOffersManager.sol/IValidatorRewardOffersManager.json";
 import IVaultsFacet from "./artifacts/contracts/IVaultsFacet.sol/IVaultsFacet.json";
+import IVerification from "./artifacts/contracts/IVerification.sol/IVerification.json";
 import IVoterPreRegistry from "./artifacts/contracts/IVoterPreRegistry.sol/IVoterPreRegistry.json";
 import IVoterRegistry from "./artifacts/contracts/IVoterRegistry.sol/IVoterRegistry.json";
 import IVoterWhitelister from "./artifacts/contracts/IVoterWhitelister.sol/IVoterWhitelister.json";
+import IVrf from "./artifacts/contracts/IVrf.sol/IVrf.json";
+import IVrfVerifier from "./artifacts/contracts/IVrfVerifier.sol/IVrfVerifier.json";
 import IWNat from "./artifacts/contracts/IWNat.sol/IWNat.json";
 import IWNatDelegationFee from "./artifacts/contracts/IWNatDelegationFee.sol/IWNatDelegationFee.json";
+import IWalletBackupManager from "./artifacts/contracts/IWalletBackupManager.sol/IWalletBackupManager.json";
+import IWalletKeyManager from "./artifacts/contracts/IWalletKeyManager.sol/IWalletKeyManager.json";
+import IWalletManager from "./artifacts/contracts/IWalletManager.sol/IWalletManager.json";
+import IWalletProjectManager from "./artifacts/contracts/IWalletProjectManager.sol/IWalletProjectManager.json";
+import IWalletProjectPause from "./artifacts/contracts/IWalletProjectPause.sol/IWalletProjectPause.json";
 import IWeb2Json from "./artifacts/contracts/IWeb2Json.sol/IWeb2Json.json";
 import IWeb2JsonVerification from "./artifacts/contracts/IWeb2JsonVerification.sol/IWeb2JsonVerification.json";
 import IXRPPayment from "./artifacts/contracts/IXRPPayment.sol/IXRPPayment.json";
@@ -192,6 +246,8 @@ export const interfaceAbis: { [key: string]: any } = {
     ContractRegistry: ContractRegistry,
     EmergencyPause: EmergencyPause,
     FtsoV2Interface: FtsoV2Interface,
+    IAddressUpdatable: IAddressUpdatable,
+    IAddressValidator: IAddressValidator,
     IAddressValidity: IAddressValidity,
     IAddressValidityVerification: IAddressValidityVerification,
     IAgentAlwaysAllowedMinters: IAgentAlwaysAllowedMinters,
@@ -199,8 +255,13 @@ export const interfaceAbis: { [key: string]: any } = {
     IAgentPing: IAgentPing,
     IAgentVaultsFacet: IAgentVaultsFacet,
     IAssetManager: IAssetManager,
+    IAssetManagerAgents: IAssetManagerAgents,
     IAssetManagerController: IAssetManagerController,
     IAssetManagerEvents: IAssetManagerEvents,
+    IAssetManagerInfo: IAssetManagerInfo,
+    IAssetManagerLiquidation: IAssetManagerLiquidation,
+    IAssetManagerMinting: IAssetManagerMinting,
+    IAssetManagerRedemption: IAssetManagerRedemption,
     IBalanceDecreasingTransaction: IBalanceDecreasingTransaction,
     IBalanceDecreasingTransactionVerification: IBalanceDecreasingTransactionVerification,
     ICChainStake: ICChainStake,
@@ -215,6 +276,7 @@ export const interfaceAbis: { [key: string]: any } = {
     IDelegationAccount: IDelegationAccount,
     IDiamond: IDiamond,
     IDiamondCut: IDiamondCut,
+    IDiamondGovernance: IDiamondGovernance,
     IDiamondLoupe: IDiamondLoupe,
     IDirectMinting: IDirectMinting,
     IDirectMintingSettings: IDirectMintingSettings,
@@ -224,12 +286,20 @@ export const interfaceAbis: { [key: string]: any } = {
     IEVMTransactionVerification: IEVMTransactionVerification,
     IEntityManager: IEntityManager,
     IExecutorsFacet: IExecutorsFacet,
+    IExtensionGovernance: IExtensionGovernance,
+    IExtensionManager: IExtensionManager,
+    IExternalAddresses: IExternalAddresses,
     IFAsset: IFAsset,
     IFAssetRedeemComposer: IFAssetRedeemComposer,
     IFAssetRedeemerAccount: IFAssetRedeemerAccount,
     IFastUpdateIncentiveManager: IFastUpdateIncentiveManager,
     IFastUpdater: IFastUpdater,
     IFastUpdatesConfiguration: IFastUpdatesConfiguration,
+    IFdc2Hub: IFdc2Hub,
+    IFdc2InflationConfigurations: IFdc2InflationConfigurations,
+    IFdc2RequestFeeConfigurations: IFdc2RequestFeeConfigurations,
+    IFdc2RewardOffersManager: IFdc2RewardOffersManager,
+    IFdc2Verification: IFdc2Verification,
     IFdcHub: IFdcHub,
     IFdcInflationConfigurations: IFdcInflationConfigurations,
     IFdcRequestFeeConfigurations: IFdcRequestFeeConfigurations,
@@ -238,8 +308,15 @@ export const interfaceAbis: { [key: string]: any } = {
     IFlareAssetRegistry: IFlareAssetRegistry,
     IFlareContractRegistry: IFlareContractRegistry,
     IFlareDaemonize: IFlareDaemonize,
+    IFlareGovernance: IFlareGovernance,
     IFlareSystemsCalculator: IFlareSystemsCalculator,
     IFlareSystemsManager: IFlareSystemsManager,
+    IFlareTeeManager: IFlareTeeManager,
+    IFlareTeeManagerAdmin: IFlareTeeManagerAdmin,
+    IFlareTeeManagerMachines: IFlareTeeManagerMachines,
+    IFlareTeeManagerOperations: IFlareTeeManagerOperations,
+    IFlareTeeManagerWalletKeys: IFlareTeeManagerWalletKeys,
+    IFlareTeeManagerWallets: IFlareTeeManagerWallets,
     IFtso: IFtso,
     IFtsoFeedDecimals: IFtsoFeedDecimals,
     IFtsoFeedIdConverter: IFtsoFeedIdConverter,
@@ -267,6 +344,7 @@ export const interfaceAbis: { [key: string]: any } = {
     IIFastUpdaterView: IIFastUpdaterView,
     IIFlareAssetRegistry: IIFlareAssetRegistry,
     IIFlareAssetRegistryProvider: IIFlareAssetRegistryProvider,
+    IIFlareGovernance: IIFlareGovernance,
     IIFlareSystemsCalculator: IIFlareSystemsCalculator,
     IIFlareSystemsManager: IIFlareSystemsManager,
     IIFtso: IIFtso,
@@ -304,11 +382,21 @@ export const interfaceAbis: { [key: string]: any } = {
     IIncreaseManager: IIncreaseManager,
     IInflationGenesis: IInflationGenesis,
     IInstructionFeesFacet: IInstructionFeesFacet,
+    IInstructions: IInstructions,
     IInstructionsFacet: IInstructionsFacet,
+    IMachineEmergencyPause: IMachineEmergencyPause,
+    IMachineManager: IMachineManager,
+    IMachinePathManager: IMachinePathManager,
     IMasterAccountController: IMasterAccountController,
     IMemoInstructionsFacet: IMemoInstructionsFacet,
     IMintingTagManager: IMintingTagManager,
+    IOperationFees: IOperationFees,
     IOwnableWithTimelock: IOwnableWithTimelock,
+    IOwnerAllowlist: IOwnerAllowlist,
+    IPMWFeeProof: IPMWFeeProof,
+    IPMWMultisigAccountConfigured: IPMWMultisigAccountConfigured,
+    IPMWMultisigUtxoConfigured: IPMWMultisigUtxoConfigured,
+    IPMWPaymentStatus: IPMWPaymentStatus,
     IPauseFacet: IPauseFacet,
     IPayment: IPayment,
     IPaymentProofsFacet: IPaymentProofsFacet,
@@ -329,7 +417,19 @@ export const interfaceAbis: { [key: string]: any } = {
     IReferencedPaymentNonexistenceVerification: IReferencedPaymentNonexistenceVerification,
     IRelay: IRelay,
     IRewardManager: IRewardManager,
+    ISafeMinimal: ISafeMinimal,
     ISubmission: ISubmission,
+    ITeeAvailabilityCheck: ITeeAvailabilityCheck,
+    ITeeCommonErrors: ITeeCommonErrors,
+    ITeeExtensionStateVerifier: ITeeExtensionStateVerifier,
+    ITeePayments: ITeePayments,
+    ITeePaymentsBase: ITeePaymentsBase,
+    ITeePaymentsConfigVerifier: ITeePaymentsConfigVerifier,
+    ITeePaymentsFeeScheduleManager: ITeePaymentsFeeScheduleManager,
+    ITeePaymentsModel: ITeePaymentsModel,
+    ITeePaymentsRegistry: ITeePaymentsRegistry,
+    ITeePaymentsUtxo: ITeePaymentsUtxo,
+    ITeeRewardOffersManager: ITeeRewardOffersManager,
     ITimelockFacet: ITimelockFacet,
     ITypeTemplate: ITypeTemplate,
     ITypeTemplateVerification: ITypeTemplateVerification,
@@ -338,11 +438,19 @@ export const interfaceAbis: { [key: string]: any } = {
     IVPToken: IVPToken,
     IValidatorRewardOffersManager: IValidatorRewardOffersManager,
     IVaultsFacet: IVaultsFacet,
+    IVerification: IVerification,
     IVoterPreRegistry: IVoterPreRegistry,
     IVoterRegistry: IVoterRegistry,
     IVoterWhitelister: IVoterWhitelister,
+    IVrf: IVrf,
+    IVrfVerifier: IVrfVerifier,
     IWNat: IWNat,
     IWNatDelegationFee: IWNatDelegationFee,
+    IWalletBackupManager: IWalletBackupManager,
+    IWalletKeyManager: IWalletKeyManager,
+    IWalletManager: IWalletManager,
+    IWalletProjectManager: IWalletProjectManager,
+    IWalletProjectPause: IWalletProjectPause,
     IWeb2Json: IWeb2Json,
     IWeb2JsonVerification: IWeb2JsonVerification,
     IXRPPayment: IXRPPayment,

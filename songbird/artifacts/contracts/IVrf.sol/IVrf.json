@@ -1,0 +1,142 @@
+[
+  {
+    "inputs": [],
+    "name": "NoTeesForKey",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NonceEmpty",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyAuthorizationAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyWalletOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WalletNotInProduction",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "authorizationAddress",
+        "type": "address"
+      }
+    ],
+    "name": "VrfAuthorizationAddressSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "walletId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "keyId",
+        "type": "uint64"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "instructionId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "VrfRequested",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getVrfAuthorizationAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_keyId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_nonce",
+        "type": "bytes"
+      },
+      {
+        "internalType": "address",
+        "name": "_claimBackAddress",
+        "type": "address"
+      }
+    ],
+    "name": "requestVrf",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_instructionId",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_walletId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "_authorizationAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setVrfAuthorizationAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

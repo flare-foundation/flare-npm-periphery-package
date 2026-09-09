@@ -1,0 +1,31 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_teeId",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_stateVersion",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_state",
+        "type": "bytes"
+      }
+    ],
+    "name": "verifyTeeState",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "_isValid",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
