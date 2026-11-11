@@ -1,0 +1,239 @@
+[
+  {
+    "inputs": [],
+    "name": "InvalidFeeRecipient",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidFeeTerms",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidMarketParams",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidMorpho",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "MarketAlreadyRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "MarketNotRegistered",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanBorrowingDisabled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanBorrowingEnabled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "feeFloor",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "feeSpread",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "feeRecipient",
+        "type": "address"
+      }
+    ],
+    "name": "LoanFeeTermsSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "morpho",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "marketId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "LoanMarketRegistered",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getLoanFeeTerms",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "feeFloor",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "feeSpread",
+            "type": "uint64"
+          },
+          {
+            "internalType": "address",
+            "name": "feeRecipient",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IMorphoLoanMarketsFacet.FeeTerms",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getLoanMarket",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "morpho",
+            "type": "address"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "loanToken",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "collateralToken",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "oracle",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "irm",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lltv",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct IMorpho.MarketParams",
+            "name": "marketParams",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IMorphoLoanMarketsFacet.Market",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "isLoanBorrowingDisabled",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

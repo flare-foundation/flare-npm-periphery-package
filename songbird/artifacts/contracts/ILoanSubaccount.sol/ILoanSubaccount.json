@@ -1,0 +1,719 @@
+[
+  {
+    "inputs": [],
+    "name": "AlreadyInitialized",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      }
+    ],
+    "name": "AmountExceedsBalance",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BridgeRouteNotConfigured",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "messagingFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "InsufficientFundsForBridge",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "executorFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "InsufficientFundsForRedeem",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidControllerAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidLoanInstruction",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidMinAmount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidOperationId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidParentPersonalAccount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NonZeroComposeValue",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NothingToRedeem",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyEndpoint",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyParent",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RefundFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "action",
+        "type": "uint8"
+      }
+    ],
+    "name": "UnsupportedAction",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "UnsupportedPayloadVersion",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "composeFrom",
+        "type": "bytes32"
+      }
+    ],
+    "name": "WrongComposeFrom",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      }
+    ],
+    "name": "WrongComposeSender",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongDestinationPeer",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "guid",
+        "type": "bytes32"
+      }
+    ],
+    "name": "WrongGuid",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "srcEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "WrongSourceEid",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "operationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "collateralAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "borrowAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "destinationKind",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "destination",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "guid",
+        "type": "bytes32"
+      }
+    ],
+    "name": "BorrowInstructionSent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "guid",
+        "type": "bytes32"
+      }
+    ],
+    "name": "CollateralDepositInstructionSent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "redeemedAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "FXrpRedeemed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "operationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "guid",
+        "type": "bytes32"
+      }
+    ],
+    "name": "LoanCancelInstructionSent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "NativeSweptToParent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "controllerAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "SubaccountInitialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "TokenSweptToParent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "operationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "guid",
+        "type": "bytes32"
+      }
+    ],
+    "name": "WithdrawInstructionSent",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_collateralAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_minCollateralAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_borrowAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_destinationKind",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_destination",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_minComposeValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_operationId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_deadline",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_extraOptions",
+        "type": "bytes"
+      }
+    ],
+    "name": "borrow",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_operationId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_extraOptions",
+        "type": "bytes"
+      }
+    ],
+    "name": "cancel",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "controllerAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_minAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_extraOptions",
+        "type": "bytes"
+      }
+    ],
+    "name": "depositCollateral",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "implementation",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_controllerAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_from",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_guid",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_message",
+        "type": "bytes"
+      },
+      {
+        "internalType": "address",
+        "name": "_executor",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_extraData",
+        "type": "bytes"
+      }
+    ],
+    "name": "lzCompose",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "parentPersonalAccount",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "subaccountType",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "sweepRedeem",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_redeemedAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_operationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "usedOperations",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_minAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_operationId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_deadline",
+        "type": "uint64"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes",
+            "name": "destinationOptions",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "returnOptions",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minComposeValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct ILoanSubaccount.WithdrawOptions",
+        "name": "_options",
+        "type": "tuple"
+      }
+    ],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  }
+]

@@ -1,0 +1,99 @@
+[
+  {
+    "inputs": [],
+    "name": "ComposeTransportNotConfigured",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidLzEndpoint",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidOft",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidOriginEid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidOriginPeer",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "ComposeTransportCleared",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "lzEndpoint",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oft",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "originEid",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "originPeer",
+        "type": "bytes32"
+      }
+    ],
+    "name": "ComposeTransportSet",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getComposeTransport",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "lzEndpoint",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "oft",
+            "type": "address"
+          },
+          {
+            "internalType": "uint32",
+            "name": "originEid",
+            "type": "uint32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "originPeer",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct IComposeTransportFacet.Transport",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

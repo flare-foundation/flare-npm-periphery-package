@@ -1,5 +1,508 @@
 [
   {
+    "inputs": [],
+    "name": "AlreadyRelayed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BadS",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BadV",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DelayedSignPolicy",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DuplicateProtocolId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EcrecoverError",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EcrecoverReturnedBadData",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FeeCollectionAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FeeConfigNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FeeExemptAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FeeExemptionsNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FeeTokenActive",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FeeTransferFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "HistoryBeforeStart",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectMerkleProof",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IndexOutOfOrder",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IndexOutOfRange",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InitialSigningPolicyHashZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidConfigHash",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidInitialStartingVotingRoundId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidProtocolId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidRandomNumberProof",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidRandomNumberProtocolId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSignPolicyLength",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSignPolicyMetadata",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidVotingRoundId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MerkleProofInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MessageTooOld",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MsgValueNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MustUseNewSignPolicy",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoAccessToMerkleRoots",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoAccessToSigningPolicyHashes",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoNewSignPolicySize",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoRandomNumber",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoSignatureCount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotEnoughSignatures",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotEnoughWeight",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotFinalized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotNextRewardEpoch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotRelayCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotWithLastInitialized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OldRelayIncompatible",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OldRelayNotAllowedInRelayMode",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OldRelayVerificationFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OldRelayWrongFirstRewardEpochStart",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OldRelayWrongRewardEpochDuration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OldRelayWrongStartTs",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OldRelayWrongVotingEpochDuration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlySigningPolicySetterRole",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ProtocolFeeZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RefundFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RenounceDisabled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RewardEpochDurationZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SignPolicyRelayDisabled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SigningPolicyEmpty",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SigningPolicyHashMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SigningPolicySetterNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SigningPolicySetterZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SourceChainIdMismatchOnHomeDeploy",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SourceChainIdZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ThresholdIncreaseTooSmall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ThresholdTooHigh",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ThresholdTooLow",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TimelockDurationTooLong",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TimelockInvalidSelector",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TimelockNotAllowedYet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TimelockValueNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TooLowFee",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TooManyVoters",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TooShortMessage",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TotalWeightTooBig",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UnreachableCode",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "VerificationFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "VotersWeightsSizeMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "VotingEpochDurationZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongMessageFormat",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongMessageFormat2",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongSignPolicyRewardEpoch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongSignature",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongSizeForNewSignPolicy",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongVerificationData",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroMerkleRoot",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroSigner",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "encodedCall",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "encodedCallHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "allowedAfterTimestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "CallTimelocked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "feeCollectionAddress",
+        "type": "address"
+      }
+    ],
+    "name": "FeeCollectionAddressSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "exempt",
+        "type": "bool"
+      }
+    ],
+    "name": "FeeExemptionSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "feeToken",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint8",
+            "name": "protocolId",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "fee",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IRelay.FeeConfig[]",
+        "name": "feeConfigs",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "ProtocolFeesSet",
+    "type": "event"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -28,6 +531,31 @@
       }
     ],
     "name": "ProtocolMessageRelayed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "votingRoundId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "randomNumber",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "isSecureRandom",
+        "type": "bool"
+      }
+    ],
+    "name": "RandomNumberRelayed",
     "type": "event"
   },
   {
@@ -99,6 +627,84 @@
     "type": "event"
   },
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "signingPolicySetter",
+        "type": "address"
+      }
+    ],
+    "name": "SigningPolicySetterSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timelockDurationSeconds",
+        "type": "uint256"
+      }
+    ],
+    "name": "TimelockDurationSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "encodedCallHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "TimelockedCallCanceled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "encodedCallHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "TimelockedCallExecuted",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "_encodedCall",
+        "type": "bytes"
+      }
+    ],
+    "name": "cancelTimelockedCall",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "_encodedCall",
+        "type": "bytes"
+      }
+    ],
+    "name": "executeTimelockedCall",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "feeCollectionAddress",
     "outputs": [
@@ -106,6 +712,82 @@
         "internalType": "address payable",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "feeExemptAddress",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "feeToken",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "_encodedCall",
+        "type": "bytes"
+      }
+    ],
+    "name": "getExecuteTimelockedCallTimestamp",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_allowedAfterTimestamp",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getFeeConfigs",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint8",
+            "name": "protocolId",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "fee",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IRelay.FeeConfig[]",
+        "name": "_feeConfigs",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
@@ -164,6 +846,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getTimelockDurationSeconds",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -180,53 +875,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes",
-        "name": "_relayMessage",
-        "type": "bytes"
-      },
-      {
-        "components": [
-          {
-            "internalType": "bytes32",
-            "name": "descriptionHash",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "uint256",
-            "name": "chainId",
-            "type": "uint256"
-          },
-          {
-            "components": [
-              {
-                "internalType": "uint8",
-                "name": "protocolId",
-                "type": "uint8"
-              },
-              {
-                "internalType": "uint256",
-                "name": "feeInWei",
-                "type": "uint256"
-              }
-            ],
-            "internalType": "struct IRelay.FeeConfig[]",
-            "name": "newFeeConfigs",
-            "type": "tuple[]"
-          }
-        ],
-        "internalType": "struct IRelay.RelayGovernanceConfig",
-        "name": "_config",
-        "type": "tuple"
-      }
-    ],
-    "name": "governanceFeeSetup",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -303,6 +951,25 @@
         "type": "uint256"
       }
     ],
+    "name": "protocolFee",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_protocolId",
+        "type": "uint256"
+      }
+    ],
     "name": "protocolFeeInWei",
     "outputs": [
       {
@@ -324,6 +991,74 @@
         "type": "bytes"
       }
     ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_feeCollectionAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setFeeCollectionAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "exempt",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct IIRelay.FeeExemption[]",
+        "name": "_exemptions",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "setFeeExemptions",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_feeToken",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint8",
+            "name": "protocolId",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "fee",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IRelay.FeeConfig[]",
+        "name": "_feeConfigs",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "setProtocolFees",
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -379,6 +1114,32 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_signingPolicySetter",
+        "type": "address"
+      }
+    ],
+    "name": "setSigningPolicySetter",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_timelockDurationSeconds",
+        "type": "uint256"
+      }
+    ],
+    "name": "setTimelockDuration",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "signingPolicySetter",
     "outputs": [
@@ -386,6 +1147,19 @@
         "internalType": "address",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "sourceChainId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -540,6 +1314,35 @@
       }
     ],
     "name": "verifyCustomSignature",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_rewardEpochId",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "_relayMessage",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_messageHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "_thresholdBIPS",
+        "type": "uint16"
+      }
+    ],
+    "name": "verifyCustomSignatureWithThreshold",
     "outputs": [
       {
         "internalType": "uint256",

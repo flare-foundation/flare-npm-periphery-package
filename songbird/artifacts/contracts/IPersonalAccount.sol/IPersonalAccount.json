@@ -50,6 +50,17 @@
     "inputs": [
       {
         "internalType": "uint256",
+        "name": "required",
+        "type": "uint256"
+      }
+    ],
+    "name": "InsufficientFundsForInstruction",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
         "name": "executorFee",
         "type": "uint256"
       }
@@ -64,12 +75,43 @@
   },
   {
     "inputs": [],
+    "name": "InvalidCrossChainUserOp",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "InvalidXrplOwner",
     "type": "error"
   },
   {
     "inputs": [],
     "name": "OnlyController",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlySelf",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlySubaccount",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "UnknownBridgeRoute",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongDestinationPeer",
     "type": "error"
   },
   {
@@ -181,6 +223,37 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "operationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "callCount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "guid",
+        "type": "bytes32"
+      }
+    ],
+    "name": "CrossChainUserOpSent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "vault",
@@ -237,6 +310,62 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
+        "internalType": "address",
+        "name": "subaccount",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "redeemedAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "executor",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "valueForwarded",
+        "type": "uint256"
+      }
+    ],
+    "name": "FXrpRedeemedFromSubaccount",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "subaccount",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "FXrpReturnedToSubaccount",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": false,
         "internalType": "address",
         "name": "to",
@@ -250,6 +379,25 @@
       }
     ],
     "name": "FXrpTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "controllerAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "xrplOwner",
+        "type": "string"
+      }
+    ],
+    "name": "PersonalAccountInitialized",
     "type": "event"
   },
   {
@@ -399,6 +547,93 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_controllerAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_xrplOwner",
+        "type": "string"
+      }
+    ],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "redeemFromSubaccount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_redeemedAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "_destinationEid",
+        "type": "uint32"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IPersonalAccount.Call[]",
+        "name": "_calls",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_operationId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_deadline",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_extraOptions",
+        "type": "bytes"
+      }
+    ],
+    "name": "sendCrossChainUserOp",
+    "outputs": [],
+    "stateMutability": "payable",
     "type": "function"
   },
   {

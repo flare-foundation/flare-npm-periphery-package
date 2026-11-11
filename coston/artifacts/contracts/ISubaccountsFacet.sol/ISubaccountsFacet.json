@@ -1,0 +1,145 @@
+[
+  {
+    "inputs": [],
+    "name": "InvalidSubaccountImplementation",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSubaccountType",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "SubaccountImplementationNotSet",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "subaccountAddress",
+        "type": "address"
+      }
+    ],
+    "name": "SubaccountNotSuccessfullyDeployed",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "subaccount",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "SubaccountCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "implementation",
+        "type": "address"
+      }
+    ],
+    "name": "SubaccountImplementationSet",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_xrplOwner",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "createSubaccount",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_xrplOwner",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getSubaccount",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "implementationForType",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
