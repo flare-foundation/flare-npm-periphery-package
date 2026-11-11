@@ -1,0 +1,25 @@
+[
+  {
+    "inputs": [],
+    "name": "AlreadyInitialized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidControllerAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "controllerAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

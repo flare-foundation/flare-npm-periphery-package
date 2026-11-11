@@ -1,0 +1,222 @@
+[
+  {
+    "inputs": [],
+    "name": "FxrpOftNotConfigured",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidDestinationEid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidDestinationPeer",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidFxrpOft",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "SubaccountTypeRoutePinned",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "UnknownBridgeRoute",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "destinationPeer",
+        "type": "bytes32"
+      }
+    ],
+    "name": "BridgeRouteSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "fxrpOft",
+        "type": "address"
+      }
+    ],
+    "name": "FxrpOftSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "SubaccountTypeRouteSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "suspended",
+        "type": "bool"
+      }
+    ],
+    "name": "SubaccountTypeRouteSuspended",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "_destinationEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "getBridgeRoute",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getBridgeRoutes",
+    "outputs": [
+      {
+        "internalType": "uint32[]",
+        "name": "_destinationEids",
+        "type": "uint32[]"
+      },
+      {
+        "internalType": "bytes32[]",
+        "name": "_destinationPeers",
+        "type": "bytes32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getFxrpOft",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getSubaccountTypeRoute",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "_fxrpOft",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_destinationEid",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_destinationPeer",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getSubaccountTypeRoutePin",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "_destinationEid",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bool",
+        "name": "_suspended",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

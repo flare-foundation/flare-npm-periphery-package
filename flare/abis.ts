@@ -9,6 +9,7 @@ import ContractRegistry from "./artifacts/contracts/ContractRegistry.sol/Contrac
 import EmergencyPause from "./artifacts/contracts/data/EmergencyPause.sol/EmergencyPause.json";
 import FtsoV2Interface from "./artifacts/contracts/FtsoV2Interface.sol/FtsoV2Interface.json";
 import IAddressBinder from "./artifacts/contracts/IAddressBinder.sol/IAddressBinder.json";
+import IAddressUpdatable from "./artifacts/contracts/IAddressUpdatable.sol/IAddressUpdatable.json";
 import IAddressValidity from "./artifacts/contracts/IAddressValidity.sol/IAddressValidity.json";
 import IAddressValidityVerification from "./artifacts/contracts/IAddressValidityVerification.sol/IAddressValidityVerification.json";
 import IAgentAlwaysAllowedMinters from "./artifacts/contracts/IAgentAlwaysAllowedMinters.sol/IAgentAlwaysAllowedMinters.json";
@@ -25,12 +26,17 @@ import IAssetManagerMinting from "./artifacts/contracts/IAssetManagerMinting.sol
 import IAssetManagerRedemption from "./artifacts/contracts/IAssetManagerRedemption.sol/IAssetManagerRedemption.json";
 import IBalanceDecreasingTransaction from "./artifacts/contracts/IBalanceDecreasingTransaction.sol/IBalanceDecreasingTransaction.json";
 import IBalanceDecreasingTransactionVerification from "./artifacts/contracts/IBalanceDecreasingTransactionVerification.sol/IBalanceDecreasingTransactionVerification.json";
+import IBridgeRoutesFacet from "./artifacts/contracts/IBridgeRoutesFacet.sol/IBridgeRoutesFacet.json";
+import IBridgingSubaccount from "./artifacts/contracts/IBridgingSubaccount.sol/IBridgingSubaccount.json";
 import ICChainStake from "./artifacts/contracts/ICChainStake.sol/ICChainStake.json";
 import ICChainVotePower from "./artifacts/contracts/ICChainVotePower.sol/ICChainVotePower.json";
 import IClaimSetupManager from "./artifacts/contracts/IClaimSetupManager.sol/IClaimSetupManager.json";
 import ICollateralizable from "./artifacts/contracts/mockXAsset/interfaces/ICollateralizable.sol/ICollateralizable.json";
+import IComposeReceiverAccountBase from "./artifacts/contracts/IComposeReceiverAccountBase.sol/IComposeReceiverAccountBase.json";
+import IComposeTransportFacet from "./artifacts/contracts/IComposeTransportFacet.sol/IComposeTransportFacet.json";
 import IConfirmedBlockHeightExists from "./artifacts/contracts/IConfirmedBlockHeightExists.sol/IConfirmedBlockHeightExists.json";
 import IConfirmedBlockHeightExistsVerification from "./artifacts/contracts/IConfirmedBlockHeightExistsVerification.sol/IConfirmedBlockHeightExistsVerification.json";
+import IControlledAccount from "./artifacts/contracts/IControlledAccount.sol/IControlledAccount.json";
 import ICoreVaultClient from "./artifacts/contracts/ICoreVaultClient.sol/ICoreVaultClient.json";
 import ICoreVaultClientSettings from "./artifacts/contracts/ICoreVaultClientSettings.sol/ICoreVaultClientSettings.json";
 import ICoreVaultManager from "./artifacts/contracts/ICoreVaultManager.sol/ICoreVaultManager.json";
@@ -53,6 +59,11 @@ import IFAssetRedeemerAccount from "./artifacts/contracts/IFAssetRedeemerAccount
 import IFastUpdateIncentiveManager from "./artifacts/contracts/IFastUpdateIncentiveManager.sol/IFastUpdateIncentiveManager.json";
 import IFastUpdater from "./artifacts/contracts/IFastUpdater.sol/IFastUpdater.json";
 import IFastUpdatesConfiguration from "./artifacts/contracts/IFastUpdatesConfiguration.sol/IFastUpdatesConfiguration.json";
+import IFdc2Hub from "./artifacts/contracts/IFdc2Hub.sol/IFdc2Hub.json";
+import IFdc2InflationConfigurations from "./artifacts/contracts/IFdc2InflationConfigurations.sol/IFdc2InflationConfigurations.json";
+import IFdc2RequestFeeConfigurations from "./artifacts/contracts/IFdc2RequestFeeConfigurations.sol/IFdc2RequestFeeConfigurations.json";
+import IFdc2RewardOffersManager from "./artifacts/contracts/IFdc2RewardOffersManager.sol/IFdc2RewardOffersManager.json";
+import IFdc2Verification from "./artifacts/contracts/IFdc2Verification.sol/IFdc2Verification.json";
 import IFdcHub from "./artifacts/contracts/IFdcHub.sol/IFdcHub.json";
 import IFdcInflationConfigurations from "./artifacts/contracts/IFdcInflationConfigurations.sol/IFdcInflationConfigurations.json";
 import IFdcRequestFeeConfigurations from "./artifacts/contracts/IFdcRequestFeeConfigurations.sol/IFdcRequestFeeConfigurations.json";
@@ -61,6 +72,7 @@ import IFeeCalculator from "./artifacts/contracts/IFeeCalculator.sol/IFeeCalcula
 import IFlareAssetRegistry from "./artifacts/contracts/IFlareAssetRegistry.sol/IFlareAssetRegistry.json";
 import IFlareContractRegistry from "./artifacts/contracts/IFlareContractRegistry.sol/IFlareContractRegistry.json";
 import IFlareDaemonize from "./artifacts/contracts/genesis/interfaces/IFlareDaemonize.sol/IFlareDaemonize.json";
+import IFlareGovernance from "./artifacts/contracts/IFlareGovernance.sol/IFlareGovernance.json";
 import IFlareSystemsCalculator from "./artifacts/contracts/IFlareSystemsCalculator.sol/IFlareSystemsCalculator.json";
 import IFlareSystemsManager from "./artifacts/contracts/IFlareSystemsManager.sol/IFlareSystemsManager.json";
 import IFtso from "./artifacts/contracts/IFtso.sol/IFtso.json";
@@ -91,6 +103,7 @@ import IIEntityManager from "./artifacts/contracts/protocol/interfaces/IIEntityM
 import IIFastUpdaterView from "./artifacts/contracts/fscV1/interfaces/IIFastUpdaterView.sol/IIFastUpdaterView.json";
 import IIFlareAssetRegistry from "./artifacts/contracts/assetRegistry/interfaces/IIFlareAssetRegistry.sol/IIFlareAssetRegistry.json";
 import IIFlareAssetRegistryProvider from "./artifacts/contracts/assetRegistry/interfaces/IIFlareAssetRegistryProvider.sol/IIFlareAssetRegistryProvider.json";
+import IIFlareGovernance from "./artifacts/contracts/governance/interfaces/IIFlareGovernance.sol/IIFlareGovernance.json";
 import IIFlareSystemsCalculator from "./artifacts/contracts/protocol/interfaces/IIFlareSystemsCalculator.sol/IIFlareSystemsCalculator.json";
 import IIFlareSystemsManager from "./artifacts/contracts/protocol/interfaces/IIFlareSystemsManager.sol/IIFlareSystemsManager.json";
 import IIFtso from "./artifacts/contracts/ftso/interfaces/IIFtso.sol/IIFtso.json";
@@ -110,7 +123,6 @@ import IIIncentivePoolSharingPercentageProvider from "./artifacts/contracts/toke
 import IIInflationAllocation from "./artifacts/contracts/inflation/interfaces/IIInflationAllocation.sol/IIInflationAllocation.json";
 import IIInflationReceiver from "./artifacts/contracts/inflation/interfaces/IIInflationReceiver.sol/IIInflationReceiver.json";
 import IIInflationReceiverV1 from "./artifacts/contracts/inflation/interfaces/IIInflationReceiverV1.sol/IIInflationReceiverV1.json";
-import IIInflationV1 from "./artifacts/contracts/inflation/interfaces/IIInflationV1.sol/IIInflationV1.json";
 import IINodePossessionVerifier from "./artifacts/contracts/protocol/interfaces/IINodePossessionVerifier.sol/IINodePossessionVerifier.json";
 import IIPChainStakeMirrorVerifier from "./artifacts/contracts/staking/interfaces/IIPChainStakeMirrorVerifier.sol/IIPChainStakeMirrorVerifier.json";
 import IIPollingFoundation from "./artifacts/contracts/governance/interfaces/IIPollingFoundation.sol/IIPollingFoundation.json";
@@ -134,19 +146,29 @@ import IIncreaseManager from "./artifacts/contracts/IIncreaseManager.sol/IIncrea
 import IInflationGenesis from "./artifacts/contracts/genesis/interfaces/IInflationGenesis.sol/IInflationGenesis.json";
 import IInstructionFeesFacet from "./artifacts/contracts/IInstructionFeesFacet.sol/IInstructionFeesFacet.json";
 import IInstructionsFacet from "./artifacts/contracts/IInstructionsFacet.sol/IInstructionsFacet.json";
+import ILoanSubaccount from "./artifacts/contracts/ILoanSubaccount.sol/ILoanSubaccount.json";
 import IMasterAccountController from "./artifacts/contracts/IMasterAccountController.sol/IMasterAccountController.json";
 import IMemoInstructionsFacet from "./artifacts/contracts/IMemoInstructionsFacet.sol/IMemoInstructionsFacet.json";
 import IMintingTagManager from "./artifacts/contracts/IMintingTagManager.sol/IMintingTagManager.json";
+import IMorpho from "./artifacts/contracts/smartAccounts/interfaces/IMorpho.sol/IMorpho.json";
+import IMorphoLoanMarketsFacet from "./artifacts/contracts/IMorphoLoanMarketsFacet.sol/IMorphoLoanMarketsFacet.json";
+import IMorphoLoanSubaccountRemote from "./artifacts/contracts/IMorphoLoanSubaccountRemote.sol/IMorphoLoanSubaccountRemote.json";
 import IOwnableWithTimelock from "./artifacts/contracts/IOwnableWithTimelock.sol/IOwnableWithTimelock.json";
 import IPChainStakeMirror from "./artifacts/contracts/IPChainStakeMirror.sol/IPChainStakeMirror.json";
 import IPChainStakeMirrorMultiSigVoting from "./artifacts/contracts/IPChainStakeMirrorMultiSigVoting.sol/IPChainStakeMirrorMultiSigVoting.json";
 import IPChainStakeMirrorVerifier from "./artifacts/contracts/IPChainStakeMirrorVerifier.sol/IPChainStakeMirrorVerifier.json";
 import IPChainVotePower from "./artifacts/contracts/IPChainVotePower.sol/IPChainVotePower.json";
+import IPMWFeeProof from "./artifacts/contracts/IPMWFeeProof.sol/IPMWFeeProof.json";
+import IPMWMultisigAccountConfigured from "./artifacts/contracts/IPMWMultisigAccountConfigured.sol/IPMWMultisigAccountConfigured.json";
+import IPMWMultisigUtxoConfigured from "./artifacts/contracts/IPMWMultisigUtxoConfigured.sol/IPMWMultisigUtxoConfigured.json";
+import IPMWPaymentStatus from "./artifacts/contracts/IPMWPaymentStatus.sol/IPMWPaymentStatus.json";
 import IPauseFacet from "./artifacts/contracts/IPauseFacet.sol/IPauseFacet.json";
 import IPayment from "./artifacts/contracts/IPayment.sol/IPayment.json";
 import IPaymentProofsFacet from "./artifacts/contracts/IPaymentProofsFacet.sol/IPaymentProofsFacet.json";
 import IPaymentVerification from "./artifacts/contracts/IPaymentVerification.sol/IPaymentVerification.json";
 import IPersonalAccount from "./artifacts/contracts/IPersonalAccount.sol/IPersonalAccount.json";
+import IPersonalAccountBase from "./artifacts/contracts/IPersonalAccountBase.sol/IPersonalAccountBase.json";
+import IPersonalAccountRemote from "./artifacts/contracts/IPersonalAccountRemote.sol/IPersonalAccountRemote.json";
 import IPersonalAccountsFacet from "./artifacts/contracts/IPersonalAccountsFacet.sol/IPersonalAccountsFacet.json";
 import IPollingFtso from "./artifacts/contracts/IPollingFtso.sol/IPollingFtso.json";
 import IPollingManagementGroup from "./artifacts/contracts/IPollingManagementGroup.sol/IPollingManagementGroup.json";
@@ -157,12 +179,17 @@ import IRandomProvider from "./artifacts/contracts/IRandomProvider.sol/IRandomPr
 import IReaderFacet from "./artifacts/contracts/IReaderFacet.sol/IReaderFacet.json";
 import IRedeemExtended from "./artifacts/contracts/IRedeemExtended.sol/IRedeemExtended.json";
 import IRedeemExtendedSettings from "./artifacts/contracts/IRedeemExtendedSettings.sol/IRedeemExtendedSettings.json";
+import IRedeemingSubaccount from "./artifacts/contracts/IRedeemingSubaccount.sol/IRedeemingSubaccount.json";
 import IRedemptionTimeExtension from "./artifacts/contracts/IRedemptionTimeExtension.sol/IRedemptionTimeExtension.json";
 import IReferencedPaymentNonexistence from "./artifacts/contracts/IReferencedPaymentNonexistence.sol/IReferencedPaymentNonexistence.json";
 import IReferencedPaymentNonexistenceVerification from "./artifacts/contracts/IReferencedPaymentNonexistenceVerification.sol/IReferencedPaymentNonexistenceVerification.json";
 import IRelay from "./artifacts/contracts/IRelay.sol/IRelay.json";
 import IRewardManager from "./artifacts/contracts/IRewardManager.sol/IRewardManager.json";
+import ISafeMinimal from "./artifacts/contracts/utils/interfaces/ISafeMinimal.sol/ISafeMinimal.json";
+import ISubaccount from "./artifacts/contracts/ISubaccount.sol/ISubaccount.json";
+import ISubaccountsFacet from "./artifacts/contracts/ISubaccountsFacet.sol/ISubaccountsFacet.json";
 import ISubmission from "./artifacts/contracts/ISubmission.sol/ISubmission.json";
+import ITeeAvailabilityCheck from "./artifacts/contracts/ITeeAvailabilityCheck.sol/ITeeAvailabilityCheck.json";
 import ITimelockFacet from "./artifacts/contracts/ITimelockFacet.sol/ITimelockFacet.json";
 import ITypeTemplate from "./artifacts/contracts/fdc/interfaces/ITypeTemplate.sol/ITypeTemplate.json";
 import ITypeTemplateVerification from "./artifacts/contracts/fdc/interfaces/ITypeTemplateVerification.sol/ITypeTemplateVerification.json";
@@ -211,6 +238,7 @@ export const interfaceAbis: { [key: string]: any } = {
     EmergencyPause: EmergencyPause,
     FtsoV2Interface: FtsoV2Interface,
     IAddressBinder: IAddressBinder,
+    IAddressUpdatable: IAddressUpdatable,
     IAddressValidity: IAddressValidity,
     IAddressValidityVerification: IAddressValidityVerification,
     IAgentAlwaysAllowedMinters: IAgentAlwaysAllowedMinters,
@@ -227,12 +255,17 @@ export const interfaceAbis: { [key: string]: any } = {
     IAssetManagerRedemption: IAssetManagerRedemption,
     IBalanceDecreasingTransaction: IBalanceDecreasingTransaction,
     IBalanceDecreasingTransactionVerification: IBalanceDecreasingTransactionVerification,
+    IBridgeRoutesFacet: IBridgeRoutesFacet,
+    IBridgingSubaccount: IBridgingSubaccount,
     ICChainStake: ICChainStake,
     ICChainVotePower: ICChainVotePower,
     IClaimSetupManager: IClaimSetupManager,
     ICollateralizable: ICollateralizable,
+    IComposeReceiverAccountBase: IComposeReceiverAccountBase,
+    IComposeTransportFacet: IComposeTransportFacet,
     IConfirmedBlockHeightExists: IConfirmedBlockHeightExists,
     IConfirmedBlockHeightExistsVerification: IConfirmedBlockHeightExistsVerification,
+    IControlledAccount: IControlledAccount,
     ICoreVaultClient: ICoreVaultClient,
     ICoreVaultClientSettings: ICoreVaultClientSettings,
     ICoreVaultManager: ICoreVaultManager,
@@ -255,6 +288,11 @@ export const interfaceAbis: { [key: string]: any } = {
     IFastUpdateIncentiveManager: IFastUpdateIncentiveManager,
     IFastUpdater: IFastUpdater,
     IFastUpdatesConfiguration: IFastUpdatesConfiguration,
+    IFdc2Hub: IFdc2Hub,
+    IFdc2InflationConfigurations: IFdc2InflationConfigurations,
+    IFdc2RequestFeeConfigurations: IFdc2RequestFeeConfigurations,
+    IFdc2RewardOffersManager: IFdc2RewardOffersManager,
+    IFdc2Verification: IFdc2Verification,
     IFdcHub: IFdcHub,
     IFdcInflationConfigurations: IFdcInflationConfigurations,
     IFdcRequestFeeConfigurations: IFdcRequestFeeConfigurations,
@@ -263,6 +301,7 @@ export const interfaceAbis: { [key: string]: any } = {
     IFlareAssetRegistry: IFlareAssetRegistry,
     IFlareContractRegistry: IFlareContractRegistry,
     IFlareDaemonize: IFlareDaemonize,
+    IFlareGovernance: IFlareGovernance,
     IFlareSystemsCalculator: IFlareSystemsCalculator,
     IFlareSystemsManager: IFlareSystemsManager,
     IFtso: IFtso,
@@ -293,6 +332,7 @@ export const interfaceAbis: { [key: string]: any } = {
     IIFastUpdaterView: IIFastUpdaterView,
     IIFlareAssetRegistry: IIFlareAssetRegistry,
     IIFlareAssetRegistryProvider: IIFlareAssetRegistryProvider,
+    IIFlareGovernance: IIFlareGovernance,
     IIFlareSystemsCalculator: IIFlareSystemsCalculator,
     IIFlareSystemsManager: IIFlareSystemsManager,
     IIFtso: IIFtso,
@@ -312,7 +352,6 @@ export const interfaceAbis: { [key: string]: any } = {
     IIInflationAllocation: IIInflationAllocation,
     IIInflationReceiver: IIInflationReceiver,
     IIInflationReceiverV1: IIInflationReceiverV1,
-    IIInflationV1: IIInflationV1,
     IINodePossessionVerifier: IINodePossessionVerifier,
     IIPChainStakeMirrorVerifier: IIPChainStakeMirrorVerifier,
     IIPollingFoundation: IIPollingFoundation,
@@ -336,19 +375,29 @@ export const interfaceAbis: { [key: string]: any } = {
     IInflationGenesis: IInflationGenesis,
     IInstructionFeesFacet: IInstructionFeesFacet,
     IInstructionsFacet: IInstructionsFacet,
+    ILoanSubaccount: ILoanSubaccount,
     IMasterAccountController: IMasterAccountController,
     IMemoInstructionsFacet: IMemoInstructionsFacet,
     IMintingTagManager: IMintingTagManager,
+    IMorpho: IMorpho,
+    IMorphoLoanMarketsFacet: IMorphoLoanMarketsFacet,
+    IMorphoLoanSubaccountRemote: IMorphoLoanSubaccountRemote,
     IOwnableWithTimelock: IOwnableWithTimelock,
     IPChainStakeMirror: IPChainStakeMirror,
     IPChainStakeMirrorMultiSigVoting: IPChainStakeMirrorMultiSigVoting,
     IPChainStakeMirrorVerifier: IPChainStakeMirrorVerifier,
     IPChainVotePower: IPChainVotePower,
+    IPMWFeeProof: IPMWFeeProof,
+    IPMWMultisigAccountConfigured: IPMWMultisigAccountConfigured,
+    IPMWMultisigUtxoConfigured: IPMWMultisigUtxoConfigured,
+    IPMWPaymentStatus: IPMWPaymentStatus,
     IPauseFacet: IPauseFacet,
     IPayment: IPayment,
     IPaymentProofsFacet: IPaymentProofsFacet,
     IPaymentVerification: IPaymentVerification,
     IPersonalAccount: IPersonalAccount,
+    IPersonalAccountBase: IPersonalAccountBase,
+    IPersonalAccountRemote: IPersonalAccountRemote,
     IPersonalAccountsFacet: IPersonalAccountsFacet,
     IPollingFtso: IPollingFtso,
     IPollingManagementGroup: IPollingManagementGroup,
@@ -359,12 +408,17 @@ export const interfaceAbis: { [key: string]: any } = {
     IReaderFacet: IReaderFacet,
     IRedeemExtended: IRedeemExtended,
     IRedeemExtendedSettings: IRedeemExtendedSettings,
+    IRedeemingSubaccount: IRedeemingSubaccount,
     IRedemptionTimeExtension: IRedemptionTimeExtension,
     IReferencedPaymentNonexistence: IReferencedPaymentNonexistence,
     IReferencedPaymentNonexistenceVerification: IReferencedPaymentNonexistenceVerification,
     IRelay: IRelay,
     IRewardManager: IRewardManager,
+    ISafeMinimal: ISafeMinimal,
+    ISubaccount: ISubaccount,
+    ISubaccountsFacet: ISubaccountsFacet,
     ISubmission: ISubmission,
+    ITeeAvailabilityCheck: ITeeAvailabilityCheck,
     ITimelockFacet: ITimelockFacet,
     ITypeTemplate: ITypeTemplate,
     ITypeTemplateVerification: ITypeTemplateVerification,

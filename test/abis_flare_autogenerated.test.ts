@@ -16,6 +16,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.EmergencyPause).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.FtsoV2Interface).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAddressBinder).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IAddressUpdatable).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAddressValidity).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAddressValidityVerification).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IAgentAlwaysAllowedMinters).toEqual(expect.any(Array));
@@ -32,12 +33,17 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IAssetManagerRedemption).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IBalanceDecreasingTransaction).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IBalanceDecreasingTransactionVerification).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IBridgeRoutesFacet).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IBridgingSubaccount).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ICChainStake).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ICChainVotePower).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IClaimSetupManager).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ICollateralizable).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IComposeReceiverAccountBase).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IComposeTransportFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IConfirmedBlockHeightExists).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IConfirmedBlockHeightExistsVerification).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IControlledAccount).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ICoreVaultClient).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ICoreVaultClientSettings).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ICoreVaultManager).toEqual(expect.any(Array));
@@ -60,6 +66,11 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IFastUpdateIncentiveManager).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFastUpdater).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFastUpdatesConfiguration).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IFdc2Hub).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IFdc2InflationConfigurations).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IFdc2RequestFeeConfigurations).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IFdc2RewardOffersManager).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IFdc2Verification).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFdcHub).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFdcInflationConfigurations).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFdcRequestFeeConfigurations).toEqual(expect.any(Array));
@@ -68,6 +79,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IFlareAssetRegistry).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFlareContractRegistry).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFlareDaemonize).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IFlareGovernance).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFlareSystemsCalculator).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFlareSystemsManager).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IFtso).toEqual(expect.any(Array));
@@ -98,6 +110,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IIFastUpdaterView).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIFlareAssetRegistry).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIFlareAssetRegistryProvider).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IIFlareGovernance).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIFlareSystemsCalculator).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIFlareSystemsManager).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIFtso).toEqual(expect.any(Array));
@@ -117,7 +130,6 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IIInflationAllocation).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIInflationReceiver).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIInflationReceiverV1).toEqual(expect.any(Array));
-        expect(flare.interfaceAbis.IIInflationV1).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IINodePossessionVerifier).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIPChainStakeMirrorVerifier).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IIPollingFoundation).toEqual(expect.any(Array));
@@ -141,19 +153,29 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IInflationGenesis).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IInstructionFeesFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IInstructionsFacet).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.ILoanSubaccount).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IMasterAccountController).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IMemoInstructionsFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IMintingTagManager).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IMorpho).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IMorphoLoanMarketsFacet).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IMorphoLoanSubaccountRemote).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IOwnableWithTimelock).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPChainStakeMirror).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPChainStakeMirrorMultiSigVoting).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPChainStakeMirrorVerifier).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPChainVotePower).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IPMWFeeProof).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IPMWMultisigAccountConfigured).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IPMWMultisigUtxoConfigured).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IPMWPaymentStatus).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPauseFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPayment).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPaymentProofsFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPaymentVerification).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPersonalAccount).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IPersonalAccountBase).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IPersonalAccountRemote).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPersonalAccountsFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPollingFtso).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IPollingManagementGroup).toEqual(expect.any(Array));
@@ -164,12 +186,17 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceAbis.IReaderFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IRedeemExtended).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IRedeemExtendedSettings).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.IRedeemingSubaccount).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IRedemptionTimeExtension).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IReferencedPaymentNonexistence).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IReferencedPaymentNonexistenceVerification).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IRelay).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.IRewardManager).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.ISafeMinimal).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.ISubaccount).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.ISubaccountsFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ISubmission).toEqual(expect.any(Array));
+        expect(flare.interfaceAbis.ITeeAvailabilityCheck).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ITimelockFacet).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ITypeTemplate).toEqual(expect.any(Array));
         expect(flare.interfaceAbis.ITypeTemplateVerification).toEqual(expect.any(Array));
@@ -479,6 +506,7 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("EmergencyPause", "flare")).toEqual(flare.interfaceAbis.EmergencyPause);
         expect(interfaceToAbi("FtsoV2Interface", "flare")).toEqual(flare.interfaceAbis.FtsoV2Interface);
         expect(interfaceToAbi("IAddressBinder", "flare")).toEqual(flare.interfaceAbis.IAddressBinder);
+        expect(interfaceToAbi("IAddressUpdatable", "flare")).toEqual(flare.interfaceAbis.IAddressUpdatable);
         expect(interfaceToAbi("IAddressValidity", "flare")).toEqual(flare.interfaceAbis.IAddressValidity);
         expect(interfaceToAbi("IAddressValidityVerification", "flare")).toEqual(
             flare.interfaceAbis.IAddressValidityVerification
@@ -505,16 +533,23 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("IBalanceDecreasingTransactionVerification", "flare")).toEqual(
             flare.interfaceAbis.IBalanceDecreasingTransactionVerification
         );
+        expect(interfaceToAbi("IBridgeRoutesFacet", "flare")).toEqual(flare.interfaceAbis.IBridgeRoutesFacet);
+        expect(interfaceToAbi("IBridgingSubaccount", "flare")).toEqual(flare.interfaceAbis.IBridgingSubaccount);
         expect(interfaceToAbi("ICChainStake", "flare")).toEqual(flare.interfaceAbis.ICChainStake);
         expect(interfaceToAbi("ICChainVotePower", "flare")).toEqual(flare.interfaceAbis.ICChainVotePower);
         expect(interfaceToAbi("IClaimSetupManager", "flare")).toEqual(flare.interfaceAbis.IClaimSetupManager);
         expect(interfaceToAbi("ICollateralizable", "flare")).toEqual(flare.interfaceAbis.ICollateralizable);
+        expect(interfaceToAbi("IComposeReceiverAccountBase", "flare")).toEqual(
+            flare.interfaceAbis.IComposeReceiverAccountBase
+        );
+        expect(interfaceToAbi("IComposeTransportFacet", "flare")).toEqual(flare.interfaceAbis.IComposeTransportFacet);
         expect(interfaceToAbi("IConfirmedBlockHeightExists", "flare")).toEqual(
             flare.interfaceAbis.IConfirmedBlockHeightExists
         );
         expect(interfaceToAbi("IConfirmedBlockHeightExistsVerification", "flare")).toEqual(
             flare.interfaceAbis.IConfirmedBlockHeightExistsVerification
         );
+        expect(interfaceToAbi("IControlledAccount", "flare")).toEqual(flare.interfaceAbis.IControlledAccount);
         expect(interfaceToAbi("ICoreVaultClient", "flare")).toEqual(flare.interfaceAbis.ICoreVaultClient);
         expect(interfaceToAbi("ICoreVaultClientSettings", "flare")).toEqual(
             flare.interfaceAbis.ICoreVaultClientSettings
@@ -547,6 +582,17 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("IFastUpdatesConfiguration", "flare")).toEqual(
             flare.interfaceAbis.IFastUpdatesConfiguration
         );
+        expect(interfaceToAbi("IFdc2Hub", "flare")).toEqual(flare.interfaceAbis.IFdc2Hub);
+        expect(interfaceToAbi("IFdc2InflationConfigurations", "flare")).toEqual(
+            flare.interfaceAbis.IFdc2InflationConfigurations
+        );
+        expect(interfaceToAbi("IFdc2RequestFeeConfigurations", "flare")).toEqual(
+            flare.interfaceAbis.IFdc2RequestFeeConfigurations
+        );
+        expect(interfaceToAbi("IFdc2RewardOffersManager", "flare")).toEqual(
+            flare.interfaceAbis.IFdc2RewardOffersManager
+        );
+        expect(interfaceToAbi("IFdc2Verification", "flare")).toEqual(flare.interfaceAbis.IFdc2Verification);
         expect(interfaceToAbi("IFdcHub", "flare")).toEqual(flare.interfaceAbis.IFdcHub);
         expect(interfaceToAbi("IFdcInflationConfigurations", "flare")).toEqual(
             flare.interfaceAbis.IFdcInflationConfigurations
@@ -559,6 +605,7 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("IFlareAssetRegistry", "flare")).toEqual(flare.interfaceAbis.IFlareAssetRegistry);
         expect(interfaceToAbi("IFlareContractRegistry", "flare")).toEqual(flare.interfaceAbis.IFlareContractRegistry);
         expect(interfaceToAbi("IFlareDaemonize", "flare")).toEqual(flare.interfaceAbis.IFlareDaemonize);
+        expect(interfaceToAbi("IFlareGovernance", "flare")).toEqual(flare.interfaceAbis.IFlareGovernance);
         expect(interfaceToAbi("IFlareSystemsCalculator", "flare")).toEqual(flare.interfaceAbis.IFlareSystemsCalculator);
         expect(interfaceToAbi("IFlareSystemsManager", "flare")).toEqual(flare.interfaceAbis.IFlareSystemsManager);
         expect(interfaceToAbi("IFtso", "flare")).toEqual(flare.interfaceAbis.IFtso);
@@ -597,6 +644,7 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("IIFlareAssetRegistryProvider", "flare")).toEqual(
             flare.interfaceAbis.IIFlareAssetRegistryProvider
         );
+        expect(interfaceToAbi("IIFlareGovernance", "flare")).toEqual(flare.interfaceAbis.IIFlareGovernance);
         expect(interfaceToAbi("IIFlareSystemsCalculator", "flare")).toEqual(
             flare.interfaceAbis.IIFlareSystemsCalculator
         );
@@ -624,7 +672,6 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("IIInflationAllocation", "flare")).toEqual(flare.interfaceAbis.IIInflationAllocation);
         expect(interfaceToAbi("IIInflationReceiver", "flare")).toEqual(flare.interfaceAbis.IIInflationReceiver);
         expect(interfaceToAbi("IIInflationReceiverV1", "flare")).toEqual(flare.interfaceAbis.IIInflationReceiverV1);
-        expect(interfaceToAbi("IIInflationV1", "flare")).toEqual(flare.interfaceAbis.IIInflationV1);
         expect(interfaceToAbi("IINodePossessionVerifier", "flare")).toEqual(
             flare.interfaceAbis.IINodePossessionVerifier
         );
@@ -660,11 +707,17 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("IInflationGenesis", "flare")).toEqual(flare.interfaceAbis.IInflationGenesis);
         expect(interfaceToAbi("IInstructionFeesFacet", "flare")).toEqual(flare.interfaceAbis.IInstructionFeesFacet);
         expect(interfaceToAbi("IInstructionsFacet", "flare")).toEqual(flare.interfaceAbis.IInstructionsFacet);
+        expect(interfaceToAbi("ILoanSubaccount", "flare")).toEqual(flare.interfaceAbis.ILoanSubaccount);
         expect(interfaceToAbi("IMasterAccountController", "flare")).toEqual(
             flare.interfaceAbis.IMasterAccountController
         );
         expect(interfaceToAbi("IMemoInstructionsFacet", "flare")).toEqual(flare.interfaceAbis.IMemoInstructionsFacet);
         expect(interfaceToAbi("IMintingTagManager", "flare")).toEqual(flare.interfaceAbis.IMintingTagManager);
+        expect(interfaceToAbi("IMorpho", "flare")).toEqual(flare.interfaceAbis.IMorpho);
+        expect(interfaceToAbi("IMorphoLoanMarketsFacet", "flare")).toEqual(flare.interfaceAbis.IMorphoLoanMarketsFacet);
+        expect(interfaceToAbi("IMorphoLoanSubaccountRemote", "flare")).toEqual(
+            flare.interfaceAbis.IMorphoLoanSubaccountRemote
+        );
         expect(interfaceToAbi("IOwnableWithTimelock", "flare")).toEqual(flare.interfaceAbis.IOwnableWithTimelock);
         expect(interfaceToAbi("IPChainStakeMirror", "flare")).toEqual(flare.interfaceAbis.IPChainStakeMirror);
         expect(interfaceToAbi("IPChainStakeMirrorMultiSigVoting", "flare")).toEqual(
@@ -674,11 +727,21 @@ describe("Testing flare ABIs", () => {
             flare.interfaceAbis.IPChainStakeMirrorVerifier
         );
         expect(interfaceToAbi("IPChainVotePower", "flare")).toEqual(flare.interfaceAbis.IPChainVotePower);
+        expect(interfaceToAbi("IPMWFeeProof", "flare")).toEqual(flare.interfaceAbis.IPMWFeeProof);
+        expect(interfaceToAbi("IPMWMultisigAccountConfigured", "flare")).toEqual(
+            flare.interfaceAbis.IPMWMultisigAccountConfigured
+        );
+        expect(interfaceToAbi("IPMWMultisigUtxoConfigured", "flare")).toEqual(
+            flare.interfaceAbis.IPMWMultisigUtxoConfigured
+        );
+        expect(interfaceToAbi("IPMWPaymentStatus", "flare")).toEqual(flare.interfaceAbis.IPMWPaymentStatus);
         expect(interfaceToAbi("IPauseFacet", "flare")).toEqual(flare.interfaceAbis.IPauseFacet);
         expect(interfaceToAbi("IPayment", "flare")).toEqual(flare.interfaceAbis.IPayment);
         expect(interfaceToAbi("IPaymentProofsFacet", "flare")).toEqual(flare.interfaceAbis.IPaymentProofsFacet);
         expect(interfaceToAbi("IPaymentVerification", "flare")).toEqual(flare.interfaceAbis.IPaymentVerification);
         expect(interfaceToAbi("IPersonalAccount", "flare")).toEqual(flare.interfaceAbis.IPersonalAccount);
+        expect(interfaceToAbi("IPersonalAccountBase", "flare")).toEqual(flare.interfaceAbis.IPersonalAccountBase);
+        expect(interfaceToAbi("IPersonalAccountRemote", "flare")).toEqual(flare.interfaceAbis.IPersonalAccountRemote);
         expect(interfaceToAbi("IPersonalAccountsFacet", "flare")).toEqual(flare.interfaceAbis.IPersonalAccountsFacet);
         expect(interfaceToAbi("IPollingFtso", "flare")).toEqual(flare.interfaceAbis.IPollingFtso);
         expect(interfaceToAbi("IPollingManagementGroup", "flare")).toEqual(flare.interfaceAbis.IPollingManagementGroup);
@@ -689,6 +752,7 @@ describe("Testing flare ABIs", () => {
         expect(interfaceToAbi("IReaderFacet", "flare")).toEqual(flare.interfaceAbis.IReaderFacet);
         expect(interfaceToAbi("IRedeemExtended", "flare")).toEqual(flare.interfaceAbis.IRedeemExtended);
         expect(interfaceToAbi("IRedeemExtendedSettings", "flare")).toEqual(flare.interfaceAbis.IRedeemExtendedSettings);
+        expect(interfaceToAbi("IRedeemingSubaccount", "flare")).toEqual(flare.interfaceAbis.IRedeemingSubaccount);
         expect(interfaceToAbi("IRedemptionTimeExtension", "flare")).toEqual(
             flare.interfaceAbis.IRedemptionTimeExtension
         );
@@ -700,7 +764,11 @@ describe("Testing flare ABIs", () => {
         );
         expect(interfaceToAbi("IRelay", "flare")).toEqual(flare.interfaceAbis.IRelay);
         expect(interfaceToAbi("IRewardManager", "flare")).toEqual(flare.interfaceAbis.IRewardManager);
+        expect(interfaceToAbi("ISafeMinimal", "flare")).toEqual(flare.interfaceAbis.ISafeMinimal);
+        expect(interfaceToAbi("ISubaccount", "flare")).toEqual(flare.interfaceAbis.ISubaccount);
+        expect(interfaceToAbi("ISubaccountsFacet", "flare")).toEqual(flare.interfaceAbis.ISubaccountsFacet);
         expect(interfaceToAbi("ISubmission", "flare")).toEqual(flare.interfaceAbis.ISubmission);
+        expect(interfaceToAbi("ITeeAvailabilityCheck", "flare")).toEqual(flare.interfaceAbis.ITeeAvailabilityCheck);
         expect(interfaceToAbi("ITimelockFacet", "flare")).toEqual(flare.interfaceAbis.ITimelockFacet);
         expect(interfaceToAbi("ITypeTemplate", "flare")).toEqual(flare.interfaceAbis.ITypeTemplate);
         expect(interfaceToAbi("ITypeTemplateVerification", "flare")).toEqual(
@@ -750,6 +818,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("EmergencyPause")).toEqual(flare.interfaceAbis.EmergencyPause);
         expect(flare.interfaceToAbi("FtsoV2Interface")).toEqual(flare.interfaceAbis.FtsoV2Interface);
         expect(flare.interfaceToAbi("IAddressBinder")).toEqual(flare.interfaceAbis.IAddressBinder);
+        expect(flare.interfaceToAbi("IAddressUpdatable")).toEqual(flare.interfaceAbis.IAddressUpdatable);
         expect(flare.interfaceToAbi("IAddressValidity")).toEqual(flare.interfaceAbis.IAddressValidity);
         expect(flare.interfaceToAbi("IAddressValidityVerification")).toEqual(
             flare.interfaceAbis.IAddressValidityVerification
@@ -774,16 +843,23 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("IBalanceDecreasingTransactionVerification")).toEqual(
             flare.interfaceAbis.IBalanceDecreasingTransactionVerification
         );
+        expect(flare.interfaceToAbi("IBridgeRoutesFacet")).toEqual(flare.interfaceAbis.IBridgeRoutesFacet);
+        expect(flare.interfaceToAbi("IBridgingSubaccount")).toEqual(flare.interfaceAbis.IBridgingSubaccount);
         expect(flare.interfaceToAbi("ICChainStake")).toEqual(flare.interfaceAbis.ICChainStake);
         expect(flare.interfaceToAbi("ICChainVotePower")).toEqual(flare.interfaceAbis.ICChainVotePower);
         expect(flare.interfaceToAbi("IClaimSetupManager")).toEqual(flare.interfaceAbis.IClaimSetupManager);
         expect(flare.interfaceToAbi("ICollateralizable")).toEqual(flare.interfaceAbis.ICollateralizable);
+        expect(flare.interfaceToAbi("IComposeReceiverAccountBase")).toEqual(
+            flare.interfaceAbis.IComposeReceiverAccountBase
+        );
+        expect(flare.interfaceToAbi("IComposeTransportFacet")).toEqual(flare.interfaceAbis.IComposeTransportFacet);
         expect(flare.interfaceToAbi("IConfirmedBlockHeightExists")).toEqual(
             flare.interfaceAbis.IConfirmedBlockHeightExists
         );
         expect(flare.interfaceToAbi("IConfirmedBlockHeightExistsVerification")).toEqual(
             flare.interfaceAbis.IConfirmedBlockHeightExistsVerification
         );
+        expect(flare.interfaceToAbi("IControlledAccount")).toEqual(flare.interfaceAbis.IControlledAccount);
         expect(flare.interfaceToAbi("ICoreVaultClient")).toEqual(flare.interfaceAbis.ICoreVaultClient);
         expect(flare.interfaceToAbi("ICoreVaultClientSettings")).toEqual(flare.interfaceAbis.ICoreVaultClientSettings);
         expect(flare.interfaceToAbi("ICoreVaultManager")).toEqual(flare.interfaceAbis.ICoreVaultManager);
@@ -814,6 +890,15 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("IFastUpdatesConfiguration")).toEqual(
             flare.interfaceAbis.IFastUpdatesConfiguration
         );
+        expect(flare.interfaceToAbi("IFdc2Hub")).toEqual(flare.interfaceAbis.IFdc2Hub);
+        expect(flare.interfaceToAbi("IFdc2InflationConfigurations")).toEqual(
+            flare.interfaceAbis.IFdc2InflationConfigurations
+        );
+        expect(flare.interfaceToAbi("IFdc2RequestFeeConfigurations")).toEqual(
+            flare.interfaceAbis.IFdc2RequestFeeConfigurations
+        );
+        expect(flare.interfaceToAbi("IFdc2RewardOffersManager")).toEqual(flare.interfaceAbis.IFdc2RewardOffersManager);
+        expect(flare.interfaceToAbi("IFdc2Verification")).toEqual(flare.interfaceAbis.IFdc2Verification);
         expect(flare.interfaceToAbi("IFdcHub")).toEqual(flare.interfaceAbis.IFdcHub);
         expect(flare.interfaceToAbi("IFdcInflationConfigurations")).toEqual(
             flare.interfaceAbis.IFdcInflationConfigurations
@@ -826,6 +911,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("IFlareAssetRegistry")).toEqual(flare.interfaceAbis.IFlareAssetRegistry);
         expect(flare.interfaceToAbi("IFlareContractRegistry")).toEqual(flare.interfaceAbis.IFlareContractRegistry);
         expect(flare.interfaceToAbi("IFlareDaemonize")).toEqual(flare.interfaceAbis.IFlareDaemonize);
+        expect(flare.interfaceToAbi("IFlareGovernance")).toEqual(flare.interfaceAbis.IFlareGovernance);
         expect(flare.interfaceToAbi("IFlareSystemsCalculator")).toEqual(flare.interfaceAbis.IFlareSystemsCalculator);
         expect(flare.interfaceToAbi("IFlareSystemsManager")).toEqual(flare.interfaceAbis.IFlareSystemsManager);
         expect(flare.interfaceToAbi("IFtso")).toEqual(flare.interfaceAbis.IFtso);
@@ -862,6 +948,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("IIFlareAssetRegistryProvider")).toEqual(
             flare.interfaceAbis.IIFlareAssetRegistryProvider
         );
+        expect(flare.interfaceToAbi("IIFlareGovernance")).toEqual(flare.interfaceAbis.IIFlareGovernance);
         expect(flare.interfaceToAbi("IIFlareSystemsCalculator")).toEqual(flare.interfaceAbis.IIFlareSystemsCalculator);
         expect(flare.interfaceToAbi("IIFlareSystemsManager")).toEqual(flare.interfaceAbis.IIFlareSystemsManager);
         expect(flare.interfaceToAbi("IIFtso")).toEqual(flare.interfaceAbis.IIFtso);
@@ -887,7 +974,6 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("IIInflationAllocation")).toEqual(flare.interfaceAbis.IIInflationAllocation);
         expect(flare.interfaceToAbi("IIInflationReceiver")).toEqual(flare.interfaceAbis.IIInflationReceiver);
         expect(flare.interfaceToAbi("IIInflationReceiverV1")).toEqual(flare.interfaceAbis.IIInflationReceiverV1);
-        expect(flare.interfaceToAbi("IIInflationV1")).toEqual(flare.interfaceAbis.IIInflationV1);
         expect(flare.interfaceToAbi("IINodePossessionVerifier")).toEqual(flare.interfaceAbis.IINodePossessionVerifier);
         expect(flare.interfaceToAbi("IIPChainStakeMirrorVerifier")).toEqual(
             flare.interfaceAbis.IIPChainStakeMirrorVerifier
@@ -919,9 +1005,15 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("IInflationGenesis")).toEqual(flare.interfaceAbis.IInflationGenesis);
         expect(flare.interfaceToAbi("IInstructionFeesFacet")).toEqual(flare.interfaceAbis.IInstructionFeesFacet);
         expect(flare.interfaceToAbi("IInstructionsFacet")).toEqual(flare.interfaceAbis.IInstructionsFacet);
+        expect(flare.interfaceToAbi("ILoanSubaccount")).toEqual(flare.interfaceAbis.ILoanSubaccount);
         expect(flare.interfaceToAbi("IMasterAccountController")).toEqual(flare.interfaceAbis.IMasterAccountController);
         expect(flare.interfaceToAbi("IMemoInstructionsFacet")).toEqual(flare.interfaceAbis.IMemoInstructionsFacet);
         expect(flare.interfaceToAbi("IMintingTagManager")).toEqual(flare.interfaceAbis.IMintingTagManager);
+        expect(flare.interfaceToAbi("IMorpho")).toEqual(flare.interfaceAbis.IMorpho);
+        expect(flare.interfaceToAbi("IMorphoLoanMarketsFacet")).toEqual(flare.interfaceAbis.IMorphoLoanMarketsFacet);
+        expect(flare.interfaceToAbi("IMorphoLoanSubaccountRemote")).toEqual(
+            flare.interfaceAbis.IMorphoLoanSubaccountRemote
+        );
         expect(flare.interfaceToAbi("IOwnableWithTimelock")).toEqual(flare.interfaceAbis.IOwnableWithTimelock);
         expect(flare.interfaceToAbi("IPChainStakeMirror")).toEqual(flare.interfaceAbis.IPChainStakeMirror);
         expect(flare.interfaceToAbi("IPChainStakeMirrorMultiSigVoting")).toEqual(
@@ -931,11 +1023,21 @@ describe("Testing flare ABIs", () => {
             flare.interfaceAbis.IPChainStakeMirrorVerifier
         );
         expect(flare.interfaceToAbi("IPChainVotePower")).toEqual(flare.interfaceAbis.IPChainVotePower);
+        expect(flare.interfaceToAbi("IPMWFeeProof")).toEqual(flare.interfaceAbis.IPMWFeeProof);
+        expect(flare.interfaceToAbi("IPMWMultisigAccountConfigured")).toEqual(
+            flare.interfaceAbis.IPMWMultisigAccountConfigured
+        );
+        expect(flare.interfaceToAbi("IPMWMultisigUtxoConfigured")).toEqual(
+            flare.interfaceAbis.IPMWMultisigUtxoConfigured
+        );
+        expect(flare.interfaceToAbi("IPMWPaymentStatus")).toEqual(flare.interfaceAbis.IPMWPaymentStatus);
         expect(flare.interfaceToAbi("IPauseFacet")).toEqual(flare.interfaceAbis.IPauseFacet);
         expect(flare.interfaceToAbi("IPayment")).toEqual(flare.interfaceAbis.IPayment);
         expect(flare.interfaceToAbi("IPaymentProofsFacet")).toEqual(flare.interfaceAbis.IPaymentProofsFacet);
         expect(flare.interfaceToAbi("IPaymentVerification")).toEqual(flare.interfaceAbis.IPaymentVerification);
         expect(flare.interfaceToAbi("IPersonalAccount")).toEqual(flare.interfaceAbis.IPersonalAccount);
+        expect(flare.interfaceToAbi("IPersonalAccountBase")).toEqual(flare.interfaceAbis.IPersonalAccountBase);
+        expect(flare.interfaceToAbi("IPersonalAccountRemote")).toEqual(flare.interfaceAbis.IPersonalAccountRemote);
         expect(flare.interfaceToAbi("IPersonalAccountsFacet")).toEqual(flare.interfaceAbis.IPersonalAccountsFacet);
         expect(flare.interfaceToAbi("IPollingFtso")).toEqual(flare.interfaceAbis.IPollingFtso);
         expect(flare.interfaceToAbi("IPollingManagementGroup")).toEqual(flare.interfaceAbis.IPollingManagementGroup);
@@ -946,6 +1048,7 @@ describe("Testing flare ABIs", () => {
         expect(flare.interfaceToAbi("IReaderFacet")).toEqual(flare.interfaceAbis.IReaderFacet);
         expect(flare.interfaceToAbi("IRedeemExtended")).toEqual(flare.interfaceAbis.IRedeemExtended);
         expect(flare.interfaceToAbi("IRedeemExtendedSettings")).toEqual(flare.interfaceAbis.IRedeemExtendedSettings);
+        expect(flare.interfaceToAbi("IRedeemingSubaccount")).toEqual(flare.interfaceAbis.IRedeemingSubaccount);
         expect(flare.interfaceToAbi("IRedemptionTimeExtension")).toEqual(flare.interfaceAbis.IRedemptionTimeExtension);
         expect(flare.interfaceToAbi("IReferencedPaymentNonexistence")).toEqual(
             flare.interfaceAbis.IReferencedPaymentNonexistence
@@ -955,7 +1058,11 @@ describe("Testing flare ABIs", () => {
         );
         expect(flare.interfaceToAbi("IRelay")).toEqual(flare.interfaceAbis.IRelay);
         expect(flare.interfaceToAbi("IRewardManager")).toEqual(flare.interfaceAbis.IRewardManager);
+        expect(flare.interfaceToAbi("ISafeMinimal")).toEqual(flare.interfaceAbis.ISafeMinimal);
+        expect(flare.interfaceToAbi("ISubaccount")).toEqual(flare.interfaceAbis.ISubaccount);
+        expect(flare.interfaceToAbi("ISubaccountsFacet")).toEqual(flare.interfaceAbis.ISubaccountsFacet);
         expect(flare.interfaceToAbi("ISubmission")).toEqual(flare.interfaceAbis.ISubmission);
+        expect(flare.interfaceToAbi("ITeeAvailabilityCheck")).toEqual(flare.interfaceAbis.ITeeAvailabilityCheck);
         expect(flare.interfaceToAbi("ITimelockFacet")).toEqual(flare.interfaceAbis.ITimelockFacet);
         expect(flare.interfaceToAbi("ITypeTemplate")).toEqual(flare.interfaceAbis.ITypeTemplate);
         expect(flare.interfaceToAbi("ITypeTemplateVerification")).toEqual(

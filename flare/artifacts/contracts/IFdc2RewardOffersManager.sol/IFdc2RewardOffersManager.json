@@ -1,0 +1,67 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint24",
+        "name": "rewardEpochId",
+        "type": "uint24"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "attestationType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint24",
+            "name": "inflationShare",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint8",
+            "name": "minRequestsThreshold",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint224",
+            "name": "mode",
+            "type": "uint224"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IFdc2InflationConfigurations.Fdc2Configuration[]",
+        "name": "fdc2Configurations",
+        "type": "tuple[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "InflationRewardsOffered",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "fdc2InflationConfigurations",
+    "outputs": [
+      {
+        "internalType": "contract IFdc2InflationConfigurations",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

@@ -69,6 +69,11 @@
   },
   {
     "inputs": [],
+    "name": "RenounceDisabled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "TimelockDurationTooLong",
     "type": "error"
   },
@@ -80,6 +85,11 @@
   {
     "inputs": [],
     "name": "TimelockNotAllowedYet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TimelockValueNotAllowed",
     "type": "error"
   },
   {

@@ -76,6 +76,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "ComposeTransportNotConfigured",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "bytes32",
@@ -89,6 +94,11 @@
       }
     ],
     "name": "CustomInstructionHashMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FxrpOftNotConfigured",
     "type": "error"
   },
   {
@@ -141,12 +151,37 @@
   },
   {
     "inputs": [],
+    "name": "InvalidDestinationEid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidDestinationPeer",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "InvalidExecutor",
     "type": "error"
   },
   {
     "inputs": [],
     "name": "InvalidExecutorFee",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidFeeRecipient",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidFeeTerms",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidFxrpOft",
     "type": "error"
   },
   {
@@ -205,12 +240,27 @@
   },
   {
     "inputs": [],
+    "name": "InvalidLzEndpoint",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidMarketParams",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "InvalidMemoData",
     "type": "error"
   },
   {
     "inputs": [],
     "name": "InvalidMinter",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidMorpho",
     "type": "error"
   },
   {
@@ -243,6 +293,21 @@
       }
     ],
     "name": "InvalidNonceIncrease",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidOft",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidOriginEid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidOriginPeer",
     "type": "error"
   },
   {
@@ -290,6 +355,16 @@
   {
     "inputs": [],
     "name": "InvalidSourceId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSubaccountImplementation",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidSubaccountType",
     "type": "error"
   },
   {
@@ -343,6 +418,28 @@
   {
     "inputs": [],
     "name": "IsPaused",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "MarketAlreadyRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "MarketNotRegistered",
     "type": "error"
   },
   {
@@ -410,6 +507,44 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "SubaccountImplementationNotSet",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "subaccountAddress",
+        "type": "address"
+      }
+    ],
+    "name": "SubaccountNotSuccessfullyDeployed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "SubaccountTypeRoutePinned",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "TimelockDurationTooLong",
     "type": "error"
@@ -427,6 +562,17 @@
   {
     "inputs": [],
     "name": "TransactionAlreadyExecuted",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "UnknownBridgeRoute",
     "type": "error"
   },
   {
@@ -611,6 +757,25 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "destinationPeer",
+        "type": "bytes32"
+      }
+    ],
+    "name": "BridgeRouteSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "internalType": "bytes",
         "name": "encodedCall",
         "type": "bytes"
@@ -739,6 +904,43 @@
       }
     ],
     "name": "CollateralReserved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "ComposeTransportCleared",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "lzEndpoint",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oft",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "originEid",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "originPeer",
+        "type": "bytes32"
+      }
+    ],
+    "name": "ComposeTransportSet",
     "type": "event"
   },
   {
@@ -994,6 +1196,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "fxrpOft",
+        "type": "address"
+      }
+    ],
+    "name": "FxrpOftSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "personalAccount",
@@ -1076,6 +1291,88 @@
       }
     ],
     "name": "InstructionFeeSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanBorrowingDisabled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanBorrowingEnabled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "feeFloor",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "feeSpread",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "feeRecipient",
+        "type": "address"
+      }
+    ],
+    "name": "LoanFeeTermsSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "morpho",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "marketId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "LoanMarketRegistered",
     "type": "event"
   },
   {
@@ -1309,6 +1606,88 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
+        "internalType": "address",
+        "name": "subaccount",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "parentPersonalAccount",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "SubaccountCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "implementation",
+        "type": "address"
+      }
+    ],
+    "name": "SubaccountImplementationSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "destinationEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "SubaccountTypeRouteSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "subaccountType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "suspended",
+        "type": "bool"
+      }
+    ],
+    "name": "SubaccountTypeRouteSuspended",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": false,
         "internalType": "uint256",
         "name": "timelockDurationSeconds",
@@ -1507,6 +1886,49 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_xrplOwner",
+        "type": "string"
+      }
+    ],
+    "name": "createPersonalAccount",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_xrplOwner",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "createSubaccount",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -2138,6 +2560,78 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "_destinationEid",
+        "type": "uint32"
+      }
+    ],
+    "name": "getBridgeRoute",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getBridgeRoutes",
+    "outputs": [
+      {
+        "internalType": "uint32[]",
+        "name": "_destinationEids",
+        "type": "uint32[]"
+      },
+      {
+        "internalType": "bytes32[]",
+        "name": "_destinationPeers",
+        "type": "bytes32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getComposeTransport",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "lzEndpoint",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "oft",
+            "type": "address"
+          },
+          {
+            "internalType": "uint32",
+            "name": "originEid",
+            "type": "uint32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "originPeer",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct IComposeTransportFacet.Transport",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "getDefaultInstructionFee",
     "outputs": [
@@ -2207,6 +2701,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getFxrpOft",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -2220,6 +2727,100 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getLoanFeeTerms",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "feeFloor",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "feeSpread",
+            "type": "uint64"
+          },
+          {
+            "internalType": "address",
+            "name": "feeRecipient",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IMorphoLoanMarketsFacet.FeeTerms",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getLoanMarket",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "morpho",
+            "type": "address"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "loanToken",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "collateralToken",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "oracle",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "irm",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lltv",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct IMorpho.MarketParams",
+            "name": "marketParams",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IMorphoLoanMarketsFacet.Market",
+        "name": "",
+        "type": "tuple"
       }
     ],
     "stateMutability": "view",
@@ -2297,6 +2898,83 @@
         "internalType": "bytes32",
         "name": "",
         "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_xrplOwner",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getSubaccount",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getSubaccountTypeRoute",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "_fxrpOft",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_destinationEid",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_destinationPeer",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "getSubaccountTypeRoutePin",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "_destinationEid",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bool",
+        "name": "_suspended",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -2434,6 +3112,44 @@
         "internalType": "address",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "implementationForType",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subaccountType",
+        "type": "uint256"
+      }
+    ],
+    "name": "isLoanBorrowingDisabled",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",

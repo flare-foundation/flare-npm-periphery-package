@@ -33,12 +33,17 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceAbis.IAssetManagerRedemption).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IBalanceDecreasingTransaction).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IBalanceDecreasingTransactionVerification).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IBridgeRoutesFacet).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IBridgingSubaccount).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ICChainStake).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ICChainVotePower).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IClaimSetupManager).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ICollateralizable).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IComposeReceiverAccountBase).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IComposeTransportFacet).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IConfirmedBlockHeightExists).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IConfirmedBlockHeightExistsVerification).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IControlledAccount).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ICoreVaultClient).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ICoreVaultClientSettings).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ICoreVaultManager).toEqual(expect.any(Array));
@@ -153,12 +158,16 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceAbis.IInstructionFeesFacet).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IInstructions).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IInstructionsFacet).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.ILoanSubaccount).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IMachineEmergencyPause).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IMachineManager).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IMachinePathManager).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IMasterAccountController).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IMemoInstructionsFacet).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IMintingTagManager).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IMorpho).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IMorphoLoanMarketsFacet).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IMorphoLoanSubaccountRemote).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IOperationFees).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IOwnableWithTimelock).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IOwnerAllowlist).toEqual(expect.any(Array));
@@ -171,6 +180,8 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceAbis.IPaymentProofsFacet).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IPaymentVerification).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IPersonalAccount).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IPersonalAccountBase).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IPersonalAccountRemote).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IPersonalAccountsFacet).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IPollingFtso).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IPollingManagementGroup).toEqual(expect.any(Array));
@@ -181,12 +192,15 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceAbis.IReaderFacet).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IRedeemExtended).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IRedeemExtendedSettings).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.IRedeemingSubaccount).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IRedemptionTimeExtension).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IReferencedPaymentNonexistence).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IReferencedPaymentNonexistenceVerification).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IRelay).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.IRewardManager).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ISafeMinimal).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.ISubaccount).toEqual(expect.any(Array));
+        expect(songbird.interfaceAbis.ISubaccountsFacet).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ISubmission).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ITeeAvailabilityCheck).toEqual(expect.any(Array));
         expect(songbird.interfaceAbis.ITeeCommonErrors).toEqual(expect.any(Array));
@@ -544,16 +558,25 @@ describe("Testing songbird ABIs", () => {
         expect(interfaceToAbi("IBalanceDecreasingTransactionVerification", "songbird")).toEqual(
             songbird.interfaceAbis.IBalanceDecreasingTransactionVerification
         );
+        expect(interfaceToAbi("IBridgeRoutesFacet", "songbird")).toEqual(songbird.interfaceAbis.IBridgeRoutesFacet);
+        expect(interfaceToAbi("IBridgingSubaccount", "songbird")).toEqual(songbird.interfaceAbis.IBridgingSubaccount);
         expect(interfaceToAbi("ICChainStake", "songbird")).toEqual(songbird.interfaceAbis.ICChainStake);
         expect(interfaceToAbi("ICChainVotePower", "songbird")).toEqual(songbird.interfaceAbis.ICChainVotePower);
         expect(interfaceToAbi("IClaimSetupManager", "songbird")).toEqual(songbird.interfaceAbis.IClaimSetupManager);
         expect(interfaceToAbi("ICollateralizable", "songbird")).toEqual(songbird.interfaceAbis.ICollateralizable);
+        expect(interfaceToAbi("IComposeReceiverAccountBase", "songbird")).toEqual(
+            songbird.interfaceAbis.IComposeReceiverAccountBase
+        );
+        expect(interfaceToAbi("IComposeTransportFacet", "songbird")).toEqual(
+            songbird.interfaceAbis.IComposeTransportFacet
+        );
         expect(interfaceToAbi("IConfirmedBlockHeightExists", "songbird")).toEqual(
             songbird.interfaceAbis.IConfirmedBlockHeightExists
         );
         expect(interfaceToAbi("IConfirmedBlockHeightExistsVerification", "songbird")).toEqual(
             songbird.interfaceAbis.IConfirmedBlockHeightExistsVerification
         );
+        expect(interfaceToAbi("IControlledAccount", "songbird")).toEqual(songbird.interfaceAbis.IControlledAccount);
         expect(interfaceToAbi("ICoreVaultClient", "songbird")).toEqual(songbird.interfaceAbis.ICoreVaultClient);
         expect(interfaceToAbi("ICoreVaultClientSettings", "songbird")).toEqual(
             songbird.interfaceAbis.ICoreVaultClientSettings
@@ -738,6 +761,7 @@ describe("Testing songbird ABIs", () => {
         );
         expect(interfaceToAbi("IInstructions", "songbird")).toEqual(songbird.interfaceAbis.IInstructions);
         expect(interfaceToAbi("IInstructionsFacet", "songbird")).toEqual(songbird.interfaceAbis.IInstructionsFacet);
+        expect(interfaceToAbi("ILoanSubaccount", "songbird")).toEqual(songbird.interfaceAbis.ILoanSubaccount);
         expect(interfaceToAbi("IMachineEmergencyPause", "songbird")).toEqual(
             songbird.interfaceAbis.IMachineEmergencyPause
         );
@@ -750,6 +774,13 @@ describe("Testing songbird ABIs", () => {
             songbird.interfaceAbis.IMemoInstructionsFacet
         );
         expect(interfaceToAbi("IMintingTagManager", "songbird")).toEqual(songbird.interfaceAbis.IMintingTagManager);
+        expect(interfaceToAbi("IMorpho", "songbird")).toEqual(songbird.interfaceAbis.IMorpho);
+        expect(interfaceToAbi("IMorphoLoanMarketsFacet", "songbird")).toEqual(
+            songbird.interfaceAbis.IMorphoLoanMarketsFacet
+        );
+        expect(interfaceToAbi("IMorphoLoanSubaccountRemote", "songbird")).toEqual(
+            songbird.interfaceAbis.IMorphoLoanSubaccountRemote
+        );
         expect(interfaceToAbi("IOperationFees", "songbird")).toEqual(songbird.interfaceAbis.IOperationFees);
         expect(interfaceToAbi("IOwnableWithTimelock", "songbird")).toEqual(songbird.interfaceAbis.IOwnableWithTimelock);
         expect(interfaceToAbi("IOwnerAllowlist", "songbird")).toEqual(songbird.interfaceAbis.IOwnerAllowlist);
@@ -766,6 +797,10 @@ describe("Testing songbird ABIs", () => {
         expect(interfaceToAbi("IPaymentProofsFacet", "songbird")).toEqual(songbird.interfaceAbis.IPaymentProofsFacet);
         expect(interfaceToAbi("IPaymentVerification", "songbird")).toEqual(songbird.interfaceAbis.IPaymentVerification);
         expect(interfaceToAbi("IPersonalAccount", "songbird")).toEqual(songbird.interfaceAbis.IPersonalAccount);
+        expect(interfaceToAbi("IPersonalAccountBase", "songbird")).toEqual(songbird.interfaceAbis.IPersonalAccountBase);
+        expect(interfaceToAbi("IPersonalAccountRemote", "songbird")).toEqual(
+            songbird.interfaceAbis.IPersonalAccountRemote
+        );
         expect(interfaceToAbi("IPersonalAccountsFacet", "songbird")).toEqual(
             songbird.interfaceAbis.IPersonalAccountsFacet
         );
@@ -782,6 +817,7 @@ describe("Testing songbird ABIs", () => {
         expect(interfaceToAbi("IRedeemExtendedSettings", "songbird")).toEqual(
             songbird.interfaceAbis.IRedeemExtendedSettings
         );
+        expect(interfaceToAbi("IRedeemingSubaccount", "songbird")).toEqual(songbird.interfaceAbis.IRedeemingSubaccount);
         expect(interfaceToAbi("IRedemptionTimeExtension", "songbird")).toEqual(
             songbird.interfaceAbis.IRedemptionTimeExtension
         );
@@ -794,6 +830,8 @@ describe("Testing songbird ABIs", () => {
         expect(interfaceToAbi("IRelay", "songbird")).toEqual(songbird.interfaceAbis.IRelay);
         expect(interfaceToAbi("IRewardManager", "songbird")).toEqual(songbird.interfaceAbis.IRewardManager);
         expect(interfaceToAbi("ISafeMinimal", "songbird")).toEqual(songbird.interfaceAbis.ISafeMinimal);
+        expect(interfaceToAbi("ISubaccount", "songbird")).toEqual(songbird.interfaceAbis.ISubaccount);
+        expect(interfaceToAbi("ISubaccountsFacet", "songbird")).toEqual(songbird.interfaceAbis.ISubaccountsFacet);
         expect(interfaceToAbi("ISubmission", "songbird")).toEqual(songbird.interfaceAbis.ISubmission);
         expect(interfaceToAbi("ITeeAvailabilityCheck", "songbird")).toEqual(
             songbird.interfaceAbis.ITeeAvailabilityCheck
@@ -915,16 +953,25 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceToAbi("IBalanceDecreasingTransactionVerification")).toEqual(
             songbird.interfaceAbis.IBalanceDecreasingTransactionVerification
         );
+        expect(songbird.interfaceToAbi("IBridgeRoutesFacet")).toEqual(songbird.interfaceAbis.IBridgeRoutesFacet);
+        expect(songbird.interfaceToAbi("IBridgingSubaccount")).toEqual(songbird.interfaceAbis.IBridgingSubaccount);
         expect(songbird.interfaceToAbi("ICChainStake")).toEqual(songbird.interfaceAbis.ICChainStake);
         expect(songbird.interfaceToAbi("ICChainVotePower")).toEqual(songbird.interfaceAbis.ICChainVotePower);
         expect(songbird.interfaceToAbi("IClaimSetupManager")).toEqual(songbird.interfaceAbis.IClaimSetupManager);
         expect(songbird.interfaceToAbi("ICollateralizable")).toEqual(songbird.interfaceAbis.ICollateralizable);
+        expect(songbird.interfaceToAbi("IComposeReceiverAccountBase")).toEqual(
+            songbird.interfaceAbis.IComposeReceiverAccountBase
+        );
+        expect(songbird.interfaceToAbi("IComposeTransportFacet")).toEqual(
+            songbird.interfaceAbis.IComposeTransportFacet
+        );
         expect(songbird.interfaceToAbi("IConfirmedBlockHeightExists")).toEqual(
             songbird.interfaceAbis.IConfirmedBlockHeightExists
         );
         expect(songbird.interfaceToAbi("IConfirmedBlockHeightExistsVerification")).toEqual(
             songbird.interfaceAbis.IConfirmedBlockHeightExistsVerification
         );
+        expect(songbird.interfaceToAbi("IControlledAccount")).toEqual(songbird.interfaceAbis.IControlledAccount);
         expect(songbird.interfaceToAbi("ICoreVaultClient")).toEqual(songbird.interfaceAbis.ICoreVaultClient);
         expect(songbird.interfaceToAbi("ICoreVaultClientSettings")).toEqual(
             songbird.interfaceAbis.ICoreVaultClientSettings
@@ -1093,6 +1140,7 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceToAbi("IInstructionFeesFacet")).toEqual(songbird.interfaceAbis.IInstructionFeesFacet);
         expect(songbird.interfaceToAbi("IInstructions")).toEqual(songbird.interfaceAbis.IInstructions);
         expect(songbird.interfaceToAbi("IInstructionsFacet")).toEqual(songbird.interfaceAbis.IInstructionsFacet);
+        expect(songbird.interfaceToAbi("ILoanSubaccount")).toEqual(songbird.interfaceAbis.ILoanSubaccount);
         expect(songbird.interfaceToAbi("IMachineEmergencyPause")).toEqual(
             songbird.interfaceAbis.IMachineEmergencyPause
         );
@@ -1105,6 +1153,13 @@ describe("Testing songbird ABIs", () => {
             songbird.interfaceAbis.IMemoInstructionsFacet
         );
         expect(songbird.interfaceToAbi("IMintingTagManager")).toEqual(songbird.interfaceAbis.IMintingTagManager);
+        expect(songbird.interfaceToAbi("IMorpho")).toEqual(songbird.interfaceAbis.IMorpho);
+        expect(songbird.interfaceToAbi("IMorphoLoanMarketsFacet")).toEqual(
+            songbird.interfaceAbis.IMorphoLoanMarketsFacet
+        );
+        expect(songbird.interfaceToAbi("IMorphoLoanSubaccountRemote")).toEqual(
+            songbird.interfaceAbis.IMorphoLoanSubaccountRemote
+        );
         expect(songbird.interfaceToAbi("IOperationFees")).toEqual(songbird.interfaceAbis.IOperationFees);
         expect(songbird.interfaceToAbi("IOwnableWithTimelock")).toEqual(songbird.interfaceAbis.IOwnableWithTimelock);
         expect(songbird.interfaceToAbi("IOwnerAllowlist")).toEqual(songbird.interfaceAbis.IOwnerAllowlist);
@@ -1121,6 +1176,10 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceToAbi("IPaymentProofsFacet")).toEqual(songbird.interfaceAbis.IPaymentProofsFacet);
         expect(songbird.interfaceToAbi("IPaymentVerification")).toEqual(songbird.interfaceAbis.IPaymentVerification);
         expect(songbird.interfaceToAbi("IPersonalAccount")).toEqual(songbird.interfaceAbis.IPersonalAccount);
+        expect(songbird.interfaceToAbi("IPersonalAccountBase")).toEqual(songbird.interfaceAbis.IPersonalAccountBase);
+        expect(songbird.interfaceToAbi("IPersonalAccountRemote")).toEqual(
+            songbird.interfaceAbis.IPersonalAccountRemote
+        );
         expect(songbird.interfaceToAbi("IPersonalAccountsFacet")).toEqual(
             songbird.interfaceAbis.IPersonalAccountsFacet
         );
@@ -1137,6 +1196,7 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceToAbi("IRedeemExtendedSettings")).toEqual(
             songbird.interfaceAbis.IRedeemExtendedSettings
         );
+        expect(songbird.interfaceToAbi("IRedeemingSubaccount")).toEqual(songbird.interfaceAbis.IRedeemingSubaccount);
         expect(songbird.interfaceToAbi("IRedemptionTimeExtension")).toEqual(
             songbird.interfaceAbis.IRedemptionTimeExtension
         );
@@ -1149,6 +1209,8 @@ describe("Testing songbird ABIs", () => {
         expect(songbird.interfaceToAbi("IRelay")).toEqual(songbird.interfaceAbis.IRelay);
         expect(songbird.interfaceToAbi("IRewardManager")).toEqual(songbird.interfaceAbis.IRewardManager);
         expect(songbird.interfaceToAbi("ISafeMinimal")).toEqual(songbird.interfaceAbis.ISafeMinimal);
+        expect(songbird.interfaceToAbi("ISubaccount")).toEqual(songbird.interfaceAbis.ISubaccount);
+        expect(songbird.interfaceToAbi("ISubaccountsFacet")).toEqual(songbird.interfaceAbis.ISubaccountsFacet);
         expect(songbird.interfaceToAbi("ISubmission")).toEqual(songbird.interfaceAbis.ISubmission);
         expect(songbird.interfaceToAbi("ITeeAvailabilityCheck")).toEqual(songbird.interfaceAbis.ITeeAvailabilityCheck);
         expect(songbird.interfaceToAbi("ITeeCommonErrors")).toEqual(songbird.interfaceAbis.ITeeCommonErrors);

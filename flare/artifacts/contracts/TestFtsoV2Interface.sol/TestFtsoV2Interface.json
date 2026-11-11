@@ -64,6 +64,112 @@
         "type": "bytes21"
       }
     ],
+    "name": "getCurrentFeed",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "_value",
+        "type": "int256"
+      },
+      {
+        "internalType": "int8",
+        "name": "_decimals",
+        "type": "int8"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_timestamp",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes21",
+        "name": "_feedId",
+        "type": "bytes21"
+      }
+    ],
+    "name": "getCurrentFeedInWei",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "_value",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_timestamp",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes21[]",
+        "name": "_feedIds",
+        "type": "bytes21[]"
+      }
+    ],
+    "name": "getCurrentFeeds",
+    "outputs": [
+      {
+        "internalType": "int256[]",
+        "name": "_values",
+        "type": "int256[]"
+      },
+      {
+        "internalType": "int8[]",
+        "name": "_decimals",
+        "type": "int8[]"
+      },
+      {
+        "internalType": "uint64[]",
+        "name": "_timestamps",
+        "type": "uint64[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes21[]",
+        "name": "_feedIds",
+        "type": "bytes21[]"
+      }
+    ],
+    "name": "getCurrentFeedsInWei",
+    "outputs": [
+      {
+        "internalType": "int256[]",
+        "name": "_values",
+        "type": "int256[]"
+      },
+      {
+        "internalType": "uint64[]",
+        "name": "_timestamps",
+        "type": "uint64[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes21",
+        "name": "_feedId",
+        "type": "bytes21"
+      }
+    ],
     "name": "getFeedById",
     "outputs": [
       {
